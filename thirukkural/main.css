@@ -37,5 +37,8 @@ article header h2 {
 
 article section p {
     line-height: 1.6em;
+    font-size: 1.4em;
 }
-
+a { 
+    text-decoration: none;
+}
