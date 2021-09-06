@@ -27,9 +27,9 @@
   color: red;
 }
 
-article {
+/* article {
     border-bottom: 1px solid #ccc;
-}
+} */
 
 article header h2 {
     text-transform: capitalize;
