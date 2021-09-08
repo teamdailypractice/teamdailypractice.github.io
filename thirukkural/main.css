@@ -43,6 +43,11 @@ a {
     text-decoration: none;
 }
 
+img { 
+    width: 64px;
+    height: 64px;
+}
+
 ul {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
