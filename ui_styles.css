@@ -1,0 +1,137 @@
+img {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  padding-bottom: 0px;
+}
+
+img.junior {
+  border: 0px solid blue;
+  border-radius: 4px;
+  padding: 5px;
+  width: 90px;
+  height: 90px;
+}
+
+img.kids {
+  border: 0px solid blue;
+  border-radius: 4px;
+  padding: 5px;
+  width: 35px;
+  height: 35px;
+}
+
+divTest {
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+.img-symbols {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 24px;
+  height: 56px;
+  padding-top: 16px;
+  padding-bottom: 0px;
+  /* padding-right: 10px;
+  padding-left: 10px;   */
+}
+
+.img-symbols-junior {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 24px;
+  height: 32px;
+  padding-top: 0px;
+  padding-bottom: 0px;  
+}
+
+
+.img-subtraction {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  /* height: 24px;   */
+   padding-top: 8px;
+  /* padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;   */
+}
+
+.img-equalto {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 48px;
+  /* height: 24px;   */
+   padding-top: 8px;
+  /* padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;   */
+}
+
+.input-name {
+  width: 32%;
+}
+
+.input-answer {
+  width: 16%;
+}
+
+.label-noborder {
+  margin: 10px;
+  border-style: solid;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+.label {
+  margin: 10px;
+  border-style: solid;
+  border-color: blue;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.label-xsmall {
+  vertical-align: super;
+  font-size: x-small;
+}
+
+.label-small {
+  vertical-align: super;
+  font-size: small;
+}
+
+.label-medium {
+  vertical-align: super;
+  font-size: medium;
+}
+
+.label-large {
+  vertical-align: super;
+  font-size: large;
+}
+
+.label-large-extra {
+  vertical-align: super;
+  font-size: x-large;
+}
+
+.label-large-large-extra {
+  font-size: xx-large;
+}
+
+.label-bs {
+  vertical-align: super;
+}
+
+.jumbotron {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}

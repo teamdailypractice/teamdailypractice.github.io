@@ -1,0 +1,88 @@
+<html>
+
+<head>
+  <title>Notification - Reminder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+  <link rel="stylesheet" href="ui_styles_test.css">
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h3>Daily Practice reminder notification</h3>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+
+        <label for="yourName">Name</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" id="yourName" value="" class="input-name" />
+        <input type="button" id="submit_name" class="btn btn-outline-primary btn-sm"
+        onclick="notifyMe()" value="Start" />
+        <script>
+          function notifyMe() {
+            alert(Notification.permission);
+            console.log("here  " + Notification.permission);
+            // Let's check if the browser supports notifications
+            if (!("Notification" in window)) {
+              alert("This browser does not support desktop notification");
+            }
+
+            // Let's check whether notification permissions have already been granted
+            else if (Notification.permission === "granted") {
+              alert("I am in notification")
+              // If it's okay let's create a notification
+              //var notification = new Notification("Hi there!");
+
+              var n = new Notification('Title', {
+                  body: 'I am the body text!',
+                  icon: 'images/notification/390px_virat_kohli.jpg' // optional
+                });
+              
+            }
+
+            // Otherwise, we need to ask the user for permission
+            else if (Notification.permission !== "denied") {
+              Notification.requestPermission().then(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                  var notification = new Notification("Hi there!");
+                  console.log(notification);
+
+                  var n = new Notification('Title', {
+                  body: 'I am the body text!',
+                  icon: 'images/notification/390px_virat_kohli.jpg' // optional
+                });
+                }
+              });
+            }
+
+            // At last, if the user has denied notifications, and you
+            // want to be respectful there is no need to bother them any more.
+          }
+          
+          //permission can be requested only in response to user action
+          function requestNotificationPermission() {
+            alert(window.Notification.permission)//default is denied
+            if (window.Notification && Notification.permission !== "denied") {
+              Notification.requestPermission((status) => {
+                // status is "granted", if accepted by user
+                var n = new Notification('Title', {
+                  body: 'I am the body text!',
+                  icon: 'images/notification/390px_virat_kohli.jpg' // optional
+                });
+              })
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
