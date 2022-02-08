@@ -18,11 +18,8 @@ https://github.com/teamdailypractice/tn_school_books/blob/efe53cd533b6e4287a56a5
 8 பா - வகை , அலகிடுதல் 195
 9 அணி 221
 
-திருக்குறள் 
+திருக்குறள்
 
-திருக்குறள் 
-
-திருக்குறள் 
 
 80
 164
@@ -30,6 +27,7 @@ https://github.com/teamdailypractice/tn_school_books/blob/efe53cd533b6e4287a56a5
 
 82
 166
+
 
 எழுத்து, சொல்
 தொகாநிலைத் தொடர்கள்
