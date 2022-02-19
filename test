@@ -1,0 +1,8 @@
+git remote set-url origin https://teamdailypractice@github.com/teamdailypractice/teamdailypractice.github.io.git
+git remote set-url origin https://mohanmca@github.com/teamdailypractice/teamdailypractice.github.io.git  
+sh-keygen -t rsa -b 4096 -C "teamdailypractice@gmail.com"
+ssh-keygen -t ed25519 -C  "teamdailypractice@gmail.com"
+chmod 400 ~/.ssh/id_rsa
+/Users/alpha/.ssh/id_ed25519.pub
+ssh-add ~/.ssh/
+eval "$(ssh-agent -s)"
