@@ -75,9 +75,10 @@ a:active {
 }
 
 .slogan {
-    color: #888;
+    color: red;
     font-size: 0.875em;
     margin: 0;
+    font-size: medium;
 }
 
 /*
