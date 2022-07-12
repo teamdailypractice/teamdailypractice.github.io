@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/kural/static/css/main.dbff3181.css",
-    "main.js": "/kural/static/js/main.b91a64bf.js",
+    "main.css": "/kural/static/css/main.dd15cd4b.css",
+    "main.js": "/kural/static/js/main.eb23efc5.js",
     "static/media/TSCuSaiIndira.woff": "/kural/static/media/TSCuSaiIndira.bd587d7a66de5668ffc8.woff",
     "static/media/TSCuSaiIndira.woff2": "/kural/static/media/TSCuSaiIndira.4336809880781a9ea33a.woff2",
     "index.html": "/kural/index.html",
-    "main.dbff3181.css.map": "/kural/static/css/main.dbff3181.css.map",
-    "main.b91a64bf.js.map": "/kural/static/js/main.b91a64bf.js.map"
+    "main.dd15cd4b.css.map": "/kural/static/css/main.dd15cd4b.css.map",
+    "main.eb23efc5.js.map": "/kural/static/js/main.eb23efc5.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbff3181.css",
-    "static/js/main.b91a64bf.js"
+    "static/css/main.dd15cd4b.css",
+    "static/js/main.eb23efc5.js"
   ]
 }
