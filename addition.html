@@ -31,18 +31,18 @@
           <form id="formPractice">
             <div><label id="welcomeMessage" /></div>
             <div class="form-group row font-size">
-              <label id="firstNumGen" class="label"></label>
-              <img class="img-symbols-4rem" src="images/img_addition_01.png" alt="Mathematics - Addition Symbol + ">
-              <label id="secondNumGen" class="label"></label>
+              <label id="firstNumGen" class="label em"></label>
+              <img class="img-symbols-em" src="images/img_addition_01.png" alt="Mathematics - Addition Symbol + ">
+              <label id="secondNumGen" class="label em"></label>
               <!-- <button id="equalTo" class="btn btn-sm" disabled>=</button> -->
-              <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-4rem">
+              <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-em">
             </div>
             <div class="form-group row font-size">
               <span>&nbsp;</span>
-              <input type="text" id="answer" value="" class="input-answer-4rem" inputmode="numeric" pattern="[0-9]*"
+              <input type="text" id="answer" value="" class="input-answer-em" inputmode="numeric" pattern="[0-9]*"
                 onkeypress="return App.uiOps.isNumber(event);" />
               <span>&nbsp;</span>
-              <input type="button" class="btn btn-outline-primary btn-sm" autofocus id="submitAnswer"
+              <input type="button" class="btn btn-outline-primary em" autofocus id="submitAnswer"
                 onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" /></label>
             </div>
             <input type="hidden" id="operations" value="addition" />
