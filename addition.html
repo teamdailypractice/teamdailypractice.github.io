@@ -45,9 +45,6 @@
       </div>
     </nav>
   </div>
-  <!-- <div class="jumbotron text-center">
-    
-  </div> -->
 
   <div class="container">
     <div class="row row-content">
@@ -58,73 +55,162 @@
           onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Start" />
         <input type="button" id="end" class="btn btn-outline-primary btn-sm"
           onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Reset" />
-        <br /><br />
+
       </div>
       <div class="col-sm-12">
         <div id="main" style="visibility: hidden;">
-          <form id="formPractice">
-            <div><label id="welcomeMessage" /></div>
-            <div class="form-group row font-size">
-              <label id="firstNumGen" class="label em"></label>
-              <img class="img-symbols-em" src="images/img_addition_01.png" alt="Mathematics - Addition Symbol + ">
-              <label id="secondNumGen" class="label em"></label>
-              <!-- <button id="equalTo" class="btn btn-sm" disabled>=</button> -->
-              <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-em">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Practice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="results-incorrect-tab" data-toggle="tab" href="#incorrect" role="tab"
+                aria-controls="incorrect" aria-selected="false">Incorrect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="results-correct-tab" data-toggle="tab" href="#correct" role="tab"
+                aria-controls="correct" aria-selected="false">Correct</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" id="next-tab" data-toggle="tab" href="#next" role="tab" aria-controls="next"
+                aria-selected="false">---></a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <form id="formPractice">
+                <div><label id="welcomeMessage" /></div>
+                <div class="form-group row font-size">
+                  <span>&nbsp;</span>
+                  <label id="firstNumGen" class="label em"></label>
+                  <img class="img-symbols-em" src="images/img_addition_01.png" alt="Mathematics - Addition Symbol + ">
+                  <label id="secondNumGen" class="label em"></label>
+                  <!-- <button id="equalTo" class="btn btn-sm" disabled>=</button> -->
+                  <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-em">
+                </div>
+                <div class="form-group row font-size">
+                  <span>&nbsp;</span>
+                  <input type="text" id="answer" value="" class="input-answer-em" inputmode="numeric" pattern="[0-9]*"
+                    onkeypress="return App.uiOps.isNumber(event);" />
+                  <span>&nbsp;</span>
+                  <input type="button" class="btn btn-outline-primary em" autofocus id="submitAnswer"
+                    onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" /></label>
+                </div>
+                <input type="hidden" id="operations" value="addition" />
+                <input type="hidden" id="maxInput" value="40" />
+                <input type="hidden" id="minInput" value="3" />
+                <input type="hidden" id="excludes" value="5,10,20" />
+                <div id="studentPracticeSummary">
+                  <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
+                </div>
+              </form>
             </div>
-            <div class="form-group row font-size">
-              <span>&nbsp;</span>
-              <input type="text" id="answer" value="" class="input-answer-em" inputmode="numeric" pattern="[0-9]*"
-                onkeypress="return App.uiOps.isNumber(event);" />
-              <span>&nbsp;</span>
-              <input type="button" class="btn btn-outline-primary em" autofocus id="submitAnswer"
-                onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" /></label>
+            <div class="tab-pane fade" id="incorrect" role="tabpanel" aria-labelledby="incorrect-tab">
+              <table id="resultsIncorrect" class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>
+                      1st
+                    </th>
+                    <th>
+                      2nd
+                    </th>
+                    <th>
+                      Sub
+                    </th>
+                    <th>
+                      Cor
+                    </th>
+                    <th>
+                      Clue
+                    </th>
+                    <!-- <th>
+                      Result
+                    </th> -->
+                  </tr>
+                </thead>
+              </table>
             </div>
-            <input type="hidden" id="operations" value="addition" />
-            <input type="hidden" id="maxInput" value="40" />
-            <input type="hidden" id="minInput" value="3" />
-            <input type="hidden" id="excludes" value="5,10,20" />
-            <div id="studentPracticeSummary">
-              <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
+            <div class="tab-pane fade" id="correct" role="tabpanel" aria-labelledby="correct-tab">
+              <table id="resultsCorrect" class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>
+                      1st
+                    </th>
+                    <th>
+                      2nd
+                    </th>
+                    <th>
+                      Sub
+                    </th>
+                    <th>
+                      Cor
+                    </th>
+                    <th>
+                      Clue
+                    </th>
+                    <!-- <th>
+                      Result
+                    </th> -->
+                  </tr>
+                </thead>
+              </table>
             </div>
-          </form>
-          <div>
-            <table id="practicedResults" border="1">
-              <tr>
-                <th>
-                  Number
-                </th>
-                <th>
-                  Number
-                </th>
-                <th>
-                  Your Answer
-                </th>
-                <th>
-                  Correct
-                </th>
-                <th>
-                  Clue
-                </th>
-                <th>
-                  Result
-                </th>
-              </tr>
-            </table>
+            <div class="tab-pane fade" id="next" role="tabpanel" aria-labelledby="next-tab">
+              <ul>
+                <li>
+                  <a href="../addition_puzzle.html">Addition Puzzle</a>
+                </li>
+                <li>
+                  <a href="../subtraction.html">Subtraction Level 1</a>
+                </li>
+                <li>
+                  <a href="../ninja_practioner.html">Multiplication table practice</a>
+                </li>
+                <li>
+                  <a href="../multiplication_l1.html">Multiplication Level 1</a>
+                </li>
+                <li>
+                  <a href="../division.html">Division Level 1</a>
+                </li>
+                <li>
+                  <a
+                    href="https://thumbs.dreamstime.com/z/x-multiplication-table-vector-illustration-students-multiplication-table-x-98833796.jpg">
+                    Multiplication Table Reference<br /><br />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div style="visibility: hidden;">
+              <table id="practicedResults" border="1">
+                <tr>
+                  <th>
+                    Number
+                  </th>
+                  <th>
+                    Number
+                  </th>
+                  <th>
+                    Your Answer
+                  </th>
+                  <th>
+                    Correct
+                  </th>
+                  <th>
+                    Clue
+                  </th>
+                  <th>
+                    Result
+                  </th>
+                </tr>
+              </table>
+            </div>
           </div>
-          <a href="addition.html">Addition</a>
-          <a href="subtraction.html">Subtraction</a>
-          <a href="multiplication.html">Multiplication</a>
-          <a href="division.html">Division</a>
-          <br /><a href="analysis.html">Analysis</a>
-
-          <a
-            href="https://thumbs.dreamstime.com/z/x-multiplication-table-vector-illustration-students-multiplication-table-x-98833796.jpg">
-            Table Reference<br /><br />
-          </a>
-
         </div>
       </div>
-
     </div>
   </div>
 </body>

@@ -108,6 +108,27 @@ function appendResult(question) {
   populateEmptyResult();
 }
 
+function appendResultByCategory(question) {
+  const evaluationResult = Evaluator.evaluateQuestion(question);
+  let resultTable;
+  if (evaluationResult) {
+    resultTable = document.getElementById('resultsCorrect').insertRow(1);
+  } else {
+    resultTable = document.getElementById('resultsIncorrect').insertRow(1);
+  }
+
+  resultTable.insertCell(0).innerHTML = question.firstNum;
+  resultTable.insertCell(1).innerHTML = question.secondNum;
+  resultTable.insertCell(2).innerHTML = question.submittedAnswer;
+  resultTable.insertCell(3).innerHTML = Evaluator.answer(question);
+  resultTable.insertCell(4).innerHTML = explanation(question.operation, [
+    question.firstNum,
+    question.secondNum,
+  ]);
+  // resultTable.insertCell(5).innerHTML = evaluationResult;
+  populateEmptyResult();
+}
+
 export function shuffleNewQuestion(targetted, newShuffledNumber) {
   let shuffledNumber = newShuffledNumber;
   if (
@@ -379,6 +400,7 @@ export function showConsolidatedSummary(summary, _tbody) {
 const uiTools = {
   createQuestion,
   appendResult,
+  appendResultByCategory,
   populateNewQuestion,
   showConsolidatedSummary,
   showSessionDetails,

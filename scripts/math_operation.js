@@ -100,6 +100,7 @@ export function scoreMark(question) {
     totalIncorrect++;
   }
   uiTools.appendResult(question);
+  uiTools.appendResultByCategory(question);
   replenish();
   lastSubmissionTime = new Date();
   const diff = Math.abs(lastSubmissionTime - startTime);
