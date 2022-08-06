@@ -1,6 +1,6 @@
 import uiTools from './ui_tools';
 import Generator from './generator';
-import extractSessions, {getResult}  from './analyze';
+import extractSessions, { getResult } from './analyze';
 import Evaluator from './model/Evaluator';
 import plotGraph from './lineGraph';
 
@@ -50,7 +50,7 @@ function tabAndEnterHandler(e) {
 }
 
 function startPractice() {
-  if(document.getElementById('welcomeMessage')) {
+  if (document.getElementById('welcomeMessage')) {
     document.getElementById('welcomeMessage').innerHTML = welcomeMessage;
   }
   document.getElementById('main').style.visibility = 'visible';
@@ -69,27 +69,25 @@ function startPractice() {
 function finalizeSubmit() {
   document.getElementById('answer').click();
   document.getElementById('answer').focus();
-  //document.getElementById('answer').scrollIntoView();
+  // document.getElementById('answer').scrollIntoView();
 }
 
 function getImageForCorrectIncorrect(latestSubmittedAnswer) {
-
   if (latestSubmittedAnswer === undefined) {
-    return "";
-  } else if (latestSubmittedAnswer === true) {
-    return `<img src="images/tick_mark_svg.png" alt="">`;
+    return '';
+  } if (latestSubmittedAnswer === true) {
+    return '<img src="images/tick_mark_svg.png" alt="">';
   }
-  return `<img src="images/x_mark_svg.png" alt="">`;
+  return '<img src="images/x_mark_svg.png" alt="">';
 }
 
 export { uiTools as ui };
 export { plotGraph };
 
-
 export function scoreMark(question) {
-  let latestSubmittedAnswer = undefined;
+  let latestSubmittedAnswer;
   if (document.getElementById('answer').value && document.getElementById('answer').value.length >= 1) {
-    //do nothing..
+    // do nothing..
   } else {
     console.log('enter usage without input!');
     return false;
@@ -112,7 +110,7 @@ export function scoreMark(question) {
   const priorQuestion = JSON.parse(localStorage.getItem(sid));
   localStorage.setItem(sid, JSON.stringify([question, ...priorQuestion]));
 
-  let result = `(Total, Correct, Incorrect)  => (${total}, <b>${totalCorrect}</b>, ${totalIncorrect})`;
+  const result = `(Total, Correct, Incorrect)  => (${total}, <b>${totalCorrect}</b>, ${totalIncorrect})`;
 
   const speed = Math.floor(elapsedTime / totalCorrect);
   let speedResult = `Speed =>  ${speed}. Lower the better!`;
@@ -131,15 +129,16 @@ export function registerUser(studentId) {
   };
   let priorPracticeDetails = localStorage.getItem(studentId.toLowerCase());
 
-  let startTime = new Date();
-  let sessionTime = startTime.toISOString();
+  const startTime = new Date();
+  const sessionTime = startTime.toISOString();
   sid = `Practice_${studentId}@${sessionTime}`;
 
-  if (priorPracticeDetails) {
-    welcomeMessage = `<b>${studentId} is amazing person!</b> ${studentId}, <b>becoming a champion begins with daily practice!</b><br/>Start time : ${startTime.toString()}`;
-  } else {
-    welcomeMessage = `<b>Hi! ${studentId}, you are courageous!</b> A journey of a 1000 miles begins with a single step!<br/>Start time : ${startTime.toString()}`;
-  }
+  // if (priorPracticeDetails) {
+  //   welcomeMessage = `<b>${studentId} is amazing person!</b> ${studentId}, <b>becoming a champion begins with daily practice!</b><br/>Start time : ${startTime.toString()}`;
+  // } else {
+  //   welcomeMessage = `<b>Hi! ${studentId}, you are courageous!</b> A journey of a 1000 miles begins with a single step!<br/>Start time : ${startTime.toString()}`;
+  // }
+  welcomeMessage = `Started at: ${startTime.toString()}`;
   startPractice();
   if (!priorPracticeDetails) {
     priorPracticeDetails = defaultDetails;
@@ -159,7 +158,7 @@ export function registerUser(studentId) {
 }
 
 export function analyzeUserPracticeSessions(studentId) {
-  let appreciation = extractSessions(studentId, localStorage);
+  const appreciation = extractSessions(studentId, localStorage);
   welcomeMessage = `<b>${studentId}</b>, you have completed ${appreciation.totalPracticeSessions} number of practice sessions`;
   console.log(appreciation);
   return appreciation;
@@ -167,7 +166,7 @@ export function analyzeUserPracticeSessions(studentId) {
 
 export function getAnalysisResult(studentId) {
   const appreciation = extractSessions(studentId, localStorage, 30);
-  const analysisResult = appreciation.uniqueDaysOfPractice.split(', ').map(date => getResult(date, appreciation, localStorage));
+  const analysisResult = appreciation.uniqueDaysOfPractice.split(', ').map((date) => getResult(date, appreciation, localStorage));
   return analysisResult;
 }
 
@@ -175,44 +174,41 @@ export function replenish() {
   const max = parseInt(document.getElementById('maxInput').value, 10);
   const min = parseInt(document.getElementById('minInput').value, 10);
   const firstNum = document.getElementById('firstNumGen') && parseInt(document.getElementById('firstNumGen').innerHTML, 10);
-  const secondNum = document.getElementById('secondNumGen') &&  parseInt(document.getElementById('secondNumGen').innerHTML, 10);
+  const secondNum = document.getElementById('secondNumGen') && parseInt(document.getElementById('secondNumGen').innerHTML, 10);
 
   const generatorFunction = document.getElementById('generatorFunction') && document.getElementById('generatorFunction').value;
   const targetted = document.getElementById('targetted') && parseInt(document.getElementById('targetted').value, 10);
 
-  if(generatorFunction && 'shuffledNumber' === generatorFunction) {
-    let shuffledNumber =  Generator.getShuffledRange(min, max, [0,1]);
+  if (generatorFunction && generatorFunction === 'shuffledNumber') {
+    const shuffledNumber = Generator.getShuffledRange(min, max, [0, 1]);
     uiTools.shuffleNewQuestion(targetted, shuffledNumber);
     return;
-  } 
+  }
 
-  const excludes = ('10,' + document.getElementById('excludes').value).split(',').filter(i => i !== '').map(i => parseInt(i, 10))
-  let randomNumbers = undefined;
+  const excludes = (`10,${document.getElementById('excludes').value}`).split(',').filter((i) => i !== '').map((i) => parseInt(i, 10));
+  let randomNumbers;
   if ('getCommonBase10sComplement'.startsWith(generatorFunction)) {
-    randomNumbers = Generator.getCommonBase10sComplement(min, max, excludes)
+    randomNumbers = Generator.getCommonBase10sComplement(min, max, excludes);
   }
   if ('fibonacci'.startsWith(generatorFunction)) {
-    if(isNaN(secondNum) || isNaN(firstNum) )
-      randomNumbers = [1, 1];
-    else
-      randomNumbers = [secondNum, firstNum+secondNum];
+    if (isNaN(secondNum) || isNaN(firstNum)) { randomNumbers = [1, 1]; } else { randomNumbers = [secondNum, firstNum + secondNum]; }
   }
   if ('getNumberEndsWith5'.startsWith(generatorFunction)) {
-    randomNumbers = Generator.getNumberEndsWith5(min, max, excludes)
+    randomNumbers = Generator.getNumberEndsWith5(min, max, excludes);
   }
-  if ("twoDigitCommon1s".startsWith(generatorFunction)) {
+  if ('twoDigitCommon1s'.startsWith(generatorFunction)) {
     randomNumbers = Generator.getNumberEndsWith1(min, max, excludes);
-  }  
-  if ("twoDigitCommon9s".startsWith(generatorFunction)) {
+  }
+  if ('twoDigitCommon9s'.startsWith(generatorFunction)) {
     randomNumbers = Generator.getNumberEndsWith9(min, max, excludes);
-  }  
+  }
   if ('getSameTens'.startsWith(generatorFunction)) {
-    randomNumbers = Generator.getSameTens(min, max, excludes)
+    randomNumbers = Generator.getSameTens(min, max, excludes);
   }
   if ('getJunior5s'.startsWith(generatorFunction)) {
-    randomNumbers = Generator.getJunior5s(min, max, excludes)
+    randomNumbers = Generator.getJunior5s(min, max, excludes);
   }
-  if(!randomNumbers) {
+  if (!randomNumbers) {
     randomNumbers = Generator.getTwoNumbers(min, max, excludes);
   }
   uiTools.populateNewQuestion(randomNumbers[0], randomNumbers[1]);

@@ -14,7 +14,6 @@ function createQuestion() {
     secondNum = document.getElementById('secondNumGen').value;
   }
 
-  debugger;
   const question = new Question(
     // parseInt(firstNum, 10),
     // parseInt(secondNum, 10),
@@ -23,8 +22,8 @@ function createQuestion() {
     parseFloat(formPractice.answer.value),
     new Date(),
   );
-  debugger;
-  console.log(` Question ---> ${JSON.stringify(question, null, 2)}`);
+
+  // console.log(` Question ---> ${JSON.stringify(question, null, 2)}`);
 
   return question;
 }
@@ -41,7 +40,7 @@ function getRandomImage() {
     'yaanai_01',
   ];
   const selectedImage = images[Random.getRandomIntInclusive(0, images.length - 1)];
-  console.log(`Selected image ${selectedImage}`);
+  // console.log(`Selected image ${selectedImage}`);
   return selectedImage;
 }
 
@@ -62,7 +61,7 @@ function getChunkSize(number) {
 }
 
 function getFirstOperand(number, image, img_style = 'kids', dimension = 50) {
-  console.log(`input to partition ${number}`);
+  // console.log(`input to partition ${number}`);
 
   if (number === 0) {
     return '<tr><td align="center" colspan="2" valign="top" width="10" height="10"></td></tr>';
@@ -79,8 +78,7 @@ function getFirstOperand(number, image, img_style = 'kids', dimension = 50) {
   );
   const partition = chunk(rows, chunkSize);
   return (
-    `<tr>${
-      partition.map((group) => group.join('')).join('</tr><tr>')
+    `<tr>${partition.map((group) => group.join('')).join('</tr><tr>')
     }</tr>`
   );
 }
@@ -120,7 +118,7 @@ export function shuffleNewQuestion(targetted, newShuffledNumber) {
   }
   const [first, ...rest] = [...shuffledNumber];
   const input = [targetted, first];
-  debugger;
+
   document.getElementById('firstNumGen').innerHTML = input[0];
   document.getElementById('secondNumGen').innerHTML = input[1];
   document.getElementById('shuffledNumber').value = [rest, first].join(',');
@@ -142,7 +140,7 @@ export function shuffleNewQuestion(targetted, newShuffledNumber) {
       str = String.raw`${input[1]}^3`;
     } else if (document.getElementById('operations').value === 'powerof-2') {
       str = `2^\{${input[1]}\}`;
-      document.getElementById('firstNumGen').innerHTML = "2";
+      document.getElementById('firstNumGen').innerHTML = '2';
       document.getElementById('firstNumGen').value = 2;
       document.getElementById('secondNumGen').value = input[1];
     }
@@ -152,7 +150,7 @@ export function shuffleNewQuestion(targetted, newShuffledNumber) {
 }
 
 export function renderMathExpression(value, elementId) {
-  console.log(`Expression ${value}`);
+  // console.log(`Expression ${value}`);
 
   katex.render(value, document.getElementById(elementId), {
     displayMode: true,
@@ -168,7 +166,6 @@ export function renderMathExpression(value, elementId) {
 }
 
 export function populateNewQuestion(randomNumber, secondRandomNumber) {
-  debugger;
   if (
     document.getElementById('operations').value === 'cube'
     || document.getElementById('operations').value === 'square'
@@ -176,7 +173,6 @@ export function populateNewQuestion(randomNumber, secondRandomNumber) {
     || document.getElementById('operations').value === 'cuberoot'
     || document.getElementById('operations').value === 'powerof-2'
   ) {
-    debugger;
     const input = [randomNumber, secondRandomNumber];
     input.sort((a, b) => a - b);
 
@@ -317,7 +313,7 @@ function showSessionDetails(sessionName, elementId) {
     q.expected = Evaluator.answer(q);
   });
   failed.sort((a, b) => a.firstNum * a.secondNum - b.firstNum * b.secondNum);
-  console.log(`failed  - ${failed}`);
+  // console.log(`failed  - ${failed}`);
   const result = failed
     .map(
       (q) => `${q.firstNum} ${q.operation} ${q.secondNum} = ${q.expected} --> <strike>${q.submittedAnswer}</strike>`,

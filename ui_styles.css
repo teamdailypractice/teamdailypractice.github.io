@@ -135,3 +135,27 @@ divTest {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
+
+div.form-group.row.font-size {
+  font-size: 4rem;
+}
+
+.input-answer-4rem {
+  width: 3.0em;
+  height:2.0em;
+}
+
+.img-equalto-4rem {
+  width: 0.7em;
+  height: 1.4em;
+  padding-top: 0.8em;
+  padding-bottom: 0.0em;
+  
+}
+.img-symbols-4rem {
+  width: 0.7em;
+  height: 1.4em;
+  padding-top: 0.8em;
+  padding-bottom: 0.0em;
+
+}
