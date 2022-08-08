@@ -95,17 +95,20 @@ function getMultiplicationOperand(number, number2, image) {
 }
 
 function appendResult(question) {
-  const x = document.getElementById('practicedResults').insertRow(1);
-  x.insertCell(0).innerHTML = question.firstNum;
-  x.insertCell(1).innerHTML = question.secondNum;
-  x.insertCell(2).innerHTML = question.submittedAnswer;
-  x.insertCell(3).innerHTML = Evaluator.answer(question);
-  x.insertCell(4).innerHTML = explanation(question.operation, [
-    question.firstNum,
-    question.secondNum,
-  ]);
-  x.insertCell(5).innerHTML = Evaluator.evaluateQuestion(question);
-  populateEmptyResult();
+  const resultsElement = document.getElementById('resultsCorrect');
+  if (resultsElement === null) {
+    const x = document.getElementById('practicedResults').insertRow(1);
+    x.insertCell(0).innerHTML = question.firstNum;
+    x.insertCell(1).innerHTML = question.secondNum;
+    x.insertCell(2).innerHTML = question.submittedAnswer;
+    x.insertCell(3).innerHTML = Evaluator.answer(question);
+    x.insertCell(4).innerHTML = explanation(question.operation, [
+      question.firstNum,
+      question.secondNum,
+    ]);
+    x.insertCell(5).innerHTML = Evaluator.evaluateQuestion(question);
+    populateEmptyResult();
+  }
 }
 
 function appendResultByCategory(question) {
