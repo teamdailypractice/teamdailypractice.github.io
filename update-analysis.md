@@ -32,6 +32,12 @@
 * Composition
 * One template for all operations versus one template per operations/category?
 * Juniors - Normal - Tricks
+* Data should be separated from presentation. Don't hard code
+  * Rules
+  * Conditions
+  * If - else
+  * ....
+* Don't generate/edit/add HTML by hand. Think of template solution or other libraries/frameworks for generating HTML
 
 ## Apply the principle
 
