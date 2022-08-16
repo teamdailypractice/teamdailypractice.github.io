@@ -78,7 +78,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <form id="formPractice">
-                            <div><label id="welcomeMessage" /></div>
+                            <div><label id="welcomeMessage"></label></div>
                             <div class="form-group row font-size">
                                 <span>&nbsp;</span>
                                 <label id="firstNumGen" class="label em"></label>
@@ -90,9 +90,11 @@
                             <div class="form-group row font-size">
                                 <span>&nbsp;</span>
                                 <input type="number" id="answer" value="" class="input-answer-em" />
+
                                 <span>&nbsp;</span>
                                 <input type="button" class="btn btn-outline-primary em" autofocus id="submitAnswer"
-                                       onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" /></label>
+                                       onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" />
+
                             </div>
                             <input type="hidden" id="operations" value="subtraction" />
                             <input type="hidden" id="maxInput" value="100" />
