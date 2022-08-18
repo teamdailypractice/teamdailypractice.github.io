@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Subtraction Level 2</title>
+    <title>Multiplication Table Step 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <h4><img src="images/img_subtraction_01.png" /> Subtraction Level 2 </h4>
+                <h4><img src="images/img_multiplication_01.png" /> Multiplication Table Step 1 </h4>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
                             <a class="nav-link" href="../mul-table-s1.html">Multiplication table practice</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../multiplication_l1.html">Multiplication Level 1</a>
+                            <a class="nav-link" href="../multiplication.html">Multiplication Level 2</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../division.html">Division Level 1</a>
@@ -79,15 +79,38 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <form id="formPractice">
-                                <div><label id="welcomeMessage"></label></div>
+                                <div>
+                                    <label id="welcomeMessage"></label>
+                                </div>
+                                <div>
+                                    <label for="multipleOfN">Choose table: 2 to 10</label>
+                                    <br />
+                                    <input type="range" id="multipleOfN"
+                                           name="multipleOfN"
+                                           min="2"
+                                           max="10"
+                                           value="7" step="1"
+                                           oninput="javascript:onSlide('multipleOfN', 'targetted');">
+                                    <output name="targetted" id="targetted">7</output>
+                                    <br />
+                                    <label>upto: <output name="selectedTableNumber" id="selectedTableNumber">7</output>
+                                        <span>&nbsp;</span>
+                                        <img class="img-symbols-range"
+                                             src="images/img_multiplication_01.png"
+                                        />
+                                        <span>&nbsp;</span>
+                                        10
+                                    </label>
+                                </div>
                                 <div class="form-group row font-size">
                                     <span>&nbsp;</span>
                                     <label id="firstNumGen" class="label em"></label>
-                                    <img class="img-symbols-em" src="images/img_subtraction_01.png"
+                                    <img class="img-symbols-em" src="images/img_multiplication_01.png"
                                          alt="Mathematics - Subtraction Symbol - ">
                                     <label id="secondNumGen" class="label em"></label>
                                     <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-em">
                                 </div>
+
                                 <div class="form-group row font-size">
                                     <span>&nbsp;</span>
                                         <input type="number" id="answer" value="" class="input-answer-em" />
@@ -97,10 +120,12 @@
                                            onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" />
 
                                 </div>
-                                    <input type="hidden" id="operations" value="subtraction" />
-                                    <input type="hidden" id="maxInput" value="1000" />
-                                    <input type="hidden" id="minInput" value="101" />
-                                    <input type="hidden" id="excludes" value="1001" />
+                                    <input type="hidden" id="operations" value="multiplication" />
+                                    <input type="hidden" id="maxInput" value="10" />
+                                    <input type="hidden" id="minInput" value="1" />
+                                    <input type="hidden" id="excludes" value="0" />
+                                    <input type="hidden" id="shuffledNumber" value="" />
+                                    <input type="hidden" id="generatorFunction" value="shuffledNumber" />
                                 <div id="studentPracticeSummary">
                                     <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
                                 </div>
@@ -162,25 +187,16 @@
                         <div class="tab-pane fade" id="next" role="tabpanel" aria-labelledby="next-tab">
                             <ul>
                                     <li>
-                                        <a href="../addition.html">Addition</a>
+                                        <a href="../mul-table-s2.html">Multiplication Table Step 2</a>
                                     </li>
                                     <li>
-                                        <a href="../addition_puzzle.html">Addition Puzzle</a>
+                                        <a href="../mul-table-s3.html">Multiplication Table Step 3</a>
                                     </li>
                                     <li>
-                                        <a href="../subtraction_l_03.html">Subtraction Level 3</a>
+                                        <a href="../mul-table-s4.html">Multiplication Table Step 4</a>
                                     </li>
                                     <li>
-                                        <a href="../mul-table-s1.html">Multiplication table practice</a>
-                                    </li>
-                                    <li>
-                                        <a href="../multiplication.html">Multiplication Level 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="../division.html">Division Level 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="../square_practitioner.html">Square cube "square root" "cube root"</a>
+                                        <a href="../mul-table-s5.html">Multiplication Table Step 5</a>
                                     </li>
                                     <li>
                                         <a href="../index.html">DailyPractice</a>
@@ -218,6 +234,14 @@
     </div>
 </body>
 <script src="scripts/bundle.js"></script>
+<script type="text/javascript">
+    function onSlide(input, output) {
+        document.getElementById(output).value = document.getElementById(input).value;
+        document.getElementById("selectedTableNumber").value = document.getElementById(input).value;
+        document.getElementById('shuffledNumber').value = '';
+        App.uiOps.replenish();
+    }
+</script>
 
 
 </html>

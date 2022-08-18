@@ -175,3 +175,15 @@ button.btn.btn-outline-primary.em {
   padding-bottom: 0.05em;
   padding-left: 0.05em;
 }
+
+.img-symbols-range {
+  border: 0px solid blue;
+  border-radius: 4px;
+  width: 12px;
+  height: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  /* padding-right: 10px;
+  padding-left: 10px;   */
+}
+
