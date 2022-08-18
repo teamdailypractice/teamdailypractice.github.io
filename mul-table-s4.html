@@ -83,9 +83,10 @@
                                     <label id="welcomeMessage"></label>
                                 </div>
                                 <div>
-                                    <label for="multipleOfN">Choose table: 11 to 20</label>
+                                    <label class="label-range" for="multipleOfN">Choose table: 11 to 20</label>
                                     <br />
                                     <input type="range" id="multipleOfN"
+                                           class="slider-width"
                                            name="multipleOfN"
                                            min="11"
                                            max="20"
@@ -93,7 +94,7 @@
                                            oninput="javascript:onSlide('multipleOfN', 'targetted');">
                                     <output name="targetted" id="targetted">13</output>
                                     <br />
-                                    <label>upto: <output name="selectedTableNumber" id="selectedTableNumber">13</output>
+                                    <label class="label-range">upto: <output name="selectedTableNumber" id="selectedTableNumber">13</output>
                                         <span>&nbsp;</span>
                                         <img class="img-symbols-range"
                                              src="images/img_multiplication_01.png"
