@@ -94,13 +94,22 @@
                                            oninput="javascript:onSlide('multipleOfN', 'targetted');">
                                     <output name="targetted" id="targetted">7</output>
                                     <br />
-                                    <label class="label-range">upto: <output name="selectedTableNumber" id="selectedTableNumber">7</output>
+                                    <label class="label-range">
+                                        selected table: <span name="selectedTableNumber" id="selectedTableNumber">7</span>
                                         <span>&nbsp;</span>
+                                        <br />
+                                        <span>From:&nbsp;</span>
+                                        <span name="selectedTableNumber" id="selectedTableNumber">7</span>
                                         <img class="img-symbols-range"
                                              src="images/img_multiplication_01.png"
                                         />
-                                        <span>&nbsp;</span>
-                                        20
+                                        <span>2&nbsp;</span>
+                                        <span>To: &nbsp;</span>
+                                        <span name="selectedTableNumber" id="selectedTableNumber">7</span>
+                                        <img class="img-symbols-range"
+                                             src="images/img_multiplication_01.png"
+                                        />
+                                        <span>20&nbsp;</span>
                                     </label>
                                 </div>
                                 <div class="form-group row font-size">
@@ -229,7 +238,11 @@
 <script type="text/javascript">
     function onSlide(input, output) {
         document.getElementById(output).value = document.getElementById(input).value;
-        document.getElementById("selectedTableNumber").value = document.getElementById(input).value;
+        // document.getElementById("selectedTableNumber").innerText = document.getElementById(input).value;
+        let items = document.getElementsByName('selectedTableNumber');
+        for (let i = 0; i < items.length; ++i) {
+            items[i].innerText = document.getElementById(input).value;
+        }
         document.getElementById('shuffledNumber').value = '';
         App.uiOps.replenish();
     }
