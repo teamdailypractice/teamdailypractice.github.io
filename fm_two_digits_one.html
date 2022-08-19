@@ -1,127 +1,232 @@
+
+<!DOCTYPE html>
 <html>
-
 <head>
-  <title>Multiplication - Practice - Daily</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="ui_styles.css">
+    <title>TwoDigit Ones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="ui_styles.css">
 </head>
-
 <body>
-  <div class="jumbotron text-center">
-    <h3>TwoDigit Ones   - Multiplication Level <img src="images/img_multiplication_01.png"> Practice</h3>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <label for="yourName">Name</label>&nbsp;&nbsp;&nbsp;
-        <input type="text" id="yourName" value="" class="input-name" />
-        <input type="button" id="submit_name" class="btn btn-outline-primary btn-sm"
-          onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Start" />
-        <input type="button" id="end" class="btn btn-outline-primary btn-sm"
-          onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Reset" />
-        <br /><br />
-      </div>
-      <div class="col-sm-12">
-        <div id="main" style="visibility: hidden;">
-          <form id="formPractice">
-            <div><label id="welcomeMessage" /></div>
-            <!-- <div id="level" style="visibility: hidden;">
-              <label for="SquareMode">Square mode</label>&nbsp;&nbsp;&nbsp;
-              <input type="checkbox" id="SquareMode" value="true" />
-            </div> -->
-            <div class="form-group row">
-              <label id="firstNumGen" class="label label-medium"></label>
-              <img class="img-symbols" src="images/img_multiplication_01.png" alt="Mathematics - Multiplication Symbol + ">
-              <label id="secondNumGen" class="label label-medium"></label>
-              <!-- <button id="equalTo" class="btn btn-sm" disabled>=</button> -->
-              <img id="equalTo" src="images/equal_symbol_01.png" class="img-symbols">&nbsp;&nbsp;
-              <input type="text" id="answer" value="" class="input-answer"
-                inputmode="numeric"
-                pattern="[0-9]*"
-                onkeypress="return App.uiOps.isNumber(event);"
-              />
-              <input type="button" class="btn btn-outline-primary btn-sm" autofocus id="submitAnswer"
-                onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="Go" />
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <h4><img src="images/img_multiplication_01.png" /> TwoDigit Ones </h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../addition.html">Addition</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../mul-table-s1.html">Multiplication table practice</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../multiplication.html">Multiplication Level 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../division.html">Division Level 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../fast_multiplication_tricks.html">Fast Multiplication Tricks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../square_practitioner.html">Square Cube ...</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">DailyPractice</a>
+                        </li>
+                </ul>
             </div>
-            <input type="hidden" id="operations" value="multiplication" />
-            <input type="hidden" id="minInput" value="2" />
-      			<input type="hidden" id="excludes" value="0" />
-            <input type="hidden" id="maxInput" value="9" />
-            <input type="hidden" id="generatorFunction" value="twoDigitCommon1s" />
-            <div id="studentPracticeSummary">
-              <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-sm-12">
+                <label for="yourName">Name</label>&nbsp;&nbsp;&nbsp;
+                <input type="text" id="yourName" value="" class="input-name" />
+                <input type="button" id="submit_name" class="btn btn-outline-primary btn-sm"
+                       onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Start" />
+                <input type="button" id="end" class="btn btn-outline-primary btn-sm"
+                       onclick="App.uiOps.registerUser(document.getElementById('yourName').value)" value="Reset" />
             </div>
-          </form>
-          <div>
-            <table id="practicedResults" border="1">
-              <tr>
-                <th>
-                  Number
-                </th>
-                <th>
-                  Number
-                </th>
-                <th>
-                  Your Answer
-                </th>
-                <th>
-                  Correct
-                </th>
-                <th>
-                  Clue
-                </th>
-                <th>
-                  Result
-                </th>
-              </tr>
-            </table>
-          </div>
-          <a href="addition.html">Addition</a>
-          <a href="subtraction.html">Subtraction</a>
-          <a href="multiplication.html">Multiplication</a>
-          <a href="division.html">Division</a>
-          <a
-            href="https://thumbs.dreamstime.com/z/x-multiplication-table-vector-illustration-students-multiplication-table-x-98833796.jpg">
-            Table Reference<br /><br />
+            <div class="col-sm-12">
+                <div id="main" style="visibility: hidden;">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                               aria-selected="true">Practice</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="results-incorrect-tab" data-toggle="tab" href="#incorrect" role="tab"
+                               aria-controls="incorrect" aria-selected="false">Incorrect</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="results-correct-tab" data-toggle="tab" href="#correct" role="tab"
+                               aria-controls="correct" aria-selected="false">Correct</a>
+                        </li>
 
-          </a>
+                        <li class="nav-item">
+                            <a class="nav-link" id="next-tab" data-toggle="tab" href="#next" role="tab" aria-controls="next"
+                               aria-selected="false">---></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <form id="formPractice">
+                                <div><label id="welcomeMessage"></label></div>
+                                <div>
+                                    <ol id="notesToUser">
+                                        <li>Do both numbers have <b>two digits?</b></li>
+                                        <li>Do both numbers have <b>1</b> in <b>Ones position</b>?</li>
+                                    </ol>
+                                </div>
+                                <div class="form-group row font-size">
+                                    <span>&nbsp;</span>
+                                    <label id="firstNumGen" class="label em"></label>
+                                    <img class="img-symbols-em" src="images/img_multiplication_01.png"
+                                         alt="Mathematics - Subtraction Symbol - ">
+                                    <label id="secondNumGen" class="label em"></label>
+                                    <img id="equalTo" src="images/equal_symbol_01.png" class="img-equalto-em">
+                                </div>
+                                <div class="form-group row font-size">
+                                    <span>&nbsp;</span>
+                                        <input type="text" id="answer" value="" class="input-answer-em"
+                                               inputmode="numeric"
+                                               pattern="[0-9]*"
+                                               onkeypress="return App.uiOps.isNumber(event);"
+                                        />
 
+
+                                    <span>&nbsp;</span>
+                                    <input type="button" class="btn btn-outline-primary em" autofocus id="submitAnswer"
+                                           onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="GO!" />
+
+                                </div>
+                                    <input type="hidden" id="operations" value="multiplication" />
+                                    <input type="hidden" id="maxInput" value="9" />
+                                    <input type="hidden" id="minInput" value="2" />
+                                    <input type="hidden" id="excludes" value="0" />
+                                    <input type="hidden" id="generatorFunction" value="twoDigitCommon1s" />
+                                <div id="studentPracticeSummary">
+                                    <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="incorrect" role="tabpanel" aria-labelledby="incorrect-tab">
+                            <table id="resultsIncorrect" class="table table-bordered table-striped">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        1st
+                                    </th>
+                                    <th>
+                                        2nd
+                                    </th>
+                                    <th>
+                                        Sub
+                                    </th>
+                                    <th>
+                                        Cor
+                                    </th>
+                                    <th>
+                                        Clue
+                                    </th>
+                                    <!-- <th>
+                                      Result
+                                    </th> -->
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="correct" role="tabpanel" aria-labelledby="correct-tab">
+                            <table id="resultsCorrect" class="table table-bordered table-striped">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th>
+                                        1st
+                                    </th>
+                                    <th>
+                                        2nd
+                                    </th>
+                                    <th>
+                                        Sub
+                                    </th>
+                                    <th>
+                                        Cor
+                                    </th>
+                                    <th>
+                                        Clue
+                                    </th>
+                                    <!-- <th>
+                                      Result
+                                    </th> -->
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="next" role="tabpanel" aria-labelledby="next-tab">
+                            <ul>
+                                <li>
+                                    <a href="../fast_multiplication_tricks.html">CommonBase + Ten Ones</a>
+                                </li>
+                                <li>
+                                    <a href="../fm_common_tens.html">Same Tens</a>
+                                </li>
+                                <li>
+                                    <a href="../fm_ends5.html">Number ends in 5</a>
+                                </li>
+                                <li>
+                                    <a href="../fm_two_digits_nine.html">TwoDigit Nines</a>
+                                </li>
+                                <li>
+                                    <a href="../square_practitioner.html">Square Cube ...</a>
+                                </li>
+                                <li>
+                                    <a href="../index.html">DailyPractice</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="visibility: hidden;">
+                            <table id="practicedResults" border="1">
+                                <tr>
+                                    <th>
+                                        Number
+                                    </th>
+                                    <th>
+                                        Number
+                                    </th>
+                                    <th>
+                                        Your Answer
+                                    </th>
+                                    <th>
+                                        Correct
+                                    </th>
+                                    <th>
+                                        Clue
+                                    </th>
+                                    <th>
+                                        Result
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
     </div>
-    <div>
-      Example-1: Two digit multiplication where 1s position is one<br/>
-        21*31<br/>
-      = 20x30 + (20+30) + 1<br/>
-      = 600 + 50 + 1<br/> 
-      = 651<br/> 
-      = <b>651</b><br/>
-    </div>    
-    <div>
-      Example-2: Two digit multiplication where 1s position is one<br/>
-      31×41<br/>
-      = 30x40 + (30+40) + 1<br/>
-      = 1200 + 70 + 1<br/> 
-      = 1270 + 1<br/> 
-      = <b>1271</b><br/>
-    </div>    
-    <div>
-      Example-3<br/>
-      51×61<br/>
-      = 50x60 + (50+60) + 1<br/>
-      = 3000 + 110 + 1<br/> 
-      = 3110 + 1<br/> 
-      = <b>3111</b><br/>
-    </div>
-  </div>
-
 </body>
 <script src="scripts/bundle.js"></script>
+
 
 </html>
