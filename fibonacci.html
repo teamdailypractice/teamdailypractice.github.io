@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <title>Fibonacci - Ration and Practice</title>
+  <title>Fibonacci Series Practice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
 
 <body>
   <div class="jumbotron text-center">
-    <h3>Ninja practioner - Multiplication Level <img src="images/img_multiplication_01.png"> Practice</h3>
+    <h3>Fibonacci Series <img src="images/img_addition_01.png"> Practice</h3>
   </div>
   <div class="container">
     <div class="row">
@@ -44,7 +44,7 @@
               <img id="equalTo" src="images/equal_symbol_01.png" class="img-symbols">&nbsp;&nbsp;
               <input type="text" id="answer" value="" class="input-answer" onkeypress="return App.uiOps.isNumber(event);" />
               <input type="button" class="btn btn-outline-primary btn-sm" autofocus id="submitAnswer"
-                onclick="updateGraph();" value="Go" />
+                 value="Go" onclick="doSubmit();"/>
             </div>
             <input type="hidden" id="operations" value="addition" />
             <input type="hidden" id="shuffledNumber" />
@@ -58,12 +58,6 @@
         </div>
       </div>
     </div>
-        <div class="row">
-          <div class="col-sm-12" style="visibility: visible;">
-            <div id="jxgbox" class="jxgbox" style="width:500px; height:500px;"></div>
-          <label id="circle"></label>
-          </div>
-      
           <div class="col-sm-12" id="studentPracticeSummary">
             <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
           </div>
@@ -101,39 +95,11 @@
 
 <script language="Javascript">
 
-  let board = null;;
-  let count = 1;
-  let xs = [];
-  let ys = [];
 
-  function updateGraph() {
-    const firstNum = document.getElementById('firstNumGen') && parseInt(document.getElementById('firstNumGen').innerHTML, 10);
-    const secondNum = document.getElementById('secondNumGen') &&  parseInt(document.getElementById('secondNumGen').innerHTML, 10);
-    // board.create('point', [firstNum, secondNum])
-    count++;
-    xs.push(count);
-    ys.push(secondNum/firstNum);
-    console.log(`${xs} - ${ys}`)
-    board.create('curve', [xs, ys],  {curveType: 'polar'})
+  function doSubmit() {
+  
     App.uiOps.scoreMark(App.uiOps.ui.createQuestion());
   }
-
-
-  
-(function () {
-var brd = JXG.JSXGraph.initBoard('jxgbox',{axis:true,grid:true, boundingbox:[-10,2.4, 80,-2.4],keepaspectratio:false});
-board  = brd;
-var p = brd.create('point', [0,0]);
-var q = brd.create('point', [3,3]);
-// var circ = brd.create('circle', [p, q]);
-
-function round(n, p) {
-  let tens = 10^p;
-  return (Math.round(n * tens) / tens);
-}
-
-brd.update();
-})()  
 
 
 </script>

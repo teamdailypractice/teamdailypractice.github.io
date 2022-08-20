@@ -101,7 +101,7 @@ export function scoreMark(question) {
   }
   uiTools.appendResult(question);
   uiTools.appendResultByCategory(question);
-  replenish();
+  replenish(latestSubmittedAnswer);
   lastSubmissionTime = new Date();
   const diff = Math.abs(lastSubmissionTime - startTime);
   const elapsedTime = Math.floor(diff / 1000);
@@ -171,7 +171,7 @@ export function getAnalysisResult(studentId) {
   return analysisResult;
 }
 
-export function replenish() {
+export function replenish(latestSubmittedAnswer) {
   const max = parseInt(document.getElementById('maxInput').value, 10);
   const min = parseInt(document.getElementById('minInput').value, 10);
   const firstNum = document.getElementById('firstNumGen') && parseInt(document.getElementById('firstNumGen').innerHTML, 10);
@@ -192,7 +192,15 @@ export function replenish() {
     randomNumbers = Generator.getCommonBase10sComplement(min, max, excludes);
   }
   if ('fibonacci'.startsWith(generatorFunction)) {
-    if (isNaN(secondNum) || isNaN(firstNum)) { randomNumbers = [1, 1]; } else { randomNumbers = [secondNum, firstNum + secondNum]; }
+    if (latestSubmittedAnswer !== undefined) {
+      if (latestSubmittedAnswer === true) {
+        randomNumbers = [secondNum, firstNum + secondNum];
+      } else {
+        randomNumbers = [firstNum, secondNum];
+      }
+    } else { // On starting
+      randomNumbers = [1, 1];
+    }
   }
   if ('getNumberEndsWith5'.startsWith(generatorFunction)) {
     randomNumbers = Generator.getNumberEndsWith5(min, max, excludes);
