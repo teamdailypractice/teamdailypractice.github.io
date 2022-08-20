@@ -192,11 +192,14 @@ export function replenish(latestSubmittedAnswer) {
     randomNumbers = Generator.getCommonBase10sComplement(min, max, excludes);
   }
   if ('fibonacci'.startsWith(generatorFunction)) {
+    const feedbackToUser = document.getElementById('feedbackToUser');
+    feedbackToUser.style.display = 'none';
     if (latestSubmittedAnswer !== undefined) {
       if (latestSubmittedAnswer === true) {
         randomNumbers = [secondNum, firstNum + secondNum];
       } else {
         randomNumbers = [firstNum, secondNum];
+        feedbackToUser.style.display = 'block';
       }
     } else { // On starting
       randomNumbers = [1, 1];
