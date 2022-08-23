@@ -1,0 +1,248 @@
+Character
+
+//char forDigit(int digit, int radix)
+
+Character.forDigit(8,10);
+//returns: '8'
+Character.forDigit(1,2);
+//returns: '1'
+Character.forDigit(7,8);
+//returns: '7'
+Character.forDigit(15,16);
+//returns: 'f'
+Character.forDigit(10,16);
+//returns: 'a'
+
+//
+Character.getNumericValue(8,10);
+
+
+//Determines if the specified character is an uppercase character.
+//boolean isUpperCase(char ch)
+
+//Returns a value indicating
+//a character's general category
+
+//int getType(char ch)
+
+Character.getType('A');
+//returns: 1
+Character.getType('a');
+//returns: 2
+Character.getType('0');
+//returns: 9
+
+//Determines if the specified
+//character is a letter
+
+//boolean isLetter(char ch)
+
+Character.isLetter('a');
+//returns: true
+Character.isLetter('A');
+//returns: true
+
+Character.isLetter('8');
+//returns: false
+Character.isLetter('_');
+//returns: false
+Character.isLetter('$');
+//returns: false
+
+
+//Determines if the specified
+//character is a letter or digit
+
+//boolean isLetterOrDigit(char ch)
+
+Character.isLetterOrDigit('a');
+//returns: true
+Character.isLetterOrDigit('A');
+//returns: true
+Character.isLetterOrDigit('8');
+//returns: true
+
+Character.isLetterOrDigit('_');
+//returns: false
+Character.isLetterOrDigit('$');
+//returns: false
+
+
+
+//Determines if the specified
+//character is white space
+//according to Java.
+
+//boolean isWhitespace(char ch)
+
+Character.isWhitespace(' ');
+//returns: true
+Character.isWhitespace('\t');
+//returns: true
+Character.isWhitespace('\r');
+//returns: true
+Character.isWhitespace('\n');
+//returns: true
+
+Character.isWhitespace('\b');
+//returns: false
+
+//Determines if the specified character 
+//is an ISO control character.
+
+//boolean isISOControl(char ch)
+//boolean isISOControl(int codePoint)
+
+//'\u0000' through '\u001F' or 
+//'\u007F' through '\u009F'.
+
+char c1 = '\u0000';
+Character.isISOControl(c1);
+//returns: true
+
+char c2 = '\u0041'; //unicode of 'A'
+Character.isISOControl(c2);
+//returns: false
+
+char c3 = 'A';
+Character.isISOControl(c3);
+//returns: false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Determines if the specified character 
+//is a titlecase character.
+
+//boolean isTitleCase(char ch)
+
+Character.isTitleCase('a');
+//returns: false
+Character.isTitleCase('A');
+//returns: false
+Character.isTitleCase('9');
+//returns: false
+
+//Converts the character argument to 
+//titlecase using case mapping information 
+//from the UnicodeData file.
+
+//char toTitleCase(char ch)
+
+Character.toTitleCase('a');
+//returns: 'A'
+Character.toTitleCase('Z');
+//returns: 'Z'
+Character.toTitleCase('9');
+//returns: '9'
+
+
+
+//Determines if the specified character 
+//is permissible as the first character 
+//in a Java identifier.
+
+//boolean isJavaIdentifierStart(char ch)
+
+Character.isJavaIdentifierStart('a');
+//returns: true
+Character.isJavaIdentifierStart('Z');
+//returns: true
+Character.isJavaIdentifierStart('_');
+//returns: true
+Character.isJavaIdentifierStart('$');
+//returns: true
+
+Character.isJavaIdentifierStart('0');
+//returns: false
+Character.isJavaIdentifierStart('-');
+//returns: false
+Character.isJavaIdentifierStart('.');
+//returns: false
+
+
+//Determines if the specified character 
+//may be part of a Java identifier 
+//as other than the first character
+
+//boolean isJavaIdentifierPart(char ch)
+
+
+Character.isJavaIdentifierPart('a');
+//returns: true
+Character.isJavaIdentifierPart('Z');
+//returns: true
+Character.isJavaIdentifierPart('_');
+//returns: true
+Character.isJavaIdentifierPart('$');
+//returns: true
+
+Character.isJavaIdentifierPart('0');
+//returns: true
+
+Character.isJavaIdentifierPart('-');
+//returns: false
+Character.isJavaIdentifierPart('.');
+//returns: false
+
+
+//Returns a String object
+//representing the specified char
+
+//String toString(char c)
+
+Character.toString('a');
+//returns: "a"
+
+Character.toString('9');
+//returns: "9"
+
+
+
+//Returns a Character instance 
+//representing the specified char value
+
+//Character valueOf(char c)
+
+Character characterA = Character.valueOf('A');
+
+char charA = characterA.charValue();
+//returns: 'A'
+String stringA = characterA.toString()
+//returns: "A"
+
+
+//Determines if a character 
+//is defined in Unicode
+
+//boolean isDefined(char ch)
+
+char tamilCh = '\u0b85';
+Character.isDefined(tamilCh);//'அ'
+//returns: true
+
+char japaneseCh = '\u30B1';//ケ
+Character.isDefined(japaneseCh)
+//returns: true
+
+
+//char reverseBytes(char ch)
+Returns the value obtained by reversing the order of the bytes in the specified char value.
+Character.reverseBytes('a');
+//returns: ?
+Character.reverseBytes('A');
+Character.reverseBytes('0');

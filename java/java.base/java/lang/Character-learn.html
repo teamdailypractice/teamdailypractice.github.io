@@ -45,7 +45,9 @@
             <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
 
             <label for="exampleDataList" class="form-label">Search method/function name</label>
-            <input id="exampleDataList" class="form-control" list="datalistOptions" placeholder="Type to search...">
+            <input id="exampleDataList" class="form-control" list="datalistOptions"
+            placeholder="Type to search..."
+            onfocus="this.value=''">
             <datalist id="datalistOptions">
                 <option value="Lower">
                 <option value="Upper">
@@ -63,7 +65,15 @@
                         <td>
                             <pre>
                                 <code class="language-java">
-Character.toUpperCase('a');
+//Determines if the specified character
+//is an uppercase character.
+
+//boolean isUpperCase(char ch)
+
+Character.isUpperCase('Z');
+//returns: true
+Character.isUpperCase('a');
+//returns: false
                                 </code>
                             </pre>
                         </td>
@@ -72,16 +82,15 @@ Character.toUpperCase('a');
                         <td>
                             <pre>
                                 <code class="language-java">
-Character.toUpperCase('a');
-                                </code>
-                            </pre>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <pre>
-                                <code class="language-java">
-Character.toLowerCase('A');
+//Determines if the specified character
+//is a lowercase character.
+
+//boolean isLowerCase(char ch)
+
+Character.isLowerCase('Z');
+//returns: false
+Character.isLowerCase('a');
+//returns: true
                                 </code>
                             </pre>
 
@@ -91,7 +100,362 @@ Character.toLowerCase('A');
                         <td>
                             <pre>
                                 <code class="language-java">
-Character.toLowerCase('A');
+//Converts the character argument
+//to uppercase  using case mapping
+//information from the UnicodeData file
+
+// char toUpperCase(char ch)
+
+Character.toUpperCase('z');
+//returns: 'Z'
+
+Character.toUpperCase('A');
+//returns: 'A'
+
+
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Converts the character argument
+//to lowercase using case mapping
+//information from the UnicodeData file
+
+//char toLowerCase(char ch)
+
+Character.toLowerCase('Z');
+//returns: 'z'
+
+Character.toLowerCase('a');
+//returns: 'a'
+
+
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified
+//character is a digit
+
+//boolean isDigit(char ch)
+
+Character.isDigit('8');
+//returns: true
+
+Character.isDigit('a');
+//returns: false
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Returns the numeric value of the
+//character ch in the specified radix
+
+
+//int digit(char ch, int radix)
+
+Character.digit('9', 10);
+//returns: 9
+
+Character.digit('a', 16);
+//returns: 10
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Returns the int value that the 
+//specified Unicode character represent
+
+//int getNumericValue(char ch)
+
+Character.getNumericValue('A');
+//returns: 10
+Character.getNumericValue('a');
+//returns: 10
+Character.getNumericValue('9');
+//returns: 9
+
+
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>                  
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines the character
+//representation for a specific
+//digit in the specified radix
+
+//char forDigit(int digit, int radix)
+
+Character.forDigit(8,10);
+//returns: '8'
+Character.forDigit(1,2);
+//returns: '1'
+Character.forDigit(7,8);
+//returns: '7'
+Character.forDigit(15,16);
+//returns: 'f'
+Character.forDigit(10,16);
+//returns: 'a'
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified 
+//character is a letter
+
+//boolean isLetter(char ch)
+
+Character.isLetter('a');
+//returns: true
+Character.isLetter('A');
+//returns: true
+
+Character.isLetter('8');
+//returns: false
+Character.isLetter('_');
+//returns: false
+Character.isLetter('$');
+//returns: false
+                                </code>
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified 
+//character is a letter or digit
+
+//boolean isLetterOrDigit(char ch)
+
+Character.isLetterOrDigit('a');
+//returns: true
+Character.isLetterOrDigit('A');
+//returns: true
+Character.isLetterOrDigit('8');
+//returns: true
+
+Character.isLetterOrDigit('_');
+//returns: false
+Character.isLetterOrDigit('$');
+//returns: false
+                                    
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified
+//character is white space
+//according to Java.
+
+//boolean isWhitespace(char ch)
+
+Character.isWhitespace(' ');
+//returns: true
+Character.isWhitespace('\t');
+//returns: true
+Character.isWhitespace('\r');
+//returns: true
+Character.isWhitespace('\n');
+//returns: true
+
+Character.isWhitespace('\b');
+//returns: false
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified character 
+//is an ISO control character.
+
+//boolean isISOControl(char ch)
+//boolean isISOControl(int codePoint)
+
+//'\u0000' through '\u001F' or 
+//'\u007F' through '\u009F'.
+
+char c1 = '\u0000';
+Character.isISOControl(c1);
+//returns: true
+
+char c2 = '\u0041'; //unicode of 'A'
+Character.isISOControl(c2);
+//returns: false
+
+char c3 = 'A';
+Character.isISOControl(c3);
+//returns: false
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified character 
+//is permissible as the first character 
+//in a Java identifier.
+
+//boolean isJavaIdentifierStart(char ch)
+
+Character.isJavaIdentifierStart('a');
+//returns: true
+Character.isJavaIdentifierStart('Z');
+//returns: true
+Character.isJavaIdentifierStart('_');
+//returns: true
+Character.isJavaIdentifierStart('$');
+//returns: true
+
+Character.isJavaIdentifierStart('0');
+//returns: false
+Character.isJavaIdentifierStart('-');
+//returns: false
+Character.isJavaIdentifierStart('.');
+//returns: false
+                                    
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if the specified character 
+//may be part of a Java identifier 
+//as other than the first character
+
+//boolean isJavaIdentifierPart(char ch)
+
+
+Character.isJavaIdentifierPart('a');
+//returns: true
+Character.isJavaIdentifierPart('Z');
+//returns: true
+Character.isJavaIdentifierPart('_');
+//returns: true
+Character.isJavaIdentifierPart('$');
+//returns: true
+
+Character.isJavaIdentifierPart('0');
+//returns: true
+
+Character.isJavaIdentifierPart('-');
+//returns: false
+Character.isJavaIdentifierPart('.');
+//returns: false
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Returns a String object
+//representing the specified char
+
+//String toString(char c)
+
+Character.toString('a');
+//returns: "a"
+
+Character.toString('9');
+//returns: "9"
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Returns a Character instance 
+//representing the specified char value
+
+//Character valueOf(char c)
+
+Character characterA = 
+    Character.valueOf('A');
+
+char charA = characterA.charValue();
+//returns: 'A'
+String stringA = characterA.toString()
+//returns: "A"
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+//Determines if a character 
+//is defined in Unicode
+
+//boolean isDefined(char ch)
+
+char tamilCh = '\u0b85';
+Character.isDefined(tamilCh);//'அ'
+//returns: true
+
+char japaneseCh = '\u30B1';//ケ
+Character.isDefined(japaneseCh)
+//returns: true
+                                </code>
+                            </pre>
+
+                        </td>
+                    </tr>                                                                                                                        
+                    <tr>
+                        <td>
+                            <pre>
+                                <code class="language-java">
+
                                 </code>
                             </pre>
 

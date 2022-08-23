@@ -39,7 +39,8 @@
             <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
 
             <label for="exampleDataList" class="form-label">Search method/function name</label>
-            <input id="exampleDataList" class="form-control" list="datalistOptions" placeholder="Type to search...">
+            <input id="exampleDataList" class="form-control" list="datalistOptions" placeholder="Type to search..."
+                onfocus="this.value=''">
             <datalist id="datalistOptions">
                 <option value="Lower">
                 <option value="Upper">
@@ -74,17 +75,16 @@
                     <tr>
                         <td>
                             <button type="button" class="btn btn-link" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop2">
-                                How to convert a character to lower case?
+                                data-bs-target="#staticBackdrop3">
+                                How to the get character representation for a specific digit in the specified radix?
                             </button>
                         </td>
-
                     </tr>
                     <tr>
                         <td>
                             <button type="button" class="btn btn-link" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop2">
-                                How to convert a character to lower case?
+                                data-bs-target="#staticBackdrop4">
+                                xxxx
                             </button>
                         </td>
 
@@ -104,35 +104,12 @@
                     <p>
                     <pre>
                         <code class="language-java">
-import java.lang.Character;
-
-System.out.println("hello, world!");
+//Converts the character argument to uppercase using case mapping information from the UnicodeData file.
+//char toUpperCase(char ch)
 Character.toUpperCase('a');
-Character.toLowerCase('A');
-for (i = 0; i < 10; i++) {
-    System.out.println("hello, world!");
-    if (true) {
-        System.out.println("true");
-    }
-    else {
-        System.out.println("false");
-    }
-}
-
-System.out.println("hello, world!");
-Character.toUpperCase('a');
-Character.toLowerCase('A');
-for (i = 0; i < 10; i++) {
-    System.out.println("hello, world!");
-    if (true) {
-        System.out.println("true");
-    }
-    else {
-        System.out.println("false");
-    }
-}
+//returns: 'A'
                         </code>
-                        </pre>
+                    </pre>
                     </p>
                 </div>
                 <div class="modal-footer">
@@ -153,17 +130,48 @@ for (i = 0; i < 10; i++) {
                 <div class="modal-body">
                     <p>
                     <pre>
-                            <code class="language-java">
-import java.lang.Character;
-
-System.out.println("hello, world!");
-Character.toUpperCase('a');
+                        <code class="language-java">
 Character.toLowerCase('A');
-                            </code>
-                            </pre>
+//returns: 'a'
+                        </code>
+                    </pre>
                     </p>
+                </div>                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                 </div>
-                <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How to the get character representation for a specific digit in the specified radix?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                    <pre>
+                        <code class="language-java">
+//Determines the character representation for a specific digit in the specified radix.
+//char forDigit(int digit, int radix)
+
+Character.forDigit(8,10);
+//returns: '8'
+Character.forDigit(1,2);
+//returns: '1'
+Character.forDigit(7,8);
+//returns: '7'
+Character.forDigit(15,16);
+//returns: 'f'
+Character.forDigit(10,16);
+//returns: 'a'
+                        </code>
+                    </pre>
+                    </p>
+                </div>                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                 </div>
