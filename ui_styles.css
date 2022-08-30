@@ -44,9 +44,8 @@ divTest {
   width: 24px;
   height: 32px;
   padding-top: 0px;
-  padding-bottom: 0px;  
+  padding-bottom: 0px;
 }
-
 
 .img-subtraction {
   border: 0px solid blue;
@@ -54,7 +53,7 @@ divTest {
   width: 16px;
   height: 16px;
   /* height: 24px;   */
-   padding-top: 8px;
+  padding-top: 8px;
   /* padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;   */
@@ -65,7 +64,7 @@ divTest {
   border-radius: 4px;
   width: 48px;
   /* height: 24px;   */
-   padding-top: 8px;
+  padding-top: 8px;
   /* padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;   */
@@ -142,34 +141,32 @@ div.form-group.row.font-size {
 
 .input-answer-em {
   width: 3.8em;
-  height:1.5em;
+  height: 1.5em;
 }
 
 .input-answer-em-one-digit {
   width: 0.7em;
-  height:1.5em;
+  height: 1.5em;
 }
-
 
 .img-equalto-em {
   width: 0.4em;
   height: 1.1em;
   padding-top: 0.7em;
-  padding-bottom: 0.0em;
-  
+  padding-bottom: 0em;
 }
 .img-symbols-em {
   width: 0.4em;
   height: 1.1em;
   padding-top: 0.7em;
-  padding-bottom: 0.0em;
+  padding-bottom: 0em;
 }
 
 button.btn.btn-outline-primary.em {
-  width: 1.0em;
-  height: 1.0em;
-  padding-top: 0.0em;
-  padding-bottom: 0.0em;
+  width: 1em;
+  height: 1em;
+  padding-top: 0em;
+  padding-bottom: 0em;
 }
 
 .label.em {
@@ -202,4 +199,13 @@ button.btn.btn-outline-primary.em {
 .slider-width {
   width: 90%;
   height: 100%;
+}
+
+.label.links {
+  margin: 0.1rem;
+  border-width: 0rem;
+  padding-top: 1rem;
+  padding-right: 0.0rem;
+  padding-bottom: 1rem;
+  padding-left: 0.0rem;
 }
