@@ -67,7 +67,7 @@
                 // if (immDate >= userDate) {
 
                 immDatesAll.push(Number.parseInt(field, 10));
-                console.log('..' + immDatesAll);
+                // console.log('..' + immDatesAll);
                 // }
                 // const immMaturityLabel = getLabelForThePosition(i);
                 // dateWithLabel.push([field, i])
@@ -75,6 +75,7 @@
                 // dataToTableRow(field, i + 1, immMaturityLabel);
             });
         });
+        console.log("loaded the data here!");
     });
     function exportTableToCSV($table, filename) {
 
@@ -128,7 +129,7 @@
             });
             var csvUrl = URL.createObjectURL(blob);
 
-            console.log('filename...' + filename);
+            // console.log('filename...' + filename);
             $(this)
                 .attr({
                     'download': filename,
@@ -170,7 +171,7 @@
     function validateDate() {
         let isValid = false;
         const userValue = $('#dateInput').val();
-        console.log('userValue...' + userValue);
+        // console.log('userValue...' + userValue);
         if (userValue && userValue.length > 0 && userValue.length === 8) {
             isValid = true;
         }
@@ -203,7 +204,7 @@
             $('#dateInputValidationError').hide();
 
             const immDatesForGivenDate = getImmDatesForGivenDate($('#dateInput').val());
-            console.log('immDatesForGivenDate...' + immDatesForGivenDate);
+            // console.log('immDatesForGivenDate...' + immDatesForGivenDate);
             immDatesForGivenDate.forEach(function (value, index, array) {
                 const immMaturityLabel = getLabelForThePosition(index);
                 dataToTableRow(value, index + 1, immMaturityLabel);
@@ -229,7 +230,7 @@
     function getDateInISO8601Format(date) {
         const inputDate = date + '';
         const formattedDate = `${inputDate.substring(0, 4)}-${inputDate.substring(4, 6)}-${inputDate.substring(6, 8)}`;
-        console.log('1...' + inputDate);
+        // console.log('1...' + inputDate);
         return formattedDate;
     }
     function dataToTableRow(date, position, immLabel) {
