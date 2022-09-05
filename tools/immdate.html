@@ -126,7 +126,7 @@
             // actual delimiter characters for CSV format
             colDelim = '","',
             rowDelim = '"\r\n"',
-            header = "upcoming IMM Date,Position,Maturity/Termination - When?" + "\r\n"
+            header = "Position, Upcoming IMM Date,Upcoming IMM Month Year,Maturity/Termination - When?" + "\r\n"
 
         // Grab text from table into CSV formatted string
         csv = header + '"' + $rows.map(function (i, row) {
