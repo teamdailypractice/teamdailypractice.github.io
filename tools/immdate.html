@@ -13,11 +13,12 @@
 <body>
     <div class="container">
         <div id="form">
-            <form>
+            <form id="formImmDate">
                 <div class="mb-3">
                     <label for="dateInput" class="form-label">Date in yyyyMMdd:</label>
                     <input type="text" class="form-control" id="dateInput" placeholder="yyyyMMdd">
-                    <button type="submit" class="btn btn-primary" class="form-control" id="btnSubmit" onClick="doWork();">Get IMM Dates</button>
+                    <button type="submit" class="btn btn-primary" class="form-control" id="btnSubmit">Get IMM
+                        Dates</button>
                     <label id="dateInputValidationError" class="form-label">Please enter valid date</label>
                 </div>
             </form>
@@ -50,10 +51,10 @@
 <script src="./data/immDates.json"></script>
 <script type="text/javascript">
     const immDatesAll = [];
-    $(function () {
+    $().ready(function () {
         // $( "p" ).text( "The DOM is now loaded and can be manipulated." );
         console.log("load the data here...only once forever!");
-        $('#dateInputValidationError').hide();
+        // $('#dateInputValidationError').hide();
         //TODO: generate IMM Date from 1970 to 2100
         $.getJSON("data/immDates.json", function (result) {
             $.each(result, function (i, field) {
@@ -76,6 +77,11 @@
             });
         });
         console.log("loaded the data here!");
+    });
+
+    $("#formImmDate").submit(function (event) {
+        doWork();
+        event.preventDefault();
     });
     function exportTableToCSV($table, filename) {
 
