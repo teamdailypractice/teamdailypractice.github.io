@@ -30,8 +30,9 @@
             <table id="tblImmDate" class="table table-bordered border-primary">
                 <thead>
                     <tr>
-                        <th>upcoming IMM Date</th>
                         <th>Position</th>
+                        <th>upcoming IMM Date</th>
+                        <th>IMM Month & Year</th>
                         <th>Maturity/Termination - When?</th>
                         <th>Calendar</th>
                     </tr>
@@ -83,6 +84,36 @@
         doWork();
         event.preventDefault();
     });
+    function getMonthNumberForApi(userMonthNumber) {
+        return userMonthNumber - 1;
+    }
+
+    function getMonthNumberForUser(apiMonthNumber) {
+        return apiMonthNumber + 1;
+    }
+    function getDate(dateAsYYYYmmdd) {
+        
+        if (dateAsYYYYmmdd.length === 8) {
+            const year = Number.parseInt(dateAsYYYYmmdd.substring(0, 4), 10);
+            const month = Number.parseInt(dateAsYYYYmmdd.substring(4, 6), 10);
+            const day = Number.parseInt(dateAsYYYYmmdd.substring(6, 8), 10);
+            if (year < 1970) {
+                throw new Error("Year starts from 1970. No support for year < 1970");
+            }
+            if (month < 1 || month > 12) {
+                throw new Error("Invalid Month");
+            }
+            if (day < 1 || day > 31) {
+                //TODO: Switch  - case - Feb 28/29 leap year
+                throw new Error("Invalid date");
+            }
+            return new Date(year, getMonthNumberForApi(month), day);
+        }
+        else {
+            throw new Error("Invalid Date: " + dateAsYYYYmmdd);
+        }
+
+    }
     function exportTableToCSV($table, filename) {
 
         var $rows = $table.find('tr:has(td)'),
@@ -213,7 +244,10 @@
             // console.log('immDatesForGivenDate...' + immDatesForGivenDate);
             immDatesForGivenDate.forEach(function (value, index, array) {
                 const immMaturityLabel = getLabelForThePosition(index);
-                dataToTableRow(value, index + 1, immMaturityLabel);
+                // Tue May 12 2020
+                // console.log('what is here?...' + array[index])
+                const dateComponents = getDate(value+'').toDateString().split(" ");
+                dataToTableRow(index + 1, value, dateComponents[1] + " " + dateComponents[3], immMaturityLabel);
             });
             // This must be a hyperlink
             $(".export").on('click', function (event) {
@@ -239,7 +273,7 @@
         // console.log('1...' + inputDate);
         return formattedDate;
     }
-    function dataToTableRow(date, position, immLabel) {
+    function dataToTableRow(position, date, dateFormatted, immLabel) {
         const calendar = `<input
                             type='date'
                             id='calendar_${date}'
@@ -247,8 +281,9 @@
                             value='${getDateInISO8601Format(date)}' />`;
         // console.log(calendar);
         let tr = `<tr>
-                    <td>${date}</td>
                     <td>${position}</td>
+                    <td>${date}</td>
+                    <td>${dateFormatted}</td>
                     <td>${immLabel}</td>
                     <td>${calendar}</td>
                 </tr>`
