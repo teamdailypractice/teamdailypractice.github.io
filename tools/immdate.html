@@ -12,15 +12,18 @@
 
 <body>
     <div class="container">
-        <div class="mb-3">
-            <label for="dateInput" class="form-label">Date in yyyyMMdd:</label>
-            <input type="text" class="form-control" id="dateInput" placeholder="yyyyMMdd">
-            <button class="form-control" id="btnSubmit" onClick="doWork();">Get IMM Dates</button>
-            <label id="dateInputValidationError" class="form-label">Please enter valid date</label>
+        <div id="form">
+            <form>
+                <div class="mb-3">
+                    <label for="dateInput" class="form-label">Date in yyyyMMdd:</label>
+                    <input type="text" class="form-control" id="dateInput" placeholder="yyyyMMdd">
+                    <button type="submit" class="btn btn-primary" class="form-control" id="btnSubmit" onClick="doWork();">Get IMM Dates</button>
+                    <label id="dateInputValidationError" class="form-label">Please enter valid date</label>
+                </div>
+            </form>
         </div>
         <div>
             <a href="#" id="hrefExportToExcel" class="export">Export Table data into Excel</a>
-
         </div>
         <div id="dvData">
             <table id="tblImmDate" class="table table-bordered border-primary">
@@ -87,22 +90,22 @@
             rowDelim = '"\r\n"',
             header = "upcoming IMM Date,Position,Maturity/Termination - When?" + "\r\n"
 
-            // Grab text from table into CSV formatted string
-            csv = header + '"' + $rows.map(function (i, row) {
-                var $row = $(row),
-                    $cols = $row.find('td');
+        // Grab text from table into CSV formatted string
+        csv = header + '"' + $rows.map(function (i, row) {
+            var $row = $(row),
+                $cols = $row.find('td');
 
-                return $cols.map(function (j, col) {
-                    var $col = $(col),
-                        text = $col.text();
+            return $cols.map(function (j, col) {
+                var $col = $(col),
+                    text = $col.text();
 
-                    return text.replace(/"/g, '""'); // escape double quotes
+                return text.replace(/"/g, '""'); // escape double quotes
 
-                }).get().join(tmpColDelim);
+            }).get().join(tmpColDelim);
 
-            }).get().join(tmpRowDelim)
-                .split(tmpRowDelim).join(rowDelim)
-                .split(tmpColDelim).join(colDelim) + '"';
+        }).get().join(tmpRowDelim)
+            .split(tmpRowDelim).join(rowDelim)
+            .split(tmpColDelim).join(colDelim) + '"';
 
         // Deliberate 'false', see comment below
         if (false && window.navigator.msSaveBlob) {
