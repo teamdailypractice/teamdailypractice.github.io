@@ -55,6 +55,7 @@
     $().ready(function () {
         // $( "p" ).text( "The DOM is now loaded and can be manipulated." );
         console.log("load the data here...only once forever!");
+        $('#dateInputValidationError').hide();
         // $('#dateInputValidationError').hide();
         //TODO: generate IMM Date from 1970 to 2100
         $.getJSON("data/immDates.json", function (result) {
