@@ -59,8 +59,20 @@ h3 {
 }
 
 p {
-  margin: 0.6em;
-  padding: 0.6em;
+  margin: 0.6rem;
+  padding: 0.6rem;
+}
+
+div {
+  margin: 0.1rem;
+  padding: 0.1rem;
+}
+
+img {
+  width:100%;
+  border:  1px solid #888;
+  border-radius: 4px;
+  padding: .5em .5em 0;
 }
 
 details {
@@ -85,6 +97,12 @@ details[open] summary {
   margin-bottom: .5em;
 }
 
+.attribution {
+  margin: 0.0em;
+  padding: 0.0em;
+  border: 0px solid gray;
+  font-size: 10px;
+}
 
 .page-header {
   background-color: #fff;
@@ -320,6 +338,11 @@ span.group {
 span.group {
   text-align: right;
 }
+span.dates {
+  font-size: 12px;
+}
+
+
 .top-to-btm {
   position: relative;
 }
