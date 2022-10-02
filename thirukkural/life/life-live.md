@@ -9,11 +9,13 @@
 * Life is not something which can be exchanged
 * **Life is something, I have to create myself, out of my own being**
 * What is in my control?
-* My health
+* Effort to maintain my physical body health is in my control
+* Effort to maintain my mental health is in my control
+* Physical body health maintenance
   * Proper Eating: healthy food and in right quantity
   * Exercise everyday at least 10 to 20 minutes
   * My family, environment can assist. It is me, who has to do it
-* My peace of mind
+* Mental health maintenance
   * Can I cultivate the habit of thinking good thoughts?
   * My family, environment can assist. It is me, who has to cultivate it
   * What should go into mind?
