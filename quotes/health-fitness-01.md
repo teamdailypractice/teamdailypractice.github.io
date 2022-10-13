@@ -21,4 +21,31 @@
 * <https://www.science.org/content/article/why-knee-injuries-often-don-t-heal> You need to take care of your joints while you are young," he says. "Once you have damage to the cartilage, it's not going to repair itself
 * I don't know whether above statement is 100% true for everybody. It may be or may not be or it depends
 * Better I would try to do enough exercises and enough rest to ensure my joints are in good shape
+* Should I just run or should I balance my running with other exercises that will strengthen the whole body?
+* What is good? Strengthening, flexibility of the whole body?
 
+
+## What do I eat?
+
+* How much quantity?
+* How much salt do I consume daily?
+* How much sugar do I consume daily?
+* How much spices?
+* Is salt good to health? How much quantity is enough to the body daily?
+* Is sugar good to health?
+* What did my healthy grandparents do in life?
+* daily walking 4 to 8 kilometers
+* Only 2 coffee - each 130 ml with less/moderate sugar per day
+* Eating good/reasonable breakfast
+* Eating moderate lunch
+* Eating less in dinner
+* Having good sleep - 10pm to 5am
+* Doing action
+* What do I care? My health, my family health?
+* What is important? Health or taste?
+* What do I choose?
+* How can I prepare a healthy food with taste?
+* An item, that I never tasted in life, If I taste first time, do I expect how it would be?
+* Taste is nothing but an action (eating an item), first tried due to environment, by force or voluntarily, and then repeated consciously or unconsciously many times?
+* Taste is nothing but an impression in mind that is strong due to many repetitions (many years....)
+* Can I replace it?

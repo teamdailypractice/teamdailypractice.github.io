@@ -1,6 +1,7 @@
 # Confucius quotes
 
 * One who learns but does not think is lost! One who thinks but does not learn is in great danger
+* The essence of  knowledge is, having it, to use it
 * Silence is a true friend who never betrays
 * The more man/women meditates upon good thoughts, the better will be his/her world and the world at large
 * By nature, men are nearly alike; by practice, they get to be wide apart
