@@ -1,0 +1,29 @@
+57
+
+https://stackoverflow.com/questions/18049847/when-would-i-use-a-priority-queue
+
+Here's a practical example - for a business application:
+
+Scenario/application/use case/real life:
+You're running a hospital and patients are coming in
+There's only one doctor on staff
+
+How is the working?
+
+The first man walks in - and he's served immediately. 
+
+Next, a man with a cold comes in and requires assistance. 
+You add him to the queue and he waits in line for the doctor to become available. 
+
+Next, a man with an axe in his head comes through the door. 
+He is assigned a higher priority because he has a higher medical liability.
+So the man with the cold is bumped down in line. 
+
+Next, someone comes in with breathing problems. 
+So, once again, the man with the cold is bumped down in priority. 
+This is called triaging in the real world - but in this case it's a medical line.
+
+Implementing this in code would use: 
+priority queue
+a worker thread (the doctor) to perform work 
+on the consumable / units of work (the patients)

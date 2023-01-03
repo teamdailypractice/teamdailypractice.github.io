@@ -3,6 +3,7 @@
 * **Who is responsible for the way I am right now, this moment?**
 * **How do I feel right now**?
 * **How do I act (think, talk, do,...) now?**
+* Can I put/ask/suggest/recommend/command it as a question?
 
 ## Is it conditioned by others/environment?
 

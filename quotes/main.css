@@ -1,0 +1,94 @@
+body {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+    line-height: 1.4;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.content {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: 300;
+    font-size: medium;
+    font-style: initial;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#search-form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#search-form input {
+    display: block;
+    width: 100%;
+    padding: 0.4em;
+    border: 1px solid #ccc;
+    font-size: 1.4em;
+}
+
+#search-form .controls {
+    margin: 1em auto;
+}
+
+#search-form .query-error {
+    font-size: 0.8em;
+    color: red;
+}
+
+*/
+/* article {
+    border-bottom: 1px solid #ccc;
+} */
+
+article header h2 {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: 300;
+    font-size: large;
+    font-style: initial;
+    color: hsl(236, 53%, 46%);
+}
+
+article header h4 span {
+    font-family: 'Noto Sans Tamil', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
+    font-weight: 300;
+    font-size: x-large;
+    font-style: initial;
+    color: hsl(236, 53%, 46%);
+}
+
+article section p {
+    line-height: 1.6em;
+    font-size: 1.4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+}
+
+ul {
+    list-style-type: none;
+    /* Remove bullets */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margins */
+}
+
+.card-kural {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    background-color: white;
+    color: hsl(236, 53%, 46%);
+    box-shadow: 0.2em 0.5em 1em rgba(0, 0, 0, 0.3);
+}
