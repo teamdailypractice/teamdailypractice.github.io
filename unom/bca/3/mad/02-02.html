@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Mobile Application Development using Android - TOC &#8212; Mobile Application Development - Android</title>
+    <title>Fragments &#8212; Mobile Application Development - Android</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="/static-jb-2022/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="/static-jb-2022/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mobile Application Development - Syllabus" href="00-00.html" />
+    <link rel="next" title="Intents" href="02-03.html" />
+    <link rel="prev" title="Activity" href="02-01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,13 +102,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Mobile Application Development using Android - TOC
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="00-00.html">
    Mobile Application Development - Syllabus
@@ -147,23 +148,23 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02-00.html">
    2 Android Concepts - Fundamentals
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02-01.html">
      Activity
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02-02.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Fragments
     </a>
    </li>
@@ -252,7 +253,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/02-02.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -289,23 +290,100 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-class-example">
+   Fragment class - Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-add-a-fragment-to-the-activity-fragment">
+   How to add a Fragment to the Activity/Fragment?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-lifecycle">
+   Fragment Lifecycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-lifecycle-and-the-fragment-s-view-lifecycle">
+   Fragment Lifecycle and the fragment’s view Lifecycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Mobile Application Development using Android - TOC</h1>
+                <h1>Fragments</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-class-example">
+   Fragment class - Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-add-a-fragment-to-the-activity-fragment">
+   How to add a Fragment to the Activity/Fragment?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-lifecycle">
+   Fragment Lifecycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fragment-lifecycle-and-the-fragment-s-view-lifecycle">
+   Fragment Lifecycle and the fragment’s view Lifecycle
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -313,16 +391,62 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="mobile-application-development-using-android-toc">
-<h1>Mobile Application Development using Android - TOC<a class="headerlink" href="#mobile-application-development-using-android-toc" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="00-00.html">Mobile Application Development - Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01-00.html">1 Mobile App Development - Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-00.html">2 Android Concepts - Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-01.html">Glossary - Terms</a></li>
+  <section class="tex2jax_ignore mathjax_ignore" id="fragments">
+<h1>Fragments<a class="headerlink" href="#fragments" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>A <strong>Fragment</strong> represents a reusable portion of your app’s UI</p></li>
+<li><p>Fragments enable to break the activity into different sections</p></li>
+<li><p>A fragment defines and manages its own layout, has its own lifecycle, and can handle its own input events</p></li>
+<li><p>Fragments cannot live on their own. They must be hosted by an activity or another fragment</p></li>
+<li><p>The fragment’s view hierarchy becomes part of, or attaches to, the host’s (Parent activity/fragment) view hierarchy</p></li>
+<li><p>Fragments introduce modularity and reusability into activity’s UI by allowing to divide the UI into discrete chunks</p></li>
 </ul>
+<section id="fragment-class-example">
+<h2>Fragment class - Example<a class="headerlink" href="#fragment-class-example" title="Permalink to this headline">#</a></h2>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ExampleFragment</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Fragment</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ExampleFragment</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">example_fragment</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+</section>
+<section id="how-to-add-a-fragment-to-the-activity-fragment">
+<h2>How to add a Fragment to the Activity/Fragment?<a class="headerlink" href="#how-to-add-a-fragment-to-the-activity-fragment" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Add a fragment via XML</p></li>
+<li><p>Add a fragment programmatically</p></li>
+</ul>
+</section>
+<section id="fragment-lifecycle">
+<h2>Fragment Lifecycle<a class="headerlink" href="#fragment-lifecycle" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Each Fragment instance has its own lifecycle.</p></li>
+<li><p>Each possible Lifecycle state is represented in the <code class="docutils literal notranslate"><span class="pre">Lifecycle.State</span></code> enum</p>
+<ul>
+<li><p>INITIALIZED</p></li>
+<li><p>CREATED</p></li>
+<li><p>STARTED</p></li>
+<li><p>RESUMED</p></li>
+<li><p>DESTROYED</p></li>
+</ul>
+</li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">Fragment</span></code> must be added to <code class="docutils literal notranslate"><span class="pre">FragmentManager</span></code></p></li>
+</ul>
+</section>
+<section id="fragment-lifecycle-and-the-fragment-s-view-lifecycle">
+<h2>Fragment Lifecycle and the fragment’s view Lifecycle<a class="headerlink" href="#fragment-lifecycle-and-the-fragment-s-view-lifecycle" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Fragment Lifecycle states and their relation to both the fragment’s lifecycle callbacks and the fragment’s view Lifecycle</p></li>
+</ul>
+<p><img alt="alt" src="images/004-fragmen-view-lifecycle.png" /></p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.android.com/guide/fragments">Fragments</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -352,10 +476,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="00-00.html" title="next page">
+    <a class='left-prev' id="prev-link" href="02-01.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Activity</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02-03.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mobile Application Development - Syllabus</p>
+        <p class="prev-next-title">Intents</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

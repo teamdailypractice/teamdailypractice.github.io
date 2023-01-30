@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Mobile Application Development - Android</title>
+    <title>Required Tools &#8212; Mobile Application Development - Android</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="/static-jb-2022/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -142,6 +142,33 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="01-10.html">
      Android Version History
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02-00.html">
+   2 Android Concepts - Fundamentals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-01.html">
+     Activity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-02.html">
+     Fragments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-03.html">
+     Intents
     </a>
    </li>
   </ul>
@@ -282,7 +309,22 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-studio">
+   Android Studio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-sdk-software-development-kit">
+   Android SDK - Software Development Kit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-virtual-devices-avds">
+   Android Virtual Devices - AVDs
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -292,7 +334,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Required Tools</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -301,7 +343,22 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-studio">
+   Android Studio
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-sdk-software-development-kit">
+   Android SDK - Software Development Kit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#android-virtual-devices-avds">
+   Android Virtual Devices - AVDs
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -312,7 +369,55 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="required-tools">
+<h1>Required Tools<a class="headerlink" href="#required-tools" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Android Studio</p></li>
+<li><p>Android SDK</p></li>
+<li><p>Creating Android Virtual Devices (AVD)</p></li>
+</ul>
+<section id="android-studio">
+<h2>Android Studio<a class="headerlink" href="#android-studio" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Download and Install</p></li>
+<li><p>Can be installed on Windows PC, Linux Machine and Mac</p></li>
+</ul>
+</section>
+<section id="android-sdk-software-development-kit">
+<h2>Android SDK - Software Development Kit<a class="headerlink" href="#android-sdk-software-development-kit" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The Android SDK contains all the packages and tools required to develop a functional android application</p></li>
+<li><p>The SDKs are named after the version of Android OS to which they correspond</p></li>
+<li><p>To install, accept the <strong>License Agreement</strong></p></li>
+<li><p>SDK Platforms</p>
+<ul>
+<li><p>Name - Android Version Name and codename</p></li>
+<li><p>API Level</p></li>
+</ul>
+</li>
+<li><p>SDK Tools</p></li>
+<li><p>SDK Update Sites</p></li>
+</ul>
+</section>
+<section id="android-virtual-devices-avds">
+<h2>Android Virtual Devices - AVDs<a class="headerlink" href="#android-virtual-devices-avds" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>AVD is used for testing the Android application</p></li>
+<li><p>AVD is an emulator instance that is a model of an actual device</p></li>
+<li><p>AVD consists of:</p>
+<ul>
+<li><p>a hardware profile</p></li>
+<li><p>a mapping to a system image</p></li>
+<li><p>emulated storage such as SD card</p></li>
+</ul>
+</li>
+<li><p>Emulators are not perfect</p></li>
+<li><p>Some applications that require GPU (Game applications), GPS sensors - may not be simulated in the emulator with the same speed and consistency</p></li>
+<li><p>AVDs can be created with different configurations</p></li>
+</ul>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -347,7 +452,7 @@ title="Print to PDF"
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By Student-Teacher-Student Community<br/>
+    By Student-Teacher-Student - https://dailypractice.info<br/>
   
       &copy; Copyright 2022.<br/>
 </p>
