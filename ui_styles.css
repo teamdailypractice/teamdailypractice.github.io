@@ -139,6 +139,10 @@ div.form-group.row.font-size {
   font-size: 4rem;
 }
 
+div.form-group.row.font-size-2 {
+  font-size: 2rem;
+}
+
 .input-answer-em {
   width: 3.8em;
   height: 1.5em;
@@ -156,10 +160,10 @@ div.form-group.row.font-size {
 }
 
 .input-answer-em-square {
-  width: 2.8em;
-  height: 2.4em;
-  padding-top: 0.8em;
-  padding-bottom: 0.3em;
+  width: 6.0em;
+  height: 1.0em;
+  padding-top: 1.8em;
+  padding-bottom: 0.8em;
 }
 
 .img-equalto-em {
@@ -176,7 +180,7 @@ div.form-group.row.font-size {
 }
 
 .img-symbols-em-square {
-  width: 1.3em;
+  width: 0.2em;
   height: 2.7em;
   padding-top: 0.7em;
   padding-bottom: 0em;
