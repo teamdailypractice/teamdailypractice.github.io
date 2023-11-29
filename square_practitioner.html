@@ -37,36 +37,41 @@
             <div class="col-sm-6">
               <div>
                 <label for="multipleOfN">Choose skill</label>
-                <input type="range" id="inputOperations" name="inputOperations" 
-                       min="1" max="5" value="2" step="1" 
-                       oninput="javascript:onSlideOperations('inputOperations', 'targetted');">
+                <input type="range" id="inputOperations" name="inputOperations" min="1" max="5" value="2" step="1"
+                  oninput="javascript:onSlideOperations('inputOperations', 'targetted');">
                 <output name="targetted" id="targetted">cube</output>
               </div>
               <div>
                 <label for="maxRange">Choose random range</label>
-                <input type="range" id="maxRange" name="maxRange" 
-                       min="3" max="48" value="20" step="1" 
-                       oninput="javascript:onSlide('maxRange', 'maxInput');">
-                       [1 - 
+                <input type="range" id="maxRange" name="maxRange" min="3" max="48" value="20" step="1"
+                  oninput="javascript:onSlide('maxRange', 'maxInput');">
+                [1 -
                 <output name="maxInput" id="maxInput">20</output>
                 <label>]</label>
               </div>
             </div>
-            <div class="form-group row">
+            <div class="form-group row font-size-2">
               <label id="firstNumGen" style='visibility: hidden;' class="label label-medium"></label>
               <p id="secondNumGen">
                 \({}\)
               </p>
-              <img id="equalTo" src="images/equal_symbol_01.png" class="img-symbols">&nbsp;&nbsp;
-              <input type="number" id="answer" value="" class="input-answer" />
-              <input type="button" class="btn btn-outline-primary btn-sm" autofocus id="submitAnswer"
-                onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="Go" />
+              <img id="equalTo" src="images/equal_symbol_01.png" class="img-symbols-em-square">
+              <input type="number" id="answer" value="" class="input-answer-em-square" />
             </div>
+            <div class="form-group row font-size-2">
+              <div class="row d-flex justify-content-center">
+                <div class="col-8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                <div class="col-4"><input type="button" class="btn btn-outline-primary" autofocus id="submitAnswer"
+                    onclick="App.uiOps.scoreMark(App.uiOps.ui.createQuestion());" value="Go" />
+                </div>
+              </div>
+            </div>
+
             <input type="hidden" id="operations" value="cube" />
             <input type="hidden" id="generatorFunction" value="shuffledNumber" />
             <input type="hidden" id="shuffledNumber" />
             <input type="hidden" id="minInput" value="1" />
-      			<input type="hidden" id="excludes" value="0" />
+            <input type="hidden" id="excludes" value="0" />
             <div id="studentPracticeSummary">
               <label id="summary">Summary</label>&nbsp;&nbsp;&nbsp;
             </div>
@@ -96,15 +101,15 @@
                 </th>
               </tr>
             </table>
-          </div>          
+          </div>
         </div>
       </div>
 
 
     </div>
-    </div>
-    
-  
+  </div>
+
+
 </body>
 <script src="scripts/bundle.js"></script>
 
@@ -116,7 +121,7 @@
     document.getElementById(output).value = document.getElementById(input).value;
     document.getElementById('shuffledNumber').value = '';
     App.uiOps.replenish();
-  }  
+  }
   function onSlideOperations(input, output) {
     console.log(ops[document.getElementById(input).value]);
     document.getElementById(output).value = ops[document.getElementById(input).value];
