@@ -52,7 +52,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="index.html">தேடுக Search</a></li>
                             <li><a class="dropdown-item" href="topics.html">அதிகாரங்கள் Topics</a></li>
-                            <li><a class="dropdown-item" href="agaramudhali/index.html">அ..ஆ..க..கா</a></li>
+                            <li><a class="dropdown-item" href="am/index.html">அ..ஆ..க..கா</a></li>
                             <li><a class="dropdown-item  active" href="#">Books Download</a></li>
                         </ul>
                     </li>
