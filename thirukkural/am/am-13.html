@@ -36,7 +36,8 @@
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Thirukkural</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
-                    <li><a class="dropdown-item" href="topics.html">அதிகாரங்கள் Topics</a></li>
+                    <li><a class="dropdown-item" href="../topics.html">அதிகாரங்கள் Topics</a></li>
+                    <li><a class="dropdown-item" href="../qa/index.html">கேள்வி? பதில்! QA</a></li>
                     <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
                     <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
                 </ul>

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "TscuSaiIndra";
+  src: url("../fonts/TSCuSaiIndira.woff2") format("woff2");
+}
+body {
+  font-family: "Roboto", "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+.tamil-content {
+  font-family: "TscuSaiIndra", "Roboto", "Open Sans", sans-serif;
+  line-height: 1.6em;
+  font-size: 1.4em;
+}
+.tamil-content-kural {
+  font-family: "TscuSaiIndra", "Roboto", "Open Sans", sans-serif;  
+  line-height: 1.6em;
+  font-size: 1.4em;
+  color: hsl(236, 53%, 46%);
+}
+
+.english-content {
+  font-family: "Roboto", "Open Sans", sans-serif;
+  line-height: 1.6em;
+  font-size: 1.4em;
+}
+
+.tamil-content-header {
+  font-family: "TscuSaiIndra", "Roboto", "Open Sans", sans-serif;
+  font-size: 0.8em;
+}
+
+table.dataTable tbody td {
+  white-space: normal; /* Enable text wrapping */
+}
+
+p {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
