@@ -1,0 +1,19 @@
+1. execute instructions in @/Users/mohannarayanaswamy/git/tamil-grammar-school/prompts/myprompt.md
+
+2. http://localhost:8000/exam.html - doesn't allow me to take exam without reading, we need any time to take exam, it currently shows "தேர்வு முடிவுகள்
+மீண்டும் தேர்வு எழுதுக
+
+முகப்புப் பக்கம்", Can you fix it?
+
+3. In the exam, can you also ensure display one question at a time instead of showing all in one page
+
+4. Can you add confeti for above ... ## Use following confeti appropriately
+1. Celebration animation
+1. Success animation
+1. Completion animation
+1. Reward animation
+1. Micro-interaction
+1. Positive feedback animation
+1. Gamification feedback
+
+5. can you store all the prompt that I gave today in a file

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Grammar School - Class 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-container">
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>தமிழ் இலக்கணம்</h1>
+            <p>வகுப்பு 9</p>
+        </div>
+        <nav id="topic-nav">
+            <!-- Topics will be loaded here -->
+        </nav>
+        <div class="exam-link-container">
+            <a href="exam.html" class="exam-btn">தேர்வு எழுதுக (Exam Mode)</a>
+        </div>
+    </aside>
+
+    <main class="content-area">
+        <header class="top-bar">
+            <h2 id="current-topic-title">தலைப்பு</h2>
+            <div class="progress-container">
+                <div class="progress-label">முன்னேற்றம்: <span id="progress-text">0/25</span></div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+            </div>
+        </header>
+
+        <div id="stage-content" class="stage-content">
+            <!-- Content loads here -->
+            <div class="loading">Loading...</div>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" class="nav-btn" disabled>முந்தைய (Previous)</button>
+            <button id="next-btn" class="nav-btn">அடுத்தது (Next)</button>
+        </div>
+
+        <!-- Quiz Section (appears at end of topic or on demand? Prompt says "Practice Mode" inside article) -->
+        <!-- We will show quiz button or section. Let's make it a section below content -->
+        <div id="quiz-section" class="quiz-section hidden">
+            <h3>பயிற்சி வினாக்கள்</h3>
+            <div id="quiz-container"></div>
+            <button id="check-quiz-btn" class="action-btn">விடையளி (Submit)</button>
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+    </main>
+</div>
+
+<!-- Celebratory Modal -->
+<div id="celebration-modal" class="modal hidden">
+    <div class="modal-content">
+        <h2>வாழ்த்துகள்! 🎉</h2>
+        <p>நீங்கள் இந்த நிலையை வெற்றிகரமாக முடித்துவிட்டீர்கள்!</p>
+        <button id="close-modal-btn">தொடர்க</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

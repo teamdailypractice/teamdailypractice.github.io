@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Grammar Exam - Class 9</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .exam-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        .timer.hidden { display: none !important; }
+        
+        .exam-header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        /* New Styles for Single Question View */
+        .question-card {
+            background: #f9f9f9;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            flex-grow: 1; /* Take up space */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .question-progress {
+            margin-bottom: 15px;
+            color: #7f8c8d;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .quiz-question {
+            font-size: 1.3rem !important;
+            margin-bottom: 25px !important;
+            line-height: 1.5;
+        }
+
+        .quiz-options label {
+            display: block;
+            margin-bottom: 15px !important;
+            padding: 15px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-options label:hover {
+            background: #f1f8ff;
+            border-color: #4a90e2;
+        }
+
+        .quiz-options input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+        
+        .navigation-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .overlay-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.98);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            text-align: center;
+            padding: 20px;
+        }
+        .overlay-screen h1 { margin-bottom: 20px; color: #2c3e50; }
+        .overlay-screen p { margin-bottom: 30px; font-size: 1.1rem; color: #555; max-width: 600px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+
+<div id="exam-app">
+    <!-- Timer (Hidden initially) -->
+    <div id="timer" class="timer hidden">20:00</div>
+    
+    <!-- Main Exam Content (Hidden initially) -->
+    <div id="exam-container" class="exam-container hidden">
+        <div class="exam-header">
+            <h1>தமிழ் இலக்கணத் தேர்வு</h1>
+            <p>மொத்த மதிப்பெண்கள்: 30 | நேரம்: 20 நிமிடங்கள்</p>
+        </div>
+
+        <!-- Single Question Container -->
+        <div id="current-question-container">
+            <!-- Loaded dynamically -->
+        </div>
+
+        <div class="navigation-controls">
+            <button id="prev-btn" class="nav-btn" disabled>&larr; முந்தைய (Prev)</button>
+            <button id="next-btn" class="nav-btn">அடுத்தது (Next) &rarr;</button>
+            <button id="finish-btn" class="action-btn hidden" style="background-color: #e74c3c;">தேர்வை முடிக்கவும் (Finish)</button>
+        </div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen" class="overlay-screen">
+        <h1>தமிழ் இலக்கணத் தேர்வு</h1>
+        <p>இந்தத் தேர்வில் 30 வினாக்கள் கேட்கப்படும். தேர்வை முடிக்க 20 நிமிடங்கள் வழங்கப்படும். "தேர்வைத் தொடங்குக" பொத்தானை அழுத்தியவுடன் நேரம் கணக்கிடப்படும்.</p>
+        <p><strong>விதிமுறைகள்:</strong><br>
+        - ஒவ்வொரு வினாவாகத் தோன்றும்.<br>
+        - முந்தைய மற்றும் அடுத்த வினாக்களுக்குச் செல்லலாம்.<br>
+        - நேரம் முடிந்தவுடன் தேர்வு தானாகவே முடிவடையும்.</p>
+        
+        <button id="start-btn" class="action-btn" style="font-size: 1.2rem; padding: 15px 40px;">தேர்வைத் தொடங்குக (Start Exam)</button>
+        <br><br>
+        <a href="index.html" style="color: #7f8c8d; text-decoration: underline;">திரும்பச் செல்</a>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="overlay-screen hidden">
+        <h1>தேர்வு முடிவுகள்</h1>
+        <h2 id="final-score" style="font-size: 3rem; color: #27ae60; margin: 20px 0;"></h2>
+        <p id="time-taken"></p>
+        <button onclick="window.location.reload()" class="action-btn">மீண்டும் தேர்வு எழுதுக</button>
+        <br>
+        <a href="index.html" class="nav-btn" style="text-decoration: none; display: inline-block; margin-top: 10px;">முகப்புப் பக்கம்</a>
+    </div>
+</div>
+
+<script src="exam.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

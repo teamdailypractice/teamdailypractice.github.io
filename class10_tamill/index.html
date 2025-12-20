@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>தமிழ் இலக்கணம் - கற்கண்டு பயணம்</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">SSLC தமிழ் இலக்கணம்</p>
+          <h1>கற்கண்டு பயணம்</h1>
+          <p class="subhead">
+            7 இயல்கள் · 25 கட்டங்கள் · தொடர்ச்சியான முன்னேற்றம்
+          </p>
+        </div>
+        <div class="hero-actions">
+          <div class="overall-progress">
+            <span>மொத்த முன்னேற்றம்</span>
+            <div class="progress-track">
+              <div id="overallProgressBar" class="progress-bar"></div>
+            </div>
+            <strong id="overallProgressText">0%</strong>
+          </div>
+          <a class="exam-link" href="exam.html">எந்த நேரமும் தேர்வெழுதலாம் →</a>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <h2>இயல்கள்</h2>
+          <div id="topicList" class="topic-list"></div>
+          <div class="streak-card">
+            <h3>முடித்த கட்டங்கள்</h3>
+            <p id="completedCount">0 / 175</p>
+            <div class="progress-track slim">
+              <div id="completedProgressBar" class="progress-bar"></div>
+            </div>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="stage-header">
+            <div>
+              <p id="topicTitle" class="topic-title">...</p>
+              <h2 id="stageTitle">கட்டம் 1</h2>
+              <p id="stageMeta" class="stage-meta">25 இல் 1</p>
+            </div>
+            <div class="stage-actions">
+              <button id="prevStage" class="ghost">முந்தையது</button>
+              <button id="markComplete" class="primary">கட்டம் முடிந்தது</button>
+              <button id="nextStage" class="ghost">அடுத்தது</button>
+            </div>
+          </div>
+
+          <div class="stage-progress">
+            <div class="progress-track">
+              <div id="stageProgressBar" class="progress-bar"></div>
+            </div>
+            <div id="stageChips" class="stage-chips"></div>
+          </div>
+
+          <article id="stageContent" class="stage-content"></article>
+
+          <section class="practice">
+            <div class="practice-header">
+              <div>
+                <h3>பயிற்சி வினாக்கள்</h3>
+                <p>ஒவ்வொரு முறையும் புதிய வினாக்கள். முயற்சி செய்து பாருங்கள்!</p>
+              </div>
+              <div class="practice-actions">
+                <button id="refreshQuiz" class="ghost">புதிய வினாக்கள்</button>
+                <button id="checkQuiz" class="primary">சரிபார்க்க</button>
+              </div>
+            </div>
+            <div id="quizContainer" class="quiz"></div>
+            <div id="quizResult" class="quiz-result" aria-live="polite"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="rewardBadge" class="reward-badge">🏆 புதிய அணி!</div>
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
