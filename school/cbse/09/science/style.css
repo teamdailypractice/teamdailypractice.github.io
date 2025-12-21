@@ -105,11 +105,10 @@ nav {
 }
 
 nav a {
-    margin: 0 0.5rem;
     text-decoration: none;
     color: #666;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
     transition: all 0.2s;
 }
@@ -355,9 +354,33 @@ button:hover:not(:disabled) {
         box-shadow: none;
         width: 100%;
     }
+    nav {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 5px;
+        gap: 8px;
+        scrollbar-width: none; /* Firefox */
+        border-bottom: 1px solid #f0f0f0;
+        margin: 0.5rem -1rem 1rem -1rem; /* Negative margin to touch edges */
+    }
+    nav::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
     nav a {
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
+        flex: 0 0 auto;
+        margin: 0;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        padding: 6px 12px;
+        background: #f9f9f9;
+        border: 1px solid #eee;
+    }
+    nav a.active {
+        background: #4CAF50;
+        color: white;
+        border-color: #4CAF50;
     }
     #topics-nav {
         width: 280px;
