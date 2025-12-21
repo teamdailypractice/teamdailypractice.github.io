@@ -6,14 +6,16 @@ const topicsBtn = document.getElementById('topics-btn');
 const topicsNav = document.getElementById('topics-nav');
 const topicsCloseBtn = document.getElementById('topics-close-btn');
 const topicsList = document.getElementById('topics-list');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
 
 let currentTopicIndex = 0;
 let currentStageIndex = 0;
 let topics = [];
 let quizData = null;
-let currentChapter = document.body.dataset.chapter || 'ch5'; // Default to ch5 if not set
+let currentChapter = document.body.dataset.chapter || 'ch5'; 
 
-const APP_VERSION = 'v2.2'; 
+// Incrementing to v3.0 forces a reset of the validation logic
+const APP_VERSION = 'v3.0'; 
 
 // --- Data & State Management ---
 
@@ -30,12 +32,20 @@ function saveProgress() {
     localStorage.setItem(getStorageKey(), JSON.stringify(progress));
 }
 
+function purgeOldStorage() {
+    // This helper clears old storage formats to prevent cross-version pollution
+    const oldKeys = ['biology-progress'];
+    oldKeys.forEach(key => localStorage.removeItem(key));
+}
+
 function loadAndValidateProgress() {
     try {
+        purgeOldStorage();
         const savedProgress = localStorage.getItem(getStorageKey());
         if (savedProgress) {
             const progress = JSON.parse(savedProgress);
             
+            // If version matches and indices are valid, load them
             if (progress.version === APP_VERSION && 
                 topics[progress.topic] && 
                 topics[progress.topic].stages[progress.stage]) {
@@ -47,6 +57,7 @@ function loadAndValidateProgress() {
     } catch (e) {
         console.error('Error loading progress:', e);
     }
+    // Default to start if invalid or missing
     resetProgress();
 }
 
@@ -58,7 +69,6 @@ function resetProgress() {
 
 async function fetchDataAndInitialize() {
     try {
-        // Dynamic fetch based on chapter ID
         const topicsResponse = await fetch(`topics-${currentChapter}.json`);
         if (!topicsResponse.ok) throw new Error(`Failed to load topics for ${currentChapter}`);
         const topicsData = await topicsResponse.json();
@@ -82,13 +92,20 @@ async function fetchDataAndInitialize() {
 
     } catch (error) {
         console.error('Initialization error:', error);
-        contentEl.innerHTML = `<p style="color:red">Error: ${error.message}. Please try refreshing the page or checking the URL.</p>`;
+        contentEl.innerHTML = `
+            <div style="color:red; padding: 20px; border: 1px solid red; border-radius: 5px;">
+                <h3>Failed to load content</h3>
+                <p>${error.message}</p>
+                <button onclick="localStorage.clear(); location.reload();">Clear All Data & Reset App</button>
+            </div>
+        `;
     }
 }
 
 // --- Rendering ---
 
 function renderTopicsNav() {
+    if (!topicsList) return;
     topicsList.innerHTML = '';
     topics.forEach((topic, index) => {
         const link = document.createElement('a');
@@ -108,6 +125,12 @@ function renderStage() {
     const topic = topics[currentTopicIndex];
     const stage = topic.stages[currentStageIndex];
 
+    if (!stage) {
+        console.error('Stage not found. Resetting.');
+        resetProgress();
+        return;
+    }
+
     let html = '';
     if (stage.type === 'text') {
         html = renderTextStage(stage);
@@ -118,6 +141,7 @@ function renderStage() {
     contentEl.innerHTML = html;
     updateProgress();
     updateButtonStates();
+    window.scrollTo(0, 0); // Scroll to top on stage change
 }
 
 function renderTextStage(stage) {
@@ -195,6 +219,7 @@ function handleQuizSubmit() {
 }
 
 function updateProgress() {
+    if (!progressBar) return;
     const totalStages = topics.reduce((total, topic) => total + topic.stages.length, 0);
     if (totalStages === 0) return;
 
@@ -210,10 +235,16 @@ function updateProgress() {
 }
 
 function updateButtonStates() {
+    if (!prevBtn || !nextBtn) return;
     prevBtn.disabled = (currentTopicIndex === 0 && currentStageIndex === 0);
     const isLastStage = currentStageIndex >= topics[currentTopicIndex].stages.length - 1;
     const isLastTopic = currentTopicIndex >= topics.length - 1;
     nextBtn.disabled = (isLastTopic && isLastStage);
+}
+
+function closeSidebar() {
+    if (topicsNav) topicsNav.classList.remove('visible');
+    if (sidebarOverlay) sidebarOverlay.classList.add('hidden');
 }
 
 function nextStage() {
@@ -240,14 +271,16 @@ function prevStage() {
 
 function handleTopicLinkClick(event) {
     event.preventDefault();
-    if (event.target.tagName === 'A') {
-        const topicIndex = parseInt(event.target.dataset.topicIndex, 10);
+    let target = event.target;
+    if (target.tagName !== 'A') target = target.closest('a');
+    if (target && target.tagName === 'A') {
+        const topicIndex = parseInt(target.dataset.topicIndex, 10);
         if (!isNaN(topicIndex)) {
             currentTopicIndex = topicIndex;
             currentStageIndex = 0;
             renderStage();
             saveProgress();
-            topicsNav.classList.remove('visible');
+            closeSidebar();
         }
     }
 }
@@ -261,19 +294,21 @@ function shuffleArray(array) {
 }
 
 // --- Event Listeners ---
-nextBtn.addEventListener('click', nextStage);
-prevBtn.addEventListener('click', prevStage);
+if (nextBtn) nextBtn.addEventListener('click', nextStage);
+if (prevBtn) prevBtn.addEventListener('click', prevStage);
 
-topicsBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    topicsNav.classList.add('visible');
-});
+// Sidebar Toggle Logic
+if (topicsBtn) {
+    topicsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        topicsNav.classList.add('visible');
+        sidebarOverlay.classList.remove('hidden');
+    });
+}
 
-topicsCloseBtn.addEventListener('click', () => {
-    topicsNav.classList.remove('visible');
-});
-
-topicsList.addEventListener('click', handleTopicLinkClick);
+if (topicsCloseBtn) topicsCloseBtn.addEventListener('click', closeSidebar);
+if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
+if (topicsList) topicsList.addEventListener('click', handleTopicLinkClick);
 
 contentEl.addEventListener('click', function(event) {
     if (event.target.id === 'submit-quiz-btn') {
