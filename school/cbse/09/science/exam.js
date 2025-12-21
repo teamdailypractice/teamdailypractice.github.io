@@ -6,6 +6,21 @@ const examContentEl = document.getElementById('exam-content');
 const submitExamBtn = document.getElementById('submit-exam-btn');
 const timerEl = document.getElementById('timer');
 
+const chapterTitles = {
+    'ch1': 'Matter in Our Surroundings',
+    'ch2': 'Is Matter Around Us Pure?',
+    'ch3': 'Atoms and Molecules',
+    'ch4': 'Structure of the Atom',
+    'ch5': 'The Fundamental Unit of Life',
+    'ch6': 'Tissues',
+    'ch7': 'Motion',
+    'ch8': 'Force and Laws of Motion',
+    'ch9': 'Gravitation',
+    'ch10': 'Work and Energy',
+    'ch11': 'Sound',
+    'ch12': 'Improvement in Food Resources'
+};
+
 let allQuestions = [];
 let examQuestions = [];
 let timerInterval = null;
@@ -23,8 +38,9 @@ async function init() {
         const quizData = await response.json();
         allQuestions = quizData.topics.reduce((acc, topic) => acc.concat(topic.questions), []);
         
-        // Update header title if possible
-        document.querySelector('header h1').textContent = `Biology Exam (${currentChapter.toUpperCase()})`;
+        // Update header title
+        const title = chapterTitles[currentChapter] || currentChapter.toUpperCase();
+        document.querySelector('header h1').textContent = `Science Exam: ${title}`;
     } catch (error) {
         console.error('Error fetching quiz data:', error);
         alert('Failed to load quiz data for this chapter.');
