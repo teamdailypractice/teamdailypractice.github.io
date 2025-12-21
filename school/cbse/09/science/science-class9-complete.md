@@ -9,6 +9,97 @@ language: en-US
 
 This e-book contains the complete interactive lessons and question banks for Class 9 Science.
 
+# Definitions & Formulae
+
+## Chemistry
+
+**Matter:** Anything that has mass and occupies space.
+
+**Diffusion:** The intermixing of particles of two different types of matter on their own.
+
+**Latent Heat of Fusion:** The amount of heat energy required to change 1 kg of a solid into liquid at atmospheric pressure at its melting point.
+
+**Sublimation:** A change of state directly from solid to gas without changing into liquid state.
+
+**Pure Substance:** A substance consisting of a single type of particle, where all constituent particles are the same in their chemical nature.
+
+**Element:** A basic form of matter that cannot be broken down into simpler substances by chemical reactions.
+
+**Compound:** A substance composed of two or more elements, chemically combined with one another in a fixed proportion.
+
+**Atom:** The smallest particle of an element that cannot usually exist independently and retains all its chemical properties.
+
+**Molecule:** A group of two or more atoms that are chemically bonded together; the smallest particle of an element or compound capable of independent existence.
+
+**Valency:** The combining power (or capacity) of an element.
+
+**Isotopes:** Atoms of the same element, having the same atomic number but different mass numbers.
+
+**Isobars:** Atoms of different elements with different atomic numbers, which have the same mass number.
+
+## Physics
+
+**Displacement:** The shortest distance measured from the initial to the final position of an object.
+
+**Velocity:** The speed of an object moving in a definite direction.
+
+**Acceleration:** The measure of the change in the velocity of an object per unit time. a = (v - u) / t
+
+**Newton's First Law:** An object remains in a state of rest or of uniform motion in a straight line unless compelled to change that state by an applied force.
+
+**Inertia:** The natural tendency of an object to resist a change in its state of motion or of rest.
+
+**Momentum (p):** The product of an object's mass (m) and velocity (v). p = mv
+
+**Newton's Second Law:** The rate of change of momentum of an object is proportional to the applied unbalanced force in the direction of force. F = ma
+
+**Newton's Third Law:** To every action, there is an equal and opposite reaction, acting on two different objects simultaneously.
+
+**Universal Law of Gravitation:** F = G * (M * m) / d²
+
+**Thrust:** The force acting on an object perpendicular to the surface.
+
+**Pressure:** The thrust acting per unit area. Pressure = Thrust / Area
+
+**Archimedes' Principle:** When a body is immersed fully or partially in a fluid, it experiences an upward force that is equal to the weight of the fluid displaced by it.
+
+**Work:** The product of the force and displacement in the direction of the force. W = Fs
+
+**Kinetic Energy:** The energy possessed by an object due to its motion. Ek = ½mv²
+
+**Potential Energy:** The energy possessed by an object by virtue of its position or configuration. Ep = mgh
+
+**Power:** The rate of doing work or the rate of transfer of energy. P = W / t
+
+## Biology
+
+**Cell:** The fundamental structural and functional unit of living organisms.
+
+**Plasma Membrane:** The selectively permeable outermost covering of the cell that regulates the entry and exit of materials.
+
+**Osmosis:** The movement of water molecules through a selectively permeable membrane toward a higher solute concentration.
+
+**Nucleus:** The control center of the cell containing chromosomes and DNA (genetic information).
+
+**Prokaryotes:** Organisms whose cells lack a nuclear membrane (e.g., bacteria).
+
+**Eukaryotes:** Organisms with cells that have a nuclear membrane and membrane-enclosed organelles.
+
+**Tissue:** A group of cells that are similar in structure and work together to achieve a particular function.
+
+**Meristematic Tissue:** The dividing tissue in plants located only in certain specific regions of growth.
+
+**Xylem:** Complex permanent tissue in plants that transports water and minerals vertically.
+
+**Phloem:** Complex permanent tissue in plants that transports food from leaves to other parts.
+
+**Neuron:** The unit of nervous tissue, highly specialised for transmitting stimuli rapidly within the body.
+
+**Mitosis:** The process of cell division for growth, producing two identical daughter cells.
+
+**Meiosis:** The process of cell division for forming gametes, producing four new cells with half the number of chromosomes.
+
+
 # Chapter 1: Matter in Our Surroundings
 
 ## Introduction to Matter

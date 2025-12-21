@@ -7,15 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
+    <div id="app"><div id="sidebar-overlay" class="hidden"></div>
         <header>
             <h1>Downloads</h1>
-            <nav>
-                <a href="index.html">Dashboard</a>
-                <a href="#" id="nav-chapter-home">Chapter Home</a>
-                <a href="#" id="nav-exam">Exam</a>
-                <a href="#" id="nav-downloads" class="active">Downloads</a>
-            </nav>
+            <nav></nav>
         </header>
         <main id="download-content">
             <p>The following content is available for offline use.</p>
@@ -52,12 +47,7 @@
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const chapter = urlParams.get('chapter') || 'ch5'; // Default to ch5
-
-        // Update Nav Links
-        document.getElementById('nav-chapter-home').href = `chapter-${chapter.replace('ch', '')}.html?home=true`;
-        document.getElementById('nav-exam').href = `exam.html?chapter=${chapter}`;
-        document.getElementById('nav-downloads').href = `download.html?chapter=${chapter}`;
+        const chapter = urlParams.get('chapter') || localStorage.getItem('biology-last-chapter') || 'ch5'; 
 
         // Update Download Links
         document.getElementById('dl-article-pdf').href = `biology-${chapter}-article.pdf`;
@@ -68,5 +58,5 @@
 
         document.getElementById('article-title').textContent = `Article Content (${chapter.toUpperCase()})`;
     </script>
-</body>
+<script src="navbar.js"></script></body>
 </html>

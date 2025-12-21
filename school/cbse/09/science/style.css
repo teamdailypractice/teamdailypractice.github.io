@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
     line-height: 1.6;
@@ -23,23 +27,20 @@ body {
     top: 0;
     left: 0;
     width: 300px;
+    max-width: 85%;
     height: 100%;
     background: #fff;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    transform: translateX(-100%); /* Move completely off-screen */
-    transition: transform 0.3s ease-in-out;
-    z-index: 2000; /* Ensure it's on top of everything */
-    padding: 1rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
+    padding: 1.5rem;
+    margin: 0;
     overflow-y: auto;
 }
 
 #topics-nav.visible {
     transform: translateX(0);
-}
-
-/* Generic hidden class */
-.hidden {
-    display: none !important;
 }
 
 #topics-nav h2 {
@@ -60,38 +61,74 @@ body {
     background-color: #f0f0f0;
 }
 
-/* --- Main Content --- */
+/* Sidebar Overlay */
+#sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    transition: opacity 0.3s ease;
+}
+
+/* --- Main Content Layout --- */
 header {
     text-align: center;
     border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    padding: 3rem 1rem 1rem 1rem; /* Top padding to avoid absolute button overlap */
+    margin-bottom: 2rem;
     position: relative;
 }
 
 #topics-btn {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #eee;
-    color: #333;
-    font-size: 1rem;
+    top: 15px;
+    left: 15px;
+    background: #4CAF50;
+    color: white;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav {
     margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav a {
-    margin: 0 1rem;
+    margin: 0 0.5rem;
     text-decoration: none;
-    color: #333;
+    color: #666;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+nav a:hover {
+    color: #4CAF50;
+    background: #f1f8e9;
+}
+
+nav a.active {
+    color: white;
+    background: #4CAF50;
 }
 
 #progress-container {
     width: 100%;
     background-color: #ddd;
     border-radius: 5px;
+    margin-top: 1rem;
 }
 
 #progress-bar {
@@ -103,17 +140,24 @@ nav a {
     color: white;
     line-height: 20px;
     transition: width 0.3s;
+    font-size: 12px;
 }
 
 main {
     padding: 1rem 0;
 }
 
+main h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.8rem;
+}
+
 main h3 {
     color: #4CAF50;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 0.5rem;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 
 footer {
@@ -124,6 +168,7 @@ footer {
     margin-top: 1rem;
 }
 
+/* --- Shared Button Styles --- */
 button {
     padding: 0.5rem 1rem;
     border: none;
@@ -143,6 +188,7 @@ button:hover:not(:disabled) {
     background-color: #45a049;
 }
 
+/* --- Quiz Styles --- */
 .quiz-question {
     margin-bottom: 1.5rem;
     padding: 1rem;
@@ -165,11 +211,63 @@ button:hover:not(:disabled) {
     font-weight: bold;
 }
 
-/* --- Exam Mode Styles --- */
-.hidden {
-    display: none !important;
+/* --- Celebration Modal --- */
+#celebration-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3);
+    z-index: 3000;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+#celebration-modal.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#celebration-modal h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+#celebration-modal .emoji {
+    font-size: 4rem;
+    display: block;
+    margin: 1rem 0;
+}
+
+/* --- Toast Notification --- */
+#toast-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    z-index: 2500;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+#toast-notification.show {
+    opacity: 1;
+}
+
+/* --- Exam Mode Styles --- */
 .mode-container {
     text-align: center;
     padding: 2rem;
@@ -231,4 +329,37 @@ button:hover:not(:disabled) {
     margin-bottom: 20px;
     border-radius: 5px;
     border-left: 4px solid #2196F3;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+/* --- Responsive Tweaks --- */
+@media (max-width: 600px) {
+    header {
+        padding: 1rem; /* Smaller padding for mobile */
+    }
+    #topics-btn {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    #app {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
+    }
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    #topics-nav {
+        width: 280px;
+    }
 }

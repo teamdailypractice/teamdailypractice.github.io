@@ -23,13 +23,23 @@ function getStorageKey() {
     return `biology-${currentChapter}-progress`;
 }
 
-function saveProgress() {
+function saveProgress(quizPassed = false) {
+    const storageKey = getStorageKey();
+    let meta = JSON.parse(localStorage.getItem(storageKey + '-meta') || '{"quizzesPassed": 0}');
+    
+    if (quizPassed) meta.quizzesPassed++;
+    meta.lastActivity = new Date().toISOString().split('T')[0];
+    meta.totalTopics = topics.length;
+    meta.totalStages = topics.reduce((sum, t) => sum + t.stages.length, 0);
+
     const progress = {
         version: APP_VERSION,
         topic: currentTopicIndex,
         stage: currentStageIndex
     };
-    localStorage.setItem(getStorageKey(), JSON.stringify(progress));
+    
+    localStorage.setItem(storageKey, JSON.stringify(progress));
+    localStorage.setItem(storageKey + '-meta', JSON.stringify(meta));
 }
 
 function purgeOldStorage() {
@@ -40,28 +50,32 @@ function purgeOldStorage() {
 
 function loadAndValidateProgress() {
     try {
-        purgeOldStorage();
         const savedProgress = localStorage.getItem(getStorageKey());
         if (savedProgress) {
             const progress = JSON.parse(savedProgress);
             
-            // If version matches and indices are valid, load them
+            // Validate: Only load if it matches current app structure
             if (progress.version === APP_VERSION && 
                 topics[progress.topic] && 
                 topics[progress.topic].stages[progress.stage]) {
                 currentTopicIndex = progress.topic;
                 currentStageIndex = progress.stage;
+                console.log("Progress loaded successfully.");
                 return;
+            } else {
+                console.warn("Saved progress is for an older version. Starting fresh for this session.");
             }
         }
     } catch (e) {
-        console.error('Error loading progress:', e);
+        console.error('Error reading progress:', e);
     }
-    // Default to start if invalid or missing
-    resetProgress();
+    // Default session state to start, but DON'T overwrite localStorage yet
+    currentTopicIndex = 0;
+    currentStageIndex = 0;
 }
 
 function resetProgress() {
+    // This is now only called manually or when the user explicitly resets
     currentTopicIndex = 0;
     currentStageIndex = 0;
     saveProgress();
@@ -186,6 +200,45 @@ function renderQuizStage(stage) {
 
 // --- UI Updates & Event Handlers ---
 
+function showToast(message) {
+    let toast = document.getElementById('toast-notification');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast-notification';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+function showCelebration(title, message, emoji = '🎉') {
+    let modal = document.getElementById('celebration-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'celebration-modal';
+        document.body.appendChild(modal);
+    }
+    modal.innerHTML = `
+        <h2>${title}</h2>
+        <span class="emoji">${emoji}</span>
+        <p>${message}</p>
+        <button onclick="this.parentElement.classList.remove('show')">Awesome!</button>
+    `;
+    
+    // Add overlay if missing
+    let overlay = document.getElementById('sidebar-overlay');
+    if (overlay) overlay.classList.remove('hidden');
+    
+    modal.classList.add('show');
+    
+    // Auto hide after 5 seconds if not closed
+    setTimeout(() => {
+        modal.classList.remove('show');
+        if (overlay) overlay.classList.add('hidden');
+    }, 5000);
+}
+
 function handleQuizSubmit() {
     const topic = topics[currentTopicIndex];
     const topicQuiz = quizData.topics.find(t => t.title === topic.title);
@@ -207,15 +260,19 @@ function handleQuizSubmit() {
                 feedbackEl.style.color = 'red';
                 questionEl.style.borderLeft = '3px solid red';
             }
-        } else {
-            feedbackEl.textContent = 'You did not answer this question.';
-            feedbackEl.style.color = 'orange';
-            questionEl.style.borderLeft = '3px solid orange';
         }
     });
 
     document.getElementById('submit-quiz-btn').style.display = 'none';
-    alert(`You scored ${score} out of ${topicQuiz.questions.length}!`);
+    
+    const percentage = (score / topicQuiz.questions.length) * 100;
+    if (percentage >= 80) {
+        showCelebration('Excellent!', `You scored ${score}/${topicQuiz.questions.length} (${percentage}%). Great job!`, '🌟');
+        saveProgress(true); // Passed
+    } else {
+        alert(`You scored ${score} out of ${topicQuiz.questions.length}!`);
+        saveProgress(false); // Finished but not 80%
+    }
 }
 
 function updateProgress() {
@@ -250,9 +307,11 @@ function closeSidebar() {
 function nextStage() {
     if (currentStageIndex < topics[currentTopicIndex].stages.length - 1) {
         currentStageIndex++;
+        showToast('Stage Complete! Keep going! 🚀');
     } else if (currentTopicIndex < topics.length - 1) {
         currentTopicIndex++;
         currentStageIndex = 0;
+        showCelebration('Topic Complete!', `You've mastered "${topics[currentTopicIndex-1].title}"!`, '🏆');
     }
     renderStage();
     saveProgress();

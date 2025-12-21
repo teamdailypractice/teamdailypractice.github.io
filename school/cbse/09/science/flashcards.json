@@ -1,0 +1,51 @@
+{
+    "subjects": {
+        "Chemistry": [
+            { "term": "Matter", "definition": "Anything that has mass and occupies space." },
+            { "term": "Diffusion", "definition": "The intermixing of particles of two different types of matter on their own." },
+            { "term": "Latent Heat of Fusion", "definition": "The amount of heat energy required to change 1 kg of a solid into liquid at atmospheric pressure at its melting point." },
+            { "term": "Sublimation", "definition": "A change of state directly from solid to gas without changing into liquid state." },
+            { "term": "Pure Substance", "definition": "A substance consisting of a single type of particle, where all constituent particles are the same in their chemical nature." },
+            { "term": "Element", "definition": "A basic form of matter that cannot be broken down into simpler substances by chemical reactions." },
+            { "term": "Compound", "definition": "A substance composed of two or more elements, chemically combined with one another in a fixed proportion." },
+            { "term": "Atom", "definition": "The smallest particle of an element that cannot usually exist independently and retains all its chemical properties." },
+            { "term": "Molecule", "definition": "A group of two or more atoms that are chemically bonded together; the smallest particle of an element or compound capable of independent existence." },
+            { "term": "Valency", "definition": "The combining power (or capacity) of an element." },
+            { "term": "Isotopes", "definition": "Atoms of the same element, having the same atomic number but different mass numbers." },
+            { "term": "Isobars", "definition": "Atoms of different elements with different atomic numbers, which have the same mass number." }
+        ],
+        "Physics": [
+            { "term": "Displacement", "definition": "The shortest distance measured from the initial to the final position of an object." },
+            { "term": "Velocity", "definition": "The speed of an object moving in a definite direction." },
+            { "term": "Acceleration", "definition": "The measure of the change in the velocity of an object per unit time. a = (v - u) / t" },
+            { "term": "Newton's First Law", "definition": "An object remains in a state of rest or of uniform motion in a straight line unless compelled to change that state by an applied force." },
+            { "term": "Inertia", "definition": "The natural tendency of an object to resist a change in its state of motion or of rest." },
+            { "term": "Momentum (p)", "definition": "The product of an object's mass (m) and velocity (v). p = mv" },
+            { "term": "Newton's Second Law", "definition": "The rate of change of momentum of an object is proportional to the applied unbalanced force in the direction of force. F = ma" },
+            { "term": "Newton's Third Law", "definition": "To every action, there is an equal and opposite reaction, acting on two different objects simultaneously." },
+            { "term": "Universal Law of Gravitation", "definition": "F = G * (M * m) / d²" },
+            { "term": "Thrust", "definition": "The force acting on an object perpendicular to the surface." },
+            { "term": "Pressure", "definition": "The thrust acting per unit area. Pressure = Thrust / Area" },
+            { "term": "Archimedes' Principle", "definition": "When a body is immersed fully or partially in a fluid, it experiences an upward force that is equal to the weight of the fluid displaced by it." },
+            { "term": "Work", "definition": "The product of the force and displacement in the direction of the force. W = Fs" },
+            { "term": "Kinetic Energy", "definition": "The energy possessed by an object due to its motion. Ek = ½mv²" },
+            { "term": "Potential Energy", "definition": "The energy possessed by an object by virtue of its position or configuration. Ep = mgh" },
+            { "term": "Power", "definition": "The rate of doing work or the rate of transfer of energy. P = W / t" }
+        ],
+        "Biology": [
+            { "term": "Cell", "definition": "The fundamental structural and functional unit of living organisms." },
+            { "term": "Plasma Membrane", "definition": "The selectively permeable outermost covering of the cell that regulates the entry and exit of materials." },
+            { "term": "Osmosis", "definition": "The movement of water molecules through a selectively permeable membrane toward a higher solute concentration." },
+            { "term": "Nucleus", "definition": "The control center of the cell containing chromosomes and DNA (genetic information)." },
+            { "term": "Prokaryotes", "definition": "Organisms whose cells lack a nuclear membrane (e.g., bacteria)." },
+            { "term": "Eukaryotes", "definition": "Organisms with cells that have a nuclear membrane and membrane-enclosed organelles." },
+            { "term": "Tissue", "definition": "A group of cells that are similar in structure and work together to achieve a particular function." },
+            { "term": "Meristematic Tissue", "definition": "The dividing tissue in plants located only in certain specific regions of growth." },
+            { "term": "Xylem", "definition": "Complex permanent tissue in plants that transports water and minerals vertically." },
+            { "term": "Phloem", "definition": "Complex permanent tissue in plants that transports food from leaves to other parts." },
+            { "term": "Neuron", "definition": "The unit of nervous tissue, highly specialised for transmitting stimuli rapidly within the body." },
+            { "term": "Mitosis", "definition": "The process of cell division for growth, producing two identical daughter cells." },
+            { "term": "Meiosis", "definition": "The process of cell division for forming gametes, producing four new cells with half the number of chromosomes." }
+        ]
+    }
+}

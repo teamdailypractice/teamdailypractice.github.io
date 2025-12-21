@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track My Progress - Science Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #4CAF50;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .stat-box {
+            background: #f1f8e9;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .overall-summary {
+            background: #4CAF50;
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .overall-summary h2 { margin: 0; font-size: 2.5rem; }
+        .overall-summary p { margin: 0.5rem 0 0 0; opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>My Learning Progress</h1>
+            <nav></nav>
+        </header>
+
+        <main>
+            <div class="overall-summary">
+                <h2 id="total-percent">0%</h2>
+                <p>Overall Curriculum Mastery</p>
+            </div>
+
+            <div id="progress-list">
+                <!-- Progress cards will be injected here -->
+            </div>
+        </main>
+    </div>
+    <script src="progress.js"></script>
+<script src="navbar.js"></script></body>
+</html>

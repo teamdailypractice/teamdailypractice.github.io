@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body data-chapter="ch7">
-    <div id="app">
+    <div id="app"><div id="sidebar-overlay" class="hidden"></div>
         <div id="topics-nav">
             <button id="topics-close-btn" style="float: right; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
             <h2>Table of Contents</h2>
@@ -18,12 +18,7 @@
             <header>
                 <button id="topics-btn">☰ Topics</button>
                 <h1>Chapter 7: Motion</h1>
-                <nav>
-                    <a href="index.html">Dashboard</a>
-                    <a href="chapter-7.html?home=true">Chapter Home</a>
-                    <a href="exam.html?chapter=ch7">Exam</a>
-                    <a href="download.html?chapter=ch7">Downloads</a>
-                </nav>
+                <nav></nav>
                 <div id="progress-container">
                     <div id="progress-bar"></div>
                 </div>
@@ -38,5 +33,5 @@
         </div>
     </div>
     <script src="app.js"></script>
-</body>
+<script src="navbar.js"></script></body>
 </html>
