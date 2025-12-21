@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Work and Energy",
+            "questions": [
+                { "question": "What is needed for life processes?", "options": ["Energy", "Sleep", "Darkness", "Stillness"], "answer": "Energy" },
+                { "question": "Where does energy for living beings come from?", "options": ["Food", "Sun directly", "Soil", "Water only"], "answer": "Food" },
+                { "question": "Do machines need energy?", "options": ["Yes", "No", "Only large ones", "Only small ones"], "answer": "Yes" },
+                { "question": "Which activity requires more energy?", "options": ["Running", "Sleeping", "Reading", "Sitting"], "answer": "Running" },
+                { "question": "Engines often require fuel like?", "options": ["Petrol and diesel", "Water", "Sand", "Stones"], "answer": "Petrol and diesel" }
+            ]
+        },
+        {
+            "title": "Scientific Conception of Work",
+            "questions": [
+                { "question": "Is reading a book considered work in science?", "options": ["No", "Yes", "Sometimes", "Only if loud"], "answer": "No" },
+                { "question": "If you push a wall and it doesn't move, is work done?", "options": ["No", "Yes", "A lot of work", "Negative work"], "answer": "No" },
+                { "question": "Work in science depends on?", "options": ["Force and displacement", "Effort", "Time spent", "Sweat"], "answer": "Force and displacement" },
+                { "question": "Mental labor is considered work in science?", "options": ["No", "Yes", "Depends on subject", "Only math"], "answer": "No" },
+                { "question": "Standing with a heavy load is?", "options": ["No work", "Hard work", "Positive work", "Maximum work"], "answer": "No work" }
+            ]
+        },
+        {
+            "title": "Two Conditions for Work",
+            "questions": [
+                { "question": "What must act on an object for work to be done?", "options": ["A force", "A thought", "A shadow", "A sound"], "answer": "A force" },
+                { "question": "What must happen to the object for work to be done?", "options": ["It must be displaced", "It must stay still", "It must heat up", "It must change color"], "answer": "It must be displaced" },
+                { "question": "If a bullock pulls a cart and it moves, is work done?", "options": ["Yes", "No", "Maybe", "Only if fast"], "answer": "Yes" },
+                { "question": "Is work done if displacement is zero?", "options": ["No", "Yes", "Infinite", "Cannot say"], "answer": "No" },
+                { "question": "Lifting a book involves work because?", "options": ["Force is applied and it moves", "Book is heavy", "Gravity exists", "It takes time"], "answer": "Force is applied and it moves" }
+            ]
+        },
+        {
+            "title": "Work Done by a Constant Force",
+            "questions": [
+                { "question": "Formula for work is?", "options": ["W = F x s", "W = F / s", "W = s / F", "W = F + s"], "answer": "W = F x s" },
+                { "question": "Work is a scalar or vector quantity?", "options": ["Scalar", "Vector", "Neither", "Both"], "answer": "Scalar" },
+                { "question": "Unit of work is?", "options": ["Joule", "Newton", "Watt", "Pascal"], "answer": "Joule" },
+                { "question": "1 Joule is defined as?", "options": ["1 N force displacing by 1 m", "1 kg mass moving 1 m", "1 N force for 1 sec", "1 Watt power"], "answer": "1 N force displacing by 1 m" },
+                { "question": "If F=0, work done is?", "options": ["Zero", "Infinite", "One", "Constant"], "answer": "Zero" }
+            ]
+        },
+        {
+            "title": "Positive and Negative Work",
+            "questions": [
+                { "question": "Work is positive when force acts in?", "options": ["Direction of displacement", "Opposite direction", "Perpendicular direction", "Random direction"], "answer": "Direction of displacement" },
+                { "question": "Work is negative when force acts in?", "options": ["Opposite direction to displacement", "Same direction", "Any direction", "Vertical direction"], "answer": "Opposite direction to displacement" },
+                { "question": "Gravity doing work on a ball thrown upwards is?", "options": ["Negative", "Positive", "Zero", "Undefined"], "answer": "Negative" },
+                { "question": "Gravity doing work on a falling ball is?", "options": ["Positive", "Negative", "Zero", "Variable"], "answer": "Positive" },
+                { "question": "Force of friction always does?", "options": ["Negative work", "Positive work", "Zero work", "Maximum work"], "answer": "Negative work" }
+            ]
+        },
+        {
+            "title": "Energy",
+            "questions": [
+                { "question": "Energy is defined as?", "options": ["Capacity to do work", "Rate of work", "Force applied", "Momentum"], "answer": "Capacity to do work" },
+                { "question": "Unit of energy is?", "options": ["Joule", "Newton", "Watt", "Pascal"], "answer": "Joule" },
+                { "question": "Object doing work?", "options": ["Loses energy", "Gains energy", "Keeps energy", "Destroys energy"], "answer": "Loses energy" },
+                { "question": "Object on which work is done?", "options": ["Gains energy", "Loses energy", "Has no energy", "Stops moving"], "answer": "Gains energy" },
+                { "question": "Biggest natural source of energy is?", "options": ["Sun", "Moon", "Earth", "Ocean"], "answer": "Sun" }
+            ]
+        },
+        {
+            "title": "Forms of Energy",
+            "questions": [
+                { "question": "Which is NOT a form of energy?", "options": ["Force", "Heat", "Light", "Chemical"], "answer": "Force" },
+                { "question": "Mechanical energy is sum of?", "options": ["Kinetic and Potential energy", "Heat and Light", "Chemical and Electrical", "Sound and Heat"], "answer": "Kinetic and Potential energy" },
+                { "question": "Energy stored in a battery is?", "options": ["Chemical energy", "Kinetic energy", "Heat energy", "Mechanical energy"], "answer": "Chemical energy" },
+                { "question": "Energy from a bulb includes?", "options": ["Light and heat", "Sound only", "Kinetic only", "Potential only"], "answer": "Light and heat" },
+                { "question": "Energy of a moving car is?", "options": ["Kinetic energy", "Potential energy", "Chemical energy", "Nuclear energy"], "answer": "Kinetic energy" }
+            ]
+        },
+        {
+            "title": "Kinetic Energy",
+            "questions": [
+                { "question": "Kinetic energy is due to?", "options": ["Motion", "Position", "Shape", "Temperature"], "answer": "Motion" },
+                { "question": "A faster moving object has?", "options": ["More kinetic energy", "Less kinetic energy", "Zero kinetic energy", "Same energy"], "answer": "More kinetic energy" },
+                { "question": "Which possesses kinetic energy?", "options": ["Blowing wind", "Stretched bow", "Water in dam", "Compressed spring"], "answer": "Blowing wind" },
+                { "question": "Kinetic energy depends on?", "options": ["Mass and velocity", "Mass and height", "Weight and height", "Force and time"], "answer": "Mass and velocity" },
+                { "question": "Can kinetic energy be negative?", "options": ["No", "Yes", "Sometimes", "Only in space"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "Formula for Kinetic Energy",
+            "questions": [
+                { "question": "Formula for kinetic energy is?", "options": ["1/2 mv^2", "mgh", "mv", "ma"], "answer": "1/2 mv^2" },
+                { "question": "If mass doubles, kinetic energy?", "options": ["Doubles", "Halves", "Quadruples", "Remains same"], "answer": "Doubles" },
+                { "question": "If velocity doubles, kinetic energy?", "options": ["Quadruples", "Doubles", "Halves", "Triples"], "answer": "Quadruples" },
+                { "question": "Work done to stop a moving object equals?", "options": ["Its kinetic energy", "Its potential energy", "Its mass", "Its weight"], "answer": "Its kinetic energy" },
+                { "question": "If velocity is zero, kinetic energy is?", "options": ["Zero", "Infinite", "Equal to mass", "Maximum"], "answer": "Zero" }
+            ]
+        },
+        {
+            "title": "Potential Energy",
+            "questions": [
+                { "question": "Potential energy is due to?", "options": ["Position or configuration", "Motion", "Speed", "Time"], "answer": "Position or configuration" },
+                { "question": "Energy in a stretched rubber band is?", "options": ["Potential energy", "Kinetic energy", "Heat energy", "Sound energy"], "answer": "Potential energy" },
+                { "question": "Water stored in a dam has?", "options": ["Potential energy", "Kinetic energy", "Electrical energy", "Solar energy"], "answer": "Potential energy" },
+                { "question": "Winding a toy car stores energy in its?", "options": ["Spring", "Wheels", "Body", "Key"], "answer": "Spring" },
+                { "question": "Released arrow from a bow gets energy from?", "options": ["Potential energy of bow", "Kinetic energy of hand", "Gravity", "Wind"], "answer": "Potential energy of bow" }
+            ]
+        },
+        {
+            "title": "Potential Energy of an Object at a Height",
+            "questions": [
+                { "question": "Formula for gravitational potential energy is?", "options": ["mgh", "1/2 mv^2", "ma", "mg"], "answer": "mgh" },
+                { "question": "Work done against gravity depends on?", "options": ["Vertical height difference", "Path taken", "Time taken", "Speed of lifting"], "answer": "Vertical height difference" },
+                { "question": "If height doubles, potential energy?", "options": ["Doubles", "Halves", "Quadruples", "Remains same"], "answer": "Doubles" },
+                { "question": "Energy is gained because work is done against?", "options": ["Gravity", "Friction", "Air resistance", "Magnetism"], "answer": "Gravity" },
+                { "question": "The value of g is approximately?", "options": ["9.8 m/s^2", "100 m/s^2", "1 m/s^2", "0.1 m/s^2"], "answer": "9.8 m/s^2" }
+            ]
+        },
+        {
+            "title": "Interconversion of Energy",
+            "questions": [
+                { "question": "Can energy change forms?", "options": ["Yes", "No", "Only in machines", "Never"], "answer": "Yes" },
+                { "question": "Green plants convert solar energy to?", "options": ["Chemical energy", "Kinetic energy", "Heat energy", "Nuclear energy"], "answer": "Chemical energy" },
+                { "question": "An electric iron converts electrical energy to?", "options": ["Heat energy", "Sound energy", "Chemical energy", "Potential energy"], "answer": "Heat energy" },
+                { "question": "Hydroelectric plants convert potential energy of water to?", "options": ["Electrical energy", "Chemical energy", "Nuclear energy", "Solar energy"], "answer": "Electrical energy" },
+                { "question": "Burning coal converts chemical energy to?", "options": ["Heat and light", "Electricity only", "Sound", "Potential energy"], "answer": "Heat and light" }
+            ]
+        },
+        {
+            "title": "Law of Conservation of Energy",
+            "questions": [
+                { "question": "Law of Conservation of Energy states energy can?", "options": ["Neither be created nor destroyed", "Be created", "Be destroyed", "Disappear"], "answer": "Neither be created nor destroyed" },
+                { "question": "Total energy during transformation?", "options": ["Remains constant", "Increases", "Decreases", "Becomes zero"], "answer": "Remains constant" },
+                { "question": "During free fall, potential energy converts to?", "options": ["Kinetic energy", "Heat energy", "Sound energy", "Chemical energy"], "answer": "Kinetic energy" },
+                { "question": "Sum of kinetic and potential energy is?", "options": ["Mechanical energy", "Total energy", "Chemical energy", "Heat energy"], "answer": "Mechanical energy" },
+                { "question": "Just before hitting ground, a falling object has maximum?", "options": ["Kinetic energy", "Potential energy", "Height", "Rest"], "answer": "Kinetic energy" }
+            ]
+        },
+        {
+            "title": "Rate of Doing Work (Power)",
+            "questions": [
+                { "question": "Power is defined as?", "options": ["Rate of doing work", "Capacity to do work", "Total work done", "Force applied"], "answer": "Rate of doing work" },
+                { "question": "Formula for power is?", "options": ["Work / Time", "Work x Time", "Force x Dist", "Mass x Vel"], "answer": "Work / Time" },
+                { "question": "SI unit of power is?", "options": ["Watt", "Joule", "Newton", "Pascal"], "answer": "Watt" },
+                { "question": "1 Watt equals?", "options": ["1 Joule/second", "1 Joule/minute", "1 Newton/meter", "1 kg m/s"], "answer": "1 Joule/second" },
+                { "question": "1 kilowatt equals?", "options": ["1000 Watts", "100 Watts", "10 Watts", "10000 Watts"], "answer": "1000 Watts" }
+            ]
+        },
+        {
+            "title": "Commercial Unit of Energy",
+            "questions": [
+                { "question": "Commercial unit of energy is?", "options": ["Kilowatt-hour (kWh)", "Joule", "Watt", "Newton"], "answer": "Kilowatt-hour (kWh)" },
+                { "question": "1 kWh is commonly known as?", "options": ["1 unit", "1 volt", "1 amp", "1 degree"], "answer": "1 unit" },
+                { "question": "1 kWh equals how many Joules?", "options": ["3.6 x 10^6 J", "1000 J", "3600 J", "10^6 J"], "answer": "3.6 x 10^6 J" },
+                { "question": "Energy used by 1000W appliance in 1 hour is?", "options": ["1 kWh", "100 kWh", "0.1 kWh", "10 kWh"], "answer": "1 kWh" },
+                { "question": "Is kWh a unit of power or energy?", "options": ["Energy", "Power", "Force", "Time"], "answer": "Energy" }
+            ]
+        }
+    ]
+}

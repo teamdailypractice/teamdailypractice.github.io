@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Structure of Atom",
+            "questions": [
+                { "question": "What are the fundamental building blocks of matter?", "options": ["Atoms and molecules", "Cells", "Tissues", "Organs"], "answer": "Atoms and molecules" },
+                { "question": "Did Dalton propose that atoms are indivisible?", "options": ["Yes", "No", "Maybe", "Only for gases"], "answer": "Yes" },
+                { "question": "Are atoms really indivisible?", "options": ["No, they have smaller constituents", "Yes, absolutely", "Only hydrogen atoms", "Only metal atoms"], "answer": "No, they have smaller constituents" },
+                { "question": "What makes atoms of different elements different?", "options": ["Different constituents", "Color", "Smell", "Taste"], "answer": "Different constituents" },
+                { "question": "When did scientists face the challenge of revealing atom structure?", "options": ["End of 19th century", "End of 20th century", "Beginning of 18th century", "Middle of 19th century"], "answer": "End of 19th century" }
+            ]
+        },
+        {
+            "title": "Charged Particles in Matter",
+            "questions": [
+                { "question": "What happens when you rub a glass rod with silk?", "options": ["It becomes electrically charged", "It melts", "It breaks", "Nothing"], "answer": "It becomes electrically charged" },
+                { "question": "Where does the charge come from?", "options": ["From within the atom", "From the air", "From the silk", "Magic"], "answer": "From within the atom" },
+                { "question": "Is an atom divisible?", "options": ["Yes", "No", "Sometimes", "Only in space"], "answer": "Yes" },
+                { "question": "Comb attracting paper pieces is an example of?", "options": ["Static electricity", "Magnetism", "Gravity", "Friction"], "answer": "Static electricity" },
+                { "question": "Charged particles indicate that atoms have?", "options": ["Internal structure", "No structure", "Hard shell", "Liquid core"], "answer": "Internal structure" }
+            ]
+        },
+        {
+            "title": "Discovery of Sub-atomic Particles",
+            "questions": [
+                { "question": "Who identified the electron?", "options": ["J.J. Thomson", "E. Goldstein", "Rutherford", "Bohr"], "answer": "J.J. Thomson" },
+                { "question": "Canal rays led to the discovery of?", "options": ["Proton", "Electron", "Neutron", "Nucleus"], "answer": "Proton" },
+                { "question": "What is the charge of a proton?", "options": ["Positive", "Negative", "Neutral", "Variable"], "answer": "Positive" },
+                { "question": "The mass of a proton is approximately ___ times that of an electron.", "options": ["2000", "100", "10", "10000"], "answer": "2000" },
+                { "question": "In general, an electron is represented as?", "options": ["e-", "p+", "n", "E"], "answer": "e-" }
+            ]
+        },
+        {
+            "title": "The Structure of an Atom",
+            "questions": [
+                { "question": "Dalton's theory failed because?", "options": ["Atom is divisible", "Atom is indivisible", "Matter is continuous", "Elements are same"], "answer": "Atom is divisible" },
+                { "question": "Which particles are inside the atom?", "options": ["Electrons and protons", "Only electrons", "Only protons", "Dust"], "answer": "Electrons and protons" },
+                { "question": "Who was the first to propose a model for atom structure?", "options": ["J.J. Thomson", "Rutherford", "Bohr", "Dalton"], "answer": "J.J. Thomson" },
+                { "question": "Understanding atom structure required?", "options": ["New models", "Better microscopes", "More elements", "Less elements"], "answer": "New models" },
+                { "question": "Protons are located?", "options": ["In the interior of the atom", "On the surface", "Outside the atom", "Nowhere"], "answer": "In the interior of the atom" }
+            ]
+        },
+        {
+            "title": "Thomson’s Model of an Atom",
+            "questions": [
+                { "question": "Thomson compared the atom to a?", "options": ["Christmas pudding", "Solar system", "Brick wall", "Cloud"], "answer": "Christmas pudding" },
+                { "question": "In Thomson's model, the positive charge is?", "options": ["Spread all over like a sphere", "Concentrated in center", "Absent", "Negative"], "answer": "Spread all over like a sphere" },
+                { "question": "According to Thomson, the atom as a whole is?", "options": ["Electrically neutral", "Positively charged", "Negatively charged", "Unstable"], "answer": "Electrically neutral" },
+                { "question": "Electrons in Thomson's model are like?", "options": ["Seeds in a watermelon", "Planets around sun", "Birds in sky", "Fish in water"], "answer": "Seeds in a watermelon" },
+                { "question": "Did Thomson's model explain experimental results of other scientists?", "options": ["No", "Yes", "Perfectly", "Mostly"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "Rutherford’s Model of an Atom",
+            "questions": [
+                { "question": "Rutherford used which particles for his experiment?", "options": ["Alpha particles", "Beta particles", "Gamma rays", "X-rays"], "answer": "Alpha particles" },
+                { "question": "He selected a foil made of?", "options": ["Gold", "Silver", "Aluminium", "Copper"], "answer": "Gold" },
+                { "question": "Most alpha particles?", "options": ["Passed straight through", "Deflected back", "Stopped", "Disappeared"], "answer": "Passed straight through" },
+                { "question": "The positively charged centre is called?", "options": ["Nucleus", "Orbit", "Shell", "Proton"], "answer": "Nucleus" },
+                { "question": "The size of the nucleus is ___ compared to the atom.", "options": ["Very small", "Very large", "Equal", "Half"], "answer": "Very small" }
+            ]
+        },
+        {
+            "title": "Drawbacks of Rutherford’s Model",
+            "questions": [
+                { "question": "A particle in circular orbit would undergo?", "options": ["Acceleration", "Deceleration", "Rest", "Linear motion"], "answer": "Acceleration" },
+                { "question": "During acceleration, charged particles?", "options": ["Radiate energy", "Gain energy", "Stop moving", "Become neutral"], "answer": "Radiate energy" },
+                { "question": "If Rutherford's model was fully correct, atoms would be?", "options": ["Unstable", "Stable", "Invisible", "Solid"], "answer": "Unstable" },
+                { "question": "The revolving electron would eventually?", "options": ["Fall into the nucleus", "Escape the atom", "Stop moving", "Grow larger"], "answer": "Fall into the nucleus" },
+                { "question": "Are atoms actually stable?", "options": ["Yes", "No", "Sometimes", "Only in gas"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "Bohr’s Model of Atom",
+            "questions": [
+                { "question": "Bohr proposed that electrons revolve in?", "options": ["Discrete orbits", "Random paths", "Nucleus", "Straight lines"], "answer": "Discrete orbits" },
+                { "question": "While revolving in discrete orbits, electrons?", "options": ["Do not radiate energy", "Radiate energy", "Lose mass", "Gain charge"], "answer": "Do not radiate energy" },
+                { "question": "These orbits are also called?", "options": ["Energy levels", "Roads", "Tracks", "Waves"], "answer": "Energy levels" },
+                { "question": "Which letter represents the first shell?", "options": ["K", "L", "M", "N"], "answer": "K" },
+                { "question": "Bohr's model explained the?", "options": ["Stability of the atom", "Color of atom", "Weight of atom", "Speed of atom"], "answer": "Stability of the atom" }
+            ]
+        },
+        {
+            "title": "Neutrons",
+            "questions": [
+                { "question": "Who discovered the neutron?", "options": ["J. Chadwick", "Bohr", "Rutherford", "Thomson"], "answer": "J. Chadwick" },
+                { "question": "Neutrons have?", "options": ["No charge", "Positive charge", "Negative charge", "Variable charge"], "answer": "No charge" },
+                { "question": "Mass of a neutron is nearly equal to?", "options": ["Proton", "Electron", "Alpha particle", "Atom"], "answer": "Proton" },
+                { "question": "Neutrons are present in the nucleus of all atoms except?", "options": ["Hydrogen", "Helium", "Carbon", "Oxygen"], "answer": "Hydrogen" },
+                { "question": "Mass of an atom is sum of?", "options": ["Protons and neutrons", "Electrons and protons", "Electrons and neutrons", "Only protons"], "answer": "Protons and neutrons" }
+            ]
+        },
+        {
+            "title": "Distribution of Electrons",
+            "questions": [
+                { "question": "The maximum number of electrons in a shell is given by?", "options": ["2n^2", "n^2", "2n", "n"], "answer": "2n^2" },
+                { "question": "Max electrons in K shell (n=1) is?", "options": ["2", "8", "18", "1"], "answer": "2" },
+                { "question": "Max electrons in L shell (n=2) is?", "options": ["8", "2", "18", "32"], "answer": "8" },
+                { "question": "The outermost shell can hold a maximum of?", "options": ["8 electrons", "18 electrons", "2 electrons", "32 electrons"], "answer": "8 electrons" },
+                { "question": "Shells are filled in a?", "options": ["Step-wise manner", "Random manner", "Reverse manner", "Fast manner"], "answer": "Step-wise manner" }
+            ]
+        },
+        {
+            "title": "Valency",
+            "questions": [
+                { "question": "Electrons in the outermost shell are called?", "options": ["Valence electrons", "Core electrons", "Free electrons", "Nuclear electrons"], "answer": "Valence electrons" },
+                { "question": "Combining capacity of an atom is?", "options": ["Valency", "Atomicity", "Atomic mass", "Atomic number"], "answer": "Valency" },
+                { "question": "An outermost shell with 8 electrons possesses?", "options": ["An octet", "A doublet", "A triplet", "Zero"], "answer": "An octet" },
+                { "question": "If an atom has 1 electron in outermost shell, its valency is?", "options": ["1", "7", "0", "8"], "answer": "1" },
+                { "question": "If an atom has 7 electrons in outermost shell, its valency is?", "options": ["1", "7", "8", "0"], "answer": "1" }
+            ]
+        },
+        {
+            "title": "Atomic Number",
+            "questions": [
+                { "question": "Atomic number is denoted by?", "options": ["Z", "A", "N", "X"], "answer": "Z" },
+                { "question": "Atomic number is equal to?", "options": ["Number of protons", "Number of neutrons", "Number of electrons", "Mass number"], "answer": "Number of protons" },
+                { "question": "Elements are defined by?", "options": ["Number of protons", "Number of neutrons", "Mass", "Valency"], "answer": "Number of protons" },
+                { "question": "Atomic number of Carbon is?", "options": ["6", "12", "14", "1"], "answer": "6" },
+                { "question": "Do all atoms of an element have the same atomic number?", "options": ["Yes", "No", "Sometimes", "Only isotopes"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "Mass Number",
+            "questions": [
+                { "question": "Mass number is denoted by?", "options": ["A", "Z", "M", "N"], "answer": "A" },
+                { "question": "Mass number is the sum of?", "options": ["Protons and neutrons", "Protons and electrons", "Neutrons and electrons", "Only protons"], "answer": "Protons and neutrons" },
+                { "question": "Protons and neutrons are collectively called?", "options": ["Nucleons", "Electrons", "Isotopes", "Ions"], "answer": "Nucleons" },
+                { "question": "Mass of Carbon (6 protons + 6 neutrons) is?", "options": ["12 u", "6 u", "18 u", "0 u"], "answer": "12 u" },
+                { "question": "Where does the mass of an atom reside?", "options": ["Nucleus", "Shells", "Electrons", "Space"], "answer": "Nucleus" }
+            ]
+        },
+        {
+            "title": "Isotopes",
+            "questions": [
+                { "question": "Isotopes have same atomic number but different?", "options": ["Mass numbers", "Protons", "Electrons", "Chemical properties"], "answer": "Mass numbers" },
+                { "question": "Protium, Deuterium, and Tritium are isotopes of?", "options": ["Hydrogen", "Carbon", "Oxygen", "Chlorine"], "answer": "Hydrogen" },
+                { "question": "Chemical properties of isotopes are?", "options": ["Similar", "Different", "Opposite", "None"], "answer": "Similar" },
+                { "question": "Isotope of Uranium is used in?", "options": ["Nuclear reactors", "Treating cancer", "Treating goitre", "Fertilizers"], "answer": "Nuclear reactors" },
+                { "question": "Isotope of Iodine is used for?", "options": ["Treating goitre", "Treating cancer", "Fuel", "Dating"], "answer": "Treating goitre" }
+            ]
+        },
+        {
+            "title": "Isobars",
+            "questions": [
+                { "question": "Isobars have same mass number but different?", "options": ["Atomic numbers", "Neutrons", "Protons", "All of the above"], "answer": "All of the above" },
+                { "question": "Calcium (20) and Argon (18) are?", "options": ["Isobars", "Isotopes", "Isomers", "Allotropes"], "answer": "Isobars" },
+                { "question": "Do isobars belong to the same element?", "options": ["No", "Yes", "Sometimes", "Always"], "answer": "No" },
+                { "question": "Isobars have different?", "options": ["Chemical properties", "Mass number", "Nucleon number", "Nothing"], "answer": "Chemical properties" },
+                { "question": "Mass number of Calcium and Argon pair is?", "options": ["40", "20", "18", "38"], "answer": "40" }
+            ]
+        }
+    ]
+}

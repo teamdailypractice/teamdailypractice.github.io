@@ -1,0 +1,279 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Structure of Atom",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Fundamental Building Blocks",
+                    "content": "Atoms and molecules are the fundamental building blocks of matter. Different kinds of matter exist because of different atoms constituting them."
+                },
+                {
+                    "type": "text",
+                    "heading": "Key Questions",
+                    "content": "What makes the atom of one element different from another? Are atoms really indivisible as proposed by Dalton, or are there smaller constituents inside?"
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Charged Particles in Matter",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Static Electricity",
+                    "content": "One of the first indications that atoms are not indivisible comes from studying static electricity. For example, rubbing a glass rod with silk cloth makes it electrically charged."
+                },
+                {
+                    "type": "text",
+                    "heading": "Source of Charge",
+                    "content": "This charge comes from within the atom, indicating that the atom is divisible and consists of charged particles."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Discovery of Sub-atomic Particles",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Electrons and Protons",
+                    "content": "By 1900, it was known that the atom contained at least one sub-atomic particle, the electron, identified by J.J. Thomson. E. Goldstein discovered canal rays, which were positively charged radiations that led to the discovery of the proton."
+                },
+                {
+                    "type": "text",
+                    "heading": "Properties",
+                    "content": "The proton has a charge equal in magnitude but opposite in sign to the electron. Its mass is approximately 2000 times that of the electron."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "The Structure of an Atom",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Failure of Dalton's Theory",
+                    "content": "The discovery of electrons and protons led to the failure of the aspect of Dalton's theory that atoms are indivisible. Scientists then needed to understand how these particles are arranged within an atom."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Thomson’s Model of an Atom",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Christmas Pudding Model",
+                    "content": "J.J. Thomson proposed that an atom was similar to a Christmas pudding or a watermelon. The positive charge is spread all over like the red edible part of a watermelon, while electrons are studded in it like seeds."
+                },
+                {
+                    "type": "text",
+                    "heading": "Neutrality",
+                    "content": "Thomson proposed that the negative and positive charges are equal in magnitude, making the atom electrically neutral."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Rutherford’s Model of an Atom",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Gold Foil Experiment",
+                    "content": "Ernest Rutherford designed an experiment where fast-moving alpha particles were made to fall on a thin gold foil. He expected small deflections."
+                },
+                {
+                    "type": "text",
+                    "heading": "Unexpected Results",
+                    "content": "Most alpha particles passed straight through. Some were deflected by small angles. Surprisingly, one out of every 12000 particles appeared to rebound."
+                },
+                {
+                    "type": "text",
+                    "heading": "Nuclear Model",
+                    "content": "Rutherford concluded that most space inside the atom is empty. The positive charge and mass are concentrated in a very small volume called the nucleus. Electrons revolve around the nucleus."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Drawbacks of Rutherford’s Model",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Instability Issue",
+                    "content": "The revolution of the electron in a circular orbit is not expected to be stable. Any particle in a circular orbit would undergo acceleration and radiate energy. Thus, the revolving electron would lose energy and fall into the nucleus, making the atom unstable. But we know atoms are stable."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Bohr’s Model of Atom",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Discrete Orbits",
+                    "content": "Neils Bohr overcame the objections to Rutherford's model. He postulated that only certain special orbits known as discrete orbits of electrons are allowed inside the atom."
+                },
+                {
+                    "type": "text",
+                    "heading": "No Energy Radiation",
+                    "content": "While revolving in these discrete orbits, the electrons do not radiate energy. These orbits or shells are called energy levels (K, L, M, N)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Neutrons",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Discovery",
+                    "content": "In 1932, J. Chadwick discovered another sub-atomic particle with no charge and a mass nearly equal to that of a proton. It was named the neutron."
+                },
+                {
+                    "type": "text",
+                    "heading": "Location",
+                    "content": "Neutrons are present in the nucleus of all atoms, except hydrogen. The mass of an atom is the sum of the masses of protons and neutrons."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Distribution of Electrons",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Bohr-Bury Scheme",
+                    "content": "The maximum number of electrons in a shell is given by the formula 2n^2. For example, K-shell (n=1) can hold 2 electrons, L-shell (n=2) can hold 8."
+                },
+                {
+                    "type": "text",
+                    "heading": "Rules",
+                    "content": "The maximum number of electrons in the outermost orbit is 8. Shells are filled in a step-wise manner."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Valency",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Combining Capacity",
+                    "content": "The electrons present in the outermost shell are called valence electrons. The combining capacity of an atom, or valency, is determined by the number of valence electrons."
+                },
+                {
+                    "type": "text",
+                    "heading": "Octet Rule",
+                    "content": "Atoms react to achieve a fully-filled outermost shell (usually 8 electrons), known as an octet. This is done by sharing, gaining, or losing electrons."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Atomic Number",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "The atomic number (Z) is defined as the total number of protons present in the nucleus of an atom. Elements are defined by the number of protons they possess."
+                },
+                {
+                    "type": "text",
+                    "heading": "Example",
+                    "content": "For Hydrogen, Z=1. For Carbon, Z=6. All atoms of an element have the same atomic number."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Mass Number",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Nucleons",
+                    "content": "The mass of an atom is practically due to protons and neutrons alone, which are present in the nucleus. They are called nucleons."
+                },
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "The mass number (A) is the sum of the total number of protons and neutrons present in the nucleus of an atom."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Isotopes",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Same Element, Different Mass",
+                    "content": "Isotopes are atoms of the same element having the same atomic number but different mass numbers. For example, Hydrogen has three isotopes: Protium, Deuterium, and Tritium."
+                },
+                {
+                    "type": "text",
+                    "heading": "Applications",
+                    "content": "Isotopes have similar chemical properties but different physical properties. Uranium isotope is used in nuclear reactors; Cobalt isotope is used in cancer treatment."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Isobars",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Different Elements, Same Mass",
+                    "content": "Atoms of different elements with different atomic numbers, which have the same mass number, are known as isobars. For example, Calcium (Z=20) and Argon (Z=18) both have a mass number of 40."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

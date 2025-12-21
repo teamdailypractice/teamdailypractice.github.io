@@ -1,0 +1,309 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Gravitation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Falling Objects",
+                    "content": "We observe that an object dropped from a height falls towards the earth. All planets go around the Sun, and the moon goes around the earth. Isaac Newton grasped that the same force is responsible for all these: the gravitational force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Newton's Insight",
+                    "content": "Newton famously thought: if the earth can attract an apple, can it not attract the moon? He conjectured that the same type of force is responsible in both cases."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Centripetal Force",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Circular Motion",
+                    "content": "The moon moves in a circular path around the earth. At every point, it changes direction, which involves a change in velocity or acceleration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Centre-Seeking Force",
+                    "content": "The force that causes this acceleration and keeps the body moving along the circular path is acting towards the centre. This force is called the centripetal (meaning 'centre-seeking') force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Absence of Force",
+                    "content": "In the absence of this force, the moon would fly off along a straight line tangential to the circular path."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Universal Law of Gravitation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Law",
+                    "content": "Every object in the universe attracts every other object with a force which is proportional to the product of their masses and inversely proportional to the square of the distance between them."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "F = G * (M * m) / d², where G is the universal gravitation constant, M and m are masses, and d is the distance."
+                },
+                {
+                    "type": "text",
+                    "heading": "Direction",
+                    "content": "The force is along the line joining the centres of two objects."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Free Fall",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Falling Under Gravity",
+                    "content": "Whenever objects fall towards the earth under the gravitational force alone, we say that the objects are in free fall."
+                },
+                {
+                    "type": "text",
+                    "heading": "Acceleration",
+                    "content": "While falling, there is no change in the direction of motion, but the magnitude of velocity changes. This change involves acceleration."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Acceleration due to Gravity",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "The acceleration during free fall is due to the earth's gravitational force. It is denoted by 'g'. The unit is m/s²."
+                },
+                {
+                    "type": "text",
+                    "heading": "Value of g",
+                    "content": "The value of g on the surface of the earth is approximately 9.8 m/s²."
+                },
+                {
+                    "type": "text",
+                    "heading": "Independence of Mass",
+                    "content": "The acceleration experienced by an object during free fall is independent of its mass. This means all objects, hollow or solid, big or small, fall at the same rate (in vacuum)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Motion under Gravity Equations",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Equations",
+                    "content": "Since g is constant near the earth, the equations of motion apply with 'a' replaced by 'g'. 1) v = u + gt, 2) s = ut + ½gt², 3) v² = u² + 2gs."
+                },
+                {
+                    "type": "text",
+                    "heading": "Sign Convention",
+                    "content": "Acceleration 'a' is taken as positive when it is in the direction of velocity (downward motion) and negative when it opposes motion (upward motion)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Mass vs Weight",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Mass",
+                    "content": "The mass of an object is the measure of its inertia. It remains the same everywhere, whether on earth, moon, or outer space. It is a constant quantity."
+                },
+                {
+                    "type": "text",
+                    "heading": "Weight",
+                    "content": "The weight of an object is the force with which it is attracted towards the earth. W = m * g. Weight has both magnitude and direction (downwards)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Variation",
+                    "content": "Weight depends on the value of g, so it changes from place to place. Mass does not change."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Weight on the Moon",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Lesser Attraction",
+                    "content": "The mass of the moon is less than that of the earth. Due to this, the moon exerts lesser force of attraction on objects."
+                },
+                {
+                    "type": "text",
+                    "heading": "Comparison",
+                    "content": "The weight of an object on the moon is about one-sixth (1/6th) of its weight on the earth."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Thrust and Pressure",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Thrust",
+                    "content": "The force acting on an object perpendicular to the surface is called thrust."
+                },
+                {
+                    "type": "text",
+                    "heading": "Pressure",
+                    "content": "The thrust on unit area is called pressure. Pressure = Thrust / Area. The SI unit is pascal (Pa)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Effect of Area",
+                    "content": "The same force acting on a smaller area exerts a larger pressure, and a smaller pressure on a larger area."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Pressure Examples",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Everyday Applications",
+                    "content": "Why does a nail have a pointed tip? The small area of the tip results in high pressure, allowing it to penetrate wood easily."
+                },
+                {
+                    "type": "text",
+                    "heading": "Other Examples",
+                    "content": "Knives have sharp edges to cut easily (small area, high pressure). Buildings have wide foundations to distribute weight over a large area (low pressure)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Buoyancy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Upward Force",
+                    "content": "When an object is immersed in a fluid (liquid or gas), it experiences an upward force exerted by the fluid. This is called the buoyant force or upthrust."
+                },
+                {
+                    "type": "text",
+                    "heading": "Magnitude",
+                    "content": "The magnitude of the buoyant force depends on the density of the fluid."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Why Objects Float or Sink",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Density Comparison",
+                    "content": "An iron nail sinks while a cork floats. This happens because of the difference in their densities relative to water."
+                },
+                {
+                    "type": "text",
+                    "heading": "Rule",
+                    "content": "Objects of density less than that of a liquid float on the liquid. Objects of density greater than that of a liquid sink in the liquid."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Archimedes' Principle",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Principle",
+                    "content": "When a body is immersed fully or partially in a fluid, it experiences an upward force that is equal to the weight of the fluid displaced by it."
+                },
+                {
+                    "type": "text",
+                    "heading": "Eureka!",
+                    "content": "Archimedes discovered this principle while taking a bath, noticing the water level rise."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Applications of Archimedes' Principle",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Ships and Submarines",
+                    "content": "It is used in designing ships and submarines to ensure they float and can control their depth."
+                },
+                {
+                    "type": "text",
+                    "heading": "Instruments",
+                    "content": "Lactometers (used to determine purity of milk) and hydrometers (used for determining density of liquids) are based on this principle."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Summary of Gravitation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Key Points",
+                    "content": "The Law of Gravitation explains the force between any two objects. Weight varies with location; mass is constant. Objects float if less dense than the fluid."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

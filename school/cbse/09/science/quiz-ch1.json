@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Matter",
+            "questions": [
+                { "question": "What is matter?", "options": ["Anything that has mass and occupies space", "Only living things", "Only solid things", "Ideas and thoughts"], "answer": "Anything that has mass and occupies space" },
+                { "question": "The SI unit of mass is?", "options": ["kilogram (kg)", "gram (g)", "milligram (mg)", "tonne"], "answer": "kilogram (kg)" },
+                { "question": "The SI unit of volume is?", "options": ["cubic metre (m³)", "litre (L)", "millilitre (mL)", "cubic centimetre (cm³)"], "answer": "cubic metre (m³)" },
+                { "question": "Early Indian philosophers classified matter into?", "options": ["Five basic elements (Panch Tatva)", "Three states", "Atoms and molecules", "Living and non-living"], "answer": "Five basic elements (Panch Tatva)" },
+                { "question": "Which of these is NOT matter?", "options": ["Love", "Air", "Water", "Sand"], "answer": "Love" }
+            ]
+        },
+        {
+            "title": "Physical Nature of Matter",
+            "questions": [
+                { "question": "Matter is made up of?", "options": ["Particles", "Continuous blocks", "Waves", "Energy"], "answer": "Particles" },
+                { "question": "The particles of matter are?", "options": ["Very small", "Very large", "Visible to naked eye", "Stationary"], "answer": "Very small" },
+                { "question": "What happens when salt dissolves in water?", "options": ["Salt particles get into spaces between water particles", "Salt disappears completely", "Water volume increases significantly", "Salt turns into water"], "answer": "Salt particles get into spaces between water particles" },
+                { "question": "How many particles are there in a small crystal of potassium permanganate?", "options": ["Millions", "Hundred", "One", "Ten"], "answer": "Millions" },
+                { "question": "Can we see particles of matter with naked eyes?", "options": ["No", "Yes", "Only in solids", "Only in gases"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "Characteristics of Particles: Space and Movement",
+            "questions": [
+                { "question": "What is diffusion?", "options": ["Intermixing of particles of two different types of matter", "Change of state from solid to liquid", "Movement of particles due to gravity", "Separation of particles"], "answer": "Intermixing of particles of two different types of matter" },
+                { "question": "What happens to kinetic energy with temperature rise?", "options": ["Increases", "Decreases", "Remains same", "Becomes zero"], "answer": "Increases" },
+                { "question": "Particles of matter are continuously?", "options": ["Moving", "Stationary", "Vibrating only in solids", "Sleeping"], "answer": "Moving" },
+                { "question": "When we make tea, particles of one matter get into?", "options": ["Spaces between particles of the other", "Nucleus of the other", "Outside the container", "None of the above"], "answer": "Spaces between particles of the other" },
+                { "question": "Rate of mixing changes with?", "options": ["Temperature", "Pressure", "Volume", "Color"], "answer": "Temperature" }
+            ]
+        },
+        {
+            "title": "Characteristics of Particles: Attraction",
+            "questions": [
+                { "question": "Particles of matter have _____ acting between them.", "options": ["Force", "Friction", "Gravity only", "Nothing"], "answer": "Force" },
+                { "question": "Which has the strongest force of attraction?", "options": ["Iron nail", "Water", "Air", "Chalk"], "answer": "Iron nail" },
+                { "question": "Which has the weakest force of attraction?", "options": ["Oxygen gas", "Water", "Sugar", "Iron"], "answer": "Oxygen gas" },
+                { "question": "Why can a diver cut through water?", "options": ["Weak forces of attraction between water particles", "Water is a solid", "Diver is very strong", "Water has no particles"], "answer": "Weak forces of attraction between water particles" },
+                { "question": "This force keeps the particles?", "options": ["Together", "Apart", "Moving", "Still"], "answer": "Together" }
+            ]
+        },
+        {
+            "title": "States of Matter: The Solid State",
+            "questions": [
+                { "question": "Solids have?", "options": ["Definite shape and fixed volume", "No definite shape but fixed volume", "No definite shape or volume", "Fixed shape but no fixed volume"], "answer": "Definite shape and fixed volume" },
+                { "question": "Solids are?", "options": ["Rigid", "Fluid", "Compressible", "Gaseous"], "answer": "Rigid" },
+                { "question": "Why is a sponge compressible?", "options": ["It has minute holes with trapped air", "It is a liquid", "It is not matter", "It has no mass"], "answer": "It has minute holes with trapped air" },
+                { "question": "Compressibility of solids is?", "options": ["Negligible", "High", "Moderate", "Variable"], "answer": "Negligible" },
+                { "question": "A rubber band changes shape under force. Is it a solid?", "options": ["Yes", "No", "It is a liquid", "It is a gas"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "The Liquid State",
+            "questions": [
+                { "question": "Liquids have?", "options": ["No fixed shape but fixed volume", "Fixed shape and volume", "No fixed shape or volume", "Fixed shape but no volume"], "answer": "No fixed shape but fixed volume" },
+                { "question": "Liquids are called fluids because they can?", "options": ["Flow", "Freeze", "Evaporate", "Solidify"], "answer": "Flow" },
+                { "question": "Rate of diffusion of liquids is higher than solids because?", "options": ["Particles move freely and have space", "Particles are fixed", "Particles are very small", "Liquids are hot"], "answer": "Particles move freely and have space" },
+                { "question": "Aquatic animals breathe oxygen dissolved in?", "options": ["Water", "Air", "Soil", "Sand"], "answer": "Water" },
+                { "question": "Liquids take the shape of?", "options": ["The container", "A cube", "A sphere", "Nothing"], "answer": "The container" }
+            ]
+        },
+        {
+            "title": "The Gaseous State",
+            "questions": [
+                { "question": "Gases are highly?", "options": ["Compressible", "Rigid", "Fixed", "Heavy"], "answer": "Compressible" },
+                { "question": "CNG stands for?", "options": ["Compressed Natural Gas", "Common Natural Gas", "Clean Natural Gas", "Cold Natural Gas"], "answer": "Compressed Natural Gas" },
+                { "question": "Gases diffuse very fast because of?", "options": ["High speed of particles and large space", "Low speed", "Small space", "High density"], "answer": "High speed of particles and large space" },
+                { "question": "Pressure of a gas is due to?", "options": ["Force exerted by particles on walls", "Weight of gas", "Volume of container", "Temperature"], "answer": "Force exerted by particles on walls" },
+                { "question": "LPG is used for?", "options": ["Cooking", "Cleaning", "Painting", "Drinking"], "answer": "Cooking" }
+            ]
+        },
+        {
+            "title": "Can Matter Change its State?",
+            "questions": [
+                { "question": "Water exists in how many states?", "options": ["Three", "Two", "One", "Four"], "answer": "Three" },
+                { "question": "The process of melting is also called?", "options": ["Fusion", "Fission", "Sublimation", "Vaporisation"], "answer": "Fusion" },
+                { "question": "The temperature at which a solid melts is called?", "options": ["Melting point", "Boiling point", "Freezing point", "Condensation point"], "answer": "Melting point" },
+                { "question": "Melting point is an indication of?", "options": ["Strength of force of attraction", "Weight of solid", "Volume of solid", "Color of solid"], "answer": "Strength of force of attraction" },
+                { "question": "Melting point of ice is?", "options": ["273.15 K", "100 K", "0 K", "373 K"], "answer": "273.15 K" }
+            ]
+        },
+        {
+            "title": "Latent Heat",
+            "questions": [
+                { "question": "Latent heat means?", "options": ["Hidden heat", "High heat", "Low heat", "Lost heat"], "answer": "Hidden heat" },
+                { "question": "Temperature during melting?", "options": ["Remains constant", "Increases", "Decreases", "Fluctuates"], "answer": "Remains constant" },
+                { "question": "Heat required to change 1 kg solid to liquid at melting point is?", "options": ["Latent heat of fusion", "Latent heat of vaporisation", "Specific heat", "Boiling heat"], "answer": "Latent heat of fusion" },
+                { "question": "Boiling point of water is?", "options": ["373 K", "273 K", "100 K", "0 K"], "answer": "373 K" },
+                { "question": "Particles in steam have more energy than water at 100°C because of?", "options": ["Latent heat of vaporisation", "Latent heat of fusion", "Kinetic energy", "Potential energy"], "answer": "Latent heat of vaporisation" }
+            ]
+        },
+        {
+            "title": "Sublimation",
+            "questions": [
+                { "question": "Change of solid directly to gas is called?", "options": ["Sublimation", "Evaporation", "Condensation", "Fusion"], "answer": "Sublimation" },
+                { "question": "Change of gas directly to solid is called?", "options": ["Deposition", "Sublimation", "Solidification", "Freezing"], "answer": "Deposition" },
+                { "question": "Which substance undergoes sublimation?", "options": ["Camphor", "Ice", "Iron", "Wax"], "answer": "Camphor" },
+                { "question": "Does sublimation involve the liquid state?", "options": ["No", "Yes", "Sometimes", "Only at high pressure"], "answer": "No" },
+                { "question": "Solid CO2 is also known as?", "options": ["Dry ice", "Wet ice", "Hard ice", "Gas ice"], "answer": "Dry ice" }
+            ]
+        },
+        {
+            "title": "Effect of Change of Pressure",
+            "questions": [
+                { "question": "Gases can be liquefied by?", "options": ["Applying pressure and reducing temperature", "Reducing pressure", "Increasing temperature", "Adding water"], "answer": "Applying pressure and reducing temperature" },
+                { "question": "What happens to particles when pressure is applied?", "options": ["They come closer", "They move apart", "They stop moving", "They disappear"], "answer": "They come closer" },
+                { "question": "1 atmosphere (atm) is a unit of?", "options": ["Pressure", "Temperature", "Volume", "Mass"], "answer": "Pressure" },
+                { "question": "Solid CO2 converts to gas at?", "options": ["1 atmosphere pressure", "10 atmosphere pressure", "0 atmosphere pressure", "100 atmosphere pressure"], "answer": "1 atmosphere pressure" },
+                { "question": "State of matter is determined by?", "options": ["Temperature and Pressure", "Volume only", "Mass only", "Color"], "answer": "Temperature and Pressure" }
+            ]
+        },
+        {
+            "title": "Evaporation",
+            "questions": [
+                { "question": "Evaporation is a?", "options": ["Surface phenomenon", "Bulk phenomenon", "Chemical reaction", "Nuclear reaction"], "answer": "Surface phenomenon" },
+                { "question": "Evaporation occurs at?", "options": ["Any temperature below boiling point", "Only at boiling point", "Only at freezing point", "Above boiling point"], "answer": "Any temperature below boiling point" },
+                { "question": "Boiling is a?", "options": ["Bulk phenomenon", "Surface phenomenon", "Slow process", "Cooling process"], "answer": "Bulk phenomenon" },
+                { "question": "During evaporation, particles gain energy from?", "options": ["Surroundings", "Nucleus", "Vacuum", "None"], "answer": "Surroundings" },
+                { "question": "Particles escaping during evaporation have?", "options": ["Higher kinetic energy", "Lower kinetic energy", "Zero energy", "No mass"], "answer": "Higher kinetic energy" }
+            ]
+        },
+        {
+            "title": "Factors Affecting Evaporation",
+            "questions": [
+                { "question": "Rate of evaporation increases with?", "options": ["Increase in surface area", "Decrease in surface area", "Decrease in temperature", "Increase in humidity"], "answer": "Increase in surface area" },
+                { "question": "Increase in wind speed causes evaporation to?", "options": ["Increase", "Decrease", "Stop", "Remain same"], "answer": "Increase" },
+                { "question": "Increase in humidity causes evaporation to?", "options": ["Decrease", "Increase", "Stop", "Fluctuate"], "answer": "Decrease" },
+                { "question": "Why do we spread clothes to dry?", "options": ["To increase surface area", "To decrease surface area", "To warm them", "To clean them"], "answer": "To increase surface area" },
+                { "question": "Higher temperature leads to?", "options": ["More particles having enough kinetic energy", "Freezing", "Condensation", "Less kinetic energy"], "answer": "More particles having enough kinetic energy" }
+            ]
+        },
+        {
+            "title": "How Does Evaporation Cause Cooling?",
+            "questions": [
+                { "question": "Evaporation causes?", "options": ["Cooling", "Heating", "Melting", "Burning"], "answer": "Cooling" },
+                { "question": "Acetone on palm feels cool because?", "options": ["Particles gain energy from palm and evaporate", "Acetone is ice cold", "Acetone is a solid", "Palm is hot"], "answer": "Particles gain energy from palm and evaporate" },
+                { "question": "Cotton clothes are worn in summer because?", "options": ["They absorb sweat and allow evaporation", "They are synthetic", "They are thick", "They are waterproof"], "answer": "They absorb sweat and allow evaporation" },
+                { "question": "Water droplets on cold glass surface are due to?", "options": ["Condensation of water vapour", "Evaporation of water", "Melting of glass", "Freezing of air"], "answer": "Condensation of water vapour" },
+                { "question": "Earthen pots keep water cool due to?", "options": ["Evaporation through pores", "Insulation", "Freezing", "Boiling"], "answer": "Evaporation through pores" }
+            ]
+        },
+        {
+            "title": "Summary of States of Matter",
+            "questions": [
+                { "question": "Forces of attraction are maximum in?", "options": ["Solids", "Liquids", "Gases", "Plasma"], "answer": "Solids" },
+                { "question": "Kinetic energy is maximum in?", "options": ["Gases", "Liquids", "Solids", "Ice"], "answer": "Gases" },
+                { "question": "Spaces between particles are maximum in?", "options": ["Gases", "Liquids", "Solids", "Stones"], "answer": "Gases" },
+                { "question": "Order of particles is most regular in?", "options": ["Solids", "Liquids", "Gases", "Steam"], "answer": "Solids" },
+                { "question": "States of matter are?", "options": ["Inter-convertible", "Fixed", "Permanent", "Unchangeable"], "answer": "Inter-convertible" }
+            ]
+        }
+    ]
+}

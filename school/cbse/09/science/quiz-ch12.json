@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Food Resources",
+            "questions": [
+                { "question": "What do all living organisms need for development and health?", "options": ["Food", "Shelter", "Clothing", "Entertainment"], "answer": "Food" },
+                { "question": "What are the major sources of food for humans?", "options": ["Plants and animals", "Rocks and minerals", "Air and water", "Chemicals"], "answer": "Plants and animals" },
+                { "question": "Why is it necessary to increase production efficiency?", "options": ["Limited land for cultivation", "Unlimited land", "Decreasing population", "None of the above"], "answer": "Limited land for cultivation" },
+                { "question": "Increasing food production should be done without?", "options": ["Degrading the environment", "Using water", "Using seeds", "Using labor"], "answer": "Degrading the environment" },
+                { "question": "Sustainable practices are needed in?", "options": ["Agriculture and animal husbandry", "Mining", "Construction", "Manufacturing"], "answer": "Agriculture and animal husbandry" }
+            ]
+        },
+        {
+            "title": "Improvement in Crop Yields",
+            "questions": [
+                { "question": "Which crop provides carbohydrates?", "options": ["Wheat", "Gram", "Mustard", "Soyabean"], "answer": "Wheat" },
+                { "question": "Pulses are a good source of?", "options": ["Protein", "Fats", "Carbohydrates", "Vitamins"], "answer": "Protein" },
+                { "question": "Kharif crops are grown in which season?", "options": ["Rainy season", "Winter season", "Summer season", "Spring season"], "answer": "Rainy season" },
+                { "question": "Which of these is a Rabi crop?", "options": ["Wheat", "Paddy", "Maize", "Cotton"], "answer": "Wheat" },
+                { "question": "From 1952 to 2010, food grain production increased by?", "options": ["Four times", "Two times", "Ten times", "No increase"], "answer": "Four times" }
+            ]
+        },
+        {
+            "title": "Crop Variety Improvement",
+            "questions": [
+                { "question": "How can desirable characters be incorporated into crop varieties?", "options": ["Hybridisation", "Irrigation", "Weeding", "Harvesting"], "answer": "Hybridisation" },
+                { "question": "Genetically modified crops are produced by?", "options": ["Introducing a gene", "Adding manure", "Changing soil", "Adding water"], "answer": "Introducing a gene" },
+                { "question": "Which is a biotic resistance factor?", "options": ["Resistance to insects", "Resistance to drought", "Resistance to heat", "Resistance to salinity"], "answer": "Resistance to insects" },
+                { "question": "Why is short maturity duration desirable?", "options": ["It is economical and allows multiple rounds of crops", "It reduces yield", "It increases cost", "It requires more water"], "answer": "It is economical and allows multiple rounds of crops" },
+                { "question": "Developing varieties for wider adaptability helps in?", "options": ["Stabilising crop production", "Reducing production", "Limiting growth", "None of the above"], "answer": "Stabilising crop production" }
+            ]
+        },
+        {
+            "title": "Crop Production Management",
+            "questions": [
+                { "question": "Farming practices are decided by?", "options": ["Farmer's purchasing capacity", "Weather only", "Soil color", "Seed size"], "answer": "Farmer's purchasing capacity" },
+                { "question": "Nutrients are supplied to plants by?", "options": ["Air, water, and soil", "Only soil", "Only water", "Only air"], "answer": "Air, water, and soil" },
+                { "question": "How many nutrients does soil supply to plants?", "options": ["Thirteen", "Six", "Seven", "Two"], "answer": "Thirteen" },
+                { "question": "Nutrients required in large quantities are called?", "options": ["Macronutrients", "Micronutrients", "Trace elements", "Essential elements"], "answer": "Macronutrients" },
+                { "question": "Which of these is a macronutrient?", "options": ["Nitrogen", "Iron", "Zinc", "Copper"], "answer": "Nitrogen" }
+            ]
+        },
+        {
+            "title": "Nutrient Management",
+            "questions": [
+                { "question": "Which of these is a micronutrient?", "options": ["Iron", "Calcium", "Magnesium", "Potassium"], "answer": "Iron" },
+                { "question": "Deficiency of nutrients affects?", "options": ["Physiological processes", "Color of soil", "Size of field", "Amount of rain"], "answer": "Physiological processes" },
+                { "question": "To increase yield, soil can be enriched with?", "options": ["Manure and fertilizers", "Plastic", "Sand", "Stones"], "answer": "Manure and fertilizers" },
+                { "question": "What is the source of Carbon for plants?", "options": ["Air", "Soil", "Water", "Fertilizer"], "answer": "Air" },
+                { "question": "What is the source of Hydrogen for plants?", "options": ["Water", "Air", "Soil", "Sunlight"], "answer": "Water" }
+            ]
+        },
+        {
+            "title": "Manure",
+            "questions": [
+                { "question": "Manure is prepared by the decomposition of?", "options": ["Animal excreta and plant waste", "Chemicals", "Rocks", "Plastic"], "answer": "Animal excreta and plant waste" },
+                { "question": "Manure helps in enriching soil with?", "options": ["Nutrients and organic matter", "Chemicals", "Pests", "Weeds"], "answer": "Nutrients and organic matter" },
+                { "question": "In sandy soils, organic matter helps in?", "options": ["Increasing water holding capacity", "Drainage", "Aeration", "None of the above"], "answer": "Increasing water holding capacity" },
+                { "question": "Which manure uses earthworms?", "options": ["Vermi-compost", "Green manure", "Compost", "Fertilizer"], "answer": "Vermi-compost" },
+                { "question": "Green manure enriches soil mainly in?", "options": ["Nitrogen and phosphorus", "Iron and zinc", "Calcium and magnesium", "Carbon and oxygen"], "answer": "Nitrogen and phosphorus" }
+            ]
+        },
+        {
+            "title": "Fertilizers",
+            "questions": [
+                { "question": "Fertilizers mainly supply?", "options": ["Nitrogen, phosphorus, and potassium", "Carbon, hydrogen, oxygen", "Iron, zinc, copper", "Calcium, magnesium, sulphur"], "answer": "Nitrogen, phosphorus, and potassium" },
+                { "question": "Excessive use of fertilizers can lead to?", "options": ["Water pollution", "Soil enrichment", "Better microbial life", "Less weeds"], "answer": "Water pollution" },
+                { "question": "Continuous use of fertilizers can destroy?", "options": ["Soil fertility", "Pests", "Weeds", "Crops"], "answer": "Soil fertility" },
+                { "question": "Organic farming involves?", "options": ["Minimal or no use of chemicals", "Maximum use of chemicals", "No manure", "No irrigation"], "answer": "Minimal or no use of chemicals" },
+                { "question": "Fertilizers ensure good?", "options": ["Vegetative growth", "Root rot", "Weed growth", "Pest growth"], "answer": "Vegetative growth" }
+            ]
+        },
+        {
+            "title": "Irrigation",
+            "questions": [
+                { "question": "Most agriculture in India is?", "options": ["Rain-fed", "Canal-fed", "Well-fed", "Tank-fed"], "answer": "Rain-fed" },
+                { "question": "Wells that tap water from deeper strata are?", "options": ["Tube wells", "Dug wells", "Canals", "Tanks"], "answer": "Tube wells" },
+                { "question": "River lift systems are used where?", "options": ["Canal flow is insufficient", "Rain is heavy", "Groundwater is high", "Soils are sandy"], "answer": "Canal flow is insufficient" },
+                { "question": "Rainwater harvesting increases?", "options": ["Ground water levels", "River flow", "Sea level", "Rainfall"], "answer": "Ground water levels" },
+                { "question": "Check-dams help to?", "options": ["Reduce soil erosion", "Increase flooding", "Increase evaporation", "Reduce crop yield"], "answer": "Reduce soil erosion" }
+            ]
+        },
+        {
+            "title": "Cropping Patterns",
+            "questions": [
+                { "question": "Growing two or more crops simultaneously on the same land is?", "options": ["Mixed cropping", "Crop rotation", "Monoculture", "Fallow land"], "answer": "Mixed cropping" },
+                { "question": "Growing crops in a definite row pattern is?", "options": ["Inter-cropping", "Mixed cropping", "Crop rotation", "Organic farming"], "answer": "Inter-cropping" },
+                { "question": "Growing different crops in succession is?", "options": ["Crop rotation", "Mixed cropping", "Inter-cropping", "Hybridisation"], "answer": "Crop rotation" },
+                { "question": "Inter-cropping ensures?", "options": ["Maximum utilisation of nutrients", "Maximum pests", "Minimum yield", "Soil erosion"], "answer": "Maximum utilisation of nutrients" },
+                { "question": "Mixed cropping reduces?", "options": ["Risk of crop failure", "Yield", "Soil fertility", "Water availability"], "answer": "Risk of crop failure" }
+            ]
+        },
+        {
+            "title": "Crop Protection Management",
+            "questions": [
+                { "question": "Xanthium and Parthenium are examples of?", "options": ["Weeds", "Crops", "Pests", "Fertilizers"], "answer": "Weeds" },
+                { "question": "Weeds compete with crops for?", "options": ["Food, space, and light", "Oxygen", "Carbon dioxide", "Pollinators"], "answer": "Food, space, and light" },
+                { "question": "Insect pests affect crop health by?", "options": ["Cutting parts and sucking sap", "Pollinating flowers", "Adding nutrients", "Aerating soil"], "answer": "Cutting parts and sucking sap" },
+                { "question": "Diseases in plants are caused by?", "options": ["Pathogens", "Weeds", "Fertilizers", "Water"], "answer": "Pathogens" },
+                { "question": "Summer ploughing is a method for?", "options": ["Weed and pest control", "Irrigation", "Harvesting", "Sowing"], "answer": "Weed and pest control" }
+            ]
+        },
+        {
+            "title": "Storage of Grains",
+            "questions": [
+                { "question": "Which is a biotic factor causing storage loss?", "options": ["Insects", "Temperature", "Moisture", "Container material"], "answer": "Insects" },
+                { "question": "Which is an abiotic factor causing storage loss?", "options": ["Moisture", "Rodents", "Fungi", "Mites"], "answer": "Moisture" },
+                { "question": "Storage losses lead to?", "options": ["Poor germinability and quality", "Better taste", "Increased weight", "Higher price"], "answer": "Poor germinability and quality" },
+                { "question": "A preventive measure for storage is?", "options": ["Strict cleaning and proper drying", "Wetting the grains", "Leaving grains in open", "Mixing with soil"], "answer": "Strict cleaning and proper drying" },
+                { "question": "Chemicals used to kill pests in storage are called?", "options": ["Fumigants", "Fertilizers", "Manure", "Irrigants"], "answer": "Fumigants" }
+            ]
+        },
+        {
+            "title": "Animal Husbandry & Cattle Farming",
+            "questions": [
+                { "question": "Milk-producing females are called?", "options": ["Milch animals", "Draught animals", "Broilers", "Layers"], "answer": "Milch animals" },
+                { "question": "Exotic breeds like Jersey are selected for?", "options": ["Long lactation periods", "Disease resistance", "Hard work", "Small size"], "answer": "Long lactation periods" },
+                { "question": "Local breeds like Red Sindhi are known for?", "options": ["Disease resistance", "Long lactation", "High milk yield", "Fast growth"], "answer": "Disease resistance" },
+                { "question": "Roughage in animal feed is largely?", "options": ["Fibre", "Protein", "Fat", "Vitamin"], "answer": "Fibre" },
+                { "question": "Flukes damage which part of cattle?", "options": ["Liver", "Stomach", "Skin", "Lungs"], "answer": "Liver" }
+            ]
+        },
+        {
+            "title": "Poultry Farming",
+            "questions": [
+                { "question": "Poultry farming is undertaken for?", "options": ["Egg and meat production", "Milk production", "Wool production", "Honey production"], "answer": "Egg and meat production" },
+                { "question": "Birds grown for meat are called?", "options": ["Broilers", "Layers", "Milch animals", "Draught animals"], "answer": "Broilers" },
+                { "question": "Broiler feed is rich in?", "options": ["Protein and fat", "Fibre", "Carbohydrates only", "Water"], "answer": "Protein and fat" },
+                { "question": "A desirable trait in poultry cross-breeding is?", "options": ["Summer adaptation", "Low egg production", "High maintenance", "Large size"], "answer": "Summer adaptation" },
+                { "question": "Layers are raised for?", "options": ["Eggs", "Meat", "Feathers", "Labour"], "answer": "Eggs" }
+            ]
+        },
+        {
+            "title": "Fish Production",
+            "questions": [
+                { "question": "Obtaining fish from natural resources is called?", "options": ["Capture fishing", "Culture fishery", "Aquaculture", "Mariculture"], "answer": "Capture fishing" },
+                { "question": "Farming marine fish is called?", "options": ["Mariculture", "Aquaculture", "Apiculture", "Sericulture"], "answer": "Mariculture" },
+                { "question": "In composite fish culture, how many species are used?", "options": ["Five or six", "Only one", "Two", "Ten"], "answer": "Five or six" },
+                { "question": "Catlas are?", "options": ["Surface feeders", "Bottom feeders", "Middle-zone feeders", "Weed feeders"], "answer": "Surface feeders" },
+                { "question": "A major problem in fish farming is?", "options": ["Lack of quality seed", "Too much water", "Too much food", "Lack of space"], "answer": "Lack of quality seed" }
+            ]
+        },
+        {
+            "title": "Bee-keeping",
+            "questions": [
+                { "question": "Apis cerana indica is known as?", "options": ["Indian bee", "Rock bee", "Little bee", "Italian bee"], "answer": "Indian bee" },
+                { "question": "Which variety is commonly used for commercial honey production?", "options": ["Italian bee (A. mellifera)", "Rock bee", "Little bee", "Indian bee"], "answer": "Italian bee (A. mellifera)" },
+                { "question": "Pasturage refers to?", "options": ["Flowers available for nectar and pollen", "Beehive structure", "Honey extractor", "Bee wax"], "answer": "Flowers available for nectar and pollen" },
+                { "question": "Bee-keeping is done to obtain?", "options": ["Honey and wax", "Milk", "Silk", "Wool"], "answer": "Honey and wax" },
+                { "question": "Italian bees are known for?", "options": ["High honey collection capacity", "Stinging more", "Staying for short periods", "Poor breeding"], "answer": "High honey collection capacity" }
+            ]
+        }
+    ]
+}

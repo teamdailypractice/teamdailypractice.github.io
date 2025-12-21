@@ -1,0 +1,454 @@
+{
+    "topics": [
+        {
+            "title": "The Fundamental Unit of Life",
+            "questions": [
+                {
+                    "question": "Who first discovered cells?",
+                    "options": ["Robert Hooke", "Robert Brown", "Leeuwenhoek", "Schleiden"],
+                    "answer": "Robert Hooke"
+                },
+                {
+                    "question": "What is the Latin word for 'a little room'?",
+                    "options": ["Cell", "Nucleus", "Organelle", "Cytoplasm"],
+                    "answer": "Cell"
+                },
+                {
+                    "question": "Who proposed that all cells arise from pre-existing cells?",
+                    "options": ["Virchow", "Schwann", "Schleiden", "Hooke"],
+                    "answer": "Virchow"
+                },
+                {
+                    "question": "When was the electron microscope discovered?",
+                    "options": ["1940", "1665", "1831", "1855"],
+                    "answer": "1940"
+                },
+                {
+                    "question": "Who discovered the nucleus in the cell?",
+                    "options": ["Robert Brown", "Robert Hooke", "Purkinje", "Leeuwenhoek"],
+                    "answer": "Robert Brown"
+                }
+            ]
+        },
+        {
+            "title": "What are Living Organisms Made Up of?",
+            "questions": [
+                {
+                    "question": "Organisms made of a single cell are called?",
+                    "options": ["Unicellular", "Multicellular", "Prokaryotic", "Eukaryotic"],
+                    "answer": "Unicellular"
+                },
+                {
+                    "question": "Which of the following is a unicellular organism?",
+                    "options": ["Amoeba", "Fungi", "Plants", "Animals"],
+                    "answer": "Amoeba"
+                },
+                {
+                    "question": "What is the specific function of nerve cells related to?",
+                    "options": ["Shape", "Size", "Color", "Smell"],
+                    "answer": "Shape"
+                },
+                {
+                    "question": "What are the specific components within a cell known as?",
+                    "options": ["Cell organelles", "Organs", "Tissues", "Molecules"],
+                    "answer": "Cell organelles"
+                },
+                {
+                    "question": "Where is division of labour seen?",
+                    "options": ["Both in multicellular organisms and within a single cell", "Only in multicellular organisms", "Only within a single cell", "None of the above"],
+                    "answer": "Both in multicellular organisms and within a single cell"
+                }
+            ]
+        },
+        {
+            "title": "What is a Cell Made Up of?",
+            "questions": [
+                {
+                    "question": "What are the three features in almost every cell?",
+                    "options": ["Plasma membrane, nucleus and cytoplasm", "Cell wall, nucleus and cytoplasm", "Plasma membrane, cell wall and nucleus", "Plasma membrane, cell wall and cytoplasm"],
+                    "answer": "Plasma membrane, nucleus and cytoplasm"
+                },
+                {
+                    "question": "What is the jelly-like substance that fills the cell?",
+                    "options": ["Cytoplasm", "Protoplasm", "Nucleoplasm", "Endoplasm"],
+                    "answer": "Cytoplasm"
+                },
+                {
+                    "question": "What is the large, centrally located spherical component of the cell?",
+                    "options": ["Nucleus", "Vacuole", "Plastid", "Mitochondrion"],
+                    "answer": "Nucleus"
+                },
+                {
+                    "question": "What is the outermost covering of the cell?",
+                    "options": ["Plasma membrane", "Cell wall", "Nuclear membrane", "Cytoskeleton"],
+                    "answer": "Plasma membrane"
+                },
+                {
+                    "question": "What are the specialized structures within the cytoplasm called?",
+                    "options": ["Cell organelles", "Organs", "Tissues", "Molecules"],
+                    "answer": "Cell organelles"
+                }
+            ]
+        },
+        {
+            "title": "Plasma Membrane or Cell Membrane",
+            "questions": [
+                {
+                    "question": "The plasma membrane is called a selectively permeable membrane because:",
+                    "options": ["It allows entry and exit of some materials and prevents movement of others", "It allows entry and exit of all materials", "It prevents entry and exit of all materials", "None of the above"],
+                    "answer": "It allows entry and exit of some materials and prevents movement of others"
+                },
+                {
+                    "question": "The movement of water molecules through a selectively permeable membrane is called?",
+                    "options": ["Osmosis", "Diffusion", "Endocytosis", "Exocytosis"],
+                    "answer": "Osmosis"
+                },
+                {
+                    "question": "A cell will swell up if the surrounding solution is?",
+                    "options": ["Hypotonic", "Isotonic", "Hypertonic", "None of the above"],
+                    "answer": "Hypotonic"
+                },
+                {
+                    "question": "The process by which a cell engulfs food is known as?",
+                    "options": ["Endocytosis", "Exocytosis", "Osmosis", "Diffusion"],
+                    "answer": "Endocytosis"
+                },
+                {
+                    "question": "The plasma membrane is made up of:",
+                    "options": ["Lipids and proteins", "Carbohydrates and proteins", "Lipids and carbohydrates", "Carbohydrates and fats"],
+                    "answer": "Lipids and proteins"
+                }
+            ]
+        },
+        {
+            "title": "Cell Wall",
+            "questions": [
+                {
+                    "question": "Which cells have a cell wall?",
+                    "options": ["Plant cells", "Animal cells", "Both plant and animal cells", "None of the above"],
+                    "answer": "Plant cells"
+                },
+                {
+                    "question": "The plant cell wall is mainly composed of?",
+                    "options": ["Cellulose", "Protein", "Lipid", "Starch"],
+                    "answer": "Cellulose"
+                },
+                {
+                    "question": "The phenomenon of shrinkage of cell contents away from the cell wall is known as?",
+                    "options": ["Plasmolysis", "Osmosis", "Diffusion", "Endocytosis"],
+                    "answer": "Plasmolysis"
+                },
+                {
+                    "question": "What does the cell wall provide to plants?",
+                    "options": ["Structural strength", "Energy", "Food", "Color"],
+                    "answer": "Structural strength"
+                },
+                {
+                    "question": "The cell wall permits the cells of which organisms to withstand very dilute external media without bursting?",
+                    "options": ["Plants, fungi and bacteria", "Only plants", "Only fungi", "Only bacteria"],
+                    "answer": "Plants, fungi and bacteria"
+                }
+            ]
+        },
+        {
+            "title": "Nucleus",
+            "questions": [
+                {
+                    "question": "The nucleus has a double layered covering called?",
+                    "options": ["Nuclear membrane", "Plasma membrane", "Cell wall", "Cytoplasm"],
+                    "answer": "Nuclear membrane"
+                },
+                {
+                    "question": "Functional segments of DNA are called?",
+                    "options": ["Genes", "Chromosomes", "Chromatin", "Nucleoid"],
+                    "answer": "Genes"
+                },
+                {
+                    "question": "Organisms whose cells lack a nuclear membrane are called?",
+                    "options": ["Prokaryotes", "Eukaryotes", "Unicellular", "Multicellular"],
+                    "answer": "Prokaryotes"
+                },
+                {
+                    "question": "The undefined nuclear region in prokaryotes is called?",
+                    "options": ["Nucleoid", "Nucleus", "Chromosome", "Chromatin"],
+                    "answer": "Nucleoid"
+                },
+                {
+                    "question": "The nucleus plays a central role in?",
+                    "options": ["Cellular reproduction", "Protein synthesis", "Energy production", "Lipid synthesis"],
+                    "answer": "Cellular reproduction"
+                }
+            ]
+        },
+        {
+            "title": "Cytoplasm",
+            "questions": [
+                {
+                    "question": "The fluid content inside the plasma membrane is called?",
+                    "options": ["Cytoplasm", "Protoplasm", "Nucleoplasm", "Endoplasm"],
+                    "answer": "Cytoplasm"
+                },
+                {
+                    "question": "Which of the following is true for prokaryotes?",
+                    "options": ["Membrane-bound cell organelles are absent", "Membrane-bound cell organelles are present", "Nuclear membrane is present", "None of the above"],
+                    "answer": "Membrane-bound cell organelles are absent"
+                },
+                {
+                    "question": "Viruses lack any membranes and hence?",
+                    "options": ["Do not show characteristics of life until they enter a living body", "Show characteristics of life", "Are unicellular", "Are multicellular"],
+                    "answer": "Do not show characteristics of life until they enter a living body"
+                },
+                {
+                    "question": "The cytoplasm contains many specialised?",
+                    "options": ["Cell organelles", "Organs", "Tissues", "Molecules"],
+                    "answer": "Cell organelles"
+                },
+                {
+                    "question": "Eukaryotic cells have?",
+                    "options": ["Nuclear membrane as well as membrane-enclosed organelles", "No nuclear membrane", "No membrane-enclosed organelles", "None of the above"],
+                    "answer": "Nuclear membrane as well as membrane-enclosed organelles"
+                }
+            ]
+        },
+        {
+            "title": "Cell Organelles",
+            "questions": [
+                {
+                    "question": "Which of the following are visible only with an electron microscope?",
+                    "options": ["Some organelles", "All organelles", "No organelles", "None of the above"],
+                    "answer": "Some organelles"
+                },
+                {
+                    "question": "Which of the following is a feature of eukaryotic cells?",
+                    "options": ["Membrane-bound little structures (or ‘organelles’) within themselves", "No membrane-bound organelles", "A nucleoid", "None of the above"],
+                    "answer": "Membrane-bound little structures (or ‘organelles’) within themselves"
+                },
+                {
+                    "question": "Which of the following will we discuss as cell organelles?",
+                    "options": ["Endoplasmic reticulum, Golgi apparatus, lysosomes, mitochondria and plastids", "Only endoplasmic reticulum", "Only Golgi apparatus", "Only lysosomes"],
+                    "answer": "Endoplasmic reticulum, Golgi apparatus, lysosomes, mitochondria and plastids"
+                },
+                {
+                    "question": "The use of membrane-bound little structures is to?",
+                    "options": ["Keep the activities of different kinds separate from each other", "Mix the activities of different kinds", "Stop all activities", "None of the above"],
+                    "answer": "Keep the activities of different kinds separate from each other"
+                },
+                {
+                    "question": "Large and complex cells need a lot of chemical activities to?",
+                    "options": ["Support their complicated structure and function", "Support their simple structure and function", "Destroy their structure and function", "None of the above"],
+                    "answer": "Support their complicated structure and function"
+                }
+            ]
+        },
+        {
+            "title": "Endoplasmic Reticulum (ER)",
+            "questions": [
+                {
+                    "question": "The two types of ER are?",
+                    "options": ["Rough ER and Smooth ER", "Long ER and Short ER", "Round ER and Flat ER", "None of the above"],
+                    "answer": "Rough ER and Smooth ER"
+                },
+                {
+                    "question": "RER looks rough because of?",
+                    "options": ["Ribosomes", "Lipids", "Proteins", "Carbohydrates"],
+                    "answer": "Ribosomes"
+                },
+                {
+                    "question": "SER helps in the manufacture of?",
+                    "options": ["Fat molecules, or lipids", "Proteins", "Carbohydrates", "None of the above"],
+                    "answer": "Fat molecules, or lipids"
+                },
+                {
+                    "question": "The process of building the cell membrane is known as?",
+                    "options": ["Membrane biogenesis", "Photosynthesis", "Respiration", "Endocytosis"],
+                    "answer": "Membrane biogenesis"
+                },
+                {
+                    "question": "In the liver cells of vertebrates, which ER plays a crucial role in detoxifying many poisons and drugs?",
+                    "options": ["SER", "RER", "Both SER and RER", "None of the above"],
+                    "answer": "SER"
+                }
+            ]
+        },
+        {
+            "title": "Golgi Apparatus",
+            "questions": [
+                {
+                    "question": "The Golgi apparatus was first described by?",
+                    "options": ["Camillo Golgi", "Robert Hooke", "Robert Brown", "Leeuwenhoek"],
+                    "answer": "Camillo Golgi"
+                },
+                {
+                    "question": "The Golgi apparatus consists of a system of membrane-bound vesicles arranged in stacks called?",
+                    "options": ["Cisterns", "Vesicles", "Tubules", "Vacuoles"],
+                    "answer": "Cisterns"
+                },
+                {
+                    "question": "The Golgi apparatus is involved in the formation of?",
+                    "options": ["Lysosomes", "Ribosomes", "Mitochondria", "Plastids"],
+                    "answer": "Lysosomes"
+                },
+                {
+                    "question": "The functions of the Golgi apparatus include?",
+                    "options": ["Storage, modification and packaging of products", "Protein synthesis", "Energy production", "Lipid synthesis"],
+                    "answer": "Storage, modification and packaging of products"
+                },
+                {
+                    "question": "In the Golgi apparatus, complex sugars may be made from?",
+                    "options": ["Simple sugars", "Proteins", "Lipids", "None of the above"],
+                    "answer": "Simple sugars"
+                }
+            ]
+        },
+        {
+            "title": "Lysosomes",
+            "questions": [
+                {
+                    "question": "Lysosomes are also known as the?",
+                    "options": ["‘Suicide bags’ of a cell", "‘Powerhouses’ of a cell", "‘Kitchens’ of a cell", "‘Control centers’ of a cell"],
+                    "answer": "‘Suicide bags’ of a cell"
+                },
+                {
+                    "question": "Lysosomes contain powerful?",
+                    "options": ["Digestive enzymes", "Synthetic enzymes", "Respiratory enzymes", "None of the above"],
+                    "answer": "Digestive enzymes"
+                },
+                {
+                    "question": "Lysosomes are a kind of?",
+                    "options": ["Waste disposal system of the cell", "Energy production system of the cell", "Protein synthesis system of the cell", "Lipid synthesis system of the cell"],
+                    "answer": "Waste disposal system of the cell"
+                },
+                {
+                    "question": "The enzymes in lysosomes are made by?",
+                    "options": ["RER", "SER", "Golgi apparatus", "Mitochondria"],
+                    "answer": "RER"
+                },
+                {
+                    "question": "What happens when the cell gets damaged?",
+                    "options": ["Lysosomes may burst and the enzymes digest their own cell", "Lysosomes create a new cell", "Lysosomes repair the cell", "None of the above"],
+                    "answer": "Lysosomes may burst and the enzymes digest their own cell"
+                }
+            ]
+        },
+        {
+            "title": "Mitochondria",
+            "questions": [
+                {
+                    "question": "Mitochondria are known as the?",
+                    "options": ["‘Powerhouses’ of the cell", "‘Suicide bags’ of a cell", "‘Kitchens’ of a cell", "‘Control centers’ of a cell"],
+                    "answer": "‘Powerhouses’ of the cell"
+                },
+                {
+                    "question": "The energy currency of the cell is?",
+                    "options": ["ATP", "ADP", "AMP", "None of the above"],
+                    "answer": "ATP"
+                },
+                {
+                    "question": "Which organelle has its own DNA and ribosomes?",
+                    "options": ["Mitochondria", "Lysosomes", "Golgi apparatus", "ER"],
+                    "answer": "Mitochondria"
+                },
+                {
+                    "question": "The outer membrane of mitochondria is?",
+                    "options": ["Porous", "Not porous", "Deeply folded", "None of the above"],
+                    "answer": "Porous"
+                },
+                {
+                    "question": "The inner membrane of mitochondria is?",
+                    "options": ["Deeply folded", "Not folded", "Porous", "None of the above"],
+                    "answer": "Deeply folded"
+                }
+            ]
+        },
+        {
+            "title": "Plastids",
+            "questions": [
+                {
+                    "question": "Plastids are present only in?",
+                    "options": ["Plant cells", "Animal cells", "Both plant and animal cells", "None of the above"],
+                    "answer": "Plant cells"
+                },
+                {
+                    "question": "Chromoplasts that contain chlorophyll are known as?",
+                    "options": ["Chloroplasts", "Leucoplasts", "Chromoplasts", "None of the above"],
+                    "answer": "Chloroplasts"
+                },
+                {
+                    "question": "The primary function of leucoplasts is?",
+                    "options": ["Storage", "Photosynthesis", "Respiration", "Protein synthesis"],
+                    "answer": "Storage"
+                },
+                {
+                    "question": "Like mitochondria, plastids also have their own?",
+                    "options": ["DNA and ribosomes", "Only DNA", "Only ribosomes", "None of the above"],
+                    "answer": "DNA and ribosomes"
+                },
+                {
+                    "question": "Chloroplasts are important for?",
+                    "options": ["Photosynthesis in plants", "Respiration in plants", "Transpiration in plants", "None of the above"],
+                    "answer": "Photosynthesis in plants"
+                }
+            ]
+        },
+        {
+            "title": "Vacuoles",
+            "questions": [
+                {
+                    "question": "Vacuoles are?",
+                    "options": ["Storage sacs for solid or liquid contents", "Powerhouses of the cell", "Kitchens of the cell", "Control centers of the cell"],
+                    "answer": "Storage sacs for solid or liquid contents"
+                },
+                {
+                    "question": "Which cells have very large vacuoles?",
+                    "options": ["Plant cells", "Animal cells", "Both plant and animal cells", "None of the above"],
+                    "answer": "Plant cells"
+                },
+                {
+                    "question": "In plant cells, vacuoles provide?",
+                    "options": ["Turgidity and rigidity to the cell", "Energy to the cell", "Food to the cell", "Color to the cell"],
+                    "answer": "Turgidity and rigidity to the cell"
+                },
+                {
+                    "question": "In Amoeba, the food vacuole contains?",
+                    "options": ["The food items that the Amoeba has consumed", "Water", "Air", "None of the above"],
+                    "answer": "The food items that the Amoeba has consumed"
+                },
+                {
+                    "question": "Specialised vacuoles in some unicellular organisms play important roles in?",
+                    "options": ["Expelling excess water and some wastes from the cell", "Absorbing water", "Storing food", "None of the above"],
+                    "answer": "Expelling excess water and some wastes from the cell"
+                }
+            ]
+        },
+        {
+            "title": "Cell Division",
+            "questions": [
+                {
+                    "question": "The process by which new cells are made is called?",
+                    "options": ["Cell division", "Cell multiplication", "Cell addition", "Cell subtraction"],
+                    "answer": "Cell division"
+                },
+                {
+                    "question": "The two main types of cell division are?",
+                    "options": ["Mitosis and meiosis", "Mitosis and osmosis", "Meiosis and osmosis", "None of the above"],
+                    "answer": "Mitosis and meiosis"
+                },
+                {
+                    "question": "In mitosis, a mother cell divides to form how many daughter cells?",
+                    "options": ["Two", "Four", "Six", "Eight"],
+                    "answer": "Two"
+                },
+                {
+                    "question": "In meiosis, a cell divides to produce how many new cells?",
+                    "options": ["Four", "Two", "Six", "Eight"],
+                    "answer": "Four"
+                },
+                {
+                    "question": "In meiosis, the new cells have how many chromosomes compared to the mother cell?",
+                    "options": ["Half", "Same", "Double", "Triple"],
+                    "answer": "Half"
+                }
+            ]
+        }
+    ]
+}

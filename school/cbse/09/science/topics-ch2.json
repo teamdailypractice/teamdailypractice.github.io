@@ -1,0 +1,295 @@
+{
+    "topics": [
+        {
+            "title": "Is Matter Around Us Pure?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Everyday vs. Scientific Meaning",
+                    "content": "For a common person, 'pure' means having no adulteration. But for a scientist, most things like milk, ghee, and juice are mixtures of different substances and hence not pure. Milk, for example, is a mixture of water, fat, and proteins."
+                },
+                {
+                    "type": "text",
+                    "heading": "Scientific Definition of Pure",
+                    "content": "When a scientist says something is pure, it means all the constituent particles of that substance are the same in their chemical nature. A pure substance consists of a single type of particle."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What is a Mixture?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Mixtures are constituted by more than one kind of pure form of matter. For example, sea water, minerals, and soil are all mixtures."
+                },
+                {
+                    "type": "text",
+                    "heading": "Properties",
+                    "content": "A mixture contains more than one pure substance. Dissolved sodium chloride can be separated from water by evaporation, but sodium chloride itself is a pure substance."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Types of Mixtures",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Homogeneous Mixtures",
+                    "content": "Mixtures which have a uniform composition throughout are called homogeneous mixtures or solutions. Examples include salt dissolved in water and sugar dissolved in water."
+                },
+                {
+                    "type": "text",
+                    "heading": "Heterogeneous Mixtures",
+                    "content": "Mixtures which contain physically distinct parts and have non-uniform compositions are called heterogeneous mixtures. Examples include mixtures of sodium chloride and iron filings, salt and sulphur, and oil and water."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What is a Solution?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "A solution is a homogeneous mixture of two or more substances. Examples include lemonade and soda water. In a solution, there is homogeneity at the particle level."
+                },
+                {
+                    "type": "text",
+                    "heading": "Solute and Solvent",
+                    "content": "A solution has a solvent and a solute as its components. The component that dissolves the other component (usually present in larger amount) is called the solvent. The component that is dissolved (usually present in lesser quantity) is called the solute."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "Tincture of iodine has iodine (solid) as the solute and alcohol (liquid) as the solvent. Air is a mixture of gas in gas."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Properties of a Solution",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Particle Size",
+                    "content": "A solution is a homogeneous mixture. The particles are smaller than 1 nm in diameter and cannot be seen by naked eyes."
+                },
+                {
+                    "type": "text",
+                    "heading": "Path of Light",
+                    "content": "Because of very small particle size, they do not scatter a beam of light passing through the solution. So, the path of light is not visible in a solution."
+                },
+                {
+                    "type": "text",
+                    "heading": "Stability",
+                    "content": "The solute particles cannot be separated by filtration. The solute particles do not settle down when left undisturbed, meaning a solution is stable."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Concentration of a Solution",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Dilute vs. Concentrated",
+                    "content": "Depending upon the amount of solute present, a solution can be called dilute, concentrated, or saturated. At any particular temperature, a solution that has dissolved as much solute as it is capable of dissolving is said to be a saturated solution."
+                },
+                {
+                    "type": "text",
+                    "heading": "Solubility",
+                    "content": "The amount of solute present in the saturated solution at this temperature is called its solubility."
+                },
+                {
+                    "type": "text",
+                    "heading": "Calculating Concentration",
+                    "content": "The concentration of a solution is the amount of solute present in a given amount of solution. Common methods include mass by mass percentage and mass by volume percentage."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What is a Suspension?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "A suspension is a heterogeneous mixture in which the solute particles do not dissolve but remain suspended throughout the bulk of the medium. Particles of a suspension are visible to the naked eye."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Properties of a Suspension",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Visibility and Scattering",
+                    "content": "Suspension is a heterogeneous mixture. The particles can be seen by the naked eye. They scatter a beam of light passing through it and make its path visible."
+                },
+                {
+                    "type": "text",
+                    "heading": "Instability",
+                    "content": "The solute particles settle down when a suspension is left undisturbed, meaning it is unstable. They can be separated by filtration."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What is a Colloidal Solution?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "A colloid is a mixture that appears homogeneous but is actually heterogeneous (like milk). The particles are uniformly spread throughout the solution."
+                },
+                {
+                    "type": "text",
+                    "heading": "Tyndall Effect",
+                    "content": "Because of the small size of colloidal particles, we cannot see them with naked eyes. However, they can scatter a beam of visible light. This scattering is called the Tyndall effect."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Properties of a Colloid",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Nature",
+                    "content": "A colloid is a heterogeneous mixture. The size of particles is too small to be seen with naked eyes but big enough to scatter light."
+                },
+                {
+                    "type": "text",
+                    "heading": "Stability",
+                    "content": "They do not settle down when left undisturbed, so a colloid is quite stable. They cannot be separated by filtration but can be separated by centrifugation."
+                },
+                {
+                    "type": "text",
+                    "heading": "Components",
+                    "content": "The components are the dispersed phase (solute-like) and the dispersing medium. Examples include fog (liquid in gas), smoke (solid in gas), and milk (liquid in liquid)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Physical and Chemical Changes",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Physical Changes",
+                    "content": "Properties that can be observed and specified like colour, hardness, density, melting point are physical properties. Changes like interconversion of states (ice to water) are physical changes because they occur without a change in composition or chemical nature."
+                },
+                {
+                    "type": "text",
+                    "heading": "Chemical Changes",
+                    "content": "Burning is a chemical change. During this process, one substance reacts with another to undergo a change in chemical composition. Chemical change brings change in chemical properties and we get new substances. It is also called a chemical reaction."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What are the Types of Pure Substances?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Classification",
+                    "content": "On the basis of chemical composition, substances can be classified as elements or compounds."
+                },
+                {
+                    "type": "text",
+                    "heading": "Elements",
+                    "content": "Robert Boyle was the first to use the term element. Lavoisier defined an element as a basic form of matter that cannot be broken down into simpler substances by chemical reactions. Elements are divided into metals, non-metals, and metalloids."
+                },
+                {
+                    "type": "text",
+                    "heading": "Metals and Non-metals",
+                    "content": "Metals are usually lustrous, ductile, malleable, and good conductors (e.g., gold, iron). Non-metals are poor conductors and not lustrous (e.g., hydrogen, oxygen)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Compounds",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "A compound is a substance composed of two or more elements, chemically combined with one another in a fixed proportion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Properties",
+                    "content": "The properties of a compound are totally different from its constituent elements. For example, water (a liquid that extinguishes fire) is made of hydrogen (combustible gas) and oxygen (supports combustion)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Mixtures vs. Compounds",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Formation",
+                    "content": "In mixtures, elements or compounds just mix together and no new compound is formed. In compounds, elements react to form new compounds."
+                },
+                {
+                    "type": "text",
+                    "heading": "Composition",
+                    "content": "A mixture has a variable composition. A compound has a fixed composition."
+                },
+                {
+                    "type": "text",
+                    "heading": "Properties and Separation",
+                    "content": "A mixture shows the properties of its constituents and can be separated by physical methods. A compound has different properties and can be separated only by chemical reactions."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,289 @@
+{
+    "topics": [
+        {
+            "title": "Force and its Effects",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "What is Force?",
+                    "content": "In everyday life, we use muscular effort to push, hit, or pull objects to change their state of motion. The concept of force is based on this push, hit, or pull."
+                },
+                {
+                    "type": "text",
+                    "heading": "Effects of Force",
+                    "content": "Force can change the magnitude of velocity of an object (make it move faster or slower) or change its direction of motion. Force can also change the shape and size of objects (e.g., stretching a spring, pressing a rubber ball)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Balanced Forces",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Balanced forces are forces that are equal in magnitude but opposite in direction. When balanced forces act on an object, they do not change its state of rest or of motion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Example",
+                    "content": "If a wooden block is pulled from both sides with equal forces, the block will not move. The net force is zero."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Unbalanced Forces",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "When two opposite forces of different magnitudes act on an object, the forces are not balanced. The unbalanced force acts in the direction of the greater force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Effect",
+                    "content": "An unbalanced force acting on an object brings it in motion or changes its speed or direction. To accelerate the motion of an object, an unbalanced force is required."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Friction",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Opposing Force",
+                    "content": "Friction is a force that opposes motion. It arises between two surfaces in contact. For example, when you push a box on a rough floor, friction acts in the direction opposite to the push."
+                },
+                {
+                    "type": "text",
+                    "heading": "Balancing Push",
+                    "content": "If you push a box with a small force and it doesn't move, it's because the friction force balances the pushing force. The box only moves when the pushing force becomes bigger than the friction force."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "First Law of Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Statement",
+                    "content": "An object remains in a state of rest or of uniform motion in a straight line unless compelled to change that state by an applied force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Explanation",
+                    "content": "All objects resist a change in their state of motion. This tendency is called inertia. Therefore, the first law of motion is also known as the law of inertia."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Inertia",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Inertia is the natural tendency of an object to resist a change in its state of motion or of rest."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "When a bus starts suddenly, passengers fall backwards because their feet move with the bus but their bodies tend to remain at rest. When a bus stops suddenly, passengers fall forward because their bodies tend to continue moving."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Inertia and Mass",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Measure of Inertia",
+                    "content": "Mass is a measure of inertia. Heavier or more massive objects offer larger inertia."
+                },
+                {
+                    "type": "text",
+                    "heading": "Comparison",
+                    "content": "It is easier to push an empty box than a box full of books. A force that can move a small cart will produce negligible change in a train. The train has more inertia than the cart."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Momentum",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Momentum (p) of an object is defined as the product of its mass (m) and velocity (v). p = mv."
+                },
+                {
+                    "type": "text",
+                    "heading": "Properties",
+                    "content": "Momentum has both direction and magnitude. Its direction is the same as that of velocity. The SI unit is kilogram-metre per second (kg m/s)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Second Law of Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Statement",
+                    "content": "The rate of change of momentum of an object is proportional to the applied unbalanced force in the direction of force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Significance",
+                    "content": "This law helps us measure the force acting on an object as a product of its mass and acceleration."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Mathematical Formulation of Second Law",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "Force (F) is proportional to the rate of change of momentum. F = ma, where m is mass and a is acceleration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Derivation",
+                    "content": "Change in momentum = m(v - u). Rate of change = m(v - u)/t = ma. Thus, F = kma. We choose units such that k=1, so F = ma."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Unit of Force",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Newton",
+                    "content": "The SI unit of force is the newton (N). One newton is defined as the amount of force that produces an acceleration of 1 m/s² in an object of 1 kg mass."
+                },
+                {
+                    "type": "text",
+                    "heading": "Calculation",
+                    "content": "1 N = 1 kg × 1 m/s²."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Applications of Second Law",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Catching a Cricket Ball",
+                    "content": "A fielder pulls his hands backwards while catching a fast-moving cricket ball. This increases the time during which the high velocity of the ball decreases to zero."
+                },
+                {
+                    "type": "text",
+                    "heading": "Why?",
+                    "content": "Increasing the time decreases the rate of change of momentum, which in turn decreases the force exerted by the ball on the hands, preventing injury."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Third Law of Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Statement",
+                    "content": "To every action, there is an equal and opposite reaction."
+                },
+                {
+                    "type": "text",
+                    "heading": "Different Bodies",
+                    "content": "It is important to remember that the action and reaction forces always act on two different objects, simultaneously. They never act on the same object."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Action and Reaction",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Example: Walking",
+                    "content": "When you walk, you push the road backwards (action). The road exerts an equal and opposite force on your feet (reaction) to make you move forward."
+                },
+                {
+                    "type": "text",
+                    "heading": "Accelerations",
+                    "content": "Even though action and reaction forces are equal in magnitude, they may produce different accelerations because they act on objects with different masses."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Recoil of a Gun",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Mechanism",
+                    "content": "When a gun is fired, it exerts a forward force on the bullet. The bullet exerts an equal and opposite force on the gun. This results in the recoil of the gun."
+                },
+                {
+                    "type": "text",
+                    "heading": "Mass Difference",
+                    "content": "Since the gun has a much greater mass than the bullet, the acceleration of the gun is much less than the acceleration of the bullet."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

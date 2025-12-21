@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Production of Sound",
+            "questions": [
+                { "question": "Sound is produced by?", "options": ["Vibrating objects", "Moving objects", "Stationary objects", "Heated objects"], "answer": "Vibrating objects" },
+                { "question": "Vibration is a?", "options": ["Rapid to and fro motion", "Slow circular motion", "Linear motion", "Random motion"], "answer": "Rapid to and fro motion" },
+                { "question": "Human voice is produced by vibrations in?", "options": ["Vocal cords", "Tongue", "Lips", "Lungs"], "answer": "Vocal cords" },
+                { "question": "Can sound be produced without vibration?", "options": ["No", "Yes", "Sometimes", "Only in space"], "answer": "No" },
+                { "question": "Which energy is required to produce sound?", "options": ["Mechanical energy", "Heat energy", "Light energy", "Chemical energy"], "answer": "Mechanical energy" }
+            ]
+        },
+        {
+            "title": "Propagation of Sound",
+            "questions": [
+                { "question": "Substance through which sound travels is called?", "options": ["Medium", "Vacuum", "Ether", "Space"], "answer": "Medium" },
+                { "question": "Can sound travel through vacuum?", "options": ["No", "Yes", "Only high frequency", "Only low frequency"], "answer": "No" },
+                { "question": "In sound propagation, what travels?", "options": ["Disturbance/Energy", "Particles of medium", "Source of sound", "Air"], "answer": "Disturbance/Energy" },
+                { "question": "Do particles of medium travel to the ear?", "options": ["No, they oscillate", "Yes", "Sometimes", "Only in solids"], "answer": "No, they oscillate" },
+                { "question": "Sound is a?", "options": ["Mechanical wave", "Electromagnetic wave", "Transverse wave", "Light wave"], "answer": "Mechanical wave" }
+            ]
+        },
+        {
+            "title": "Sound Waves are Longitudinal",
+            "questions": [
+                { "question": "A region of high pressure is called?", "options": ["Compression", "Rarefaction", "Crest", "Trough"], "answer": "Compression" },
+                { "question": "A region of low pressure is called?", "options": ["Rarefaction", "Compression", "Valley", "Peak"], "answer": "Rarefaction" },
+                { "question": "In longitudinal waves, particles move?", "options": ["Parallel to wave direction", "Perpendicular to wave direction", "In circles", "Randomly"], "answer": "Parallel to wave direction" },
+                { "question": "Sound waves in air are?", "options": ["Longitudinal", "Transverse", "Electromagnetic", "None"], "answer": "Longitudinal" },
+                { "question": "Light is a?", "options": ["Transverse wave", "Longitudinal wave", "Mechanical wave", "Sound wave"], "answer": "Transverse wave" }
+            ]
+        },
+        {
+            "title": "Characteristics of a Sound Wave",
+            "questions": [
+                { "question": "A peak in the sound wave curve represents?", "options": ["Maximum compression", "Maximum rarefaction", "Minimum density", "Zero pressure"], "answer": "Maximum compression" },
+                { "question": "A valley in the sound wave curve represents?", "options": ["Maximum rarefaction", "Maximum compression", "High pressure", "Crest"], "answer": "Maximum rarefaction" },
+                { "question": "Which characteristic distinguishes sound waves?", "options": ["Frequency, Amplitude, Speed", "Mass, Volume, Density", "Color, Shape, Size", "Heat, Light, Electricity"], "answer": "Frequency, Amplitude, Speed" },
+                { "question": "Compressions are regions of?", "options": ["High density and pressure", "Low density and pressure", "Zero density", "Low pressure"], "answer": "High density and pressure" },
+                { "question": "Rarefactions are regions where particles are?", "options": ["Spread apart", "Crowded", "Stationary", "Fast"], "answer": "Spread apart" }
+            ]
+        },
+        {
+            "title": "Wavelength and Frequency",
+            "questions": [
+                { "question": "Distance between two consecutive compressions is?", "options": ["Wavelength", "Frequency", "Amplitude", "Speed"], "answer": "Wavelength" },
+                { "question": "SI unit of wavelength is?", "options": ["Metre", "Hertz", "Second", "Pascal"], "answer": "Metre" },
+                { "question": "Number of oscillations per unit time is?", "options": ["Frequency", "Time period", "Wavelength", "Speed"], "answer": "Frequency" },
+                { "question": "SI unit of frequency is?", "options": ["Hertz", "Metre", "Second", "Decibel"], "answer": "Hertz" },
+                { "question": "Relation between frequency (v) and time period (T) is?", "options": ["v = 1/T", "v = T", "v = T^2", "v = 1/T^2"], "answer": "v = 1/T" }
+            ]
+        },
+        {
+            "title": "Pitch and Loudness",
+            "questions": [
+                { "question": "Pitch determines?", "options": ["Shrillness of sound", "Loudness", "Quality", "Speed"], "answer": "Shrillness of sound" },
+                { "question": "Pitch depends on?", "options": ["Frequency", "Amplitude", "Speed", "Medium"], "answer": "Frequency" },
+                { "question": "Loudness depends on?", "options": ["Amplitude", "Frequency", "Wavelength", "Time period"], "answer": "Amplitude" },
+                { "question": "Higher amplitude means?", "options": ["Louder sound", "Higher pitch", "Lower pitch", "Softer sound"], "answer": "Louder sound" },
+                { "question": "Single frequency sound is called?", "options": ["Tone", "Note", "Noise", "Music"], "answer": "Tone" }
+            ]
+        },
+        {
+            "title": "Speed of Sound",
+            "questions": [
+                { "question": "Formula for speed of sound is?", "options": ["v = wavelength x frequency", "v = wavelength / frequency", "v = frequency / wavelength", "v = wavelength + frequency"], "answer": "v = wavelength x frequency" },
+                { "question": "Speed of sound depends on?", "options": ["Properties of medium", "Source of sound", "Frequency only", "Amplitude only"], "answer": "Properties of medium" },
+                { "question": "Speed of sound is maximum in?", "options": ["Solids", "Liquids", "Gases", "Vacuum"], "answer": "Solids" },
+                { "question": "Speed of sound in air at 22°C is approx?", "options": ["344 m/s", "330 m/s", "1500 m/s", "5000 m/s"], "answer": "344 m/s" },
+                { "question": "As temperature increases, speed of sound?", "options": ["Increases", "Decreases", "Remains same", "Becomes zero"], "answer": "Increases" }
+            ]
+        },
+        {
+            "title": "Reflection of Sound",
+            "questions": [
+                { "question": "Does sound reflect like light?", "options": ["Yes", "No", "Only in water", "Only in vacuum"], "answer": "Yes" },
+                { "question": "Angle of incidence equals?", "options": ["Angle of reflection", "Angle of refraction", "90 degrees", "0 degrees"], "answer": "Angle of reflection" },
+                { "question": "Reflection of sound requires?", "options": ["Large obstacle", "Small obstacle", "Transparent medium", "Vacuum"], "answer": "Large obstacle" },
+                { "question": "Law of reflection holds for?", "options": ["Sound and light", "Only light", "Only sound", "Neither"], "answer": "Sound and light" },
+                { "question": "Incident sound, reflected sound and normal lie in?", "options": ["Same plane", "Different planes", "Perpendicular planes", "Parallel planes"], "answer": "Same plane" }
+            ]
+        },
+        {
+            "title": "Echo",
+            "questions": [
+                { "question": "Repetition of sound due to reflection is?", "options": ["Echo", "Reverberation", "Noise", "Note"], "answer": "Echo" },
+                { "question": "Minimum time interval to hear echo is?", "options": ["0.1 s", "1 s", "0.01 s", "0.5 s"], "answer": "0.1 s" },
+                { "question": "Minimum distance for echo at 22°C is?", "options": ["17.2 m", "34.4 m", "10 m", "100 m"], "answer": "17.2 m" },
+                { "question": "Why 0.1 s?", "options": ["Persistence of hearing", "Speed of light", "Brain processing", "Ear drum limit"], "answer": "Persistence of hearing" },
+                { "question": "Rolling of thunder is due to?", "options": ["Multiple reflections", "Single reflection", "Refraction", "Interference"], "answer": "Multiple reflections" }
+            ]
+        },
+        {
+            "title": "Reverberation",
+            "questions": [
+                { "question": "Persistence of sound in a hall is called?", "options": ["Reverberation", "Echo", "Resonance", "Vibration"], "answer": "Reverberation" },
+                { "question": "Reverberation is caused by?", "options": ["Repeated reflection", "Refraction", "Absorption", "Diffraction"], "answer": "Repeated reflection" },
+                { "question": "To reduce reverberation, we use?", "options": ["Sound-absorbent materials", "Mirrors", "Metal sheets", "Glass"], "answer": "Sound-absorbent materials" },
+                { "question": "Excessive reverberation is?", "options": ["Undesirable", "Desirable", "Good for music", "Necessary"], "answer": "Undesirable" },
+                { "question": "Example of sound absorbent is?", "options": ["Compressed fibreboard", "Steel", "Marble", "Plastic"], "answer": "Compressed fibreboard" }
+            ]
+        },
+        {
+            "title": "Uses of Multiple Reflection",
+            "questions": [
+                { "question": "Which instrument uses multiple reflection?", "options": ["Megaphone", "Guitar", "Drum", "Flute"], "answer": "Megaphone" },
+                { "question": "Stethoscopes work on the principle of?", "options": ["Multiple reflection", "Refraction", "Interference", "Doppler effect"], "answer": "Multiple reflection" },
+                { "question": "Why are concert hall ceilings curved?", "options": ["To reflect sound to all corners", "For decoration", "To absorb sound", "To reduce echo"], "answer": "To reflect sound to all corners" },
+                { "question": "Sound board in halls helps to?", "options": ["Spread sound evenly", "Absorb sound", "Stop sound", "Increase pitch"], "answer": "Spread sound evenly" },
+                { "question": "Horns and trumpets send sound in?", "options": ["Particular direction", "All directions", "Backward direction", "Upward direction"], "answer": "Particular direction" }
+            ]
+        },
+        {
+            "title": "Range of Hearing",
+            "questions": [
+                { "question": "Audible range for humans is?", "options": ["20 Hz to 20000 Hz", "0 to 20 Hz", "Above 20000 Hz", "10 to 100 Hz"], "answer": "20 Hz to 20000 Hz" },
+                { "question": "Children under five can hear up to?", "options": ["25 kHz", "10 kHz", "50 kHz", "100 kHz"], "answer": "25 kHz" },
+                { "question": "As people grow older, ears become less sensitive to?", "options": ["Higher frequencies", "Lower frequencies", "Middle frequencies", "All frequencies"], "answer": "Higher frequencies" },
+                { "question": "1 kHz equals?", "options": ["1000 Hz", "100 Hz", "10 Hz", "10000 Hz"], "answer": "1000 Hz" },
+                { "question": "Dogs can hear?", "options": ["Ultrasound", "Only infrasound", "Only low pitch", "Nothing"], "answer": "Ultrasound" }
+            ]
+        },
+        {
+            "title": "Infrasound and Ultrasound",
+            "questions": [
+                { "question": "Sound below 20 Hz is?", "options": ["Infrasound", "Ultrasound", "Audible sound", "Noise"], "answer": "Infrasound" },
+                { "question": "Sound above 20 kHz is?", "options": ["Ultrasound", "Infrasound", "Sonic", "Subsonic"], "answer": "Ultrasound" },
+                { "question": "Which animal produces infrasound?", "options": ["Rhinoceros", "Bat", "Dolphin", "Rat"], "answer": "Rhinoceros" },
+                { "question": "Which animal produces ultrasound?", "options": ["Bat", "Elephant", "Whale", "Rhino"], "answer": "Bat" },
+                { "question": "Earthquakes produce?", "options": ["Low-frequency infrasound", "High-frequency ultrasound", "Audible sound only", "No sound"], "answer": "Low-frequency infrasound" }
+            ]
+        },
+        {
+            "title": "Applications of Ultrasound",
+            "questions": [
+                { "question": "Ultrasound is used for cleaning because?", "options": ["High frequency detaches dirt", "It is hot", "It is loud", "It is chemical"], "answer": "High frequency detaches dirt" },
+                { "question": "To detect cracks in metal blocks, we use?", "options": ["Ultrasound", "Infrasound", "X-rays", "Light"], "answer": "Ultrasound" },
+                { "question": "If there is a flaw in metal, ultrasound?", "options": ["Reflects back", "Passes through", "Absorbs", "Speeds up"], "answer": "Reflects back" },
+                { "question": "Ordinary sound is not used for flaw detection because?", "options": ["It bends around corners", "It is too fast", "It is too slow", "It is weak"], "answer": "It bends around corners" },
+                { "question": "Ultrasound travels along?", "options": ["Well-defined paths", "Random paths", "Curved paths", "Zigzag paths"], "answer": "Well-defined paths" }
+            ]
+        },
+        {
+            "title": "Medical Applications",
+            "questions": [
+                { "question": "Technique to image the heart is?", "options": ["Echocardiography", "ECG", "EEG", "X-ray"], "answer": "Echocardiography" },
+                { "question": "Ultrasonography is used for?", "options": ["Getting images of internal organs", "Cleaning teeth", "Hearing aid", "Measuring height"], "answer": "Getting images of internal organs" },
+                { "question": "Ultrasound can break kidney stones into?", "options": ["Fine grains", "Large pieces", "Gas", "Liquid"], "answer": "Fine grains" },
+                { "question": "Ultrasonography uses?", "options": ["Ultrasonic waves", "Infrasonic waves", "Radio waves", "Light waves"], "answer": "Ultrasonic waves" },
+                { "question": "Examination of foetus is done by?", "options": ["Ultrasonography", "X-ray", "CT Scan", "MRI"], "answer": "Ultrasonography" }
+            ]
+        }
+    ]
+}

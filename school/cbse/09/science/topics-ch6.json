@@ -1,0 +1,309 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Tissues",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "From Cells to Tissues",
+                    "content": "In unicellular organisms like Amoeba, a single cell performs all basic functions such as movement, food intake, and excretion. However, multicellular organisms have millions of cells, most of which are specialised to carry out specific functions."
+                },
+                {
+                    "type": "text",
+                    "heading": "Specialisation and Efficiency",
+                    "content": "Each specialised function is taken up by a different group of cells. Since these cells carry out only a particular function, they do it very efficiently. For example, muscle cells contract and relax to cause movement, while nerve cells carry messages."
+                },
+                {
+                    "type": "text",
+                    "heading": "Defining a Tissue",
+                    "content": "Cells specialising in one function are often grouped together in the body. This cluster of cells, called a tissue, is arranged and designed to give the highest possible efficiency of function. A group of cells that are similar in structure and/or work together to achieve a particular function forms a tissue."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Plants vs. Animals Tissues",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Stationary vs. Mobile",
+                    "content": "Plants are stationary or fixed; they don't move. Since they have to be upright, they possess a large quantity of supportive tissue, which generally consists of dead cells. Animals, on the other hand, move around in search of food, mates, and shelter, consuming more energy. Most of their tissues are living."
+                },
+                {
+                    "type": "text",
+                    "heading": "Pattern of Growth",
+                    "content": "Growth in plants is limited to certain regions, where tissues divide throughout their life. Based on dividing capacity, plant tissues are classified as growing (meristematic) or permanent. Cell growth in animals is more uniform, with no clear demarcation of dividing and non-dividing regions."
+                },
+                {
+                    "type": "text",
+                    "heading": "Organ System Complexity",
+                    "content": "The structural organisation of organs and organ systems is far more specialised and localised in complex animals than in plants. This reflects their different modes of life: sedentary existence for plants and active locomotion for animals."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Meristematic Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Regions of Growth",
+                    "content": "The growth of plants occurs only in certain specific regions because the dividing tissue, known as meristematic tissue, is located only at these points. Depending on the region, they are classified as apical, lateral, and intercalary."
+                },
+                {
+                    "type": "text",
+                    "heading": "Types of Meristem",
+                    "content": "Apical meristem is present at the growing tips of stems and roots and increases their length. Lateral meristem (cambium) increases the girth of the stem or root. Intercalary meristem is seen in some plants located near the node."
+                },
+                {
+                    "type": "text",
+                    "heading": "Characteristics of Cells",
+                    "content": "Cells of meristematic tissue are very active, have dense cytoplasm, thin cellulose walls, and prominent nuclei. They typically lack vacuoles."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Permanent Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Differentiation",
+                    "content": "What happens to cells formed by meristematic tissue? They take up a specific role and lose the ability to divide. This process of taking up a permanent shape, size, and function is called differentiation, leading to the development of various types of permanent tissues."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Simple Permanent Tissue (Parenchyma)",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Structure and Function",
+                    "content": "Parenchyma is the most common simple permanent tissue. It consists of relatively unspecialised living cells with thin cell walls. They are usually loosely arranged with large intercellular spaces. This tissue generally stores food."
+                },
+                {
+                    "type": "text",
+                    "heading": "Special Types",
+                    "content": "In some situations, parenchyma contains chlorophyll and performs photosynthesis; it is then called chlorenchyma. In aquatic plants, large air cavities are present in parenchyma to help them float; this type is called aerenchyma."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Collenchyma and Sclerenchyma",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Collenchyma: Flexibility",
+                    "content": "The flexibility in plants is due to collenchyma. It allows bending of various parts like tendrils and stems without breaking and provides mechanical support. Its cells are living, elongated, and irregularly thickened at the corners with very little intercellular space."
+                },
+                {
+                    "type": "text",
+                    "heading": "Sclerenchyma: Stiffness",
+                    "content": "Sclerenchyma makes the plant hard and stiff (e.g., coconut husk). The cells are dead, long, and narrow with walls thickened due to lignin. There is often no internal space inside the cell. It provides strength to plant parts."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Protective Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Epidermis",
+                    "content": "The outermost layer of cells is called the epidermis. It is usually a single layer of flat cells without intercellular spaces. It protects all parts of the plant. In dry habitats, it may be thicker with a waxy coating (cutin) to prevent water loss."
+                },
+                {
+                    "type": "text",
+                    "heading": "Stomata",
+                    "content": "Small pores in the epidermis of the leaf are called stomata. They are enclosed by two kidney-shaped guard cells and are necessary for gas exchange and transpiration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Cork",
+                    "content": "As plants grow older, the outer protective tissue changes. A strip of secondary meristem forms layers of cork cells which are dead and compactly arranged. They have a substance called suberin in their walls that makes them impervious to gases and water."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Complex Permanent Tissue: Xylem",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Complex Tissues",
+                    "content": "Complex tissues are made of more than one type of cells coordinating to perform a common function. Xylem and phloem are conducting tissues and constitute a vascular bundle."
+                },
+                {
+                    "type": "text",
+                    "heading": "Components of Xylem",
+                    "content": "Xylem consists of tracheids, vessels, xylem parenchyma, and xylem fibres. Tracheids and vessels have thick walls and are often dead when mature. They are tubular structures that transport water and minerals vertically. Xylem parenchyma stores food."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Complex Permanent Tissue: Phloem",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Components of Phloem",
+                    "content": "Phloem is made up of five types of cells: sieve cells, sieve tubes, companion cells, phloem fibres, and phloem parenchyma. Sieve tubes are tubular cells with perforated walls."
+                },
+                {
+                    "type": "text",
+                    "heading": "Function",
+                    "content": "Phloem transports food from leaves to other parts of the plant. Unlike xylem, materials can move in both directions in phloem. Except for phloem fibres, other phloem cells are living cells."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Animal Tissues Overview",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Types of Animal Tissues",
+                    "content": "On the basis of the functions they perform, animal tissues are classified into four main types: epithelial tissue, connective tissue, muscular tissue, and nervous tissue."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Epithelial Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Protective Covering",
+                    "content": "Epithelial tissue is the covering or protective tissue in the animal body. It covers most organs and cavities and forms a barrier to keep different body systems separate. Cells are tightly packed with almost no intercellular spaces."
+                },
+                {
+                    "type": "text",
+                    "heading": "Types of Epithelium",
+                    "content": "Different types include: Simple squamous (thin and flat, lining blood vessels), Stratified squamous (arranged in layers, skin), Columnar (pillar-like, intestine), Ciliated columnar (with hair-like cilia, respiratory tract), and Cuboidal (cube-shaped, kidney tubules)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Connective Tissue: Blood and Bone",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Characteristics",
+                    "content": "The cells of connective tissue are loosely spaced and embedded in an intercellular matrix. The matrix may be jelly-like, fluid, dense, or rigid."
+                },
+                {
+                    "type": "text",
+                    "heading": "Blood",
+                    "content": "Blood has a fluid matrix called plasma, in which RBCs, WBCs, and platelets are suspended. It transports gases, food, hormones, and waste materials."
+                },
+                {
+                    "type": "text",
+                    "heading": "Bone",
+                    "content": "Bone forms the framework that supports the body. It is a strong and nonflexible tissue. Bone cells are embedded in a hard matrix composed of calcium and phosphorus compounds."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Other Connective Tissues",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Ligaments and Tendons",
+                    "content": "Ligaments connect two bones; they are very elastic and have considerable strength. Tendons connect muscles to bones; they are fibrous with great strength but limited flexibility."
+                },
+                {
+                    "type": "text",
+                    "heading": "Cartilage",
+                    "content": "Cartilage has widely spaced cells and a solid matrix of proteins and sugars. It smoothens bone surfaces at joints and is present in the nose, ear, trachea, and larynx."
+                },
+                {
+                    "type": "text",
+                    "heading": "Areolar and Adipose",
+                    "content": "Areolar tissue is found between skin and muscles, around blood vessels, and in bone marrow; it aids in repair. Adipose tissue stores fat below the skin and between internal organs, acting as an insulator."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Muscular Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Movement",
+                    "content": "Muscular tissue consists of elongated cells called muscle fibres. It is responsible for movement. Muscles contain contractile proteins which contract and relax."
+                },
+                {
+                    "type": "text",
+                    "heading": "Types of Muscles",
+                    "content": "Striated (skeletal/voluntary) muscles are attached to bones and show light and dark bands. Smooth (involuntary) muscles control movements in the alimentary canal and blood vessels; they are unstriated. Cardiac muscles are involuntary muscles of the heart that show rhythmic contraction throughout life."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Nervous Tissue",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Transmission of Stimuli",
+                    "content": "Nervous tissue is highly specialised for transmitting stimuli very rapidly. The brain, spinal cord, and nerves are composed of this tissue."
+                },
+                {
+                    "type": "text",
+                    "heading": "Neurons",
+                    "content": "The cells are called nerve cells or neurons. A neuron consists of a cell body with a nucleus, an axon (long part), and dendrites (short branched parts). Nerve impulses allow us to move our muscles when we want to."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

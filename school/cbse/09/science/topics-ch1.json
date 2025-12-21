@@ -1,0 +1,339 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Matter",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Everything is Matter",
+                    "content": "As we look at our surroundings, we see a large variety of things with different shapes, sizes and textures. Everything in this universe is made up of material which scientists have named 'matter'. The air we breathe, the food we eat, stones, clouds, stars, plants and animals, even a small drop of water or a particle of sand — every thing is matter."
+                },
+                {
+                    "type": "text",
+                    "heading": "Mass and Volume",
+                    "content": "We can also see as we look around that all the things mentioned above occupy space and have mass. In other words, they have both mass and volume. The SI unit of mass is kilogram (kg). The SI unit of volume is cubic metre (m³)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Historical Classification",
+                    "content": "Since early times, human beings have been trying to understand their surroundings. Early Indian philosophers classified matter in the form of five basic elements — the 'Panch Tatva' — air, earth, fire, sky and water. According to them everything, living or non-living, was made up of these five basic elements."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Physical Nature of Matter",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Particulate Nature",
+                    "content": "For a long time, two schools of thought prevailed regarding the nature of matter. One school believed matter to be continuous like a block of wood, whereas, the other thought that matter was made up of particles like sand. Experiments show that matter is particulate."
+                },
+                {
+                    "type": "text",
+                    "heading": "How Small are Particles?",
+                    "content": "The particles of matter are very small – they are small beyond our imagination. For example, just a few crystals of potassium permanganate can colour a large volume of water (about 1000 L). So we conclude that there must be millions of tiny particles in just one crystal."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Characteristics of Particles: Space and Movement",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Space Between Particles",
+                    "content": "Particles of matter have space between them. When we make tea, coffee or lemonade, particles of one type of matter get into the spaces between particles of the other. This shows that there is enough space between particles of matter."
+                },
+                {
+                    "type": "text",
+                    "heading": "Continuous Movement",
+                    "content": "Particles of matter are continuously moving, that is, they possess what we call the kinetic energy. As the temperature rises, particles move faster. So, we can say that with increase in temperature the kinetic energy of the particles also increases."
+                },
+                {
+                    "type": "text",
+                    "heading": "Diffusion",
+                    "content": "Particles of matter intermix on their own with each other. They do so by getting into the spaces between the particles. This intermixing of particles of two different types of matter on their own is called diffusion. We also observe that on heating, diffusion becomes faster."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Characteristics of Particles: Attraction",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Force of Attraction",
+                    "content": "Particles of matter have force acting between them. This force keeps the particles together. The strength of this force of attraction varies from one kind of matter to another."
+                },
+                {
+                    "type": "text",
+                    "heading": "Varying Strength",
+                    "content": "For example, it is easy to move your hand through water, but difficult to do so through a solid block of wood. This suggests that the particles in a solid are held together by a stronger force of attraction than in a liquid."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "States of Matter: The Solid State",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Properties of Solids",
+                    "content": "Solids have a definite shape, distinct boundaries and fixed volumes, that is, have negligible compressibility. Solids have a tendency to maintain their shape when subjected to outside force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Rigidity",
+                    "content": "Solids may break under force but it is difficult to change their shape, so they are rigid. Examples include a pen, a book, a needle, and a piece of wooden stick."
+                },
+                {
+                    "type": "text",
+                    "heading": "Exceptions?",
+                    "content": "A rubber band changes shape under force and regains the same shape when the force is removed. If excessive force is applied, it breaks. A sponge has minute holes, in which air is trapped, when we press it, the air is expelled out and we are able to compress it. Both are still considered solids."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "The Liquid State",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Properties of Liquids",
+                    "content": "Liquids have no fixed shape but have a fixed volume. They take up the shape of the container in which they are kept. Liquids flow and change shape, so they are not rigid but can be called fluid."
+                },
+                {
+                    "type": "text",
+                    "heading": "Diffusion in Liquids",
+                    "content": "Solids, liquids, and gases can diffuse into liquids. The gases from the atmosphere diffuse and dissolve in water. These gases, especially oxygen and carbon dioxide, are essential for the survival of aquatic animals and plants."
+                },
+                {
+                    "type": "text",
+                    "heading": "Particle Movement",
+                    "content": "The rate of diffusion of liquids is higher than that of solids. This is due to the fact that in the liquid state, particles move freely and have greater space between each other as compared to particles in the solid state."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "The Gaseous State",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Compressibility",
+                    "content": "Gases are highly compressible as compared to solids and liquids. The liquefied petroleum gas (LPG) cylinder that we get in our home for cooking or the oxygen supplied to hospitals in cylinders is compressed gas. Compressed natural gas (CNG) is used as fuel these days in vehicles."
+                },
+                {
+                    "type": "text",
+                    "heading": "High Speed Diffusion",
+                    "content": "Due to high speed of particles and large space between them, gases show the property of diffusing very fast into other gases. For example, the smell of hot cooked food reaches us in seconds."
+                },
+                {
+                    "type": "text",
+                    "heading": "Pressure",
+                    "content": "In the gaseous state, the particles move about randomly at high speed. Due to this random movement, the particles hit each other and also the walls of the container. The pressure exerted by the gas is because of this force exerted by gas particles per unit area on the walls of the container."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Can Matter Change its State?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "States of Water",
+                    "content": "Water can exist in three states of matter: solid, as ice; liquid, as the familiar water; and gas, as water vapour. The state of matter can be changed by changing temperature or pressure."
+                },
+                {
+                    "type": "text",
+                    "heading": "Melting",
+                    "content": "On increasing the temperature of solids, the kinetic energy of the particles increases. The particles start vibrating with greater speed. The energy supplied by heat overcomes the forces of attraction between the particles. A stage is reached when the solid melts and is converted to a liquid. This temperature is called the melting point."
+                },
+                {
+                    "type": "text",
+                    "heading": "Fusion",
+                    "content": "The process of melting, that is, change of solid state into liquid state is also known as fusion."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Latent Heat",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Hidden Heat",
+                    "content": "During the experiment of melting, the temperature of the system does not change after the melting point is reached, till all the ice melts. This happens even though we continue to supply heat. This heat gets used up in changing the state by overcoming the forces of attraction between the particles."
+                },
+                {
+                    "type": "text",
+                    "heading": "Latent Heat of Fusion",
+                    "content": "As this heat energy is absorbed by ice without showing any rise in temperature, it is considered that it gets hidden into the contents of the beaker and is known as the latent heat. The amount of heat energy that is required to change 1 kg of a solid into liquid at atmospheric pressure at its melting point is known as the latent heat of fusion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Latent Heat of Vaporisation",
+                    "content": "Similarly, particles in steam (water vapour) at 100°C (373 K) have more energy than water at the same temperature. This is because particles in steam have absorbed extra energy in the form of latent heat of vaporisation."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Sublimation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Direct Change",
+                    "content": "There are some substances that change directly from solid state to gaseous state and vice versa without changing into the liquid state. Camphor is an example."
+                },
+                {
+                    "type": "text",
+                    "heading": "Definitions",
+                    "content": "A change of state directly from solid to gas without changing into liquid state is called sublimation. The direct change of gas to solid without changing into liquid is called deposition."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Effect of Change of Pressure",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Compressing Gases",
+                    "content": "Applying pressure and reducing temperature can liquefy gases. By applying pressure, particles of matter can be brought close together."
+                },
+                {
+                    "type": "text",
+                    "heading": "Dry Ice",
+                    "content": "Solid carbon dioxide (CO2) is stored under high pressure. Solid CO2 gets converted directly into gaseous state on decrease of pressure to 1 atmosphere without coming into liquid state. This is the reason that solid carbon dioxide is also known as dry ice."
+                },
+                {
+                    "type": "text",
+                    "heading": "Determinants of State",
+                    "content": "Thus, we can say that pressure and temperature determine the state of a substance, whether it will be solid, liquid or gas."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Evaporation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Surface Phenomenon",
+                    "content": "The phenomenon of change of liquid into vapours at any temperature below its boiling point is called evaporation. Particles of matter are always moving and are never at rest."
+                },
+                {
+                    "type": "text",
+                    "heading": "Mechanism",
+                    "content": "In the case of liquids, a small fraction of particles at the surface, having higher kinetic energy, is able to break away from the forces of attraction of other particles and gets converted into vapour."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Factors Affecting Evaporation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Surface Area",
+                    "content": "The rate of evaporation increases with an increase of surface area. For example, while putting clothes for drying up we spread them out."
+                },
+                {
+                    "type": "text",
+                    "heading": "Temperature",
+                    "content": "With the increase of temperature, more number of particles get enough kinetic energy to go into the vapour state, increasing the rate of evaporation."
+                },
+                {
+                    "type": "text",
+                    "heading": "Humidity and Wind Speed",
+                    "content": "Humidity is the amount of water vapour present in air. If the amount of water in air is already high, the rate of evaporation decreases. With the increase in wind speed, the particles of water vapour move away with the wind, increasing the rate of evaporation."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "How Does Evaporation Cause Cooling?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Absorption of Energy",
+                    "content": "In an open vessel, the liquid keeps on evaporating. The particles of liquid absorb energy from the surrounding to regain the energy lost during evaporation. This absorption of energy from the surroundings makes the surroundings cold."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "When you pour some acetone (nail polish remover) on your palm, the particles gain energy from your palm or surroundings and evaporate causing the palm to feel cool. Sprinkling water on the roof after a hot day helps cool the surface because of the large latent heat of vaporisation of water."
+                },
+                {
+                    "type": "text",
+                    "heading": "Cotton Clothes in Summer",
+                    "content": "Cotton, being a good absorber of water helps in absorbing the sweat and exposing it to the atmosphere for easy evaporation. The heat energy equal to the latent heat of vaporisation is absorbed from the body leaving the body cool."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Summary of States of Matter",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Inter-convertibility",
+                    "content": "The states of matter are inter-convertible. The state of matter can be changed by changing temperature or pressure."
+                },
+                {
+                    "type": "text",
+                    "heading": "Key Differences",
+                    "content": "Forces of attraction are maximum in solids, intermediate in liquids and minimum in gases. Spaces between particles are minimum in solids, intermediate in liquids and maximum in gases. Kinetic energy is minimum in solids, intermediate in liquids and maximum in gases."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

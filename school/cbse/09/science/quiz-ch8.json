@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Force and its Effects",
+            "questions": [
+                { "question": "What can force do?", "options": ["Change speed, direction, or shape", "Only change speed", "Only change direction", "Nothing"], "answer": "Change speed, direction, or shape" },
+                { "question": "Force is based on the concept of?", "options": ["Push, hit, or pull", "Mass and volume", "Speed and time", "Energy"], "answer": "Push, hit, or pull" },
+                { "question": "Can force change the shape of an object?", "options": ["Yes", "No", "Only for liquids", "Only for gases"], "answer": "Yes" },
+                { "question": "Pushing a stationary object can?", "options": ["Put it into motion", "Break it", "Change its color", "Do nothing"], "answer": "Put it into motion" },
+                { "question": "Stopping a moving object requires?", "options": ["Effort or force", "No effort", "Magic", "Waiting"], "answer": "Effort or force" }
+            ]
+        },
+        {
+            "title": "Balanced Forces",
+            "questions": [
+                { "question": "Balanced forces are?", "options": ["Equal in magnitude, opposite in direction", "Unequal in magnitude", "Same direction", "Zero magnitude"], "answer": "Equal in magnitude, opposite in direction" },
+                { "question": "Do balanced forces change the state of motion?", "options": ["No", "Yes", "Sometimes", "Only for light objects"], "answer": "No" },
+                { "question": "If a block is pulled equally from both sides, it?", "options": ["Does not move", "Moves right", "Moves left", "Moves up"], "answer": "Does not move" },
+                { "question": "The net force in a balanced system is?", "options": ["Zero", "Double", "Half", "Infinite"], "answer": "Zero" },
+                { "question": "Balanced forces can change?", "options": ["Shape", "Speed", "Velocity", "Direction"], "answer": "Shape" }
+            ]
+        },
+        {
+            "title": "Unbalanced Forces",
+            "questions": [
+                { "question": "Unbalanced forces act in the direction of?", "options": ["The greater force", "The smaller force", "Gravity", "Friction"], "answer": "The greater force" },
+                { "question": "What is required to accelerate an object?", "options": ["Unbalanced force", "Balanced force", "No force", "Friction only"], "answer": "Unbalanced force" },
+                { "question": "If an unbalanced force acts on an object, it?", "options": ["Changes speed or direction", "Stops moving", "Remains at rest", "Disappears"], "answer": "Changes speed or direction" },
+                { "question": "To keep an object moving with uniform velocity, the net force must be?", "options": ["Zero", "Positive", "Negative", "Unbalanced"], "answer": "Zero" },
+                { "question": "When you stop pedaling a bicycle, it slows down due to?", "options": ["Unbalanced friction force", "Balanced force", "Inertia", "Gravity"], "answer": "Unbalanced friction force" }
+            ]
+        },
+        {
+            "title": "Friction",
+            "questions": [
+                { "question": "Friction force acts in which direction?", "options": ["Opposite to motion", "Same as motion", "Perpendicular to motion", "Downwards"], "answer": "Opposite to motion" },
+                { "question": "Friction arises between?", "options": ["Two surfaces in contact", "Air and water", "Space", "Magnets"], "answer": "Two surfaces in contact" },
+                { "question": "If a pushed box doesn't move, friction is?", "options": ["Balancing the push", "Less than the push", "Zero", "Helping the push"], "answer": "Balancing the push" },
+                { "question": "To move a heavy box, pushing force must be?", "options": ["Greater than friction", "Equal to friction", "Less than friction", "Zero"], "answer": "Greater than friction" },
+                { "question": "Friction is a type of?", "options": ["Contact force", "Non-contact force", "Magnetic force", "Gravitational force"], "answer": "Contact force" }
+            ]
+        },
+        {
+            "title": "First Law of Motion",
+            "questions": [
+                { "question": "First Law of Motion is also known as?", "options": ["Law of Inertia", "Law of Momentum", "Law of Action-Reaction", "Law of Gravity"], "answer": "Law of Inertia" },
+                { "question": "An object at rest tends to?", "options": ["Remain at rest", "Start moving", "Fly", "Vibrate"], "answer": "Remain at rest" },
+                { "question": "An object in uniform motion tends to?", "options": ["Keep moving in a straight line", "Stop", "Change direction", "Accelerate"], "answer": "Keep moving in a straight line" },
+                { "question": "What changes the state of motion?", "options": ["Applied unbalanced force", "Inertia", "Mass", "Time"], "answer": "Applied unbalanced force" },
+                { "question": "Who presented the three laws of motion?", "options": ["Newton", "Galileo", "Einstein", "Darwin"], "answer": "Newton" }
+            ]
+        },
+        {
+            "title": "Inertia",
+            "questions": [
+                { "question": "Inertia is the tendency to?", "options": ["Resist change in state of motion", "Change state of motion", "Move faster", "Stop moving"], "answer": "Resist change in state of motion" },
+                { "question": "Why do passengers fall back when a bus starts?", "options": ["Inertia of rest", "Inertia of motion", "Gravity", "Friction"], "answer": "Inertia of rest" },
+                { "question": "Why do passengers fall forward when a bus stops?", "options": ["Inertia of motion", "Inertia of rest", "Acceleration", "Speed"], "answer": "Inertia of motion" },
+                { "question": "Why does a coin fall into a glass when the card is flicked?", "options": ["Inertia of the coin", "Gravity only", "Card pushes it", "Coin is heavy"], "answer": "Inertia of the coin" },
+                { "question": "Which objects have inertia?", "options": ["All objects", "Only moving objects", "Only heavy objects", "Only solids"], "answer": "All objects" }
+            ]
+        },
+        {
+            "title": "Inertia and Mass",
+            "questions": [
+                { "question": "Inertia is measured by?", "options": ["Mass", "Volume", "Speed", "Force"], "answer": "Mass" },
+                { "question": "Which has more inertia?", "options": ["A stone", "A rubber ball of same size", "Both same", "Depends on speed"], "answer": "A stone" },
+                { "question": "Heavier objects have?", "options": ["Larger inertia", "Smaller inertia", "No inertia", "Variable inertia"], "answer": "Larger inertia" },
+                { "question": "Which is harder to push?", "options": ["Box full of books", "Empty box", "Small toy", "Feather"], "answer": "Box full of books" },
+                { "question": "Mass is a measure of?", "options": ["Inertia", "Velocity", "Acceleration", "Distance"], "answer": "Inertia" }
+            ]
+        },
+        {
+            "title": "Momentum",
+            "questions": [
+                { "question": "Formula for momentum (p) is?", "options": ["mv", "ma", "1/2mv^2", "mg"], "answer": "mv" },
+                { "question": "SI unit of momentum is?", "options": ["kg m/s", "kg m/s^2", "N", "Joule"], "answer": "kg m/s" },
+                { "question": "Momentum has?", "options": ["Magnitude and direction", "Only magnitude", "Only direction", "Neither"], "answer": "Magnitude and direction" },
+                { "question": "Direction of momentum is same as?", "options": ["Velocity", "Acceleration", "Force", "Displacement"], "answer": "Velocity" },
+                { "question": "An object at rest has momentum?", "options": ["Zero", "Infinite", "Equal to mass", "Variable"], "answer": "Zero" }
+            ]
+        },
+        {
+            "title": "Second Law of Motion",
+            "questions": [
+                { "question": "Rate of change of momentum is proportional to?", "options": ["Applied unbalanced force", "Velocity", "Mass", "Time"], "answer": "Applied unbalanced force" },
+                { "question": "This law gives a method to measure?", "options": ["Force", "Inertia", "Energy", "Work"], "answer": "Force" },
+                { "question": "Force acts in the direction of?", "options": ["Change of momentum", "Velocity", "Mass", "Gravity"], "answer": "Change of momentum" },
+                { "question": "A greater force produces?", "options": ["Greater change in velocity/momentum", "Less change", "No change", "Constant velocity"], "answer": "Greater change in velocity/momentum" },
+                { "question": "Change in momentum depends on?", "options": ["Force and time", "Force only", "Time only", "Mass only"], "answer": "Force and time" }
+            ]
+        },
+        {
+            "title": "Mathematical Formulation of Second Law",
+            "questions": [
+                { "question": "Mathematical formula for Second Law is?", "options": ["F = ma", "F = mv", "F = m/a", "a = mF"], "answer": "F = ma" },
+                { "question": "Acceleration 'a' is?", "options": ["(v - u) / t", "v / t", "u / t", "s / t"], "answer": "(v - u) / t" },
+                { "question": "The constant 'k' in F = kma is?", "options": ["1", "0", "10", "9.8"], "answer": "1" },
+                { "question": "If mass is 2kg and acceleration is 5m/s^2, Force is?", "options": ["10 N", "2.5 N", "7 N", "3 N"], "answer": "10 N" },
+                { "question": "If Force is 0, acceleration is?", "options": ["0", "Constant", "Infinite", "1"], "answer": "0" }
+            ]
+        },
+        {
+            "title": "Unit of Force",
+            "questions": [
+                { "question": "SI unit of force is?", "options": ["Newton (N)", "Dyne", "Pascal", "Joule"], "answer": "Newton (N)" },
+                { "question": "1 Newton is force required to accelerate?", "options": ["1 kg mass at 1 m/s^2", "1 g mass at 1 cm/s^2", "1 kg at 10 m/s^2", "10 kg at 1 m/s^2"], "answer": "1 kg mass at 1 m/s^2" },
+                { "question": "Symbol for Newton is?", "options": ["N", "n", "Kg", "m"], "answer": "N" },
+                { "question": "Force is a?", "options": ["Vector quantity", "Scalar quantity", "Fundamental quantity", "None"], "answer": "Vector quantity" },
+                { "question": "kg m s^-2 is equivalent to?", "options": ["Newton", "Pascal", "Watt", "Joule"], "answer": "Newton" }
+            ]
+        },
+        {
+            "title": "Applications of Second Law",
+            "questions": [
+                { "question": "Why does a fielder pull hands back while catching?", "options": ["To increase time and reduce force", "To show style", "To decrease time", "To catch faster"], "answer": "To increase time and reduce force" },
+                { "question": "Increasing time of impact?", "options": ["Decreases rate of change of momentum", "Increases force", "Does nothing", "Increases momentum"], "answer": "Decreases rate of change of momentum" },
+                { "question": "High jumpers fall on cushions to?", "options": ["Increase time of fall stop", "Decrease time", "Increase force", "Bounce back"], "answer": "Increase time of fall stop" },
+                { "question": "Stopping a ball suddenly causes?", "options": ["Large force and injury", "No force", "Less force", "Slow stop"], "answer": "Large force and injury" },
+                { "question": "Karate player breaks ice slab with?", "options": ["Single fast blow", "Slow push", "Heavy hammer", "Heat"], "answer": "Single fast blow" }
+            ]
+        },
+        {
+            "title": "Third Law of Motion",
+            "questions": [
+                { "question": "Third Law states?", "options": ["To every action there is equal and opposite reaction", "Force equals mass times acceleration", "Objects remain at rest", "Energy is conserved"], "answer": "To every action there is equal and opposite reaction" },
+                { "question": "Action and reaction forces act on?", "options": ["Two different objects", "Same object", "No object", "One object only"], "answer": "Two different objects" },
+                { "question": "Action and reaction are?", "options": ["Simultaneous", "One after another", "Delayed", "Random"], "answer": "Simultaneous" },
+                { "question": "If A exerts force on B, B exerts force on A that is?", "options": ["Equal and opposite", "Equal and same direction", "Unequal", "Zero"], "answer": "Equal and opposite" },
+                { "question": "Do action and reaction cancel each other?", "options": ["No, because they act on different objects", "Yes", "Sometimes", "Only in space"], "answer": "No, because they act on different objects" }
+            ]
+        },
+        {
+            "title": "Action and Reaction",
+            "questions": [
+                { "question": "When walking, we push the ground?", "options": ["Backwards", "Forwards", "Downwards", "Upwards"], "answer": "Backwards" },
+                { "question": "The ground pushes us?", "options": ["Forwards", "Backwards", "Downwards", "Sideways"], "answer": "Forwards" },
+                { "question": "Why do equal forces produce different accelerations?", "options": ["Different masses of objects", "Different times", "Different shapes", "Different colors"], "answer": "Different masses of objects" },
+                { "question": "A sailor jumps forward from a boat. The boat moves?", "options": ["Backwards", "Forwards", "Downwards", "Doesn't move"], "answer": "Backwards" },
+                { "question": "This is explained by?", "options": ["Third Law of Motion", "First Law", "Second Law", "Law of Gravitation"], "answer": "Third Law of Motion" }
+            ]
+        },
+        {
+            "title": "Recoil of a Gun",
+            "questions": [
+                { "question": "Recoil of a gun is due to?", "options": ["Third Law of Motion", "First Law", "Friction", "Gravity"], "answer": "Third Law of Motion" },
+                { "question": "Gun exerts forward force on bullet. Bullet exerts?", "options": ["Backward force on gun", "Forward force", "No force", "Downward force"], "answer": "Backward force on gun" },
+                { "question": "Why is gun acceleration less than bullet?", "options": ["Gun has much greater mass", "Gun is fixed", "Bullet is sharp", "Gun is lighter"], "answer": "Gun has much greater mass" },
+                { "question": "Recoil force is in which direction?", "options": ["Opposite to bullet", "Same as bullet", "Perpendicular", "Random"], "answer": "Opposite to bullet" },
+                { "question": "This phenomenon is an example of?", "options": ["Conservation of momentum", "Conservation of energy", "Inertia", "Friction"], "answer": "Conservation of momentum" }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,295 @@
+{
+    "topics": [
+        {
+            "title": "The Fundamental Unit of Life",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Introduction",
+                    "content": "Welcome to the amazing world of cells! In this chapter, we will learn about the fundamental unit of life."
+                },
+                {
+                    "type": "text",
+                    "heading": "Robert Hooke's Discovery",
+                    "content": "While examining a thin slice of cork, Robert Hooke saw that the cork resembled the structure of a honeycomb consisting of many little compartments. Cork is a substance which comes from the bark of a tree. This was in the year 1665 when Hooke made this chance observation through a self-designed microscope. Robert Hooke called these boxes 'cells'. Cell is a Latin word for ‘a little room’."
+                },
+                {
+                    "type": "text",
+                    "heading": "The Importance of the Discovery",
+                    "content": "This may seem to be a very small and insignificant incident, but it is very important in the history of science. This was the very first time that someone had observed that living things appear to consist of separate units. The use of the word ‘cell’ to describe these units is being used till this day in biology."
+                },
+                {
+                    "type": "text",
+                    "heading": "Timeline of Key Discoveries",
+                    "content": "Cells were first discovered by Robert Hooke in 1665. He observed the cells in a cork slice with the help of a primitive microscope. Leeuwenhoek (1674), with the improved microscope, discovered the free living cells in pond water for the first time. It was Robert Brown in 1831 who discovered the nucleus in the cell. Purkinje in 1839 coined the term ‘protoplasm’ for the fluid substance of the cell."
+                },
+                {
+                    "type": "text",
+                    "heading": "The Cell Theory",
+                    "content": "The cell theory, stating that all plants and animals are composed of cells and that the cell is the basic unit of life, was presented by two biologists, Schleiden (1838) and Schwann (1839). The cell theory was further expanded by Virchow (1855) by suggesting that all cells arise from pre-existing cells. With the discovery of the electron microscope in 1940, it was possible to observe and understand the complex structure of the cell and its various organelles."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What are Living Organisms Made Up of?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Building Blocks of Life",
+                    "content": "All organisms that we observe around are made up of cells. These small structures are the basic building units of life. For example, the cells of an onion peel will all look the same, regardless of the size of the onion they came from."
+                },
+                {
+                    "type": "text",
+                    "heading": "Unicellular vs. Multicellular Organisms",
+                    "content": "Some organisms consist of a single cell that lives on its own; these are called unicellular organisms. Examples include Amoeba, Chlamydomonas, and bacteria. In contrast, many cells group together in a single body to form various parts in multicellular organisms, such as fungi, plants, and animals. Every multi-cellular organism has come from a single cell, as cells divide to produce cells of their own kind."
+                },
+                {
+                    "type": "text",
+                    "heading": "Variety in Cells",
+                    "content": "Some organisms also have cells of different kinds. The shape and size of cells are related to the specific function they perform. Some cells, like Amoeba, have changing shapes. In other cases, the cell shape is more or less fixed, like nerve cells which have a typical long shape to transmit messages."
+                },
+                {
+                    "type": "text",
+                    "heading": "Division of Labour",
+                    "content": "Each living cell can perform certain basic functions. There is a division of labour in multicellular organisms, meaning different parts of the body perform different functions. Similarly, division of labour is also seen within a single cell. Each cell has specific components within it known as cell organelles, which each perform a special function."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "What is a Cell Made Up of?",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Three Main Features",
+                    "content": "If we study a cell under a microscope, we would come across three features in almost every cell: the plasma membrane, the nucleus, and the cytoplasm. All activities inside the cell and interactions with its environment are possible due to these features."
+                }
+            ]
+        },
+        {
+            "title": "Plasma Membrane or Cell Membrane",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Cell's Gatekeeper",
+                    "content": "This is the outermost covering of the cell that separates its contents from the external environment. The plasma membrane allows the entry and exit of some materials but prevents the movement of others. Therefore, it is called a selectively permeable membrane."
+                },
+                {
+                    "type": "text",
+                    "heading": "Diffusion and Osmosis",
+                    "content": "Substances like carbon dioxide or oxygen can move across the cell membrane by a process called diffusion—the movement from a region of high concentration to low concentration. The movement of water across this membrane is called osmosis. Osmosis is the net diffusion of water across a selectively permeable membrane toward a higher solute concentration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Effect of Solutions on Cells",
+                    "content": "If the surrounding medium is a hypotonic solution (dilute), the cell will gain water and swell. In an isotonic solution (same concentration), there is no net water movement. In a hypertonic solution (concentrated), the cell will lose water and shrink."
+                },
+                {
+                    "type": "text",
+                    "heading": "Structure and Function",
+                    "content": "The plasma membrane is flexible and made of lipids and proteins. Its flexibility also allows the cell to engulf food from its external environment through a process known as endocytosis, which is how an Amoeba acquires its food."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Cell Wall",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Rigid Outer Layer",
+                    "content": "Plant cells have another rigid outer covering outside the plasma membrane called the cell wall. It is mainly composed of cellulose, a complex substance that provides structural strength to plants."
+                },
+                {
+                    "type": "text",
+                    "heading": "Plasmolysis and Turgidity",
+                    "content": "When a living plant cell loses water, the contents shrink away from the cell wall, a phenomenon known as plasmolysis. Conversely, the cell wall allows plant, fungi, and bacterial cells to withstand dilute external media without bursting. The cell swells, building pressure against the wall, which exerts an equal pressure back."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Nucleus",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Cell's Control Center",
+                    "content": "The nucleus has a double-layered covering called the nuclear membrane, which has pores to allow the transfer of material to the cytoplasm. The nucleus contains chromosomes, which are visible as rod-shaped structures only when the cell is about to divide."
+                },
+                {
+                    "type": "text",
+                    "heading": "Chromosomes and DNA",
+                    "content": "Chromosomes contain information for inheritance in the form of DNA (Deoxyribonucleic Acid) molecules. DNA molecules contain the information necessary for constructing and organizing cells. Functional segments of DNA are called genes. In a non-dividing cell, DNA is present as part of chromatin material."
+                },
+                {
+                    "type": "text",
+                    "heading": "Prokaryotes vs. Eukaryotes",
+                    "content": "In some organisms like bacteria, the nuclear region is poorly defined and lacks a nuclear membrane. This region, called a nucleoid, characterizes them as prokaryotes. Organisms with a true nuclear membrane are called eukaryotes."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Cytoplasm",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Cell's Interior",
+                    "content": "The cytoplasm is the fluid content inside the plasma membrane. It contains many specialised cell organelles, each performing a specific function. In prokaryotes, which lack membrane-bound organelles, many functions are performed by poorly organised parts of the cytoplasm."
+                },
+                {
+                    "type": "text",
+                    "heading": "The Importance of Membranes",
+                    "content": "The significance of membranes is illustrated by viruses, which lack any membranes and thus do not show characteristics of life until they enter a living body and use its cell machinery to multiply."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Cell Organelles",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Specialized Structures",
+                    "content": "To support their complex structure and function, large eukaryotic cells use membrane-bound little structures, or 'organelles', to keep their chemical activities separate from each other. Some of these are visible only with an electron microscope. We will now discuss some of the most important ones."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Endoplasmic Reticulum (ER)",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Cell's Network",
+                    "content": "The ER is a large network of membrane-bound tubes and sheets. There are two types: rough ER (RER) and smooth ER (SER). RER looks rough because it has ribosomes attached to its surface, which are the sites of protein manufacture. SER helps in the manufacture of fat molecules, or lipids."
+                },
+                {
+                    "type": "text",
+                    "heading": "Functions of the ER",
+                    "content": "One function of the ER is to serve as a channel for transporting materials, especially proteins. It also functions as a cytoplasmic framework. In liver cells, SER plays a crucial role in detoxifying many poisons and drugs. The process of building the cell membrane using proteins and lipids from the ER is known as membrane biogenesis."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Golgi Apparatus",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Cell's Post Office",
+                    "content": "The Golgi apparatus consists of a system of membrane-bound vesicles arranged in stacks called cisterns. It receives material synthesized near the ER, which is then packaged and dispatched to various targets inside and outside the cell. Its functions include the storage, modification, and packaging of products. It is also involved in the formation of lysosomes."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Lysosomes",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Waste Disposal System",
+                    "content": "Lysosomes are membrane-bound sacs filled with powerful digestive enzymes made by the RER. They help to keep the cell clean by digesting any foreign material as well as worn-out cell organelles. When a cell gets damaged, lysosomes may burst and the enzymes digest their own cell. Therefore, they are also known as the ‘suicide bags’ of a cell."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Mitochondria",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Powerhouses of the Cell",
+                    "content": "Mitochondria are known as the powerhouses of the cell because they release the energy required for various chemical activities. This energy is in the form of ATP (Adenosine triphosphate) molecules, the energy currency of the cell. Mitochondria have two membrane coverings; the inner one is deeply folded to increase the surface area for ATP-generating reactions. Strangely, they have their own DNA and ribosomes."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Plastids",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Plant Cell Organelles",
+                    "content": "Plastids are present only in plant cells. There are two types: chromoplasts (coloured) and leucoplasts (white or colourless). Chromoplasts that contain chlorophyll are known as chloroplasts and are important for photosynthesis. Leucoplasts are primarily for storing materials like starch, oils, and proteins. Like mitochondria, plastids also have their own DNA and ribosomes."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Vacuoles",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Storage Sacs",
+                    "content": "Vacuoles are storage sacs for solid or liquid contents. Plant cells have very large vacuoles that can occupy 50-90% of the cell volume, providing turgidity and rigidity. Animal cells have small vacuoles. In single-celled organisms like Amoeba, the food vacuole contains consumed food items. In others, they play a role in expelling excess water and wastes."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Cell Division",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Creating New Cells",
+                    "content": "The process by which new cells are made is called cell division. It's essential for growth, replacing old or injured cells, and forming gametes for reproduction. There are two main types: mitosis and meiosis."
+                },
+                {
+                    "type": "text",
+                    "heading": "Mitosis",
+                    "content": "The process of cell division for growth is called mitosis. In this process, a mother cell divides to form two identical daughter cells that have the same number of chromosomes as the mother cell."
+                },
+                {
+                    "type": "text",
+                    "heading": "Meiosis",
+                    "content": "Specific cells in reproductive organs divide by meiosis to form gametes (like sperm and eggs). This process involves two consecutive divisions and produces four new cells, each with half the number of chromosomes as the mother cell."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

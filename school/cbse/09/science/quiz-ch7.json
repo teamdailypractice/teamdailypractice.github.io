@@ -1,0 +1,114 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Motion",
+            "questions": [
+                { "question": "When is an object said to be in motion?", "options": ["When its position changes with time", "When it is invisible", "When it is heavy", "When it is hot"], "answer": "When its position changes with time" },
+                { "question": "Can an object be moving for one person and stationary for another?", "options": ["Yes, motion is relative", "No, motion is absolute", "Only in space", "Never"], "answer": "Yes, motion is relative" },
+                { "question": "What is indirect evidence of motion?", "options": ["Observing effects like dust movement", "Seeing the object move", "Measuring speed", "Hearing sound"], "answer": "Observing effects like dust movement" },
+                { "question": "Which of these is NOT in motion?", "options": ["A parked car", "Blood flowing", "Earth rotating", "Atoms vibrating"], "answer": "A parked car" },
+                { "question": "Sunrise and sunset are caused by?", "options": ["Motion of the earth", "Motion of the sun", "Motion of the moon", "Motion of stars"], "answer": "Motion of the earth" }
+            ]
+        },
+        {
+            "title": "Describing Motion",
+            "questions": [
+                { "question": "To describe position, we need a?", "options": ["Reference point", "Stopwatch", "Thermometer", "Compass"], "answer": "Reference point" },
+                { "question": "The reference point is also called?", "options": ["Origin", "Destination", "Path", "Vector"], "answer": "Origin" },
+                { "question": "If school is 2km north of station, what is the origin?", "options": ["Station", "School", "North", "2km"], "answer": "Station" },
+                { "question": "Can we choose any reference point?", "options": ["Yes", "No", "Only fixed ones", "Only moving ones"], "answer": "Yes" },
+                { "question": "Location depends on?", "options": ["Reference point", "Time of day", "Weather", "Speed"], "answer": "Reference point" }
+            ]
+        },
+        {
+            "title": "Motion Along a Straight Line",
+            "questions": [
+                { "question": "Total path length covered is called?", "options": ["Distance", "Displacement", "Speed", "Velocity"], "answer": "Distance" },
+                { "question": "Shortest distance from initial to final position is?", "options": ["Displacement", "Distance", "Path", "Length"], "answer": "Displacement" },
+                { "question": "Displacement has?", "options": ["Magnitude and direction", "Only magnitude", "Only direction", "Neither"], "answer": "Magnitude and direction" },
+                { "question": "Can displacement be zero?", "options": ["Yes", "No", "Never", "Only for light"], "answer": "Yes" },
+                { "question": "If you go 5m East and 5m West, displacement is?", "options": ["0m", "10m", "5m", "25m"], "answer": "0m" }
+            ]
+        },
+        {
+            "title": "Uniform and Non-Uniform Motion",
+            "questions": [
+                { "question": "Equal distances in equal time intervals is?", "options": ["Uniform motion", "Non-uniform motion", "Accelerated motion", "Circular motion"], "answer": "Uniform motion" },
+                { "question": "Unequal distances in equal time intervals is?", "options": ["Non-uniform motion", "Uniform motion", "Constant speed", "Rest"], "answer": "Non-uniform motion" },
+                { "question": "A car in crowded traffic typically shows?", "options": ["Non-uniform motion", "Uniform motion", "Constant velocity", "Zero acceleration"], "answer": "Non-uniform motion" },
+                { "question": "Planets revolving around sun is?", "options": ["Uniform circular motion", "Linear motion", "Random motion", "Zigzag motion"], "answer": "Uniform circular motion" },
+                { "question": "For uniform motion, time interval should be?", "options": ["Small", "Large", "Infinite", "Zero"], "answer": "Small" }
+            ]
+        },
+        {
+            "title": "Measuring the Rate of Motion",
+            "questions": [
+                { "question": "Rate of motion is measured by?", "options": ["Speed", "Distance", "Time", "Mass"], "answer": "Speed" },
+                { "question": "SI unit of speed is?", "options": ["m/s", "km/h", "cm/s", "miles/hour"], "answer": "m/s" },
+                { "question": "Average speed is?", "options": ["Total distance / Total time", "Total time / Total distance", "Distance x Time", "Speed x Time"], "answer": "Total distance / Total time" },
+                { "question": "Does speed specify direction?", "options": ["No", "Yes", "Sometimes", "Only in space"], "answer": "No" },
+                { "question": "An object covers 16m in 4s. Speed is?", "options": ["4 m/s", "64 m/s", "12 m/s", "0.25 m/s"], "answer": "4 m/s" }
+            ]
+        },
+        {
+            "title": "Speed with Direction: Velocity",
+            "questions": [
+                { "question": "Speed with direction is called?", "options": ["Velocity", "Acceleration", "Distance", "Displacement"], "answer": "Velocity" },
+                { "question": "Velocity changes if?", "options": ["Speed or direction changes", "Only time changes", "Only mass changes", "Nothing changes"], "answer": "Speed or direction changes" },
+                { "question": "Average velocity formula (uniform change) is?", "options": ["(u + v) / 2", "u + v", "v - u", "u x v"], "answer": "(u + v) / 2" },
+                { "question": "If a car moves in a circle at constant speed, does velocity change?", "options": ["Yes", "No", "Sometimes", "Never"], "answer": "Yes" },
+                { "question": "Unit of velocity is?", "options": ["m/s", "m/s²", "m", "s"], "answer": "m/s" }
+            ]
+        },
+        {
+            "title": "Rate of Change of Velocity: Acceleration",
+            "questions": [
+                { "question": "Acceleration is?", "options": ["Change in velocity per unit time", "Change in distance", "Change in speed", "Change in position"], "answer": "Change in velocity per unit time" },
+                { "question": "Formula for acceleration is?", "options": ["(v - u) / t", "v x t", "u + at", "s / t"], "answer": "(v - u) / t" },
+                { "question": "SI unit of acceleration is?", "options": ["m/s²", "m/s", "km/h", "m"], "answer": "m/s²" },
+                { "question": "If velocity increases, acceleration is?", "options": ["Positive", "Negative", "Zero", "Undefined"], "answer": "Positive" },
+                { "question": "If velocity is constant, acceleration is?", "options": ["Zero", "Constant", "Increasing", "Decreasing"], "answer": "Zero" }
+            ]
+        },
+        {
+            "title": "Graphical Representation: Distance-Time Graphs",
+            "questions": [
+                { "question": "Slope of distance-time graph gives?", "options": ["Speed", "Acceleration", "Displacement", "Time"], "answer": "Speed" },
+                { "question": "For uniform speed, d-t graph is?", "options": ["Straight line", "Curved line", "Circle", "Zigzag"], "answer": "Straight line" },
+                { "question": "Graph parallel to time axis means object is?", "options": ["At rest", "Moving uniformly", "Accelerating", "Decelerating"], "answer": "At rest" },
+                { "question": "Curved d-t graph indicates?", "options": ["Non-uniform speed", "Uniform speed", "Rest", "Zero speed"], "answer": "Non-uniform speed" },
+                { "question": "Distance is plotted on which axis?", "options": ["Y-axis", "X-axis", "Z-axis", "Any axis"], "answer": "Y-axis" }
+            ]
+        },
+        {
+            "title": "Velocity-Time Graphs",
+            "questions": [
+                { "question": "Area under v-t graph gives?", "options": ["Displacement", "Acceleration", "Speed", "Time"], "answer": "Displacement" },
+                { "question": "Slope of v-t graph gives?", "options": ["Acceleration", "Displacement", "Speed", "Force"], "answer": "Acceleration" },
+                { "question": "For uniform acceleration, v-t graph is?", "options": ["Straight line inclined to axes", "Curved line", "Parallel to time axis", "Parallel to velocity axis"], "answer": "Straight line inclined to axes" },
+                { "question": "If v-t graph is parallel to time axis, acceleration is?", "options": ["Zero", "Constant", "Variable", "Infinite"], "answer": "Zero" },
+                { "question": "Retardation graph slope is?", "options": ["Negative", "Positive", "Zero", "Undefined"], "answer": "Negative" }
+            ]
+        },
+        {
+            "title": "Equations of Motion",
+            "questions": [
+                { "question": "First equation of motion is?", "options": ["v = u + at", "s = ut + 1/2at²", "2as = v² - u²", "F = ma"], "answer": "v = u + at" },
+                { "question": "Second equation relates?", "options": ["Position and time", "Velocity and time", "Position and velocity", "Force and mass"], "answer": "Position and time" },
+                { "question": "Third equation is?", "options": ["2as = v² - u²", "v = u + at", "s = ut + 1/2at²", "E = mc²"], "answer": "2as = v² - u²" },
+                { "question": "'u' stands for?", "options": ["Initial velocity", "Final velocity", "Acceleration", "Time"], "answer": "Initial velocity" },
+                { "question": "These equations apply for?", "options": ["Uniform acceleration", "Non-uniform acceleration", "Variable acceleration", "Zero velocity"], "answer": "Uniform acceleration" }
+            ]
+        },
+        {
+            "title": "Uniform Circular Motion",
+            "questions": [
+                { "question": "Motion in a circle at constant speed is?", "options": ["Accelerated motion", "Uniform motion", "Retarded motion", "Rest"], "answer": "Accelerated motion" },
+                { "question": "Why is it accelerated?", "options": ["Direction changes continuously", "Speed changes", "Mass changes", "Time stops"], "answer": "Direction changes continuously" },
+                { "question": "Direction of motion at any point is?", "options": ["Tangential", "Radial", "Vertical", "Horizontal"], "answer": "Tangential" },
+                { "question": "Formula for circular speed is?", "options": ["v = 2πr / t", "v = πr² / t", "v = 2r / t", "v = r / t"], "answer": "v = 2πr / t" },
+                { "question": "Example of uniform circular motion?", "options": ["Moon revolving around Earth", "Car on straight road", "Stone falling", "Bullet fired"], "answer": "Moon revolving around Earth" }
+            ]
+        }
+    ]
+}

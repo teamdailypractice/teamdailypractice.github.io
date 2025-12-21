@@ -1,0 +1,233 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Motion is Everywhere",
+                    "content": "In everyday life, we see objects at rest and in motion. Birds fly, cars move, and blood flows. Even atoms, planets, and stars are in motion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Perception of Motion",
+                    "content": "We often perceive an object to be in motion when its position changes with time. Sometimes motion is inferred indirectly, like observing dust movement to know the wind is blowing."
+                },
+                {
+                    "type": "text",
+                    "heading": "Relative Motion",
+                    "content": "An object may appear moving to one person and stationary to another. For example, roadside trees appear to move backwards to passengers in a moving bus, but are stationary to a person on the road."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Describing Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Reference Point",
+                    "content": "To describe the location of an object, we specify a reference point called the origin. For example, if a school is 2 km north of the railway station, the station is the reference point."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Motion Along a Straight Line",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Distance",
+                    "content": "The total path length covered by an object is the distance. It has only magnitude (numerical value) and no direction."
+                },
+                {
+                    "type": "text",
+                    "heading": "Displacement",
+                    "content": "The shortest distance measured from the initial to the final position of an object is known as displacement. It has both magnitude and direction."
+                },
+                {
+                    "type": "text",
+                    "heading": "Difference",
+                    "content": "The magnitude of displacement can be zero (if the object returns to the start), but the distance covered will not be zero."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Uniform and Non-Uniform Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Uniform Motion",
+                    "content": "If an object covers equal distances in equal intervals of time, it is said to be in uniform motion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Non-Uniform Motion",
+                    "content": "If an object covers unequal distances in equal intervals of time, it is in non-uniform motion. Example: A car moving on a crowded street."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Measuring the Rate of Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Speed",
+                    "content": "The distance travelled by an object in unit time is called speed. The SI unit is metre per second (m/s)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Average Speed",
+                    "content": "Since speed is often not constant, we use average speed. Average speed = Total distance travelled / Total time taken."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Speed with Direction: Velocity",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Velocity is the speed of an object moving in a definite direction. It specifies both magnitude and direction."
+                },
+                {
+                    "type": "text",
+                    "heading": "Changing Velocity",
+                    "content": "Velocity can change by changing the object's speed, direction of motion, or both."
+                },
+                {
+                    "type": "text",
+                    "heading": "Average Velocity",
+                    "content": "If velocity changes at a uniform rate, Average velocity = (Initial velocity + Final velocity) / 2."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Rate of Change of Velocity: Acceleration",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Acceleration is the measure of the change in the velocity of an object per unit time. Acceleration = (Change in velocity) / (Time taken)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "If velocity changes from u (initial) to v (final) in time t, then acceleration a = (v - u) / t. The SI unit is m/s²."
+                },
+                {
+                    "type": "text",
+                    "heading": "Uniform Acceleration",
+                    "content": "If velocity changes by equal amounts in equal time intervals, acceleration is uniform (e.g., a freely falling body)."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Graphical Representation: Distance-Time Graphs",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Uniform Speed",
+                    "content": "For an object moving with uniform speed, the distance-time graph is a straight line. The slope of the line indicates the speed."
+                },
+                {
+                    "type": "text",
+                    "heading": "Non-Uniform Speed",
+                    "content": "For non-uniform speed, the graph is a curved line, showing non-linear variation of distance with time."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Velocity-Time Graphs",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Uniform Motion",
+                    "content": "If an object moves at uniform velocity, the graph is a straight line parallel to the time axis. The area under the graph gives the displacement."
+                },
+                {
+                    "type": "text",
+                    "heading": "Uniform Acceleration",
+                    "content": "For uniformly accelerated motion, the velocity-time graph is a straight line. The area under the graph gives the distance travelled."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Equations of Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Three Equations",
+                    "content": "For an object moving along a straight line with uniform acceleration: 1) v = u + at (Velocity-time relation), 2) s = ut + ½at² (Position-time relation), 3) 2as = v² - u² (Position-velocity relation)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Symbols",
+                    "content": "u = initial velocity, v = final velocity, a = acceleration, t = time, s = distance."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Uniform Circular Motion",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Accelerated Motion",
+                    "content": "When an object moves in a circular path with uniform speed, its direction changes continuously. Therefore, the velocity changes, making it an accelerated motion."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "Examples include the motion of the moon around the earth, a satellite in orbit, or a stone tied to a thread and whirled in a circle."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "Speed v = (2πr) / t, where r is the radius of the circular path and t is the time taken for one round."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Gravitation",
+            "questions": [
+                { "question": "What force keeps the planets moving around the sun?", "options": ["Gravitational force", "Magnetic force", "Friction", "Electrostatic force"], "answer": "Gravitational force" },
+                { "question": "Newton saw an apple fall. This led to the idea of?", "options": ["Gravity", "Light", "Sound", "Electricity"], "answer": "Gravity" },
+                { "question": "Does the earth attract the moon?", "options": ["Yes", "No", "Only during full moon", "Only during eclipse"], "answer": "Yes" },
+                { "question": "Is gravitational force limited to earth?", "options": ["No, it is universal", "Yes", "Only solar system", "Only nearby objects"], "answer": "No, it is universal" },
+                { "question": "Who formulated the Universal Law of Gravitation?", "options": ["Isaac Newton", "Galileo", "Einstein", "Kepler"], "answer": "Isaac Newton" }
+            ]
+        },
+        {
+            "title": "Centripetal Force",
+            "questions": [
+                { "question": "Centripetal force acts towards?", "options": ["The centre of the circle", "Away from centre", "Tangent to circle", "Upwards"], "answer": "The centre of the circle" },
+                { "question": "What happens if centripetal force ceases?", "options": ["Object flies off along tangent", "Object stops", "Object moves to centre", "Object spirals"], "answer": "Object flies off along tangent" },
+                { "question": "Motion of moon around earth is due to?", "options": ["Centripetal force provided by gravity", "Wind", "Magnetic force", "Rocket propulsion"], "answer": "Centripetal force provided by gravity" },
+                { "question": "Does velocity change in uniform circular motion?", "options": ["Yes, direction changes", "No", "Only magnitude changes", "Only speed changes"], "answer": "Yes, direction changes" },
+                { "question": "Centripetal means?", "options": ["Centre-seeking", "Centre-fleeing", "Circular", "Fast"], "answer": "Centre-seeking" }
+            ]
+        },
+        {
+            "title": "Universal Law of Gravitation",
+            "questions": [
+                { "question": "Force is proportional to?", "options": ["Product of masses", "Sum of masses", "Difference of masses", "Division of masses"], "answer": "Product of masses" },
+                { "question": "Force is inversely proportional to?", "options": ["Square of distance", "Distance", "Cube of distance", "Square root of distance"], "answer": "Square of distance" },
+                { "question": "The value of G (Gravitational Constant) is?", "options": ["6.673 x 10^-11 Nm^2/kg^2", "9.8 m/s^2", "10 m/s^2", "3 x 10^8 m/s"], "answer": "6.673 x 10^-11 Nm^2/kg^2" },
+                { "question": "Who determined the value of G?", "options": ["Henry Cavendish", "Newton", "Galileo", "Kepler"], "answer": "Henry Cavendish" },
+                { "question": "The force acts along?", "options": ["Line joining centres of two objects", "Tangent", "Perpendicular", "Random direction"], "answer": "Line joining centres of two objects" }
+            ]
+        },
+        {
+            "title": "Free Fall",
+            "questions": [
+                { "question": "Free fall means object falling under?", "options": ["Gravity alone", "Air resistance", "Magnetic force", "Wind"], "answer": "Gravity alone" },
+                { "question": "During free fall, what changes?", "options": ["Velocity magnitude", "Direction", "Mass", "Shape"], "answer": "Velocity magnitude" },
+                { "question": "Acceleration during free fall is denoted by?", "options": ["g", "G", "a", "f"], "answer": "g" },
+                { "question": "Is direction of motion changed in free fall?", "options": ["No", "Yes", "Sometimes", "Depends on mass"], "answer": "No" },
+                { "question": "Earth attracts objects due to?", "options": ["Gravitational force", "Magnetic force", "Electrostatic force", "Friction"], "answer": "Gravitational force" }
+            ]
+        },
+        {
+            "title": "Acceleration due to Gravity",
+            "questions": [
+                { "question": "Value of g on earth surface is approx?", "options": ["9.8 m/s^2", "6.7 m/s^2", "1.6 m/s^2", "100 m/s^2"], "answer": "9.8 m/s^2" },
+                { "question": "Does g depend on mass of the falling object?", "options": ["No", "Yes", "Only for heavy objects", "Only for light objects"], "answer": "No" },
+                { "question": "Value of g is greater at?", "options": ["Poles", "Equator", "Same everywhere", "Mountain top"], "answer": "Poles" },
+                { "question": "Unit of g is same as?", "options": ["Acceleration", "Velocity", "Force", "Work"], "answer": "Acceleration" },
+                { "question": "Formula for g is?", "options": ["GM/R^2", "Gm/d^2", "F/m", "ma"], "answer": "GM/R^2" }
+            ]
+        },
+        {
+            "title": "Motion under Gravity Equations",
+            "questions": [
+                { "question": "Equation for velocity in free fall?", "options": ["v = u + gt", "v = u + at", "s = ut + 1/2gt^2", "v^2 - u^2 = 2gs"], "answer": "v = u + gt" },
+                { "question": "If object is thrown up, g is taken as?", "options": ["Negative", "Positive", "Zero", "Constant"], "answer": "Negative" },
+                { "question": "At maximum height, velocity is?", "options": ["Zero", "Maximum", "Minimum", "9.8 m/s"], "answer": "Zero" },
+                { "question": "Distance formula in free fall?", "options": ["s = ut + 1/2gt^2", "s = vt", "s = u + v", "s = gt"], "answer": "s = ut + 1/2gt^2" },
+                { "question": "If dropped from rest, initial velocity u is?", "options": ["0", "9.8", "Maximum", "1"], "answer": "0" }
+            ]
+        },
+        {
+            "title": "Mass vs Weight",
+            "questions": [
+                { "question": "Mass is a measure of?", "options": ["Inertia", "Gravity", "Weight", "Force"], "answer": "Inertia" },
+                { "question": "Does mass change on the moon?", "options": ["No", "Yes", "Becomes zero", "Increases"], "answer": "No" },
+                { "question": "Weight is defined as?", "options": ["Force with which earth attracts an object", "Mass x Volume", "Inertia", "Quantity of matter"], "answer": "Force with which earth attracts an object" },
+                { "question": "SI unit of Weight is?", "options": ["Newton", "Kilogram", "Pascal", "Joule"], "answer": "Newton" },
+                { "question": "Formula for Weight is?", "options": ["W = mg", "W = ma", "W = m/g", "W = mv"], "answer": "W = mg" }
+            ]
+        },
+        {
+            "title": "Weight on the Moon",
+            "questions": [
+                { "question": "Weight on moon is what fraction of weight on earth?", "options": ["1/6", "1/2", "1/10", "Same"], "answer": "1/6" },
+                { "question": "Why is weight less on moon?", "options": ["Moon has less mass and weaker gravity", "Moon has no atmosphere", "Moon is smaller", "Moon is far"], "answer": "Moon has less mass and weaker gravity" },
+                { "question": "If mass is 6kg on earth, mass on moon is?", "options": ["6kg", "1kg", "36kg", "0kg"], "answer": "6kg" },
+                { "question": "If weight is 60N on earth, weight on moon is?", "options": ["10N", "6N", "60N", "360N"], "answer": "10N" },
+                { "question": "Does g value change on moon?", "options": ["Yes, it is less", "No, it is constant", "Yes, it is more", "It is zero"], "answer": "Yes, it is less" }
+            ]
+        },
+        {
+            "title": "Thrust and Pressure",
+            "questions": [
+                { "question": "Thrust is force acting?", "options": ["Perpendicular to surface", "Parallel to surface", "At any angle", "Opposite to gravity"], "answer": "Perpendicular to surface" },
+                { "question": "Pressure is?", "options": ["Thrust per unit area", "Force x Area", "Mass per unit volume", "Thrust x Time"], "answer": "Thrust per unit area" },
+                { "question": "SI unit of pressure is?", "options": ["Pascal", "Newton", "Joule", "Watt"], "answer": "Pascal" },
+                { "question": "For same force, smaller area gives?", "options": ["Larger pressure", "Smaller pressure", "Same pressure", "Zero pressure"], "answer": "Larger pressure" },
+                { "question": "Why do school bags have wide straps?", "options": ["To reduce pressure on shoulders", "To look good", "To increase weight", "To increase pressure"], "answer": "To reduce pressure on shoulders" }
+            ]
+        },
+        {
+            "title": "Pressure Examples",
+            "questions": [
+                { "question": "Why are knives sharp?", "options": ["To increase pressure for cutting", "To decrease pressure", "To look shiny", "To serve food"], "answer": "To increase pressure for cutting" },
+                { "question": "Why do camels walk easily on sand?", "options": ["Broad feet reduce pressure", "Sharp feet", "Heavy weight", "Long legs"], "answer": "Broad feet reduce pressure" },
+                { "question": "Why do trucks have wide tyres?", "options": ["To distribute weight and reduce pressure", "To move fast", "To look big", "To increase friction"], "answer": "To distribute weight and reduce pressure" },
+                { "question": "A sharp nail penetrates easily because?", "options": ["Small area exerts high pressure", "It is made of iron", "It is heavy", "It is long"], "answer": "Small area exerts high pressure" },
+                { "question": "Walking on sand is harder than lying down because?", "options": ["Feet have smaller area, exert more pressure", "Feet are heavy", "Sand is hot", "Lying increases weight"], "answer": "Feet have smaller area, exert more pressure" }
+            ]
+        },
+        {
+            "title": "Buoyancy",
+            "questions": [
+                { "question": "Upward force exerted by fluid is called?", "options": ["Buoyant force", "Gravitational force", "Friction", "Tension"], "answer": "Buoyant force" },
+                { "question": "Another name for buoyant force is?", "options": ["Upthrust", "Downthrust", "Weight", "Pressure"], "answer": "Upthrust" },
+                { "question": "Does air exert buoyant force?", "options": ["Yes", "No", "Only on balloons", "Only on birds"], "answer": "Yes" },
+                { "question": "Magnitude of buoyant force depends on?", "options": ["Density of fluid", "Color of fluid", "Temperature of object", "Shape of container"], "answer": "Density of fluid" },
+                { "question": "Why does a mug feel lighter in water?", "options": ["Due to buoyancy", "Water reduces mass", "Gravity stops working", "Mug absorbs water"], "answer": "Due to buoyancy" }
+            ]
+        },
+        {
+            "title": "Why Objects Float or Sink",
+            "questions": [
+                { "question": "An object floats if its density is?", "options": ["Less than liquid", "More than liquid", "Equal to liquid", "Zero"], "answer": "Less than liquid" },
+                { "question": "An object sinks if its density is?", "options": ["Greater than liquid", "Less than liquid", "Equal to liquid", "Very low"], "answer": "Greater than liquid" },
+                { "question": "Cork floats on water because?", "options": ["Density of cork < Density of water", "Cork is heavy", "Cork is wood", "Water pushes it down"], "answer": "Density of cork < Density of water" },
+                { "question": "Iron nail sinks because?", "options": ["Density of iron > Density of water", "Iron is magnetic", "Iron is solid", "Water pulls it"], "answer": "Density of iron > Density of water" },
+                { "question": "Density is defined as?", "options": ["Mass per unit volume", "Volume per unit mass", "Weight per area", "Force per volume"], "answer": "Mass per unit volume" }
+            ]
+        },
+        {
+            "title": "Archimedes' Principle",
+            "questions": [
+                { "question": "Archimedes' Principle states upward force equals?", "options": ["Weight of fluid displaced", "Weight of object", "Volume of object", "Density of fluid"], "answer": "Weight of fluid displaced" },
+                { "question": "Who discovered this principle?", "options": ["Archimedes", "Newton", "Pascal", "Bernoulli"], "answer": "Archimedes" },
+                { "question": "This principle applies to?", "options": ["Both liquids and gases (fluids)", "Only water", "Only gases", "Only solids"], "answer": "Both liquids and gases (fluids)" },
+                { "question": "When body is fully immersed, volume of fluid displaced equals?", "options": ["Volume of body", "Weight of body", "Mass of body", "Area of body"], "answer": "Volume of body" },
+                { "question": "Eureka means?", "options": ["I have found it", "I am lost", "Water is hot", "Gold is pure"], "answer": "I have found it" }
+            ]
+        },
+        {
+            "title": "Applications of Archimedes' Principle",
+            "questions": [
+                { "question": "Which instrument measures purity of milk?", "options": ["Lactometer", "Hydrometer", "Barometer", "Thermometer"], "answer": "Lactometer" },
+                { "question": "Which instrument measures density of liquids?", "options": ["Hydrometer", "Lactometer", "Voltmeter", "Speedometer"], "answer": "Hydrometer" },
+                { "question": "Archimedes' principle is used in designing?", "options": ["Ships and submarines", "Cars", "Planes", "Rockets"], "answer": "Ships and submarines" },
+                { "question": "Why do steel ships float?", "options": ["They displace water equal to their weight", "Steel is light", "Engines push them up", "Air holds them"], "answer": "They displace water equal to their weight" },
+                { "question": "A submarine dives by?", "options": ["Taking in water to increase weight", "Releasing air", "Using propeller", "Dropping anchor"], "answer": "Taking in water to increase weight" }
+            ]
+        },
+        {
+            "title": "Summary of Gravitation",
+            "questions": [
+                { "question": "Gravitational force is a?", "options": ["Weak force unless large masses involved", "Strong force", "Repulsive force", "Short range force"], "answer": "Weak force unless large masses involved" },
+                { "question": "Weight varies because?", "options": ["g varies from place to place", "Mass varies", "Earth is round", "Air pressure varies"], "answer": "g varies from place to place" },
+                { "question": "Value of g decreases with?", "options": ["Altitude", "Depth", "Both A and B", "Neither"], "answer": "Both A and B" },
+                { "question": "Mass is scalar or vector?", "options": ["Scalar", "Vector", "Neither", "Both"], "answer": "Scalar" },
+                { "question": "Weight is scalar or vector?", "options": ["Vector", "Scalar", "Neither", "Both"], "answer": "Vector" }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,359 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Food Resources",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Basic Needs",
+                    "content": "All living organisms need food. Food supplies proteins, carbohydrates, fats, vitamins, and minerals, which are required for body development, growth, and health."
+                },
+                {
+                    "type": "text",
+                    "heading": "Sources of Food",
+                    "content": "Both plants and animals are major sources of food for us. We obtain most of this food from agriculture and animal husbandry."
+                },
+                {
+                    "type": "text",
+                    "heading": "Need for Improvement",
+                    "content": "With a growing population, the demand for food is increasing. Since land for cultivation is limited, it is necessary to increase production efficiency for both crops and livestock."
+                },
+                {
+                    "type": "text",
+                    "heading": "Sustainable Practices",
+                    "content": "Increasing food production should not degrade our environment. Therefore, sustainable practices in agriculture and animal husbandry are essential."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Improvement in Crop Yields",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Types of Crops",
+                    "content": "Cereals (wheat, rice, maize) provide carbohydrates for energy. Pulses (gram, pea) provide protein. Oil seeds (soyabean, groundnut) provide fats. Vegetables, spices, and fruits provide vitamins and minerals."
+                },
+                {
+                    "type": "text",
+                    "heading": "Crop Seasons",
+                    "content": "Different crops require different climatic conditions. Kharif crops (paddy, soyabean) are grown in the rainy season (June to October). Rabi crops (wheat, gram) are grown in the winter season (November to April)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Stages of Farming",
+                    "content": "Farming practices can be divided into three stages: choice of seeds, nurturing of crop plants, and protection of growing and harvested crops."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Crop Variety Improvement",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Selecting Varieties",
+                    "content": "This approach depends on finding a crop variety that can give a good yield. Varieties can be selected by breeding for useful characteristics such as disease resistance, response to fertilisers, product quality, and high yields."
+                },
+                {
+                    "type": "text",
+                    "heading": "Hybridisation",
+                    "content": "One way to improve varieties is by hybridisation, which refers to crossing between genetically dissimilar plants. Another way is by introducing a gene that provides a desired characteristic, resulting in genetically modified crops."
+                },
+                {
+                    "type": "text",
+                    "heading": "Factors for Improvement",
+                    "content": "Varieties are improved for higher yield, improved quality, biotic and abiotic resistance (to diseases, drought, salinity), change in maturity duration (shorter duration is more economical), wider adaptability, and desirable agronomic characteristics."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Crop Production Management",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Farming Levels",
+                    "content": "Farming ranges from small to very large farms. The farmer's purchasing capacity for inputs decides the production practices, which can be 'no cost', 'low cost', or 'high cost' production."
+                },
+                {
+                    "type": "text",
+                    "heading": "Nutrient Requirements",
+                    "content": "Plants require nutrients for growth. Air supplies carbon and oxygen, water supplies hydrogen, and soil supplies thirteen other nutrients."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Nutrient Management",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Macronutrients",
+                    "content": "Six nutrients are required in large quantities and are called macronutrients: nitrogen, phosphorus, potassium, calcium, magnesium, and sulphur."
+                },
+                {
+                    "type": "text",
+                    "heading": "Micronutrients",
+                    "content": "Seven nutrients are used in small quantities and are called micronutrients: iron, manganese, boron, zinc, copper, molybdenum, and chlorine."
+                },
+                {
+                    "type": "text",
+                    "heading": "Deficiency",
+                    "content": "Deficiency of these nutrients affects physiological processes in plants including reproduction, growth, and susceptibility to diseases. Soil can be enriched by supplying manure and fertilizers."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Manure",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Organic Matter",
+                    "content": "Manure contains large quantities of organic matter and small quantities of nutrients. It is prepared by the decomposition of animal excreta and plant waste. It increases soil fertility and improves soil structure."
+                },
+                {
+                    "type": "text",
+                    "heading": "Types of Manure",
+                    "content": "Compost is farm waste decomposed in pits. Vermi-compost uses earthworms to hasten decomposition. Green manure involves ploughing green plants like sun hemp into the soil to enrich it in nitrogen and phosphorus."
+                },
+                {
+                    "type": "text",
+                    "heading": "Benefits",
+                    "content": "Using manure recycles farm waste and protects the environment from excessive use of fertilizers."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Fertilizers",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Commercial Nutrients",
+                    "content": "Fertilizers are commercially produced plant nutrients. They supply nitrogen, phosphorus, and potassium to ensure good vegetative growth (leaves, branches, flowers)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Precautions",
+                    "content": "Fertilizers should be applied carefully in terms of dose and time. Excessive irrigation can wash them away, leading to water pollution."
+                },
+                {
+                    "type": "text",
+                    "heading": "Long-term Effect",
+                    "content": "Continuous use of fertilizers can destroy soil fertility because organic matter is not replenished and micro-organisms are harmed. Organic farming is a system with minimal use of chemicals and maximum input of organic manures."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Irrigation",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Water for Crops",
+                    "content": "Most agriculture in India is rain-fed. Ensuring crops get water at the right stages increases yields. Irrigation systems include wells (dug and tube wells), canals, river lift systems, and tanks."
+                },
+                {
+                    "type": "text",
+                    "heading": "Water Management",
+                    "content": "Fresh initiatives for increasing water availability include rainwater harvesting and watershed management. This involves building small check-dams to increase groundwater levels and reduce soil erosion."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Cropping Patterns",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Mixed Cropping",
+                    "content": "Mixed cropping is growing two or more crops simultaneously on the same piece of land (e.g., wheat + gram). This reduces risk and gives insurance against failure of one crop."
+                },
+                {
+                    "type": "text",
+                    "heading": "Inter-cropping",
+                    "content": "Inter-cropping is growing two or more crops simultaneously in a definite pattern (e.g., alternating rows). Crops are selected with different nutrient requirements to ensure maximum utilisation of nutrients and prevent pest spread."
+                },
+                {
+                    "type": "text",
+                    "heading": "Crop Rotation",
+                    "content": "The growing of different crops on a piece of land in a pre-planned succession is known as crop rotation. Properly done, two or three crops can be grown in a year."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Crop Protection Management",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Weeds",
+                    "content": "Weeds are unwanted plants (e.g., Xanthium, Parthenium) that compete for food, space, and light, reducing crop growth."
+                },
+                {
+                    "type": "text",
+                    "heading": "Pests and Diseases",
+                    "content": "Insect pests attack plants by cutting parts, sucking sap, or boring into stems/fruits. Diseases are caused by pathogens like bacteria, fungi, and viruses."
+                },
+                {
+                    "type": "text",
+                    "heading": "Control Methods",
+                    "content": "Control methods include pesticides (herbicides, insecticides, fungicides), mechanical removal, and preventive methods like proper seed bed preparation, timely sowing, and using resistant varieties."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Storage of Grains",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Storage Losses",
+                    "content": "Losses in agricultural produce can be high due to biotic factors (insects, rodents, fungi) and abiotic factors (inappropriate moisture and temperature)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Effects",
+                    "content": "These factors cause degradation in quality, loss in weight, poor germinability, and discolouration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Preventive Measures",
+                    "content": "Measures include strict cleaning of produce before storage, proper drying in sunlight and then shade, and fumigation using chemicals to kill pests."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Animal Husbandry & Cattle Farming",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Cattle Farming Purposes",
+                    "content": "Cattle husbandry is done for milk (milch animals) and draught labour (draught animals) for agricultural work."
+                },
+                {
+                    "type": "text",
+                    "heading": "Breeds",
+                    "content": "Exotic breeds (e.g., Jersey) are selected for long lactation periods, while local breeds (e.g., Red Sindhi) show excellent disease resistance. They can be cross-bred to get both qualities."
+                },
+                {
+                    "type": "text",
+                    "heading": "Care and Feed",
+                    "content": "Proper shelter and hygiene are important. Feed includes roughage (fibre) and concentrates (protein-rich). Cattle suffer from diseases caused by parasites, bacteria, and viruses, necessitating vaccinations."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Poultry Farming",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Egg and Meat Production",
+                    "content": "Poultry farming raises domestic fowl for egg production (layers) and chicken meat (broilers)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Variety Improvement",
+                    "content": "Cross-breeding programs focus on desirable traits like number and quality of chicks, dwarf broiler parents, summer adaptation, and low maintenance requirements."
+                },
+                {
+                    "type": "text",
+                    "heading": "Management",
+                    "content": "Broilers require protein-rich feed with adequate fat and high vitamins A and K. Maintenance of temperature, hygienic conditions, and disease control are crucial."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Fish Production",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Sources of Fish",
+                    "content": "Fish production includes finned true fish and shellfish. It can be from natural resources (capture fishing) or fish farming (culture fishery). Sources include marine (seawater) and fresh water."
+                },
+                {
+                    "type": "text",
+                    "heading": "Marine Fisheries",
+                    "content": "Includes catching fish like pomphret and tuna using nets and satellites. Mariculture involves farming high-value marine fish like mullets, prawns, and oysters."
+                },
+                {
+                    "type": "text",
+                    "heading": "Inland Fisheries",
+                    "content": "Includes freshwater resources like canals and ponds. Composite fish culture uses a combination of 5-6 fish species in a single pond (e.g., Catla, Rohu, Mrigal) to utilise all food in the pond."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Bee-keeping",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Honey Production",
+                    "content": "Bee-keeping is an agricultural enterprise for making honey and wax. It needs low investment."
+                },
+                {
+                    "type": "text",
+                    "heading": "Bee Varieties",
+                    "content": "Local varieties include the Indian bee (Apis cerana indica), rock bee (A. dorsata), and little bee (A. florae). The Italian bee (A. mellifera) is used for high honey collection capacity and less stinging."
+                },
+                {
+                    "type": "text",
+                    "heading": "Pasturage",
+                    "content": "The quality and taste of honey depend upon the pasturage, or the flowers available to the bees for nectar and pollen collection."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

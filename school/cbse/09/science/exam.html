@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Biology Exam & Practice</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="chapter-5.html?home=true">Chapter Home</a>
+                <a href="exam.html">Exam</a>
+                <a href="download.html">Downloads</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Mode Selection Screen -->
+            <div id="mode-selection" class="mode-container">
+                <h2>Choose a Mode</h2>
+                <div class="mode-buttons">
+                    <button id="mode-read-btn" class="large-btn">📖 Read / Practice Mode</button>
+                    <button id="mode-exam-btn" class="large-btn">⏱️ Take Timed Exam</button>
+                </div>
+                <p class="mode-desc">
+                    <strong>Read Mode:</strong> View all questions with answers for study.<br>
+                    <strong>Exam Mode:</strong> 50 random questions, 20 minutes, answers hidden.
+                </p>
+            </div>
+
+            <!-- Read Mode Container -->
+            <div id="read-container" class="hidden">
+                <div class="mode-header">
+                    <h2>Practice Questions</h2>
+                    <button class="back-btn">← Back to Modes</button>
+                </div>
+                <div id="read-content"></div>
+            </div>
+
+            <!-- Exam Mode Container -->
+            <div id="exam-container" class="hidden">
+                <div class="mode-header">
+                    <div id="timer">20:00</div>
+                    <button class="back-btn">← Quit Exam</button>
+                </div>
+                <div id="exam-content">
+                    <!-- Exam questions will be loaded here -->
+                </div>
+                <footer>
+                    <button id="submit-exam-btn">Submit Exam</button>
+                </footer>
+            </div>
+        </main>
+    </div>
+    <script src="exam.js"></script>
+</body>
+</html>

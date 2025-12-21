@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chemistry Textbook - Chapter 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-chapter="ch1">
+    <div id="app">
+        <div id="topics-nav">
+            <button id="topics-close-btn" style="float: right; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+            <h2>Table of Contents</h2>
+            <div id="topics-list"></div>
+        </div>
+
+        <div id="content-wrap">
+            <header>
+                <button id="topics-btn">☰ Topics</button>
+                <h1>Chapter 1: Matter in Our Surroundings</h1>
+                <nav>
+                    <a href="index.html">Dashboard</a>
+                    <a href="chapter-1.html?home=true">Chapter Home</a>
+                    <a href="exam.html?chapter=ch1">Exam</a>
+                    <a href="download.html?chapter=ch1">Downloads</a>
+                </nav>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </header>
+            <main id="content">
+                <!-- Content will be loaded here -->
+            </main>
+            <footer>
+                <button id="prev-btn">Previous</button>
+                <button id="next-btn">Next</button>
+            </footer>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Tissues",
+            "questions": [
+                { "question": "What is a tissue?", "options": ["A group of similar cells performing a specific function", "A single cell", "An organ system", "A type of organism"], "answer": "A group of similar cells performing a specific function" },
+                { "question": "Which organism carries out all functions in a single cell?", "options": ["Amoeba", "Human", "Plant", "Fish"], "answer": "Amoeba" },
+                { "question": "What is division of labour?", "options": ["Different groups of cells doing specific tasks", "Cells dividing rapidly", "Cells stopping work", "None of the above"], "answer": "Different groups of cells doing specific tasks" },
+                { "question": "Which of these is an example of a tissue?", "options": ["Blood", "Stomach", "Heart", "Eye"], "answer": "Blood" },
+                { "question": "Why are cells grouped into tissues?", "options": ["To increase efficiency", "To look better", "To decrease size", "To stop dividing"], "answer": "To increase efficiency" }
+            ]
+        },
+        {
+            "title": "Plants vs. Animals Tissues",
+            "questions": [
+                { "question": "Why do plants need supportive tissue?", "options": ["Because they are stationary and need to stand upright", "Because they move a lot", "To store food", "To absorb water"], "answer": "Because they are stationary and need to stand upright" },
+                { "question": "Most plant supportive tissues consist of?", "options": ["Dead cells", "Living cells", "Muscle cells", "Nerve cells"], "answer": "Dead cells" },
+                { "question": "Which organisms consume more energy?", "options": ["Animals", "Plants", "Both equally", "Neither"], "answer": "Animals" },
+                { "question": "Growth in plants is limited to?", "options": ["Certain specific regions", "All over the body", "No regions", "Roots only"], "answer": "Certain specific regions" },
+                { "question": "Cell growth in animals is?", "options": ["More uniform", "Localised to tips", "Non-existent", "Only in bones"], "answer": "More uniform" }
+            ]
+        },
+        {
+            "title": "Meristematic Tissue",
+            "questions": [
+                { "question": "What is meristematic tissue?", "options": ["Dividing tissue", "Dead tissue", "Storage tissue", "Protective tissue"], "answer": "Dividing tissue" },
+                { "question": "Where is apical meristem found?", "options": ["Growing tips of stems and roots", "Base of leaves", "Sides of the stem", "In the bark"], "answer": "Growing tips of stems and roots" },
+                { "question": "Which meristem increases the girth of the stem?", "options": ["Lateral meristem", "Apical meristem", "Intercalary meristem", "None"], "answer": "Lateral meristem" },
+                { "question": "Cells of meristematic tissue lack?", "options": ["Vacuoles", "Nuclei", "Cytoplasm", "Cell walls"], "answer": "Vacuoles" },
+                { "question": "Intercalary meristem is located?", "options": ["Near the node", "At the root tip", "In the bark", "In the flower"], "answer": "Near the node" }
+            ]
+        },
+        {
+            "title": "Permanent Tissue",
+            "questions": [
+                { "question": "What is differentiation?", "options": ["Taking up a permanent shape, size, and function", "Continuous division", "Dying of cells", "Moving of cells"], "answer": "Taking up a permanent shape, size, and function" },
+                { "question": "Permanent tissues are formed from?", "options": ["Meristematic tissue", "Dead cells", "Animal cells", "None of the above"], "answer": "Meristematic tissue" },
+                { "question": "Do permanent tissues divide?", "options": ["No, they have lost the ability", "Yes, rapidly", "Sometimes", "Only in winter"], "answer": "No, they have lost the ability" },
+                { "question": "Differentiation leads to?", "options": ["Various types of permanent tissues", "Meristematic tissue", "Seeds", "Fruits"], "answer": "Various types of permanent tissues" },
+                { "question": "Cells in permanent tissue have?", "options": ["Specific roles", "No roles", "Random roles", "Only storage roles"], "answer": "Specific roles" }
+            ]
+        },
+        {
+            "title": "Simple Permanent Tissue (Parenchyma)",
+            "questions": [
+                { "question": "What is the most common simple permanent tissue?", "options": ["Parenchyma", "Collenchyma", "Sclerenchyma", "Xylem"], "answer": "Parenchyma" },
+                { "question": "What is a main function of parenchyma?", "options": ["Storing food", "Mechanical strength", "Transporting water", "Movement"], "answer": "Storing food" },
+                { "question": "Parenchyma with chlorophyll is called?", "options": ["Chlorenchyma", "Aerenchyma", "Sclerenchyma", "Epidermis"], "answer": "Chlorenchyma" },
+                { "question": "Aerenchyma helps aquatic plants to?", "options": ["Float", "Sink", "Dry out", "Reproduce"], "answer": "Float" },
+                { "question": "Are parenchyma cells living?", "options": ["Yes", "No", "Half of them", "Only in roots"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "Collenchyma and Sclerenchyma",
+            "questions": [
+                { "question": "Which tissue provides flexibility to plants?", "options": ["Collenchyma", "Parenchyma", "Sclerenchyma", "Xylem"], "answer": "Collenchyma" },
+                { "question": "Sclerenchyma cells are?", "options": ["Dead", "Living", "Dividing", "Photosynthetic"], "answer": "Dead" },
+                { "question": "The husk of a coconut is made of?", "options": ["Sclerenchyma", "Collenchyma", "Parenchyma", "Epidermis"], "answer": "Sclerenchyma" },
+                { "question": "What makes sclerenchyma walls thick?", "options": ["Lignin", "Suberin", "Pectin", "Cellulose"], "answer": "Lignin" },
+                { "question": "Collenchyma is found in?", "options": ["Leaf stalks", "Root tips", "Bark", "Seeds"], "answer": "Leaf stalks" }
+            ]
+        },
+        {
+            "title": "Protective Tissue",
+            "questions": [
+                { "question": "The outermost layer of plant cells is?", "options": ["Epidermis", "Cortex", "Pith", "Cambium"], "answer": "Epidermis" },
+                { "question": "What are stomata?", "options": ["Pores in the leaf epidermis", "Cells in the root", "Hairs on the stem", "Waxy coating"], "answer": "Pores in the leaf epidermis" },
+                { "question": "What is the function of cutin?", "options": ["Prevent water loss", "Allow gas exchange", "Absorb water", "Attract insects"], "answer": "Prevent water loss" },
+                { "question": "Cork cells have what substance in their walls?", "options": ["Suberin", "Lignin", "Cutin", "Pectin"], "answer": "Suberin" },
+                { "question": "Are cork cells living?", "options": ["No", "Yes", "Sometimes", "Only in young plants"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "Complex Permanent Tissue: Xylem",
+            "questions": [
+                { "question": "What does xylem transport?", "options": ["Water and minerals", "Food", "Air", "Hormones"], "answer": "Water and minerals" },
+                { "question": "Which of these is NOT part of xylem?", "options": ["Sieve tubes", "Tracheids", "Vessels", "Xylem parenchyma"], "answer": "Sieve tubes" },
+                { "question": "In which direction does xylem transport?", "options": ["Vertically (upwards)", "Downwards only", "Both directions", "Sideways"], "answer": "Vertically (upwards)" },
+                { "question": "Are most xylem cells dead or living at maturity?", "options": ["Dead", "Living", "Dividing", "Dormant"], "answer": "Dead" },
+                { "question": "Complex tissues are made of?", "options": ["More than one type of cell", "Only one type of cell", "Only dead cells", "Only living cells"], "answer": "More than one type of cell" }
+            ]
+        },
+        {
+            "title": "Complex Permanent Tissue: Phloem",
+            "questions": [
+                { "question": "What is the function of phloem?", "options": ["Transport food", "Transport water", "Support", "Protection"], "answer": "Transport food" },
+                { "question": "Phloem transport is in which direction?", "options": ["Both directions", "Upwards only", "Downwards only", "None"], "answer": "Both directions" },
+                { "question": "Which phloem component is dead?", "options": ["Phloem fibres", "Sieve tubes", "Companion cells", "Phloem parenchyma"], "answer": "Phloem fibres" },
+                { "question": "Sieve tubes have?", "options": ["Perforated walls", "Thick lignified walls", "No cytoplasm", "No nucleus"], "answer": "Perforated walls" },
+                { "question": "Phloem is an example of?", "options": ["Complex permanent tissue", "Simple permanent tissue", "Meristematic tissue", "Protective tissue"], "answer": "Complex permanent tissue" }
+            ]
+        },
+        {
+            "title": "Animal Tissues Overview",
+            "questions": [
+                { "question": "Which is NOT a type of animal tissue?", "options": ["Meristematic tissue", "Epithelial tissue", "Connective tissue", "Muscular tissue"], "answer": "Meristematic tissue" },
+                { "question": "Tissue responsible for movement is?", "options": ["Muscular", "Nervous", "Epithelial", "Connective"], "answer": "Muscular" },
+                { "question": "Tissue responsible for protection is?", "options": ["Epithelial", "Muscular", "Connective", "Nervous"], "answer": "Epithelial" },
+                { "question": "Blood belongs to which category?", "options": ["Connective tissue", "Epithelial tissue", "Muscular tissue", "Nervous tissue"], "answer": "Connective tissue" },
+                { "question": "The brain is made of?", "options": ["Nervous tissue", "Muscular tissue", "Connective tissue", "Epithelial tissue"], "answer": "Nervous tissue" }
+            ]
+        },
+        {
+            "title": "Epithelial Tissue",
+            "questions": [
+                { "question": "What type of epithelium lines the mouth?", "options": ["Squamous epithelium", "Cuboidal epithelium", "Columnar epithelium", "Glandular epithelium"], "answer": "Squamous epithelium" },
+                { "question": "Which epithelium has hair-like cilia?", "options": ["Ciliated columnar", "Stratified squamous", "Cuboidal", "Simple squamous"], "answer": "Ciliated columnar" },
+                { "question": "Where is cuboidal epithelium found?", "options": ["Kidney tubules", "Skin", "Lungs", "Stomach"], "answer": "Kidney tubules" },
+                { "question": "The skin is made of?", "options": ["Stratified squamous epithelium", "Simple squamous epithelium", "Columnar epithelium", "Cuboidal epithelium"], "answer": "Stratified squamous epithelium" },
+                { "question": "What is the main function of glandular epithelium?", "options": ["Secretion", "Movement", "Support", "Conduction"], "answer": "Secretion" }
+            ]
+        },
+        {
+            "title": "Connective Tissue: Blood and Bone",
+            "questions": [
+                { "question": "The liquid matrix of blood is called?", "options": ["Plasma", "Serum", "Lymph", "Water"], "answer": "Plasma" },
+                { "question": "Bone cells are embedded in a matrix of?", "options": ["Calcium and phosphorus", "Proteins and sugars", "Fats", "Silica"], "answer": "Calcium and phosphorus" },
+                { "question": "Is bone flexible?", "options": ["No, it is nonflexible", "Yes, very flexible", "Slightly flexible", "Only when young"], "answer": "No, it is nonflexible" },
+                { "question": "What does blood transport?", "options": ["Gases, food, and hormones", "Only oxygen", "Only waste", "Nothing"], "answer": "Gases, food, and hormones" },
+                { "question": "RBCs are found in?", "options": ["Blood", "Bone", "Cartilage", "Muscle"], "answer": "Blood" }
+            ]
+        },
+        {
+            "title": "Other Connective Tissues",
+            "questions": [
+                { "question": "Ligaments connect?", "options": ["Bone to bone", "Muscle to bone", "Muscle to muscle", "Skin to muscle"], "answer": "Bone to bone" },
+                { "question": "Tendons connect?", "options": ["Muscle to bone", "Bone to bone", "Nerve to muscle", "Skin to bone"], "answer": "Muscle to bone" },
+                { "question": "Cartilage is found in?", "options": ["Nose and ear", "Teeth", "Hair", "Nails"], "answer": "Nose and ear" },
+                { "question": "Adipose tissue stores?", "options": ["Fat", "Water", "Protein", "Starch"], "answer": "Fat" },
+                { "question": "Areolar tissue is found?", "options": ["Between skin and muscles", "In bones", "In teeth", "In hair"], "answer": "Between skin and muscles" }
+            ]
+        },
+        {
+            "title": "Muscular Tissue",
+            "questions": [
+                { "question": "Which muscles are voluntary?", "options": ["Striated muscles", "Smooth muscles", "Cardiac muscles", "All of them"], "answer": "Striated muscles" },
+                { "question": "Heart muscles are called?", "options": ["Cardiac muscles", "Striated muscles", "Smooth muscles", "Skeletal muscles"], "answer": "Cardiac muscles" },
+                { "question": "Which muscles are found in the alimentary canal?", "options": ["Smooth muscles", "Striated muscles", "Cardiac muscles", "Voluntary muscles"], "answer": "Smooth muscles" },
+                { "question": "Striated muscles are attached to?", "options": ["Bones", "Skin", "Organs", "Nerves"], "answer": "Bones" },
+                { "question": "Muscle cells are called?", "options": ["Fibres", "Neurons", "Osteocytes", "Chondrocytes"], "answer": "Fibres" }
+            ]
+        },
+        {
+            "title": "Nervous Tissue",
+            "questions": [
+                { "question": "The unit of nervous tissue is?", "options": ["Neuron", "Nephron", "Cell body", "Axon"], "answer": "Neuron" },
+                { "question": "The long part of a neuron is called?", "options": ["Axon", "Dendrite", "Cell body", "Nucleus"], "answer": "Axon" },
+                { "question": "Branched parts of a neuron are?", "options": ["Dendrites", "Axons", "Nerve endings", "Synapses"], "answer": "Dendrites" },
+                { "question": "What passes along the nerve fibre?", "options": ["Nerve impulse", "Blood", "Hormones", "Water"], "answer": "Nerve impulse" },
+                { "question": "Nervous tissue allows us to?", "options": ["Respond to stimuli", "Digest food", "Transport blood", "Photosynthesize"], "answer": "Respond to stimuli" }
+            ]
+        }
+    ]
+}

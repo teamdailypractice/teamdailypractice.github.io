@@ -1,0 +1,309 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Work and Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Life Processes",
+                    "content": "All living beings need food for energy to perform basic activities. We also need energy for playing, singing, reading, etc."
+                },
+                {
+                    "type": "text",
+                    "heading": "Machines",
+                    "content": "Machines also need energy for their working. Some engines require fuel like petrol and diesel."
+                },
+                {
+                    "type": "text",
+                    "heading": "Connection",
+                    "content": "Work, energy, and power are closely related concepts that help us understand natural phenomena."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 1: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Scientific Conception of Work",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Difference in Meaning",
+                    "content": "There is a difference between 'work' in day-to-day life and 'work' in science. Mental labour like studying is not considered work in science."
+                },
+                {
+                    "type": "text",
+                    "heading": "No Displacement, No Work",
+                    "content": "Pushing a huge rock that doesn't move involves a lot of effort but no work is done on the rock because there is no displacement."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 2: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Two Conditions for Work",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "The Conditions",
+                    "content": "For work to be done in science, two conditions must be satisfied: (i) a force should act on an object, and (ii) the object must be displaced."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "A girl pulling a trolley is doing work because force is applied and displacement occurs. A book lifted up involves work."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 3: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Work Done by a Constant Force",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Work done by a force acting on an object is equal to the magnitude of the force multiplied by the distance moved in the direction of the force."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "Work (W) = Force (F) × Displacement (s). Work has only magnitude and no direction."
+                },
+                {
+                    "type": "text",
+                    "heading": "Unit",
+                    "content": "The unit of work is newton metre (N m) or joule (J). 1 J is the work done when a force of 1 N displaces an object by 1 m."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 4: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Positive and Negative Work",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Positive Work",
+                    "content": "Work done is positive when the force is in the direction of displacement. Example: A baby pulling a toy car parallel to the ground."
+                },
+                {
+                    "type": "text",
+                    "heading": "Negative Work",
+                    "content": "Work done is negative when the force acts opposite to the direction of displacement. Example: Retarding force applied to a moving object."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 5: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Capacity to Do Work",
+                    "content": "An object having a capability to do work is said to possess energy. The object doing work loses energy, and the object on which work is done gains energy."
+                },
+                {
+                    "type": "text",
+                    "heading": "Measurement",
+                    "content": "Energy possessed by an object is measured in terms of its capacity of doing work. The unit of energy is the same as work: joule (J)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Sources",
+                    "content": "The Sun is the biggest natural source of energy. Other sources include nuclei of atoms, interior of earth, and tides."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 6: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Forms of Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Variety",
+                    "content": "Energy exists in many forms: mechanical energy (potential + kinetic), heat energy, chemical energy, electrical energy, and light energy."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 7: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Kinetic Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Energy of Motion",
+                    "content": "Kinetic energy is the energy possessed by an object due to its motion. A moving bullet, blowing wind, and a running athlete possess kinetic energy."
+                },
+                {
+                    "type": "text",
+                    "heading": "Speed Factor",
+                    "content": "The kinetic energy of an object increases with its speed. An object moving faster can do more work than an identical object moving relatively slow."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 8: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Formula for Kinetic Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Derivation",
+                    "content": "Work done to accelerate an object from velocity u to v is the change in kinetic energy. If starting from rest (u=0), Work = ½mv²."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "Kinetic Energy (Ek) = ½mv², where m is the mass and v is the velocity."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 9: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Potential Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Stored Energy",
+                    "content": "The energy transferred to an object is stored as potential energy if it is not used to cause a change in velocity. It is the energy present by virtue of position or configuration."
+                },
+                {
+                    "type": "text",
+                    "heading": "Examples",
+                    "content": "Stretching a rubber band or winding a toy car stores potential energy."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 10: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Potential Energy of an Object at a Height",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Gravitational Potential Energy",
+                    "content": "When an object is raised through a height, work is done against gravity. The energy gained is gravitational potential energy."
+                },
+                {
+                    "type": "text",
+                    "heading": "Formula",
+                    "content": "Ep = mgh, where m is mass, g is acceleration due to gravity, and h is the height."
+                },
+                {
+                    "type": "text",
+                    "heading": "Path Independence",
+                    "content": "The work done by gravity depends on the difference in vertical heights, not on the path taken."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 11: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Interconversion of Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Transformation",
+                    "content": "Energy can be converted from one form to another. In nature, green plants convert solar energy to chemical energy (food)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Gadgets",
+                    "content": "Many human activities and gadgets involve energy conversion, like an electric bulb converting electrical energy to light and heat."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 12: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Law of Conservation of Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Statement",
+                    "content": "Energy can only be converted from one form to another; it can neither be created nor destroyed. The total energy before and after the transformation remains the same."
+                },
+                {
+                    "type": "text",
+                    "heading": "Free Fall Example",
+                    "content": "During free fall, potential energy decreases while kinetic energy increases. The sum (mechanical energy) remains constant at all points: mgh + ½mv² = constant."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 13: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Rate of Doing Work (Power)",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Definition",
+                    "content": "Power is defined as the rate of doing work or the rate of transfer of energy. Power = Work / Time."
+                },
+                {
+                    "type": "text",
+                    "heading": "Unit",
+                    "content": "The unit of power is watt (W). 1 W = 1 Joule/second. Larger unit is kilowatt (kW)."
+                },
+                {
+                    "type": "text",
+                    "heading": "Average Power",
+                    "content": "Since power may vary with time, we use average power = Total energy consumed / Total time taken."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 14: Quick Quiz"
+                }
+            ]
+        },
+        {
+            "title": "Commercial Unit of Energy",
+            "stages": [
+                {
+                    "type": "text",
+                    "heading": "Kilowatt-hour",
+                    "content": "The joule is too small for large energy quantities. We use kilowatt-hour (kWh). 1 kWh is the energy used in one hour at the rate of 1000 J/s."
+                },
+                {
+                    "type": "text",
+                    "heading": "Conversion",
+                    "content": "1 kWh = 3.6 x 10^6 J. This is commonly known as one 'unit' of electricity."
+                },
+                {
+                    "type": "quiz",
+                    "heading": "Topic 15: Quick Quiz"
+                }
+            ]
+        }
+    ]
+}

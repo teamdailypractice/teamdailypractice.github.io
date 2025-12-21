@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Downloads</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="#" id="nav-chapter-home">Chapter Home</a>
+                <a href="#" id="nav-exam">Exam</a>
+                <a href="#" id="nav-downloads" class="active">Downloads</a>
+            </nav>
+        </header>
+        <main id="download-content">
+            <p>The following content is available for offline use.</p>
+            
+            <div style="margin-bottom: 3rem; background: #e8f5e9; padding: 1.5rem; border-radius: 8px; border: 1px solid #4CAF50;">
+                <h2 style="margin-top: 0; color: #2e7d32;">Complete Collection (All Chapters)</h2>
+                <ul>
+                    <li><a href="science-class9-textbook-complete.pdf" download class="download-link" style="font-weight: bold;">Download Complete Textbook (PDF)</a></li>
+                    <li><small>Includes all 12 chapters: Chemistry, Physics, and Biology.</small></li>
+                    <li style="margin-top: 10px;"><a href="science-class9-quiz-complete.pdf" download class="download-link" style="font-weight: bold;">Download Complete Question Bank (PDF)</a></li>
+                    <li><small>Includes all practice questions and answers.</small></li>
+                    <li style="margin-top: 10px;"><a href="science-class9-complete.epub" download class="download-link" style="font-weight: bold;">Download Complete e-Book (EPUB)</a></li>
+                    <li><small>Combined lessons and quizzes for e-readers (Kindle, Apple Books, etc.).</small></li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h2 id="article-title">Article Content</h2>
+                <ul>
+                    <li><a href="#" id="dl-article-pdf" class="download-link">Download Article (PDF)</a></li>
+                    <li><a href="#" id="dl-article-html" class="download-link">Download Article (Offline HTML)</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 id="quiz-title">Quiz Content</h2>
+                <ul>
+                    <li><a href="#" id="dl-quiz-pdf" class="download-link">Download Quiz with Answers (PDF)</a></li>
+                    <li><a href="#" id="dl-quiz-html" class="download-link">Download Quiz with Answers (Offline HTML)</a></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const chapter = urlParams.get('chapter') || 'ch5'; // Default to ch5
+
+        // Update Nav Links
+        document.getElementById('nav-chapter-home').href = `chapter-${chapter.replace('ch', '')}.html?home=true`;
+        document.getElementById('nav-exam').href = `exam.html?chapter=${chapter}`;
+        document.getElementById('nav-downloads').href = `download.html?chapter=${chapter}`;
+
+        // Update Download Links
+        document.getElementById('dl-article-pdf').href = `biology-${chapter}-article.pdf`;
+        document.getElementById('dl-article-html').href = `biology-${chapter}-article.html`;
+        
+        document.getElementById('dl-quiz-pdf').href = `biology-${chapter}-quiz.pdf`;
+        document.getElementById('dl-quiz-html').href = `biology-${chapter}-quiz.html`;
+
+        document.getElementById('article-title').textContent = `Article Content (${chapter.toUpperCase()})`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+{
+    "topics": [
+        {
+            "title": "Introduction to Atoms and Molecules",
+            "questions": [
+                { "question": "Who postulated the term 'Parmanu'?", "options": ["Maharishi Kanad", "Democritus", "Lavoisier", "Dalton"], "answer": "Maharishi Kanad" },
+                { "question": "What does the Greek word 'atom' mean?", "options": ["Indivisible", "Invisible", "Tiny", "Hard"], "answer": "Indivisible" },
+                { "question": "Who laid the foundation of chemical sciences?", "options": ["Antoine L. Lavoisier", "John Dalton", "Proust", "Kanad"], "answer": "Antoine L. Lavoisier" },
+                { "question": "When was the idea of divisibility of matter considered in India?", "options": ["Around 500 BC", "Around 1800 AD", "Around 100 AD", "Around 2000 BC"], "answer": "Around 500 BC" },
+                { "question": "Who suggested that particles normally exist in a combined form?", "options": ["Pakudha Katyayama", "Democritus", "Lavoisier", "Proust"], "answer": "Pakudha Katyayama" }
+            ]
+        },
+        {
+            "title": "Law of Conservation of Mass",
+            "questions": [
+                { "question": "The Law of Conservation of Mass states that mass can?", "options": ["Neither be created nor destroyed", "Be created but not destroyed", "Be destroyed but not created", "Be created and destroyed"], "answer": "Neither be created nor destroyed" },
+                { "question": "Who established the Law of Conservation of Mass?", "options": ["Lavoisier", "Dalton", "Proust", "Bohr"], "answer": "Lavoisier" },
+                { "question": "In a chemical reaction, the total mass of reactants is?", "options": ["Equal to total mass of products", "Greater than products", "Less than products", "Variable"], "answer": "Equal to total mass of products" },
+                { "question": "If 10g of A reacts with 5g of B to give C and D, the total mass of C and D is?", "options": ["15g", "10g", "5g", "20g"], "answer": "15g" },
+                { "question": "Why is a cork put on the flask during the experiment?", "options": ["To prevent matter from escaping", "To keep it warm", "To look good", "To mix solutions"], "answer": "To prevent matter from escaping" }
+            ]
+        },
+        {
+            "title": "Law of Constant Proportions",
+            "questions": [
+                { "question": "This law is also known as?", "options": ["Law of Definite Proportions", "Law of Mass Action", "Law of Multiple Proportions", "Law of Conservation"], "answer": "Law of Definite Proportions" },
+                { "question": "In water, the ratio of Hydrogen to Oxygen by mass is?", "options": ["1:8", "1:2", "2:1", "8:1"], "answer": "1:8" },
+                { "question": "Who stated the Law of Constant Proportions?", "options": ["Proust", "Lavoisier", "Dalton", "Kanad"], "answer": "Proust" },
+                { "question": "In Ammonia (NH3), Nitrogen and Hydrogen are in ratio?", "options": ["14:3", "1:3", "3:14", "14:1"], "answer": "14:3" },
+                { "question": "If 9g of water is decomposed, we get?", "options": ["1g Hydrogen and 8g Oxygen", "2g Hydrogen and 16g Oxygen", "8g Hydrogen and 1g Oxygen", "4.5g each"], "answer": "1g Hydrogen and 8g Oxygen" }
+            ]
+        },
+        {
+            "title": "Dalton's Atomic Theory",
+            "questions": [
+                { "question": "Dalton's theory was based on?", "options": ["Laws of chemical combination", "Law of gravity", "Atomic structure", "Electrons"], "answer": "Laws of chemical combination" },
+                { "question": "According to Dalton, all matter is made of?", "options": ["Tiny particles called atoms", "Molecules", "Compounds", "Mixtures"], "answer": "Tiny particles called atoms" },
+                { "question": "Which postulate explains the Law of Conservation of Mass?", "options": ["Atoms are indivisible and cannot be created/destroyed", "Atoms combine in whole numbers", "Atoms of different elements differ", "Atoms of same element are identical"], "answer": "Atoms are indivisible and cannot be created/destroyed" },
+                { "question": "Atoms of a given element are identical in?", "options": ["Mass and chemical properties", "Size only", "Shape only", "Nothing"], "answer": "Mass and chemical properties" },
+                { "question": "Atoms combine in the ratio of?", "options": ["Small whole numbers", "Large fractions", "Decimals", "Random numbers"], "answer": "Small whole numbers" }
+            ]
+        },
+        {
+            "title": "What is an Atom?",
+            "questions": [
+                { "question": "The building blocks of all matter are?", "options": ["Atoms", "Cells", "Bricks", "Sand"], "answer": "Atoms" },
+                { "question": "Atomic radius is measured in?", "options": ["Nanometres", "Metres", "Centimetres", "Kilometres"], "answer": "Nanometres" },
+                { "question": "1 nanometre is equal to?", "options": ["10^-9 m", "10^-6 m", "10^-3 m", "10^-12 m"], "answer": "10^-9 m" },
+                { "question": "Can we see atoms with naked eyes?", "options": ["No", "Yes", "Sometimes", "Only large ones"], "answer": "No" },
+                { "question": "Which of these is the smallest?", "options": ["Atom of hydrogen", "Molecule of water", "Grain of sand", "Ant"], "answer": "Atom of hydrogen" }
+            ]
+        },
+        {
+            "title": "Modern Day Symbols of Elements",
+            "questions": [
+                { "question": "Who was the first scientist to use symbols for elements?", "options": ["Dalton", "Lavoisier", "Bohr", "Newton"], "answer": "Dalton" },
+                { "question": "Who approves names of elements?", "options": ["IUPAC", "NASA", "WHO", "UN"], "answer": "IUPAC" },
+                { "question": "The symbol for Iron is derived from?", "options": ["Ferrum", "Iron", "Ferrous", "Fe"], "answer": "Ferrum" },
+                { "question": "What is the symbol for Sodium?", "options": ["Na", "So", "S", "Nu"], "answer": "Na" },
+                { "question": "The symbol for Gold is?", "options": ["Au", "Go", "Gd", "Ag"], "answer": "Au" }
+            ]
+        },
+        {
+            "title": "Atomic Mass",
+            "questions": [
+                { "question": "The reference atom for atomic mass is?", "options": ["Carbon-12", "Oxygen-16", "Hydrogen-1", "Nitrogen-14"], "answer": "Carbon-12" },
+                { "question": "One atomic mass unit (u) is equal to?", "options": ["1/12th the mass of one C-12 atom", "Mass of one C-12 atom", "Mass of one H atom", "1/16th mass of O atom"], "answer": "1/12th the mass of one C-12 atom" },
+                { "question": "What is the atomic mass of Oxygen?", "options": ["16 u", "8 u", "12 u", "14 u"], "answer": "16 u" },
+                { "question": "What is the atomic mass of Hydrogen?", "options": ["1 u", "2 u", "12 u", "16 u"], "answer": "1 u" },
+                { "question": "Relative atomic mass is defined as?", "options": ["Average mass of the atom compared to C-12", "Absolute mass", "Weight of atom", "Mass of nucleus"], "answer": "Average mass of the atom compared to C-12" }
+            ]
+        },
+        {
+            "title": "How Do Atoms Exist?",
+            "questions": [
+                { "question": "Can atoms of most elements exist independently?", "options": ["No", "Yes", "Always", "Only noble gases"], "answer": "No" },
+                { "question": "Atoms form?", "options": ["Molecules and ions", "Only molecules", "Only ions", "Nothing"], "answer": "Molecules and ions" },
+                { "question": "Molecules and ions aggregate to form?", "options": ["Matter", "Energy", "Space", "Time"], "answer": "Matter" },
+                { "question": "Which atoms can exist independently?", "options": ["Noble gases (e.g., Helium)", "Oxygen", "Hydrogen", "Nitrogen"], "answer": "Noble gases (e.g., Helium)" },
+                { "question": "Why do atoms form molecules?", "options": ["To become stable", "To become unstable", "To increase mass", "To decrease size"], "answer": "To become stable" }
+            ]
+        },
+        {
+            "title": "What is a Molecule?",
+            "questions": [
+                { "question": "A molecule is a group of atoms held together by?", "options": ["Chemical bonds", "Gravity", "Magnetism", "Glue"], "answer": "Chemical bonds" },
+                { "question": "A molecule is capable of?", "options": ["Independent existence", "Breathing", "Moving", "Dividing"], "answer": "Independent existence" },
+                { "question": "Can a molecule contain atoms of different elements?", "options": ["Yes", "No", "Never", "Only if heated"], "answer": "Yes" },
+                { "question": "What is the smallest particle of a compound?", "options": ["Molecule", "Atom", "Ion", "Electron"], "answer": "Molecule" },
+                { "question": "Does a molecule show properties of the substance?", "options": ["Yes", "No", "Sometimes", "Only in gas"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "Molecules of Elements",
+            "questions": [
+                { "question": "Molecules of elements contain?", "options": ["Same type of atoms", "Different atoms", "Ions", "Mixtures"], "answer": "Same type of atoms" },
+                { "question": "The number of atoms in a molecule is called?", "options": ["Atomicity", "Valency", "Atomic mass", "Molecular weight"], "answer": "Atomicity" },
+                { "question": "What is the atomicity of Oxygen?", "options": ["Diatomic", "Monoatomic", "Triatomic", "Polyatomic"], "answer": "Diatomic" },
+                { "question": "Ozone (O3) is?", "options": ["Triatomic", "Diatomic", "Monoatomic", "Tetra-atomic"], "answer": "Triatomic" },
+                { "question": "Phosphorus (P4) is?", "options": ["Tetra-atomic", "Diatomic", "Monoatomic", "Polyatomic"], "answer": "Tetra-atomic" }
+            ]
+        },
+        {
+            "title": "Molecules of Compounds",
+            "questions": [
+                { "question": "Molecules of compounds contain?", "options": ["Atoms of different elements", "Atoms of same element", "Only ions", "Only metals"], "answer": "Atoms of different elements" },
+                { "question": "In NH3 (Ammonia), the elements are?", "options": ["Nitrogen and Hydrogen", "Nitrogen and Helium", "Nickel and Hydrogen", "Neon and Hydrogen"], "answer": "Nitrogen and Hydrogen" },
+                { "question": "The ratio by mass in CO2 is?", "options": ["3:8", "1:2", "12:16", "1:1"], "answer": "3:8" },
+                { "question": "Water is a molecule of?", "options": ["Compound", "Element", "Mixture", "Ion"], "answer": "Compound" },
+                { "question": "Atoms in a compound are combined in?", "options": ["Definite proportions", "Random proportions", "Variable proportions", "No proportions"], "answer": "Definite proportions" }
+            ]
+        },
+        {
+            "title": "What is an Ion?",
+            "questions": [
+                { "question": "An ion is a?", "options": ["Charged species", "Neutral atom", "Molecule", "Compound"], "answer": "Charged species" },
+                { "question": "A positively charged ion is called?", "options": ["Cation", "Anion", "Atom", "Molecule"], "answer": "Cation" },
+                { "question": "A negatively charged ion is called?", "options": ["Anion", "Cation", "Positron", "Electron"], "answer": "Anion" },
+                { "question": "A group of atoms carrying a charge is?", "options": ["Polyatomic ion", "Monoatomic ion", "Molecule", "Compound"], "answer": "Polyatomic ion" },
+                { "question": "In NaCl, the cation is?", "options": ["Sodium (Na+)", "Chloride (Cl-)", "Both", "None"], "answer": "Sodium (Na+)" }
+            ]
+        },
+        {
+            "title": "Writing Chemical Formulae",
+            "questions": [
+                { "question": "Combining power of an element is called?", "options": ["Valency", "Atomicity", "Atomic number", "Mass"], "answer": "Valency" },
+                { "question": "In a formula, valencies must?", "options": ["Balance", "Be equal", "Be zero", "Be negative"], "answer": "Balance" },
+                { "question": "When writing formula for metal and non-metal, which comes first?", "options": ["Metal", "Non-metal", "Any", "Heavier one"], "answer": "Metal" },
+                { "question": "Polyatomic ions are enclosed in?", "options": ["Brackets", "Quotes", "Commas", "Spaces"], "answer": "Brackets" },
+                { "question": "The formula for Magnesium Hydroxide is?", "options": ["Mg(OH)2", "MgOH2", "Mg2OH", "MgO2H2"], "answer": "Mg(OH)2" }
+            ]
+        },
+        {
+            "title": "Formulae of Simple Compounds",
+            "questions": [
+                { "question": "Formula of Hydrogen Chloride is?", "options": ["HCl", "H2Cl", "HCl2", "HCL"], "answer": "HCl" },
+                { "question": "Formula of Aluminium Oxide is?", "options": ["Al2O3", "AlO", "Al3O2", "AlO3"], "answer": "Al2O3" },
+                { "question": "Formula of Sodium Nitrate is?", "options": ["NaNO3", "Na2NO3", "Na(NO3)2", "Na3N"], "answer": "NaNO3" },
+                { "question": "Formula of Calcium Oxide is?", "options": ["CaO", "Ca2O2", "Ca2O", "CaO2"], "answer": "CaO" },
+                { "question": "In MgCl2, the valency of Mg is?", "options": ["2", "1", "3", "0"], "answer": "2" }
+            ]
+        },
+        {
+            "title": "Molecular Mass",
+            "questions": [
+                { "question": "Molecular mass is the sum of?", "options": ["Atomic masses of all atoms", "Atomic numbers", "Valencies", "Electrons"], "answer": "Atomic masses of all atoms" },
+                { "question": "Molecular mass of H2O is?", "options": ["18 u", "16 u", "20 u", "10 u"], "answer": "18 u" },
+                { "question": "Formula unit mass is used for?", "options": ["Ionic compounds", "Elements", "Gases", "Liquids"], "answer": "Ionic compounds" },
+                { "question": "Mass of one mole of a substance is called?", "options": ["Molar mass", "Atomic mass", "Molecular mass", "Unit mass"], "answer": "Molar mass" },
+                { "question": "Molecular mass of NaCl (Na=23, Cl=35.5) is?", "options": ["58.5 u", "58 u", "23 u", "35.5 u"], "answer": "58.5 u" }
+            ]
+        }
+    ]
+}

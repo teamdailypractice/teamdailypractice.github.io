@@ -1,0 +1,144 @@
+{
+    "topics": [
+        {
+            "title": "Is Matter Around Us Pure?",
+            "questions": [
+                { "question": "What does 'pure' mean to a scientist?", "options": ["All constituent particles are the same chemically", "No adulteration", "Clear liquid", "Expensive"], "answer": "All constituent particles are the same chemically" },
+                { "question": "Milk is a?", "options": ["Mixture", "Pure substance", "Element", "Compound"], "answer": "Mixture" },
+                { "question": "A pure substance consists of?", "options": ["Single type of particle", "Two types of particles", "Variable particles", "Any particle"], "answer": "Single type of particle" },
+                { "question": "Most matter around us exists as?", "options": ["Mixtures", "Pure elements", "Pure compounds", "Atoms"], "answer": "Mixtures" },
+                { "question": "Which of these is NOT a pure substance?", "options": ["Soil", "Iron", "Gold", "Oxygen"], "answer": "Soil" }
+            ]
+        },
+        {
+            "title": "What is a Mixture?",
+            "questions": [
+                { "question": "Mixtures are constituted by?", "options": ["More than one kind of pure form of matter", "Single element", "Single compound", "Only atoms"], "answer": "More than one kind of pure form of matter" },
+                { "question": "Can sodium chloride be separated from water by physical process?", "options": ["Yes, by evaporation", "No", "Only by chemical reaction", "Only by filtration"], "answer": "Yes, by evaporation" },
+                { "question": "Is sodium chloride a pure substance?", "options": ["Yes", "No", "Sometimes", "It is a mixture"], "answer": "Yes" },
+                { "question": "Soft drink is a?", "options": ["Mixture", "Pure substance", "Element", "Compound"], "answer": "Mixture" },
+                { "question": "A mixture contains?", "options": ["More than one pure substance", "Only one pure substance", "Only elements", "Only compounds"], "answer": "More than one pure substance" }
+            ]
+        },
+        {
+            "title": "Types of Mixtures",
+            "questions": [
+                { "question": "Mixtures with uniform composition are called?", "options": ["Homogeneous", "Heterogeneous", "Suspensions", "Colloids"], "answer": "Homogeneous" },
+                { "question": "Mixtures with non-uniform composition are called?", "options": ["Heterogeneous", "Homogeneous", "Solutions", "Alloys"], "answer": "Heterogeneous" },
+                { "question": "Salt dissolved in water is an example of?", "options": ["Homogeneous mixture", "Heterogeneous mixture", "Compound", "Element"], "answer": "Homogeneous mixture" },
+                { "question": "Oil and water is an example of?", "options": ["Heterogeneous mixture", "Homogeneous mixture", "Solution", "Alloy"], "answer": "Heterogeneous mixture" },
+                { "question": "Can a homogeneous mixture have variable composition?", "options": ["Yes", "No", "Only if heated", "Never"], "answer": "Yes" }
+            ]
+        },
+        {
+            "title": "What is a Solution?",
+            "questions": [
+                { "question": "A solution is a?", "options": ["Homogeneous mixture", "Heterogeneous mixture", "Compound", "Element"], "answer": "Homogeneous mixture" },
+                { "question": "The component present in larger amount in a solution is?", "options": ["Solvent", "Solute", "Particle", "Gas"], "answer": "Solvent" },
+                { "question": "The component dissolved in the solvent is?", "options": ["Solute", "Solvent", "Mixture", "Solution"], "answer": "Solute" },
+                { "question": "Air is a mixture of?", "options": ["Gas in gas", "Solid in gas", "Liquid in gas", "Solid in liquid"], "answer": "Gas in gas" },
+                { "question": "Tincture of iodine contains?", "options": ["Iodine in alcohol", "Iodine in water", "Alcohol in iodine", "Sugar in water"], "answer": "Iodine in alcohol" }
+            ]
+        },
+        {
+            "title": "Properties of a Solution",
+            "questions": [
+                { "question": "Can solution particles be seen by naked eyes?", "options": ["No", "Yes", "Sometimes", "Only in sunlight"], "answer": "No" },
+                { "question": "Do solution particles scatter a beam of light?", "options": ["No", "Yes", "Only when hot", "Only when concentrated"], "answer": "No" },
+                { "question": "Is the path of light visible in a solution?", "options": ["No", "Yes", "Maybe", "Only for coloured solutions"], "answer": "No" },
+                { "question": "Is a solution stable?", "options": ["Yes", "No", "Only temporarily", "Depends on container"], "answer": "Yes" },
+                { "question": "Can solute particles be separated by filtration?", "options": ["No", "Yes", "Sometimes", "Only large particles"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "Concentration of a Solution",
+            "questions": [
+                { "question": "A solution that has dissolved as much solute as it can is called?", "options": ["Saturated", "Unsaturated", "Dilute", "Concentrated"], "answer": "Saturated" },
+                { "question": "The amount of solute present in a saturated solution is its?", "options": ["Solubility", "Concentration", "Volume", "Mass"], "answer": "Solubility" },
+                { "question": "If amount of solute is less than saturation level, it is?", "options": ["Unsaturated", "Saturated", "Supersaturated", "Suspension"], "answer": "Unsaturated" },
+                { "question": "Concentration is the amount of solute in?", "options": ["Given amount of solution", "Given amount of solvent", "Total mass", "Total volume"], "answer": "Given amount of solution" },
+                { "question": "Solubility changes with?", "options": ["Temperature", "Pressure", "Time", "Container"], "answer": "Temperature" }
+            ]
+        },
+        {
+            "title": "What is a Suspension?",
+            "questions": [
+                { "question": "A suspension is a?", "options": ["Heterogeneous mixture", "Homogeneous mixture", "Solution", "Colloid"], "answer": "Heterogeneous mixture" },
+                { "question": "Are particles of suspension visible to naked eye?", "options": ["Yes", "No", "Only with microscope", "Only in dark"], "answer": "Yes" },
+                { "question": "In suspension, solute particles?", "options": ["Remain suspended", "Dissolve", "Evaporate", "Disappear"], "answer": "Remain suspended" },
+                { "question": "Chalk powder in water is an example of?", "options": ["Suspension", "Solution", "Colloid", "Solvent"], "answer": "Suspension" },
+                { "question": "Solids dispersed in liquids form?", "options": ["Suspensions", "Solutions", "Gases", "Pure substances"], "answer": "Suspensions" }
+            ]
+        },
+        {
+            "title": "Properties of a Suspension",
+            "questions": [
+                { "question": "Do suspension particles scatter light?", "options": ["Yes", "No", "Only when settled", "Only when filtered"], "answer": "Yes" },
+                { "question": "Is the path of light visible in a suspension?", "options": ["Yes", "No", "Sometimes", "Never"], "answer": "Yes" },
+                { "question": "Is a suspension stable?", "options": ["No, particles settle down", "Yes, always", "Yes, if stirred", "Yes, if heated"], "answer": "No, particles settle down" },
+                { "question": "Can suspension particles be separated by filtration?", "options": ["Yes", "No", "Only by evaporation", "Only by boiling"], "answer": "Yes" },
+                { "question": "When particles settle, does suspension scatter light?", "options": ["No", "Yes", "More than before", "Same as before"], "answer": "No" }
+            ]
+        },
+        {
+            "title": "What is a Colloidal Solution?",
+            "questions": [
+                { "question": "A colloid appears homogeneous but is actually?", "options": ["Heterogeneous", "Homogeneous", "Pure", "Element"], "answer": "Heterogeneous" },
+                { "question": "Milk is an example of?", "options": ["Colloid", "Suspension", "True solution", "Pure substance"], "answer": "Colloid" },
+                { "question": "Scattering of light by colloidal particles is called?", "options": ["Tyndall effect", "Reflection", "Refraction", "Dispersion"], "answer": "Tyndall effect" },
+                { "question": "Are colloidal particles visible to naked eye?", "options": ["No", "Yes", "Sometimes", "Only in light"], "answer": "No" },
+                { "question": "Tyndall effect is due to?", "options": ["Scattering of light", "Absorption of light", "Transmission of light", "Reflection of light"], "answer": "Scattering of light" }
+            ]
+        },
+        {
+            "title": "Properties of a Colloid",
+            "questions": [
+                { "question": "Is a colloid stable?", "options": ["Yes, quite stable", "No, unstable", "Settles quickly", "Separates on standing"], "answer": "Yes, quite stable" },
+                { "question": "Can colloids be separated by filtration?", "options": ["No", "Yes", "Easily", "Sometimes"], "answer": "No" },
+                { "question": "Technique used to separate colloidal particles is?", "options": ["Centrifugation", "Filtration", "Evaporation", "Distillation"], "answer": "Centrifugation" },
+                { "question": "The solute-like component in colloid is?", "options": ["Dispersed phase", "Dispersing medium", "Solvent", "Solution"], "answer": "Dispersed phase" },
+                { "question": "Fog is an example of?", "options": ["Liquid in gas (Aerosol)", "Solid in gas", "Gas in liquid", "Solid in liquid"], "answer": "Liquid in gas (Aerosol)" }
+            ]
+        },
+        {
+            "title": "Physical and Chemical Changes",
+            "questions": [
+                { "question": "Melting of ice is a?", "options": ["Physical change", "Chemical change", "Both", "Neither"], "answer": "Physical change" },
+                { "question": "Burning of paper is a?", "options": ["Chemical change", "Physical change", "Reversible change", "State change"], "answer": "Chemical change" },
+                { "question": "Physical properties include?", "options": ["Colour, hardness, density", "Flammability", "Reactivity", "Acidity"], "answer": "Colour, hardness, density" },
+                { "question": "During a chemical change, we get?", "options": ["New substances", "Same substance in new state", "No change", "Mixture"], "answer": "New substances" },
+                { "question": "Rusting of iron is?", "options": ["Chemical change", "Physical change", "No change", "Fast change"], "answer": "Chemical change" }
+            ]
+        },
+        {
+            "title": "What are the Types of Pure Substances?",
+            "questions": [
+                { "question": "Who defined 'element'?", "options": ["Lavoisier", "Boyle", "Dalton", "Newton"], "answer": "Lavoisier" },
+                { "question": "An element is?", "options": ["Basic form of matter", "Mixture", "Compound", "Solution"], "answer": "Basic form of matter" },
+                { "question": "Which of these is a property of metals?", "options": ["Lustrous and ductile", "Brittle", "Poor conductor", "Non-sonorous"], "answer": "Lustrous and ductile" },
+                { "question": "Mercury is a metal that is?", "options": ["Liquid at room temperature", "Gas at room temperature", "Solid at room temperature", "Plasma"], "answer": "Liquid at room temperature" },
+                { "question": "Elements intermediate between metals and non-metals are?", "options": ["Metalloids", "Alloys", "Compounds", "Mixtures"], "answer": "Metalloids" }
+            ]
+        },
+        {
+            "title": "Compounds",
+            "questions": [
+                { "question": "A compound is composed of?", "options": ["Two or more elements chemically combined", "Mixture of elements", "Single element", "Solutions"], "answer": "Two or more elements chemically combined" },
+                { "question": "The composition of a compound is?", "options": ["Fixed", "Variable", "Random", "Changing"], "answer": "Fixed" },
+                { "question": "Properties of a compound are?", "options": ["Different from constituent elements", "Same as constituent elements", "Average of elements", "None of the above"], "answer": "Different from constituent elements" },
+                { "question": "Water is a?", "options": ["Compound", "Element", "Mixture", "Solution"], "answer": "Compound" },
+                { "question": "Constituents of a compound can be separated by?", "options": ["Chemical reactions", "Physical methods", "Filtration", "Evaporation"], "answer": "Chemical reactions" }
+            ]
+        },
+        {
+            "title": "Mixtures vs. Compounds",
+            "questions": [
+                { "question": "In a mixture, elements?", "options": ["Just mix together", "React to form new substance", "Change properties", "Bond chemically"], "answer": "Just mix together" },
+                { "question": "A compound has?", "options": ["Fixed composition", "Variable composition", "Any composition", "No composition"], "answer": "Fixed composition" },
+                { "question": "Constituents of a mixture can be separated by?", "options": ["Physical methods", "Chemical reactions", "Electrochemical reactions", "Nuclear reactions"], "answer": "Physical methods" },
+                { "question": "Which has variable composition?", "options": ["Mixture", "Compound", "Element", "Pure substance"], "answer": "Mixture" },
+                { "question": "Air is a?", "options": ["Mixture", "Compound", "Element", "Pure substance"], "answer": "Mixture" }
+            ]
+        }
+    ]
+}

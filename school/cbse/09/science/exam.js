@@ -1,0 +1,193 @@
+const modeSelection = document.getElementById('mode-selection');
+const readContainer = document.getElementById('read-container');
+const examContainer = document.getElementById('exam-container');
+const readContentEl = document.getElementById('read-content');
+const examContentEl = document.getElementById('exam-content');
+const submitExamBtn = document.getElementById('submit-exam-btn');
+const timerEl = document.getElementById('timer');
+
+let allQuestions = [];
+let examQuestions = [];
+let timerInterval = null;
+let timeLeft = 20 * 60; // 20 minutes in seconds
+
+// Get chapter from URL or default to ch5
+const urlParams = new URLSearchParams(window.location.search);
+const currentChapter = urlParams.get('chapter') || 'ch5';
+
+// --- Initialization ---
+async function init() {
+    try {
+        const response = await fetch(`quiz-${currentChapter}.json`);
+        if (!response.ok) throw new Error('Failed to load quiz data');
+        const quizData = await response.json();
+        allQuestions = quizData.topics.reduce((acc, topic) => acc.concat(topic.questions), []);
+        
+        // Update header title if possible
+        document.querySelector('header h1').textContent = `Biology Exam (${currentChapter.toUpperCase()})`;
+    } catch (error) {
+        console.error('Error fetching quiz data:', error);
+        alert('Failed to load quiz data for this chapter.');
+    }
+}
+
+// --- Event Listeners ---
+document.getElementById('mode-read-btn').addEventListener('click', startReadMode);
+document.getElementById('mode-exam-btn').addEventListener('click', startExamMode);
+document.querySelectorAll('.back-btn').forEach(btn => {
+    btn.addEventListener('click', resetToModeSelection);
+});
+submitExamBtn.addEventListener('click', submitExam);
+
+// --- Mode Logic ---
+
+function resetToModeSelection() {
+    clearInterval(timerInterval);
+    modeSelection.classList.remove('hidden');
+    readContainer.classList.add('hidden');
+    examContainer.classList.add('hidden');
+}
+
+function startReadMode() {
+    modeSelection.classList.add('hidden');
+    readContainer.classList.remove('hidden');
+    renderReadMode();
+}
+
+function startExamMode() {
+    modeSelection.classList.add('hidden');
+    examContainer.classList.remove('hidden');
+    renderExamMode();
+    startTimer();
+}
+
+// --- Render Logic ---
+
+function renderReadMode() {
+    if (allQuestions.length === 0) {
+        readContentEl.innerHTML = '<p>No questions available.</p>';
+        return;
+    }
+
+    let html = '';
+    allQuestions.forEach((q, index) => {
+        html += `
+            <div class="read-question-box">
+                <p><strong>${index + 1}. ${q.question}</strong></p>
+                <ul>
+                    ${q.options.map(opt => {
+                        const isCorrect = opt === q.answer;
+                        return `<li class="${isCorrect ? 'read-answer-correct' : ''}">
+                            ${isCorrect ? '✅' : '○'} ${opt}
+                        </li>`;
+                    }).join('')}
+                </ul>
+            </div>
+        `;
+    });
+    readContentEl.innerHTML = html;
+}
+
+function renderExamMode() {
+    if (allQuestions.length === 0) {
+        examContentEl.innerHTML = '<p>No questions available.</p>';
+        return;
+    }
+
+    // Shuffle and pick 50 questions
+    shuffleArray(allQuestions);
+    examQuestions = allQuestions.slice(0, 50);
+
+    let html = '';
+    examQuestions.forEach((q, index) => {
+        // Shuffle options for the exam
+        const shuffledOptions = [...q.options];
+        shuffleArray(shuffledOptions);
+
+        html += `
+            <div class="quiz-question">
+                <p>${index + 1}. ${q.question}</p>
+                <form id="exam-form-${index}">
+                    ${shuffledOptions.map(opt => `
+                        <label>
+                            <input type="radio" name="question-${index}" value="${opt}">
+                            ${opt}
+                        </label><br>
+                    `).join('')}
+                </form>
+            </div>
+        `;
+    });
+    examContentEl.innerHTML = html;
+}
+
+// --- Exam Utilities ---
+
+function startTimer() {
+    timeLeft = 20 * 60; // Reset to 20 minutes
+    updateTimerDisplay();
+    
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitExam();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerEl.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    
+    // Add warning color when low
+    if (timeLeft < 60) {
+        timerEl.style.color = 'red';
+    } else {
+        timerEl.style.color = '#333';
+    }
+}
+
+function submitExam() {
+    clearInterval(timerInterval);
+    let score = 0;
+    
+    examQuestions.forEach((q, index) => {
+        const form = document.getElementById(`exam-form-${index}`);
+        const selectedOption = form.querySelector(`input[name="question-${index}"]:checked`);
+        const questionDiv = form.parentElement;
+
+        // Visual feedback on the exam paper itself
+        if (selectedOption) {
+            if (selectedOption.value === q.answer) {
+                score++;
+                questionDiv.style.borderLeft = '5px solid green';
+            } else {
+                questionDiv.style.borderLeft = '5px solid red';
+            }
+        } else {
+            questionDiv.style.borderLeft = '5px solid orange';
+        }
+    });
+
+    alert(`Exam finished!\n\nYou scored ${score} out of ${examQuestions.length}.`);
+    
+    // Disable inputs after submission
+    const inputs = document.querySelectorAll('#exam-content input');
+    inputs.forEach(input => input.disabled = true);
+    submitExamBtn.style.display = 'none';
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// Start
+init();
