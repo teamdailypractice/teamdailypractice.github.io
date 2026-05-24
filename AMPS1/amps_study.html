@@ -1,0 +1,2556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMPS 5.3.5 Developer Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root {
+    --coral: #FF6B6B;
+    --teal: #4ECDC4;
+    --amber: #FFD93D;
+    --violet: #9B59B6;
+    --emerald: #2ECC71;
+    --sky: #3498DB;
+    --slate: #2C3E50;
+    --cloud: #F8F9FA;
+    --warm: #FFF5F5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+  #app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+    min-height: 100vh;
+  }
+  .header {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header h1 {
+    font-size: 1.3rem;
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .header .progress-bar {
+    flex: 1;
+    min-width: 200px;
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .header .progress-bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), var(--amber));
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    width: 0%;
+  }
+  .header .streak {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--coral);
+  }
+  .slide-container {
+    background: rgba(255,255,255,0.97);
+    border-radius: 20px;
+    padding: 28px;
+    min-height: 60vh;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .slide-type-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+  .badge-intro { background: #E8F4FD; color: var(--sky); }
+  .badge-concept { background: #F3E8FF; color: var(--violet); }
+  .badge-definition { background: #E6F9F5; color: var(--teal); }
+  .badge-example { background: #FFF8E1; color: #F57C00; }
+  .badge-recap { background: #FFEBEE; color: var(--coral); }
+  .badge-quiz { background: #E8F5E9; color: var(--emerald); }
+  .slide-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--slate);
+    line-height: 1.3;
+  }
+  .slide-content p {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+  }
+  .slide-content ul, .slide-content ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+  }
+  .slide-content li {
+    margin-bottom: 10px;
+    font-size: 1.02rem;
+  }
+  .slide-content code {
+    background: #f4f4f5;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.9em;
+    color: var(--coral);
+  }
+  .slide-content pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+  .slide-content pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .slide-content .callout {
+    background: linear-gradient(135deg, #FFF5F5, #FFF9E6);
+    border-left: 4px solid var(--coral);
+    padding: 16px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 16px;
+  }
+  .slide-content .callout-title {
+    font-weight: 700;
+    color: var(--coral);
+    margin-bottom: 6px;
+  }
+  .slide-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .slide-content th, .slide-content td {
+    border: 1px solid #e2e8f0;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  .slide-content th {
+    background: #f8fafc;
+    font-weight: 600;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .nav-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .btn-prev { background: #e9ecef; color: var(--slate); }
+  .btn-next { background: linear-gradient(135deg, var(--coral), #FF8E8E); color: white; }
+  .btn-toc { background: var(--teal); color: white; }
+  .btn-quiz { background: var(--emerald); color: white; }
+  .toc-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+  .toc-panel {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+  .toc-panel h2 {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc-module {
+    margin-bottom: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+  }
+  .toc-module-header {
+    background: #f8f9fa;
+    padding: 12px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .toc-module-header:hover { background: #e9ecef; }
+  .toc-module-slides {
+    padding: 8px 16px;
+  }
+  .toc-slide {
+    padding: 6px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    padding-left: 8px;
+    font-size: 0.9rem;
+  }
+  .toc-slide:hover { background: #f0f0f0; }
+  .toc-slide.active { background: #E8F4FD; color: var(--sky); font-weight: 600; }
+  .toc-slide.completed { color: var(--emerald); }
+  .quiz-container {
+    padding: 8px 0;
+  }
+  .quiz-question {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--slate);
+  }
+  .quiz-option {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    background: white;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .quiz-option:hover {
+    border-color: var(--sky);
+    background: #F8FBFF;
+  }
+  .quiz-option.selected-correct {
+    border-color: var(--emerald);
+    background: #E8F5E9;
+  }
+  .quiz-option.selected-wrong {
+    border-color: var(--coral);
+    background: #FFEBEE;
+  }
+  .quiz-option.correct-answer {
+    border-color: var(--emerald);
+    background: #E8F5E9;
+  }
+  .quiz-explanation {
+    background: #FFF8E1;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 0.95rem;
+  }
+  .quiz-result {
+    text-align: center;
+    padding: 32px;
+  }
+  .quiz-result-score {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--coral);
+  }
+  .quiz-result-message {
+    font-size: 1.2rem;
+    margin: 16px 0;
+  }
+  .dashboard {
+    text-align: center;
+    padding: 24px 0;
+  }
+  .dashboard h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .dashboard p {
+    color: #666;
+    margin-bottom: 24px;
+  }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .module-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .module-card.locked { opacity: 0.6; }
+  .module-card.active { border-color: var(--sky); }
+  .module-card.completed { border-color: var(--emerald); }
+  .module-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .module-number {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--sky);
+    text-transform: uppercase;
+  }
+  .module-status {
+    font-size: 1.2rem;
+  }
+  .module-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .module-progress {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .module-progress .fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--emerald));
+    border-radius: 4px;
+    transition: width 0.4s ease;
+  }
+  .achievements-bar {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .achievement {
+    background: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 0.9rem;
+  }
+  .achievement.locked { opacity: 0.4; filter: grayscale(1); }
+  .achievement-icon { font-size: 1.4rem; }
+  .final-exam-btn {
+    background: linear-gradient(135deg, var(--violet), #B07CC6);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: all 0.2s ease;
+  }
+  .final-exam-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(155,89,182,0.4);
+  }
+  .final-exam-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .confetti {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 200;
+  }
+  .confetti-piece {
+    position: absolute;
+    width: 10px; height: 10px;
+    background: var(--coral);
+    animation: confetti-fall 3s ease-out forwards;
+  }
+  @keyframes confetti-fall {
+    0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+  .formula-block {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 600px) {
+    .slide-container { padding: 18px; }
+    .slide-title { font-size: 1.3rem; }
+    .header h1 { font-size: 1rem; }
+    .module-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+// ---------------------------------------------------------------------------
+// Configuration
+// ---------------------------------------------------------------------------
+const STORE_KEY = 'amps-developer-study-v1';
+const ENCOURAGEMENT_RIGHT = ['🌟 Great job!', '💪 You\'re getting stronger!', '🎯 Nailed it!', '🚀 Keep going!', '🎉 That\'s the spirit!', '✨ You\'re a star!'];
+const ENCOURAGEMENT_WRONG = ['💡 Nice try — here\'s why…', '🌱 Every mistake helps you grow!', '🔍 Let\'s figure this out together.', '✅ Almost there! Check this out…'];
+
+// ---------------------------------------------------------------------------
+// Module Names
+// ---------------------------------------------------------------------------
+const MODULE_NAMES = [
+  'M0: Welcome to AMPS',
+  'M1: Getting Started',
+  'M2: Publish/Subscribe Fundamentals',
+  'M3: Content Filtering & Expressions',
+  'M4: State of the World (SOW)',
+  'M5: Message Queues',
+  'M6: Advanced Messaging',
+  'M7: High Availability & Replication',
+  'M8: Configuration & Administration',
+  'M9: Security & Best Practices'
+];
+
+// ---------------------------------------------------------------------------
+// Slides Data
+// ---------------------------------------------------------------------------
+const SLIDES = [
+  // ===== DASHBOARD =====
+  { moduleId: 'dashboard', type: 'dashboard', title: 'AMPS Developer Onboarding', content: [] },
+
+  // ===== M0: Welcome to AMPS =====
+  { moduleId: 'M0', type: 'intro', title: '🚀 What Is AMPS?', content: [
+    `<p><strong>AMPS</strong> = <strong>A</strong>dvanced <strong>M</strong>essage <strong>P</strong>rocessing <strong>S</strong>ystem</p>`,
+    `<p>Built by <strong>60East Technologies</strong>, AMPS is designed for data-intensive applications with demanding requirements for <strong>low latency</strong> and <strong>high performance</strong>.</p>`,
+    `<p>AMPS takes a <em>nontraditional approach</em> to messaging, storage, and analytics — built from the ground up for <strong>streaming data</strong> and <strong>highly-parallelized multicore systems</strong>.</p>`,
+    `<div class="callout"><div class="callout-title">💡 Think about this</div>AMPS isn\'t just a database or just a message broker. It combines both capabilities in one system.</div>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'Key Feature Highlights', content: [
+    `<ul>`,
+    `<li><strong>Fast messaging engine</strong> — supports both publish/subscribe (fan-out) and queued (competitive consumption) delivery</li>`,
+    `<li><strong>Full content filtering</strong> — subscribers receive only the messages they need</li>`,
+    `<li><strong>Integrated database (SOW)</strong> — use as a current-value cache, key/value store, or queryable database</li>`,
+    `<li><strong>Built-in aggregation engine</strong> — near real-time analytics on streaming data</li>`,
+    `<li><strong>Message logging & replay</strong> — record and replay message streams with full fidelity</li>`,
+    `<li><strong>Enterprise HA</strong> — integrated replication, automatic failover, and recovery</li>`,
+    `<li><strong>RESTful monitoring</strong> — detailed statistics via HTTP for easy integration</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'AMPS Use Cases', content: [
+    `<p>AMPS is widely used in industries that require real-time data processing:</p>`,
+    `<table>`,
+    `<tr><th>Use Case</th><th>How AMPS Helps</th></tr>`,
+    `<tr><td>Trade plant operations</td><td>Low-latency market data distribution, backtesting, historical analysis</td></tr>`,
+    `<tr><td>Risk calculations</td><td>Real-time aggregation of positions and exposures</td></tr>`,
+    `<tr><td>Elastic worker farms</td><td>Competitive consumption via message queues</td></tr>`,
+    `<tr><td>View servers</td><td>SOW-based current-value caches with query support</td></tr>`,
+    `<tr><td>Message flow integration</td><td>"Shock absorbers" that buffer and filter data streams</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M0', type: 'diagram_explanation', title: 'AMPS Architecture Overview', content: [
+    `<p>At the center of AMPS is a <strong>highly-optimized message delivery engine</strong>:</p>`,
+    `<pre><code>┌─────────────┐     ┌─────────────┐     ┌─────────────┐\n│ Publishers  │────▶│    AMPS     │────▶│ Subscribers │\n└─────────────┘     │   Engine    │     └─────────────┘\n                    ├─────────────┤\n                    │  SOW Store  │\n                    ├─────────────┤\n                    │ Trans. Log  │\n                    ├─────────────┤\n                    │  Replicaton │\n                    └─────────────┘</code></pre>`,
+    `<p>All features — SOW, transaction logging, replication, and aggregation — build on top of the core pub/sub engine.</p>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'Message Delivery Models', content: [
+    `<p>AMPS supports <strong>two primary message delivery models</strong>:</p>`,
+    `<p><strong>1. Publish/Subscribe (Fan-Out)</strong></p>`,
+    `<ul><li>One message → many subscribers</li><li>Broadcast pattern</li><li>Used for market data, notifications</li></ul>`,
+    `<p><strong>2. Message Queues (Competitive Consumption)</strong></p>`,
+    `<ul><li>One message → exactly one consumer</li><li>Work distribution pattern</li><li>Used for task queues, worker farms</li></ul>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'The AMPS Ecosystem', content: [
+    `<p>Working with AMPS involves several components:</p>`,
+    `<ul>`,
+    `<li><strong>AMPS Server</strong> — the core engine that processes messages</li>`,
+    `<li><strong>Client Libraries</strong> — C++, C#, Java, Python, and more</li>`,
+    `<li><strong>spark</strong> — the command-line client for testing and administration</li>`,
+    `<li><strong>Galvanometer</strong> — RESTful monitoring and statistics interface</li>`,
+    `<li><strong>Configuration Files</strong> — XML-based server configuration</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'Documentation Roadmap', content: [
+    `<p>The AMPS documentation includes:</p>`,
+    `<table>`,
+    `<tr><th>Guide</th><th>Purpose</th></tr>`,
+    `<tr><td>Getting Started</td><td>Installation, first pub/sub example, spark CLI</td></tr>`,
+    `<tr><td>User Guide</td><td>Deep dive into all features and configuration</td></tr>`,
+    `<tr><td>Evaluation Guide</td><td>Performance testing and evaluation tips</td></tr>`,
+    `<tr><td>Monitoring Guide</td><td>Statistics, events, and operational monitoring</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'Development Tools Overview', content: [
+    `<p><strong>spark</strong> is your best friend when learning AMPS:</p>`,
+    `<ul>`,
+    `<li>Command-line AMPS client included with the server</li>`,
+    `<li>Supports publish, subscribe, SOW query, and administrative commands</li>`,
+    `<li>Great for prototyping, testing filters, and debugging</li>`,
+    `</ul>`,
+    `<p><strong>Client APIs</strong> are available for production applications:</p>`,
+    `<ul><li>C++, Java, C#, Python, and more</li><li>All support pub/sub, SOW, queues, and delta messaging</li></ul>`
+  ]},
+  { moduleId: 'M0', type: 'concept', title: 'Getting Help and Support', content: [
+    `<p>If you need help:</p>`,
+    `<ul>`,
+    `<li>Check the official AMPS documentation first</li>`,
+    `<li>Use <code>spark</code> to test and isolate issues</li>`,
+    `<li>Review the Monitoring Guide for operational questions</li>`,
+    `<li>Contact 60East Technologies Support with detailed reproduction steps</li>`,
+    `</ul>`,
+    `<div class="callout"><div class="callout-title">📌 Support Tip</div>When asking for help, always include: AMPS version, configuration snippets, and exact error messages.</div>`
+  ]},
+  { moduleId: 'M0', type: 'recap', title: 'Module Recap: Welcome to AMPS', content: [
+    `<ul>`,
+    `<li>AMPS is an Advanced Message Processing System for low-latency, high-performance data applications</li>`,
+    `<li>Combines messaging, storage (SOW), aggregation, and logging in one platform</li>`,
+    `<li>Supports both pub/sub (fan-out) and queued (competitive) message delivery</li>`,
+    `<li>Built-in high availability with replication and automatic failover</li>`,
+    `<li>Use <code>spark</code> for quick testing and client APIs for production apps</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M0', type: 'quiz', title: 'Quiz: Welcome to AMPS', content: [] },
+
+  // ===== M1: Getting Started =====
+  { moduleId: 'M1', type: 'intro', title: 'Installation Requirements', content: [
+    `<p>Before installing AMPS, ensure your system meets these requirements:</p>`,
+    `<table>`,
+    `<tr><th>Requirement</th><th>Details</th></tr>`,
+    `<tr><td>Operating System</td><td>Linux (RHEL, CentOS, Ubuntu recommended)</td></tr>`,
+    `<tr><td>CPU</td><td>64-bit x86_64 architecture</td></tr>`,
+    `<tr><td>Memory</td><td>Depends on workload; plan for SOW + queue storage</td></tr>`,
+    `<tr><td>Disk</td><td>High-performance SSD recommended for transaction logs</td></tr>`,
+    `<tr><td>Network</td><td>Low-latency network for replication and clients</td></tr>`,
+    `</table>`,
+    `<p>AMPS can also be evaluated on <strong>Windows or macOS</strong> using WSL2 or a virtual machine.</p>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Installing AMPS on Linux', content: [
+    `<p>Installation is straightforward:</p>`,
+    `<ol>`,
+    `<li>Download the AMPS distribution for your platform</li>`,
+    `<li>Extract the tarball to your preferred location</li>`,
+    `<li>Ensure the <code>amps</code> binary is executable</li>`,
+    `<li>Verify the installation by running <code>amps --version</code></li>`,
+    `</ol>`,
+    `<pre><code>$ tar xzf AMPS-5.3.5.0-Release-Linux.tar.gz\n$ cd AMPS-5.3.5.0-Release-Linux\n$ ./bin/amps --version\nAMPS Version 5.3.5.0</code></pre>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Starting and Stopping AMPS', content: [
+    `<p>Start AMPS with a configuration file:</p>`,
+    `<pre><code>$ ./bin/amps config/amps-config.xml</code></pre>`,
+    `<p>By default, AMPS runs in the foreground. To run as a daemon:</p>`,
+    `<pre><code>$ ./bin/amps config/amps-config.xml &amp;</code></pre>`,
+    `<p>Stop AMPS gracefully by sending a <strong>SIGINT</strong> or <strong>SIGTERM</strong> signal:</p>`,
+    `<pre><code>$ kill -SIGTERM &lt;amps_pid&gt;</code></pre>`,
+    `<div class="callout"><div class="callout-title">⚠️ Important</div>Always use graceful shutdown. Forced termination can corrupt the SOW or transaction log.</div>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Command Line Options', content: [
+    `<p>Common command-line options for the AMPS server:</p>`,
+    `<table>`,
+    `<tr><th>Option</th><th>Description</th></tr>`,
+    `<tr><td><code>--version</code></td><td>Display version information</td></tr>`,
+    `<tr><td><code>--help</code></td><td>Show help message</td></tr>`,
+    `<tr><td><code>-config &lt;file&gt;</code></td><td>Specify configuration file path</td></tr>`,
+    `<tr><td><code>-log &lt;file&gt;</code></td><td>Specify log file location</td></tr>`,
+    `<tr><td><code>-minidump</code></td><td>Enable minidump generation on crash</td></tr>`,
+    `</table>`,
+    `<p>The configuration file is the primary way to control AMPS behavior.</p>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'JSON Messages Quick Primer', content: [
+    `<p>AMPS supports multiple message formats. <strong>JSON</strong> is the most commonly used:</p>`,
+    `<pre><code>{\n  "Ticker": "IBM",\n  "Price": 125.50,\n  "Quantity": 1000,\n  "Side": "BUY"\n}</code></pre>`,
+    `<p>Key rules for AMPS JSON messages:</p>`,
+    `<ul>`,
+    `<li>Field names are case-sensitive</li>`,
+    `<li>AMPS can filter on any field in the JSON payload</li>`,
+    `<li>Nested objects and arrays are supported in expressions</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Introducing spark: The AMPS CLI', content: [
+    `<p><code>spark</code> is the command-line client included with AMPS:</p>`,
+    `<pre><code>$ ./bin/spark -server localhost:9007 -type json</code></pre>`,
+    `<p>Once connected, you can:</p>`,
+    `<ul>`,
+    `<li><code>publish</code> — send messages to a topic</li>`,
+    `<li><code>subscribe</code> — receive messages from a topic</li>`,
+    `<li><code>sow</code> — query the State of the World</li>`,
+    `<li><code>sow_and_subscribe</code> — query then subscribe for updates</li>`,
+    `</ul>`,
+    `<p>Use <code>help</code> inside spark to see all available commands.</p>`
+  ]},
+  { moduleId: 'M1', type: 'worked_example', title: 'Your First Publish and Subscribe', content: [
+    `<p><strong>Terminal 1 — Subscribe:</strong></p>`,
+    `<pre><code>spark&gt; subscribe ORDERS\nSubscribed to ORDERS</code></pre>`,
+    `<p><strong>Terminal 2 — Publish:</strong></p>`,
+    `<pre><code>spark&gt; publish ORDERS\nEnter message (blank line to send):\n{ "Ticker": "AAPL", "Price": 175.00 }\n\nMessage published.</code></pre>`,
+    `<p><strong>Terminal 1 — Receive:</strong></p>`,
+    `<pre><code>{ "Ticker": "AAPL", "Price": 175.00 }</code></pre>`,
+    `<div class="callout"><div class="callout-title">🎉 Success!</div>You just sent your first message through AMPS.</div>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Filesystem and Environment Setup', content: [
+    `<p>AMPS uses the filesystem for several purposes:</p>`,
+    `<table>`,
+    `<tr><th>Path</th><th>Purpose</th></tr>`,
+    `<tr><td>SOW files</td><td>Persistent storage for State of the World topics</td></tr>`,
+    `<tr><td>Transaction log journals</td><td>Recorded message streams for replay</td></tr>`,
+    `<tr><td>Log files</td><td>Server event and error logging</td></tr>`,
+    `<tr><td>Minidumps</td><td>Crash diagnostics</td></tr>`,
+    `</table>`,
+    `<p>Use fast, local storage (SSD) for SOW and transaction log directories.</p>`
+  ]},
+  { moduleId: 'M1', type: 'concept', title: 'Common Installation Issues', content: [
+    `<table>`,
+    `<tr><th>Issue</th><th>Solution</th></tr>`,
+    `<tr><td>Port already in use</td><td>Change the transport port in config or stop the other process</td></tr>`,
+    `<tr><td>Permission denied</td><td>Ensure AMPS has write access to SOW and log directories</td></tr>`,
+    `<tr><td>Config file not found</td><td>Verify the path passed to <code>-config</code></td></tr>`,
+    `<tr><td>Out of memory</td><td>Reduce SOW topic sizes or increase system RAM</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M1', type: 'recap', title: 'Module Recap: Getting Started', content: [
+    `<ul>`,
+    `<li>AMPS runs on Linux x86_64; evaluation on Windows/macOS via WSL/VM</li>`,
+    `<li>Start with <code>amps config.xml</code>; stop gracefully with SIGTERM</li>`,
+    `<li>JSON is the most common message format — field names are case-sensitive</li>`,
+    `<li><code>spark</code> is the CLI client for testing pub/sub, SOW queries, and more</li>`,
+    `<li>Use fast local storage for SOW files and transaction logs</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M1', type: 'quiz', title: 'Quiz: Getting Started', content: [] },
+
+  // ===== M2: Publish/Subscribe Fundamentals =====
+  { moduleId: 'M2', type: 'intro', title: 'What Is Pub/Sub Messaging?', content: [
+    `<p>In <strong>publish/subscribe messaging</strong>, publishers send messages without knowing which subscribers will receive them.</p>`,
+    `<p>This <strong>decouples publishers from subscribers</strong> for maximum flexibility:</p>`,
+    `<ul>`,
+    `<li>Add new publishers without changing subscribers</li>`,
+    `<li>Add new subscribers without changing publishers</li>`,
+    `<li>Scale each side independently</li>`,
+    `</ul>`,
+    `<p>All other AMPS features build on this foundation.</p>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Topics in AMPS', content: [
+    `<p>Every message in AMPS is published to a <strong>topic</strong>:</p>`,
+    `<ul>`,
+    `<li>The topic indicates the type of message</li>`,
+    `<li>Subscribers choose which topics to receive</li>`,
+    `<li>Topics are typically named after business entities (e.g., <code>ORDERS</code>, <code>TRADES</code>)</li>`,
+    `</ul>`,
+    `<pre><code>// Publisher sends to topic\npublish ORDERS { "Ticker": "IBM", "Price": 125 }\n\n// Subscriber receives from topic\nsubscribe ORDERS</code></pre>`,
+    `<p>Topics are configured in the AMPS configuration file or created ad hoc.</p>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Ad Hoc Topics', content: [
+    `<p><strong>Ad hoc topics</strong> are created automatically when a client publishes or subscribes to a topic name that doesn\'t have explicit configuration:</p>`,
+    `<ul>`,
+    `<li>No configuration needed in <code>amps-config.xml</code></li>`,
+    `<li>Useful for prototyping and dynamic messaging</li>`,
+    `<li>Messages are not persisted to the SOW unless configured</li>`,
+    `</ul>`,
+    `<div class="callout"><div class="callout-title">⚠️ Production Tip</div>Always configure topics explicitly in production. Ad hoc topics have no SOW, no transaction log, and no entitlement controls.</div>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Regular Expression Subscriptions', content: [
+    `<p>Subscribers can match <strong>multiple topics</strong> with regular expressions:</p>`,
+    `<pre><code>// Subscribe to all topics starting with "ORDERS_"\nsubscribe ORDERS_.*\n\n// Subscribe to any single character suffix\nsubscribe ORDERS_?</code></pre>`,
+    `<p>This is useful when:</p>`,
+    `<ul>`,
+    `<li>You have many related topics (e.g., <code>ORDERS_US</code>, <code>ORDERS_EU</code>)</li>`,
+    `<li>You want to dynamically discover new topics</li>`,
+    `<li>You need a unified view across topic hierarchies</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Message Headers Overview', content: [
+    `<p>AMPS adds <strong>headers</strong> to every message. Key headers include:</p>`,
+    `<table>`,
+    `<tr><th>Header</th><th>Description</th></tr>`,
+    `<tr><td><code>AMPS_Topic</code></td><td>The topic the message was published to</td></tr>`,
+    `<tr><td><code>AMPS_MessageId</code></td><td>Unique identifier for the message</td></tr>`,
+    `<tr><td><code>AMPS_Timestamp</code></td><td>Server timestamp when message was processed</td></tr>`,
+    `<tr><td><code>CorrelationId</code></td><td>Application-defined correlation identifier</td></tr>`,
+    `<tr><td><code>AMPS_CommandId</code></td><td>Identifier for the subscription command</td></tr>`,
+    `</table>`,
+    `<p>Headers are separate from the message payload and are used for routing, filtering, and tracking.</p>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Message Ordering Guarantees', content: [
+    `<p>AMPS guarantees <strong>absolute message ordering within a topic</strong>:</p>`,
+    `<ul>`,
+    `<li>Messages are delivered to subscribers in the order they were received by AMPS</li>`,
+    `<li>This applies to all subscribers on that topic</li>`,
+    `<li>Ordering is also maintained within replicated topics</li>`,
+    `</ul>`,
+    `<p><strong>Note:</strong> For <strong>view topics</strong>, ordering is guaranteed within each view but not across separate views.</p>`,
+    `<p>Subscribers can rely on message order for stateful processing.</p>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Conflated Subscriptions', content: [
+    `<p><strong>Conflation</strong> reduces message volume by delivering only the <strong>latest message</strong> for a given SOW key:</p>`,
+    `<ul>`,
+    `<li>Useful when subscribers only need the most recent state</li>`,
+    `<li>Reduces bandwidth and processing overhead</li>`,
+    `<li>Configured per-subscription with the <code>conflated</code> option</li>`,
+    `</ul>`,
+    `<pre><code>// Subscribe with conflation\nsubscribe ORDERS with options { conflated: true }</code></pre>`,
+    `<p>Conflation is often used for price feeds and status updates.</p>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Replacing Subscriptions', content: [
+    `<p>A subscriber can <strong>replace</strong> an existing subscription without unsubscribing first:</p>`,
+    `<ul>`,
+    `<li>Replace the content filter</li>`,
+    `<li>Replace the topic</li>`,
+    `<li>Replace subscription options</li>`,
+    `</ul>`,
+    `<p>Replacement uses the same <code>CommandId</code> as the original subscription. AMPS sends a <code>group_end</code> message for the old subscription and begins the new one.</p>`,
+    `<div class="callout"><div class="callout-title">💡 Pro Tip</div>Use replace to dynamically change filters at runtime — no message loss during the transition.</div>`
+  ]},
+  { moduleId: 'M2', type: 'concept', title: 'Select Lists: Retrieving Partial Messages', content: [
+    `<p><strong>Select lists</strong> let subscribers receive only the fields they need:</p>`,
+    `<pre><code>// Only receive Ticker and Price fields\nsubscribe ORDERS with selectList ["/Ticker", "/Price"]</code></pre>`,
+    `<p>Benefits:</p>`,
+    `<ul>`,
+    `<li>Reduced bandwidth between AMPS and subscriber</li>`,
+    `<li>Faster client-side processing</li>`,
+    `<li>Less memory usage on the client</li>`,
+    `</ul>`,
+    `<p>Use <strong>AMPS expressions</strong> in select lists for computed fields.</p>`
+  ]},
+  { moduleId: 'M2', type: 'recap', title: 'Module Recap: Pub/Sub Fundamentals', content: [
+    `<ul>`,
+    `<li>Pub/sub decouples publishers and subscribers for flexibility and scale</li>`,
+    `<li>Messages are sent to topics; subscribers choose which topics to receive</li>`,
+    `<li>Ad hoc topics work without configuration but lack persistence and security</li>`,
+    `<li>Regex subscriptions allow matching multiple topics with one command</li>`,
+    `<li>AMPS guarantees absolute ordering within each topic</li>`,
+    `<li>Conflation and select lists optimize bandwidth and processing</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M2', type: 'quiz', title: 'Quiz: Publish/Subscribe Fundamentals', content: [] },
+
+  // ===== M3: Content Filtering & Expressions =====
+  { moduleId: 'M3', type: 'intro', title: 'Why Content Filtering Matters', content: [
+    `<p>Unlike many messaging systems, AMPS lets subscribers filter messages by <strong>content within the payload</strong>, not just by topic.</p>`,
+    `<p>Benefits of content filtering:</p>`,
+    `<ul>`,
+    `<li><strong>Better bandwidth usage</strong> — subscribers only receive relevant messages</li>`,
+    `<li><strong>Simpler subscriber code</strong> — guaranteed that received messages match criteria</li>`,
+    `<li><strong>Looser coupling</strong> — publishers don\'t need to know what fields subscribers care about</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Filter Syntax Basics', content: [
+    `<p>Content filters are expressions that evaluate to <code>true</code> or <code>false</code>:</p>`,
+    `<pre><code>// Simple equality filter\n/Ticker = "IBM"\n\n// Numeric comparison\n/Price &gt; 100\n\n// Combined conditions\n/Ticker = "IBM" AND /Price &gt; 100\n\n// Range filter\n/Price BETWEEN 50 AND 150</code></pre>`,
+    `<p>Filters use <strong>field references</strong> like <code>/Ticker</code> and <strong>operators</strong> like <code>=</code>, <code>&gt;</code>, <code>AND</code>, <code>OR</code>.</p>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'AMPS Data Types', content: [
+    `<p>AMPS supports these data types in expressions:</p>`,
+    `<table>`,
+    `<tr><th>Type</th><th>Examples</th><th>Notes</th></tr>`,
+    `<tr><td>Integer</td><td><code>42</code>, <code>-7</code></td><td>64-bit signed integers</td></tr>`,
+    `<tr><td>Floating point</td><td><code>3.14</code>, <code>-0.5</code></td><td>IEEE 754 double precision</td></tr>`,
+    `<tr><td>String</td><td><code>"IBM"</code></td><td>Double-quoted, case-sensitive</td></tr>`,
+    `<tr><td>Boolean</td><td><code>true</code>, <code>false</code></td><td>Lowercase literals</td></tr>`,
+    `<tr><td>NULL</td><td><code>NULL</code></td><td>Represents missing value</td></tr>`,
+    `<tr><td>Array</td><td><code>[1, 2, 3]</code></td><td>Used with IN operator</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Identifiers and Field References', content: [
+    `<p>Field references in AMPS start with a forward slash <code>/</code>:</p>`,
+    `<pre><code>/Ticker          // Top-level field\n/Order/Quantity  // Nested field\n/Tags[0]          // First element of array\n/Items[0]/Price  // Nested field within array element</code></pre>`,
+    `<p>Rules:</p>`,
+    `<ul>`,
+    `<li>Field names are case-sensitive</li>`,
+    `<li>Use brackets for array indexing</li>`,
+    `<li>Use dot or slash for nested paths</li>`,
+    `<li>Unquoted identifiers can contain letters, digits, and underscores</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Arithmetic Operators', content: [
+    `<table>`,
+    `<tr><th>Operator</th><th>Description</th><th>Example</th></tr>`,
+    `<tr><td><code>+</code></td><td>Addition</td><td><code>/Price + /Tax</code></td></tr>`,
+    `<tr><td><code>-</code></td><td>Subtraction</td><td><code>/Total - /Discount</code></td></tr>`,
+    `<tr><td><code>*</code></td><td>Multiplication</td><td><code>/Quantity * /Price</code></td></tr>`,
+    `<tr><td><code>/</code></td><td>Division</td><td><code>/Total / /Count</code></td></tr>`,
+    `<tr><td><code>%</code></td><td>Modulo</td><td><code>/Id % 10</code></td></tr>`,
+    `</table>`,
+    `<p>Arithmetic follows standard order of precedence. Use parentheses to override.</p>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Comparison Operators', content: [
+    `<table>`,
+    `<tr><th>Operator</th><th>Description</th></tr>`,
+    `<tr><td><code>=</code></td><td>Equal to</td></tr>`,
+    `<tr><td><code>&lt;&gt;</code> or <code>!=</code></td><td>Not equal to</td></tr>`,
+    `<tr><td><code>&lt;</code></td><td>Less than</td></tr>`,
+    `<tr><td><code>&gt;</code></td><td>Greater than</td></tr>`,
+    `<tr><td><code>&lt;=</code></td><td>Less than or equal to</td></tr>`,
+    `<tr><td><code>&gt;=</code></td><td>Greater than or equal to</td></tr>`,
+    `<tr><td><code>BETWEEN</code></td><td>Inclusive range</td></tr>`,
+    `<tr><td><code>IN</code></td><td>Match any value in list</td></tr>`,
+    `<tr><td><code>LIKE</code></td><td>Pattern matching with wildcards</td></tr>`,
+    `<tr><td><code>IS NULL</code></td><td>Check for NULL value</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Logical Operators', content: [
+    `<table>`,
+    `<tr><th>Operator</th><th>Description</th></tr>`,
+    `<tr><td><code>AND</code></td><td>True if both operands are true</td></tr>`,
+    `<tr><td><code>OR</code></td><td>True if either operand is true</td></tr>`,
+    `<tr><td><code>NOT</code></td><td>Negates the following expression</td></tr>`,
+    `</table>`,
+    `<p>Precedence (highest to lowest): <code>NOT</code> → <code>AND</code> → <code>OR</code></p>`,
+    `<pre><code>// Use parentheses for clarity\n(/Ticker = "IBM" OR /Ticker = "AAPL") AND /Price &gt; 100</code></pre>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'LIKE and IN Operators', content: [
+    `<p><strong>LIKE</strong> performs pattern matching with two wildcards:</p>`,
+    `<ul>`,
+    `<li><code>%</code> — matches zero or more characters</li>`,
+    `<li><code>_</code> — matches exactly one character</li>`,
+    `</ul>`,
+    `<pre><code>/Ticker LIKE "IB%"     // Matches IBM, IBN, etc.\n/Ticker LIKE "A_P_"    // Matches AAPL, AAPX, etc.</code></pre>`,
+    `<p><strong>IN</strong> checks if a value exists in a list:</p>`,
+    `<pre><code>/Ticker IN ("IBM", "AAPL", "MSFT")\n/Status IN (/AllowedStatuses)</code></pre>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'NULL, NaN, and IS NULL', content: [
+    `<p>Handling missing or invalid values:</p>`,
+    `<ul>`,
+    `<li><strong>NULL</strong> — a field is absent or explicitly set to null</li>`,
+    `<li><strong>NaN</strong> — a numeric field contains "not a number"</li>`,
+    `</ul>`,
+    `<pre><code>// Check for NULL\n/OptionalField IS NULL\n\n// Check for non-NULL\n/OptionalField IS NOT NULL\n\n// NaN comparisons always return false\n/NanField = /NanField  // Returns false!</code></pre>`,
+    `<div class="callout"><div class="callout-title">⚠️ Important</div><code>NaN = NaN</code> returns <code>false</code> in AMPS, following IEEE 754 rules. Use <code>IS NULL</code> to check for missing values.</div>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Working with Arrays', content: [
+    `<p>AMPS expressions support array operations:</p>`,
+    `<pre><code>// Access by index\n/Tags[0] = "urgent"\n\n// IN operator with array literal\n/Status IN ("NEW", "PENDING", "OPEN")\n\n// Array field reference\n/AllowedValues IN (/ConfiguredList)</code></pre>`,
+    `<p>For nested arrays and objects, combine bracket and dot notation:</p>`,
+    `<pre><code>/Orders[0]/Items[1]/Price &gt; 100</code></pre>`
+  ]},
+  { moduleId: 'M3', type: 'concept', title: 'Regular Expressions in Filters', content: [
+    `<p>AMPS supports <strong>regular expression matching</strong> for string fields:</p>`,
+    `<pre><code>// Match ticker starting with A\n/Ticker LIKE_REGEX "^A.*"\n\n// Match 3-4 character uppercase ticker\n/Ticker LIKE_REGEX "^[A-Z]{3,4}$"</code></pre>`,
+    `<p>Regular expressions follow standard PCRE-like syntax. Use them when <code>LIKE</code> wildcards aren\'t expressive enough.</p>`,
+    `<div class="callout"><div class="callout-title">💡 Performance Tip</div>Regular expressions are powerful but slower than simple comparisons. Use <code>=</code>, <code>IN</code>, or <code>LIKE</code> when possible.</div>`
+  ]},
+  { moduleId: 'M3', type: 'recap', title: 'Module Recap: Content Filtering & Expressions', content: [
+    `<ul>`,
+    `<li>Content filtering lets subscribers receive only relevant messages by payload content</li>`,
+    `<li>Field references start with <code>/</code> and support nested paths and array indexing</li>`,
+    `<li>AMPS supports integers, floats, strings, booleans, NULL, and arrays</li>`,
+    `<li>Comparison operators: <code>= &lt;&gt; &lt; &gt; &lt;= &gt;= BETWEEN IN LIKE</code></li>`,
+    `<li>Logical operators: <code>AND OR NOT</code> with standard precedence</li>`,
+    `<li>Use <code>IS NULL</code> for missing values; remember <code>NaN = NaN</code> is false</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M3', type: 'quiz', title: 'Quiz: Content Filtering & Expressions', content: [] },
+
+  // ===== M4: State of the World (SOW) =====
+  { moduleId: 'M4', type: 'intro', title: 'What Is the State of the World?', content: [
+    `<p>The <strong>State of the World (SOW)</strong> is AMPS\'s integrated database capability.</p>`,
+    `<p>Unlike a traditional message broker that only routes messages, AMPS can <strong>persist the latest value</strong> for each record in a topic:</p>`,
+    `<ul>`,
+    `<li>Acts as a <strong>current-value cache</strong></li>`,
+    `<li>Works as a <strong>key/value document store</strong></li>`,
+    `<li>Functions as a <strong>fully queryable database</strong></li>`,
+    `</ul>`,
+    `<p>You can use all three modes simultaneously for the same topic.</p>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'When to Store a Topic in the SOW', content: [
+    `<p>Use the SOW when you need to:</p>`,
+    `<ul>`,
+    `<li><strong>Query current state</strong> — "What is the latest price for IBM?"</li>`,
+    `<li><strong>Track record changes over time</strong> — update existing records</li>`,
+    `<li><strong>Support delta messaging</strong> — send only changed fields</li>`,
+    `<li><strong>Aggregate data</strong> — views and analytics over current state</li>`,
+    `</ul>`,
+    `<p>Don\'t use SOW for:</p>`,
+    `<ul>`,
+    `<li>Fire-and-forget events that don\'t need persistence</li>`,
+    `<li>High-volume streams where only the stream matters</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'How the SOW Works', content: [
+    `<p>When a message is published to a SOW topic:</p>`,
+    `<ol>`,
+    `<li>AMPS extracts the <strong>SOW key</strong> from the message</li>`,
+    `<li>Looks up the existing record with that key</li>`,
+    `<li>If found, <strong>replaces</strong> the old record with the new one</li>`,
+    `<li>If not found, <strong>creates</strong> a new record</li>`,
+    `<li>Notifies subscribers of the change</li>`,
+    `</ol>`,
+    `<pre><code>Publish: { "Ticker": "IBM", "Price": 125 }  // New record\nPublish: { "Ticker": "IBM", "Price": 126 }  // Updates existing\nPublish: { "Ticker": "AAPL", "Price": 175 } // New record</code></pre>`,
+    `<p>The SOW always contains the <strong>most recent message per key</strong>.</p>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'SOW Keys: AMPS-Generated vs User-Generated', content: [
+    `<p>Every SOW record needs a <strong>key</strong> to identify it:</p>`,
+    `<p><strong>AMPS-Generated Keys</strong></p>`,
+    `<ul>`,
+    `<li>AMPS automatically creates a unique key for each message</li>`,
+    `<li>Useful when messages don\'t have a natural identifier</li>`,
+    `<li>Configured with <code>SOW_KEY</code> or omitted key configuration</li>`,
+    `</ul>`,
+    `<p><strong>User-Generated Keys</strong></p>`,
+    `<ul>`,
+    `<li>You specify which field(s) form the key</li>`,
+    `<li>Multiple fields can be combined into a composite key</li>`,
+    `<li>Configured with <code>Key</code> elements in topic configuration</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Key&gt;/Ticker&lt;/Key&gt;\n&lt;Key&gt;/Exchange&lt;/Key&gt;</code></pre>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'Indexing SOW Topics', content: [
+    `<p>Indexes speed up SOW queries:</p>`,
+    `<ul>`,
+    `<li>Define <code>Index</code> elements in topic configuration</li>`,
+    `<li>Index fields you query frequently</li>`,
+    `<li>More indexes = faster queries, but more memory and slower updates</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Index&gt;\n  &lt;Field&gt;/Ticker&lt;/Field&gt;\n&lt;/Index&gt;\n&lt;Index&gt;\n  &lt;Field&gt;/Sector&lt;/Field&gt;\n&lt;/Index&gt;</code></pre>`,
+    `<div class="callout"><div class="callout-title">💡 Best Practice</div>Index the fields used in content filters and query <code>WHERE</code> clauses. Don\'t over-index.</div>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'SOW Queries', content: [
+    `<p>Query the SOW to retrieve current records:</p>`,
+    `<pre><code>// Query all records in a topic\nsow ORDERS\n\n// Query with a filter\nsow ORDERS where /Ticker = "IBM"\n\n// Query with multiple conditions\nsow ORDERS where /Price &gt; 100 AND /Quantity &gt; 500</code></pre>`,
+    `<p>Query results are delivered as a set of messages, followed by a <code>group_end</code> message.</p>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'Query and Subscribe', content: [
+    `<p><strong>Query and Subscribe</strong> combines two operations:</p>`,
+    `<ol>`,
+    `<li>First, AMPS sends the current SOW contents matching the query</li>`,
+    `<li>Then, AMPS sends real-time updates as new messages arrive</li>`,
+    `</ol>`,
+    `<pre><code>sow_and_subscribe ORDERS where /Ticker = "IBM"</code></pre>`,
+    `<p>This is one of the most common patterns in AMPS applications:</p>`,
+    `<ul>`,
+    `<li>Populate a UI with current data</li>`,
+    `<li>Keep the UI updated in real-time</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'Historical SOW Queries', content: [
+    `<p><strong>Historical SOW queries</strong> let you retrieve past states of the SOW:</p>`,
+    `<ul>`,
+    `<li>Requires the topic to have a <strong>transaction log</strong></li>`,
+    `<li>Use a <strong>bookmark</strong> to specify a point in time</li>`,
+    `<li>Useful for auditing, backtesting, and debugging</li>`,
+    `</ul>`,
+    `<pre><code>// Query SOW as it existed at a specific bookmark\nsow ORDERS with bookmark "E|12345|/amps/replication"</code></pre>`,
+    `<div class="callout"><div class="callout-title">⚠️ Requirement</div>Historical SOW queries require both SOW and transaction log to be configured for the topic.</div>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'Paginated SOW Subscriptions', content: [
+    `<p>For large result sets, use <strong>pagination</strong>:</p>`,
+    `<ul>`,
+    `<li>Request a subset of records at a time</li>`,
+    `<li>Use <code>topN</code> and <code>skipN</code> options</li>`,
+    `<li>Combine with <code>OrderBy</code> for sorted results</li>`,
+    `</ul>`,
+    `<pre><code>// First page: top 10 by Price descending\nsow ORDERS with options {\n  topN: 10,\n  OrderBy: "/Price DESC"\n}</code></pre>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'Aggregated SOW Queries', content: [
+    `<p>AMPS can compute <strong>aggregations</strong> over SOW topics:</p>`,
+    `<ul>`,
+    `<li><code>COUNT</code>, <code>MIN</code>, <code>MAX</code>, <code>SUM</code>, <code>AVG</code></li>`,
+    `<li><code>GROUP BY</code> for grouping results</li>`,
+    `<li>Useful for dashboards and analytics</li>`,
+    `</ul>`,
+    `<pre><code>// Average price per sector\nsow ORDERS with options {\n  selectList: ["/Sector", "AVG(/Price) as AvgPrice"],\n  groupBy: ["/Sector"]\n}</code></pre>`
+  ]},
+  { moduleId: 'M4', type: 'concept', title: 'SOW Maintenance and Expiration', content: [
+    `<p>AMPS provides mechanisms to manage SOW storage:</p>`,
+    `<table>`,
+    `<tr><th>Feature</th><th>Description</th></tr>`,
+    `<tr><td>Expiration</td><td>Automatically delete records after a configured time</td></tr>`,
+    `<tr><td>Compaction</td><td>Reclaim space from deleted records</td></tr>`,
+    `<tr><td>Preprocessing</td><td>Transform or validate messages before SOW update</td></tr>`,
+    `<tr><td>Enrichment</td><td>Add computed fields to messages in the SOW</td></tr>`,
+    `</table>`,
+    `<p>Configure these in the topic definition within <code>amps-config.xml</code>.</p>`
+  ]},
+  { moduleId: 'M4', type: 'recap', title: 'Module Recap: State of the World', content: [
+    `<ul>`,
+    `<li>SOW persists the latest message per key, acting as a database</li>`,
+    `<li>Use SOW when you need queries, deltas, or current-state tracking</li>`,
+    `<li>Keys can be AMPS-generated or user-defined from message fields</li>`,
+    `<li>Indexes speed up queries but consume memory</li>`,
+    `<li><code>sow_and_subscribe</code> gives current state + real-time updates</li>`,
+    `<li>Historical queries, pagination, and aggregation extend SOW capabilities</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M4', type: 'quiz', title: 'Quiz: State of the World (SOW)', content: [] },
+
+  // ===== M5: Message Queues =====
+  { moduleId: 'M5', type: 'intro', title: 'What Are Message Queues?', content: [
+    `<p><strong>Message queues</strong> provide <strong>competitive consumption</strong> — each message is delivered to exactly one subscriber.</p>`,
+    `<p>This is different from pub/sub where one message goes to all subscribers.</p>`,
+    `<pre><code>Pub/Sub:     1 message → ALL subscribers\nQueue:       1 message → ONE subscriber</code></pre>`,
+    `<p>Queues are ideal for <strong>work distribution</strong> and <strong>task processing</strong>.</p>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'How Queues Work in AMPS', content: [
+    `<p>AMPS queues build on top of SOW topics:</p>`,
+    `<ol>`,
+    `<li>A topic is configured as a <strong>queue</strong></li>`,
+    `<li>Messages published to the topic become available to consumers</li>`,
+    `<li>Each consumer <strong>leases</strong> a message (exclusive access for a time)</li>`,
+    `<li>The consumer processes the message and <strong>acknowledges</strong> it</li>`,
+    `<li>If not acknowledged in time, the lease expires and another consumer gets it</li>`,
+    `</ol>`,
+    `<p>This ensures <strong>at-least-once delivery</strong> with automatic retry.</p>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'When to Use Queues', content: [
+    `<table>`,
+    `<tr><th>Scenario</th><th>Use Queue?</th></tr>`,
+    `<tr><td>Task distribution to worker pool</td><td>✅ Yes</td></tr>`,
+    `<tr><td>Order processing pipelines</td><td>✅ Yes</td></tr>`,
+    `<tr><td>Market data broadcast</td><td>❌ Use pub/sub</td></tr>`,
+    `<tr><td>Event notifications to all listeners</td><td>❌ Use pub/sub</td></tr>`,
+    `<tr><td>Guaranteed processing with retry</td><td>✅ Yes</td></tr>`,
+    `<tr><td>Real-time price updates</td><td>❌ Use pub/sub</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Queue Configuration', content: [
+    `<p>Configure a queue in <code>amps-config.xml</code>:</p>`,
+    `<pre><code>&lt;SOW&gt;\n  &lt;Topic&gt;\n    &lt;Name&gt;WORK_QUEUE&lt;/Name&gt;\n    &lt;Queue&gt;\n      &lt;LeaseTime&gt;30s&lt;/LeaseTime&gt;\n      &lt;MaxBacklog&gt;10000&lt;/MaxBacklog&gt;\n    &lt;/Queue&gt;\n    &lt;Key&gt;/TaskId&lt;/Key&gt;\n  &lt;/Topic&gt;\n&lt;/SOW&gt;</code></pre>`,
+    `<p>Key parameters:</p>`,
+    `<ul>`,
+    `<li><code>LeaseTime</code> — how long a consumer has exclusive access</li>`,
+    `<li><code>MaxBacklog</code> — maximum queued messages</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Queue Replication Types', content: [
+    `<p>AMPS supports different replication behaviors for queues:</p>`,
+    `<table>`,
+    `<tr><th>Type</th><th>Behavior</th></tr>`,
+    `<tr><td>Local</td><td>Messages are consumed locally on each instance</td></tr>`,
+    `<tr><td>Global</td><td>Messages are consumed once across the entire replication group</td></tr>`,
+    `<tr><td>Group Local</td><td>Messages are consumed once within a designated group</td></tr>`,
+    `</table>`,
+    `<p>Choose the type based on your deployment topology and failover requirements.</p>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Group Local Queues', content: [
+    `<p><strong>Group local queues</strong> provide a balance between local and global:</p>`,
+    `<ul>`,
+    `<li>Messages are consumed once <strong>within a group</strong></li>`,
+    `<li>Different groups can process the same message independently</li>`,
+    `<li>Useful for multi-region deployments</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Queue&gt;\n  &lt;ReplicationType&gt;group-local&lt;/ReplicationType&gt;\n  &lt;GroupName&gt;US-EAST&lt;/GroupName&gt;\n&lt;/Queue&gt;</code></pre>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Multiple Underlying Topics', content: [
+    `<p>A single queue can consume from <strong>multiple underlying topics</strong>:</p>`,
+    `<ul>`,
+    `<li>Aggregate work items from different sources</li>`,
+    `<li>Process them with a single consumer pool</li>`,
+    `<li>Configure with <code>UnderlyingTopic</code> elements</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Queue&gt;\n  &lt;UnderlyingTopic&gt;ORDERS_US&lt;/UnderlyingTopic&gt;\n  &lt;UnderlyingTopic&gt;ORDERS_EU&lt;/UnderlyingTopic&gt;\n&lt;/Queue&gt;</code></pre>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Queue vs Pub/Sub: Choosing a Model', content: [
+    `<table>`,
+    `<tr><th>Criteria</th><th>Pub/Sub</th><th>Queue</th></tr>`,
+    `<tr><td>Delivery</td><td>All subscribers</td><td>One consumer</td></tr>`,
+    `<tr><td>Pattern</td><td>Broadcast</td><td>Work distribution</td></tr>`,
+    `<tr><td>Persistence</td><td>Optional</td><td>Required (SOW-based)</td></tr>`,
+    `<tr><td>Ordering</td><td>Global per topic</td><td>Per consumer</td></tr>`,
+    `<tr><td>Retry</td><td>No</td><td>Yes (lease expiry)</td></tr>`,
+    `<tr><td>Scaling</td><td>Subscribers scale reads</td><td>Consumers scale processing</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M5', type: 'concept', title: 'Advanced Queue Configuration', content: [
+    `<p>Additional queue options:</p>`,
+    `<table>`,
+    `<tr><th>Option</th><th>Description</th></tr>`,
+    `<tr><td><code>Acknowledgment</code></td><td>Require explicit ack from consumer</td></tr>`,
+    `<tr><td><code>MaxLeaseDuration</code></td><td>Hard limit on lease time</td></tr>`,
+    `<tr><td><code>Priority</code></td><td>Process higher-priority messages first</td></tr>`,
+    `<tr><td><code>Filter</code></td><td>Only queue messages matching a filter</td></tr>`,
+    `</table>`,
+    `<p>Fine-tune these based on your SLAs and processing requirements.</p>`
+  ]},
+  { moduleId: 'M5', type: 'recap', title: 'Module Recap: Message Queues', content: [
+    `<ul>`,
+    `<li>Queues provide competitive consumption — one message → one consumer</li>`,
+    `<li>Built on SOW topics with lease-based message locking</li>`,
+    `<li>Use queues for task distribution, pipelines, and guaranteed processing</li>`,
+    `<li>Choose replication type: local, global, or group-local</li>`,
+    `<li>Multiple underlying topics can feed a single queue</li>`,
+    `<li>Configure lease time, backlog limits, and acknowledgments</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M5', type: 'quiz', title: 'Quiz: Message Queues', content: [] },
+
+  // ===== M6: Advanced Messaging =====
+  { moduleId: 'M6', type: 'intro', title: 'The AMPS Transaction Log', content: [
+    `<p>The <strong>Transaction Log</strong> records every message that passes through AMPS with full fidelity.</p>`,
+    `<p>It enables powerful capabilities:</p>`,
+    `<ul>`,
+    `<li><strong>Message replay</strong> — reprocess historical messages</li>`,
+    `<li><strong>Bookmark subscriptions</strong> — resume from a specific point</li>`,
+    `<li><strong>Replication</strong> — synchronize between AMPS instances</li>`,
+    `<li><strong>Historical SOW queries</strong> — view past state</li>`,
+    `</ul>`,
+    `<p>The transaction log is stored in <strong>journal files</strong> on disk.</p>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'How Transaction Logging Works', content: [
+    `<p>When a message is published to a topic with a transaction log:</p>`,
+    `<ol>`,
+    `<li>AMPS assigns a <strong>bookmark</strong> — a unique, ordered identifier</li>`,
+    `<li>The message is written to the transaction log journal</li>`,
+    `<li>The message is then processed (SOW update, subscriber delivery, etc.)</li>`,
+    `</ol>`,
+    `<pre><code>Bookmark format: E|sequence_number|source\nExample: E|12345|/amps/replication</code></pre>`,
+    `<p>Bookmarks are monotonically increasing, so they define a total order.</p>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Bookmark Subscriptions and Replay', content: [
+    `<p><strong>Bookmark subscriptions</strong> let you receive messages starting from any point in the log:</p>`,
+    `<pre><code>// Subscribe from the beginning of the log\nsubscribe ORDERS with bookmark "0"\n\n// Subscribe from a specific bookmark\nsubscribe ORDERS with bookmark "E|12345|/amps/replication"\n\n// Subscribe from now\nsubscribe ORDERS with bookmark "now"</code></pre>`,
+    `<p>Use cases:</p>`,
+    `<ul>`,
+    `<li>Recovering from application crashes</li>`,
+    `<li>Replaying messages for testing or analytics</li>`,
+    `<li>Catch-up replication</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Replay from a Specific Bookmark', content: [
+    `<p>AMPS provides utilities for transaction log analysis:</p>`,
+    `<table>`,
+    `<tr><th>Tool</th><th>Purpose</th></tr>`,
+    `<tr><td><code>amps_journal_search</code></td><td>Search journal files for messages matching criteria</td></tr>`,
+    `<tr><td><code>amps-grep</code></td><td>Pattern search across journal files</td></tr>`,
+    `</table>`,
+    `<pre><code>// Find all messages for IBM in the log\namps_journal_search --topic ORDERS --filter '/Ticker = "IBM"'</code></pre>`,
+    `<p>These tools work offline on journal files without starting the AMPS server.</p>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Finding Messages with Specific Data', content: [
+    `<p>You can search the transaction log for messages matching content filters:</p>`,
+    `<pre><code>// Search for high-value orders\namps_journal_search --topic ORDERS \\\n  --filter '/Price &gt; 1000 AND /Quantity &gt; 10000'</code></pre>`,
+    `<p>This is useful for:</p>`,
+    `<ul>`,
+    `<li>Debugging production issues</li>`,
+    `<li>Audit and compliance</li>`,
+    `<li>Recovering specific messages</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Delta Publish: Sending Incremental Updates', content: [
+    `<p><strong>Delta publish</strong> sends only the <strong>changed fields</strong> instead of the full message:</p>`,
+    `<pre><code>// Full publish (sends entire record)\npublish ORDERS { "Ticker": "IBM", "Price": 125, "Quantity": 100 }\n\n// Delta publish (sends only changed field)\ndelta_publish ORDERS { "Ticker": "IBM", "Price": 126 }</code></pre>`,
+    `<p>Benefits:</p>`,
+    `<ul>`,
+    `<li>Reduced bandwidth for publishers</li>`,
+    `<li>Faster processing for subscribers that only need changes</li>`,
+    `</ul>`,
+    `<p>The SOW key must be included so AMPS knows which record to update.</p>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Delta Subscribe: Receiving Incremental Updates', content: [
+    `<p><strong>Delta subscribe</strong> receives only the fields that changed:</p>`,
+    `<pre><code>// Standard subscribe receives full messages\nsubscribe ORDERS\n// Receives: { "Ticker": "IBM", "Price": 126, "Quantity": 100 }\n\n// Delta subscribe receives only changes\ndelta_subscribe ORDERS\n// Receives: { "Ticker": "IBM", "Price": 126 }</code></pre>`,
+    `<p>This is ideal for:</p>`,
+    `<ul>`,
+    `<li>UI updates where only changed fields need refresh</li>`,
+    `<li>Bandwidth-constrained clients</li>`,
+    `<li>Efficient caching layers</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Delta Publish/Subscribe Support', content: [
+    `<p>Delta messaging requires:</p>`,
+    `<ul>`,
+    `<li>The topic to be stored in the <strong>SOW</strong></li>`,
+    `<li>AMPS must be able to compare the new message with the existing record</li>`,
+    `</ul>`,
+    `<p>Client considerations:</p>`,
+    `<ul>`,
+    `<li>Not all client libraries support delta publish/subscribe</li>`,
+    `<li>Verify support in your chosen client API</li>`,
+    `<li>Consider using OOF (Out-of-Focus) processing for additional flexibility</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Conflated Topics', content: [
+    `<p><strong>Conflated topics</strong> automatically reduce update frequency:</p>`,
+    `<ul>`,
+    `<li>AMPS batches updates and sends only the latest per key</li>`,
+    `<li>Configured with a <strong>window</strong> and <strong>granularity</strong></li>`,
+    `</ul>`,
+    `<pre><code>&lt;Conflation&gt;\n  &lt;Window&gt;1s&lt;/Window&gt;\n  &lt;Granularity&gt;100ms&lt;/Granularity&gt;\n&lt;/Conflation&gt;</code></pre>`,
+    `<p>Use conflated topics when subscribers don\'t need every single update.</p>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Views and Aggregation', content: [
+    `<p><strong>Views</strong> are computed projections over SOW topics:</p>`,
+    `<ul>`,
+    `<li>Defined with aggregation functions and groupings</li>`,
+    `<li>Updated in near real-time as underlying data changes</li>`,
+    `<li>Subscribers can treat views just like regular topics</li>`,
+    `</ul>`,
+    `<pre><code>&lt;View&gt;\n  &lt;TopicName&gt;SECTOR_SUMMARY&lt;/TopicName&gt;\n  &lt;UnderlyingTopic&gt;ORDERS&lt;/UnderlyingTopic&gt;\n  &lt;Projection&gt;\n    &lt;Field&gt;/Sector&lt;/Field&gt;\n    &lt;Field&gt;SUM(/Quantity) AS TotalQty&lt;/Field&gt;\n  &lt;/Projection&gt;\n  &lt;Grouping&gt;\n    &lt;Field&gt;/Sector&lt;/Field&gt;\n  &lt;/Grouping&gt;\n&lt;/View&gt;</code></pre>`
+  ]},
+  { moduleId: 'M6', type: 'concept', title: 'Message Enrichment', content: [
+    `<p><strong>Enrichment</strong> adds computed or looked-up fields to messages:</p>`,
+    `<ul>`,
+    `<li>Combine data from multiple sources</li>`,
+    `<li>Add timestamps, sequences, or derived values</li>`,
+    `<li>Transform message format before storage or delivery</li>`,
+    `</ul>`,
+    `<p>Enrichment is configured at the topic level and runs server-side.</p>`,
+    `<div class="callout"><div class="callout-title">💡 Use Case</div>Add a <code>/ReceivedAt</code> timestamp to every message for latency tracking.</div>`
+  ]},
+  { moduleId: 'M6', type: 'recap', title: 'Module Recap: Advanced Messaging', content: [
+    `<ul>`,
+    `<li>Transaction log records all messages with bookmarks for replay and replication</li>`,
+    `<li>Bookmark subscriptions resume from any point in the message stream</li>`,
+    `<li>Delta publish/subscribe sends only changed fields, saving bandwidth</li>`,
+    `<li>Conflated topics batch updates for subscribers that don\'t need every message</li>`,
+    `<li>Views provide real-time aggregation over SOW topics</li>`,
+    `<li>Enrichment adds computed fields server-side before storage/delivery</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M6', type: 'quiz', title: 'Quiz: Advanced Messaging', content: [] },
+
+  // ===== M7: High Availability & Replication =====
+  { moduleId: 'M7', type: 'intro', title: 'Why High Availability Matters', content: [
+    `<p>AMPS is designed for <strong>enterprise deployment at scale</strong>. Downtime can be costly.</p>`,
+    `<p>High availability features include:</p>`,
+    `<ul>`,
+    `<li><strong>Replication</strong> — synchronize data across multiple AMPS instances</li>`,
+    `<li><strong>Automatic failover</strong> — clients reconnect to standby instances</li>`,
+    `<li><strong>Guaranteed publishing</strong> — ensure critical messages are not lost</li>`,
+    `<li><strong>Resynchronization</strong> — bring failed instances back up to date</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Replication Basics', content: [
+    `<p><strong>Replication</strong> copies messages from one AMPS instance to another:</p>`,
+    `<ul>`,
+    `<li><strong>Source instance</strong> — the primary that receives client messages</li>`,
+    `<li><strong>Destination instance</strong> — the replica that receives copied messages</li>`,
+    `<li>Replication is <strong>topic-level</strong> — choose which topics to replicate</li>`,
+    `</ul>`,
+    `<pre><code>┌──────────┐     replication     ┌──────────┐\n│ AMPS A   │ ─────────────────▶ │ AMPS B   │\n│ (source) │                    │ (dest)   │\n└──────────┘                    └──────────┘</code></pre>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Benefits of Replication', content: [
+    `<table>`,
+    `<tr><th>Benefit</th><th>Description</th></tr>`,
+    `<tr><td>Disaster recovery</td><td>Standby instance takes over if primary fails</td></tr>`,
+    `<tr><td>Load distribution</td><td>Spread read load across replicas</td></tr>`,
+    `<tr><td>Geographic distribution</td><td>Place data closer to users in different regions</td></tr>`,
+    `<tr><td>Maintenance windows</td><td>Upgrade one instance while others serve traffic</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Replication Resynchronization', content: [
+    `<p>When a replica comes back online after a failure:</p>`,
+    `<ol>`,
+    `<li>AMPS detects the replica is behind</li>`,
+    `<li>Automatically sends missing messages from the transaction log</li>`,
+    `<li>The replica catches up to the current state</li>`,
+    `<li>Normal replication resumes</li>`,
+    `</ol>`,
+    `<p>This happens <strong>automatically</strong> — no manual intervention required.</p>`,
+    `<div class="callout"><div class="callout-title">💡 Note</div>Resynchronization requires the source to retain transaction log journals long enough for the replica to catch up.</div>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Two-Way Replication', content: [
+    `<p><strong>Two-way replication</strong> allows both instances to accept writes:</p>`,
+    `<ul>`,
+    `<li>Each instance replicates to the other</li>`,
+    `<li>Messages from Instance A are marked so they don\'t loop back</li>`,
+    `<li>Useful for active-active deployments</li>`,
+    `</ul>`,
+    `<pre><code>┌──────────┐  replication  ┌──────────┐\n│ AMPS A   │ ◀───────────▶ │ AMPS B   │\n└──────────┘               └──────────┘</code></pre>`,
+    `<p>Requires careful configuration to avoid conflicts on SOW updates.</p>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'PassThrough Replication', content: [
+    `<p><strong>PassThrough replication</strong> chains instances together:</p>`,
+    `<ul>`,
+    `<li>Instance A replicates to B</li>`,
+    `<li>Instance B replicates to C</li>`,
+    `<li>Instance C receives messages from both A and B</li>`,
+    `</ul>`,
+    `<pre><code>┌──────────┐    ┌──────────┐    ┌──────────┐\n│ AMPS A   │───▶│ AMPS B   │───▶│ AMPS C   │\n└──────────┘    └──────────┘    └──────────┘</code></pre>`,
+    `<p>Useful for hub-and-spoke or tiered deployment topologies.</p>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Replication Security', content: [
+    `<p>Secure replication with:</p>`,
+    `<ul>`,
+    `<li><strong>TLS/SSL</strong> — encrypt replication traffic</li>`,
+    `<li><strong>Authentication</strong> — verify replica identity</li>`,
+    `<li><strong>Access control</strong> — restrict which topics can be replicated</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Replication&gt;\n  &lt;Destination&gt;\n    &lt;Transport&gt;\n      &lt;Type&gt;amps-replication&lt;/Type&gt;\n      &lt;Encrypted>true&lt;/Encrypted&gt;\n    &lt;/Transport&gt;\n  &lt;/Destination&gt;\n&lt;/Replication&gt;</code></pre>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Guaranteed Publishing', content: [
+    `<p><strong>Guaranteed publishing</strong> ensures critical messages are persisted before acknowledgment:</p>`,
+    `<ul>`,
+    `<li>Publisher waits for AMPS to confirm the message is in the transaction log</li>`,
+    `<li>Prevents message loss during publisher or AMPS crashes</li>`,
+    `<li>Slightly higher latency than standard publish</li>`,
+    `</ul>`,
+    `<pre><code>// Enable guaranteed publish\npublish ORDERS with options {\n  guaranteed: true\n}</code></pre>`
+  ]},
+  { moduleId: 'M7', type: 'concept', title: 'Durable Publishing and Heartbeats', content: [
+    `<p><strong>Durable publishing</strong> goes further:</p>`,
+    `<ul>`,
+    `<li>Messages are stored locally by the publisher until acknowledged</li>`,
+    `<li>Survives publisher application restarts</li>`,
+    `<li>Combined with heartbeats to detect disconnections</li>`,
+    `</ul>`,
+    `<p><strong>Heartbeats</strong> maintain connection health:</p>`,
+    `<ul>`,
+    `<li>Regular ping/pong between client and AMPS</li>`,
+    `<li>Detect network partitions or unresponsive peers</li>`,
+    `<li>Trigger reconnection and failover</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M7', type: 'recap', title: 'Module Recap: High Availability & Replication', content: [
+    `<ul>`,
+    `<li>Replication copies messages between AMPS instances for HA and scale</li>`,
+    `<li>Automatic resynchronization brings failed replicas back online</li>`,
+    `<li>Two-way replication supports active-active deployments</li>`,
+    `<li>PassThrough chains instances for tiered topologies</li>`,
+    `<li>Use TLS and authentication to secure replication</li>`,
+    `<li>Guaranteed and durable publishing prevent message loss</li>`,
+    `<li>Heartbeats detect failures and trigger failover</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M7', type: 'quiz', title: 'Quiz: High Availability & Replication', content: [] },
+
+  // ===== M8: Configuration & Administration =====
+  { moduleId: 'M8', type: 'intro', title: 'Configuration File Overview', content: [
+    `<p>AMPS behavior is controlled by an <strong>XML configuration file</strong>:</p>`,
+    `<pre><code>&lt;AMPSConfig&gt;\n  &lt;Name&gt;my-amps-instance&lt;/Name&gt;\n  &lt;Transports&gt;...&lt;/Transports&gt;\n  &lt;SOW&gt;...&lt;/SOW&gt;\n  &lt;Monitoring&gt;...&lt;/Monitoring&gt;\n  &lt;Replication&gt;...&lt;/Replication&gt;\n&lt;/AMPSConfig&gt;</code></pre>`,
+    `<p>The configuration file is the single source of truth for an AMPS instance.</p>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Instance-Level Configuration', content: [
+    `<p>Top-level settings control the AMPS process:</p>`,
+    `<table>`,
+    `<tr><th>Setting</th><th>Description</th></tr>`,
+    `<tr><td><code>Name</code></td><td>Unique instance name</td></tr>`,
+    `<tr><td><code>Minidump</code></td><td>Enable crash dump generation</td></tr>`,
+    `<tr><td><code>SlowClient</code></td><td>Policy for slow subscribers (disconnect, buffer, etc.)</td></tr>`,
+    `<tr><td><code>ThreadPoolSize</code></td><td>Number of worker threads</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Transport Configuration', content: [
+    `<p><strong>Transports</strong> define how clients connect to AMPS:</p>`,
+    `<pre><code>&lt;Transport&gt;\n  &lt;Name&gt;json-tcp&lt;/Name&gt;\n  &lt;Type&gt;tcp&lt;/Type&gt;\n  &lt;InetAddr&gt;9007&lt;/InetAddr&gt;\n  &lt;Protocol&gt;amps&lt;/Protocol&gt;\n  &lt;MessageType&gt;json&lt;/MessageType&gt;\n&lt;/Transport&gt;</code></pre>`,
+    `<p>Each transport specifies:</p>`,
+    `<ul>`,
+    `<li><strong>Type</strong> — tcp, multicast, etc.</li>`,
+    `<li><strong>InetAddr</strong> — port (and optionally host)</li>`,
+    `<li><strong>Protocol</strong> — amps, fix, nvfix, etc.</li>`,
+    `<li><strong>MessageType</strong> — json, xml, bflat, etc.</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Protocols and Message Formats', content: [
+    `<table>`,
+    `<tr><th>Protocol</th><th>Use Case</th></tr>`,
+    `<tr><td>amps</td><td>Native AMPS protocol (most common)</td></tr>`,
+    `<tr><td>fix</td><td>Financial FIX protocol</td></tr>`,
+    `<tr><td>nvfix</td><td>Name-value FIX variant</td></tr>`,
+    `</table>`,
+    `<table>`,
+    `<tr><th>Message Type</th><th>Use Case</th></tr>`,
+    `<tr><td>json</td><td>Modern web APIs, human-readable</td></tr>`,
+    `<tr><td>xml</td><td>Legacy systems, schema validation</td></tr>`,
+    `<tr><td>bflat</td><td>High-performance binary format</td></tr>`,
+    `<tr><td>fix</td><td>Financial industry standard</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'SOW and Topic Configuration', content: [
+    `<p>Configure SOW topics with persistence and indexing:</p>`,
+    `<pre><code>&lt;SOW&gt;\n  &lt;Topic&gt;\n    &lt;Name&gt;ORDERS&lt;/Name&gt;\n    &lt;MessageType&gt;json&lt;/MessageType&gt;\n    &lt;Key&gt;/OrderId&lt;/Key&gt;\n    &lt;Index&gt;\n      &lt;Field&gt;/Ticker&lt;/Field&gt;\n    &lt;/Index&gt;\n    &lt;FileName&gt;sow/orders.sow&lt;/FileName&gt;\n  &lt;/Topic&gt;\n&lt;/SOW&gt;</code></pre>`,
+    `<p>Key elements: <code>Name</code>, <code>MessageType</code>, <code>Key</code>, <code>Index</code>, <code>FileName</code></p>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Monitoring with Galvanometer', content: [
+    `<p><strong>Galvanometer</strong> is AMPS\'s RESTful monitoring interface:</p>`,
+    `<ul>`,
+    `<li>Access statistics via HTTP GET requests</li>`,
+    `<li>JSON output for easy integration</li>`,
+    `<li>No additional software required</li>`,
+    `</ul>`,
+    `<pre><code>// Get instance statistics\ncurl http://localhost:8085/amps/json/.json\n\n// Get topic statistics\ncurl http://localhost:8085/amps/json/topic?name=ORDERS</code></pre>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Event Topics and Logging', content: [
+    `<p>AMPS publishes <strong>event topics</strong> for operational visibility:</p>`,
+    `<table>`,
+    `<tr><th>Event Topic</th><th>Purpose</th></tr>`,
+    `<tr><td><code>/AMPS/ClientStatus</code></td><td>Client connect/disconnect events</td></tr>`,
+    `<tr><td><code>/AMPS/SOWStats</code></td><td>SOW statistics updates</td></tr>`,
+    `<tr><td><code>/AMPS/Replication</code></td><td>Replication status changes</td></tr>`,
+    `</table>`,
+    `<p>Subscribe to these topics for real-time operational monitoring.</p>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Actions and Automation', content: [
+    `<p><strong>Actions</strong> let AMPS respond to events automatically:</p>`,
+    `<ul>`,
+    `<li>Trigger on: SOW expiration, client connect, message publish, etc.</li>`,
+    `<li>Actions can: publish a message, run a script, log an event</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Action&gt;\n  &lt;On&gt; sow_expire &lt;/On&gt;\n  &lt;Do&gt; publish &lt;/Do&gt;\n  &lt;Topic&gt;/AMPS/ExpiredOrders&lt;/Topic&gt;\n&lt;/Action&gt;</code></pre>`
+  ]},
+  { moduleId: 'M8', type: 'concept', title: 'Slow Client Policies', content: [
+    `<p>When a subscriber can\'t keep up, AMPS uses a <strong>slow client policy</strong>:</p>`,
+    `<table>`,
+    `<tr><th>Policy</th><th>Behavior</th></tr>`,
+    `<tr><td>disconnect</td><td>Close the connection</td></tr>`,
+    `<tr><td>buffer</td><td>Buffer messages in memory (limited)</td></tr>`,
+    `<tr><td>conflate</td><td>Drop older messages, keep latest</td></tr>`,
+    `<tr><td>pause</td><td>Pause delivery until client catches up</td></tr>`,
+    `</table>`,
+    `<p>Configure at the transport or instance level.</p>`
+  ]},
+  { moduleId: 'M8', type: 'recap', title: 'Module Recap: Configuration & Administration', content: [
+    `<ul>`,
+    `<li>AMPS is configured via XML with sections for transports, SOW, monitoring, and replication</li>`,
+    `<li>Transports define protocol, port, and message type for client connections</li>`,
+    `<li>SOW topics need keys, indexes, and file paths for persistence</li>`,
+    `<li>Galvanometer provides RESTful statistics via HTTP</li>`,
+    `<li>Event topics publish real-time operational events</li>`,
+    `<li>Actions automate responses to system events</li>`,
+    `<li>Slow client policies prevent one subscriber from degrading the system</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M8', type: 'quiz', title: 'Quiz: Configuration & Administration', content: [] },
+
+  // ===== M9: Security & Best Practices =====
+  { moduleId: 'M9', type: 'intro', title: 'Security Overview', content: [
+    `<p>AMPS provides a comprehensive security model:</p>`,
+    `<ul>`,
+    `<li><strong>Authentication</strong> — verify who is connecting</li>`,
+    `<li><strong>Entitlements</strong> — control what they can do</li>`,
+    `<li><strong>Transport encryption</strong> — protect data in transit</li>`,
+    `</ul>`,
+    `<p>Security is configured in the AMPS configuration file and can be changed at runtime.</p>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Authentication Modules', content: [
+    `<p>AMPS supports multiple authentication mechanisms via <strong>loadable modules</strong>:</p>`,
+    `<table>`,
+    `<tr><th>Module</th><th>Description</th></tr>`,
+    `<tr><td>Simple Access</td><td>Username/password in config file</td></tr>`,
+    `<tr><td>OAuth</td><td>OAuth 2.0 / OpenID Connect integration</td></tr>`,
+    `<tr><td>LDAP</td><td>Directory service authentication</td></tr>`,
+    `<tr><td>Kerberos</td><td>Enterprise single sign-on</td></tr>`,
+    `<tr><td>Custom</td><td>Write your own module in C++</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Simple Access Module', content: [
+    `<p>The <strong>Simple Access Module</strong> is the easiest way to get started:</p>`,
+    `<pre><code>&lt;Authentication&gt;\n  &lt;Module&gt;amps-simple-auth&lt;/Module&gt;\n  &lt;Parameters&gt;\n    &lt;User&gt;\n      &lt;Name&gt;admin&lt;/Name&gt;\n      &lt;Password&gt;secret123&lt;/Password&gt;\n    &lt;/User&gt;\n  &lt;/Parameters&gt;\n&lt;/Authentication&gt;</code></pre>`,
+    `<div class="callout"><div class="callout-title">⚠️ Security Warning</div>Never use Simple Access in production. Use OAuth, LDAP, or a custom module instead.</div>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'OAuth Authentication', content: [
+    `<p><strong>OAuth</strong> integrates AMPS with external identity providers:</p>`,
+    `<ul>`,
+    `<li>Clients obtain tokens from an OAuth provider</li>`,
+    `<li>AMPS validates tokens via HTTP(S) to the provider</li>`,
+    `<li>Supports token refresh and expiration</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Authentication&gt;\n  &lt;Module&gt;amps-oauth-auth&lt;/Module&gt;\n  &lt;Parameters&gt;\n    &lt;TokenInfoEndpoint&gt;\n      https://auth.example.com/oauth/tokeninfo\n    &lt;/TokenInfoEndpoint&gt;\n  &lt;/Parameters&gt;\n&lt;/Authentication&gt;</code></pre>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Entitlements and Permissions', content: [
+    `<p><strong>Entitlements</strong> control what authenticated users can do:</p>`,
+    `<table>`,
+    `<tr><th>Permission</th><th>Controls</th></tr>`,
+    `<tr><td>publish</td><td>Which topics the user can publish to</td></tr>`,
+    `<tr><td>subscribe</td><td>Which topics the user can subscribe to</td></tr>`,
+    `<tr><td>sow</td><td>Which SOW topics the user can query</td></tr>`,
+    `<tr><td>queue</td><td>Which queues the user can consume from</td></tr>`,
+    `<tr><td>admin</td><td>Administrative commands and actions</td></tr>`,
+    `</table>`,
+    `<p>Entitlements can be static (in config) or dynamic (from an external service).</p>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Replication Transport Permissions', content: [
+    `<p>Replication transports need special security configuration:</p>`,
+    `<ul>`,
+    `<li>Restrict replication to known peers</li>`,
+    `<li>Use TLS certificates for mutual authentication</li>`,
+    `<li>Limit which topics can be replicated</li>`,
+    `</ul>`,
+    `<pre><code>&lt;Replication&gt;\n  &lt;Destination&gt;\n    &lt;Transport&gt;\n      &lt;Type&gt;amps-replication&lt;/Type&gt;\n      &lt;Encrypted&gt;true&lt;/Encrypted&gt;\n      &lt;Certificate&gt;/path/to/cert.pem&lt;/Certificate&gt;\n    &lt;/Transport&gt;\n  &lt;/Destination&gt;\n&lt;/Replication&gt;</code></pre>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Performance Best Practices', content: [
+    `<table>`,
+    `<tr><th>Practice</th><th>Recommendation</th></tr>`,
+    `<tr><td>Message size</td><td>Keep messages small; large messages increase latency</td></tr>`,
+    `<tr><td>Content filters</td><td>Use simple comparisons over regex when possible</td></tr>`,
+    `<tr><td>SOW indexes</td><td>Index frequently queried fields only</td></tr>`,
+    `<tr><td>Transaction log</td><td>Use fast SSD storage for journal files</td></tr>`,
+    `<tr><td>Networking</td><td>Use dedicated network interfaces for replication</td></tr>`,
+    `<tr><td>Batching</td><td>Batch small publishes when throughput matters</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Capacity Testing Guidelines', content: [
+    `<p>When evaluating AMPS performance:</p>`,
+    `<ol>`,
+    `<li><strong>Use realistic data</strong> — match message sizes and complexity to production</li>`,
+    `<li><strong>Compare equivalent work</strong> — test the same operations across systems</li>`,
+    `<li><strong>Use AMPS capabilities</strong> — leverage content filtering, conflation, and queues</li>`,
+    `<li><strong>Test underlying hardware</strong> — CPU, memory, disk, and network all matter</li>`,
+    `<li><strong>Measure end-to-end latency</strong> — not just server-side processing</li>`,
+    `</ol>`,
+    `<p>Refer to the AMPS Evaluation Guide for detailed testing methodology.</p>`
+  ]},
+  { moduleId: 'M9', type: 'concept', title: 'Common Pitfalls and Anti-Patterns', content: [
+    `<table>`,
+    `<tr><th>Pitfall</th><th>Solution</th></tr>`,
+    `<tr><td>No SOW key specified</td><td>Always define keys for SOW topics</td></tr>`,
+    `<tr><td>Over-indexing</td><td>Index only fields used in filters</td></tr>`,
+    `<tr><td>Ignoring slow clients</td><td>Configure appropriate policies</td></tr>`,
+    `<tr><td>Not using guaranteed publish</td><td>Use for critical messages</td></tr>`,
+    `<tr><td>Ad hoc topics in production</td><td>Configure all topics explicitly</td></tr>`,
+    `<tr><td>Not testing failover</td><td>Regularly test HA scenarios</td></tr>`,
+    `</table>`
+  ]},
+  { moduleId: 'M9', type: 'chapter_summary', title: 'Course Summary and Next Steps', content: [
+    `<p>You\'ve completed the AMPS Developer Onboarding! Here\'s what you learned:</p>`,
+    `<ol>`,
+    `<li><strong>M0</strong> — AMPS is a high-performance message processing system</li>`,
+    `<li><strong>M1</strong> — Installation, starting AMPS, and the spark CLI</li>`,
+    `<li><strong>M2</strong> — Pub/sub fundamentals: topics, filters, ordering</li>`,
+    `<li><strong>M3</strong> — Content filtering with expressions and operators</li>`,
+    `<li><strong>M4</strong> — State of the World for persistence and queries</li>`,
+    `<li><strong>M5</strong> — Message queues for competitive consumption</li>`,
+    `<li><strong>M6</strong> — Transaction logs, delta messaging, views</li>`,
+    `<li><strong>M7</strong> — High availability through replication</li>`,
+    `<li><strong>M8</strong> — Configuration, monitoring, and administration</li>`,
+    `<li><strong>M9</strong> — Security, performance, and best practices</li>`,
+    `</ol>`,
+    `<p><strong>Next steps:</strong></p>`,
+    `<ul>`,
+    `<li>Build a prototype with the spark CLI</li>`,
+    `<li>Explore the client API for your language</li>`,
+    `<li>Read the full User Guide for advanced topics</li>`,
+    `<li>Take the Final Exam to test your knowledge!</li>`,
+    `</ul>`
+  ]},
+  { moduleId: 'M9', type: 'quiz', title: 'Quiz: Security & Best Practices', content: [] },
+
+  // ===== FINAL EXAM =====
+  { moduleId: 'final', type: 'final_exam_intro', title: '🏆 Final Exam', content: [
+    `<p>You\'ve reached the final exam! This exam covers all 10 modules.</p>`,
+    `<ul>`,
+    `<li>50 questions total</li>`,
+    `<li>Mix of easy, medium, and hard difficulty</li>`,
+    `<li>You need 80% to pass</li>`,
+    `<li>You can retake the exam as many times as needed</li>`,
+    `</ul>`,
+    `<p>Good luck! 🚀</p>`
+  ]},
+  { moduleId: 'final', type: 'final_exam_quiz', title: 'Final Exam', content: [] },
+];
+
+// ---------------------------------------------------------------------------
+// Quiz Data
+// ---------------------------------------------------------------------------
+const QUIZ_DATA = {
+  M0: [
+    { questionId: 'M0-q001', type: 'mcq', difficulty: 'easy', concept: 'AMPS definition', question: 'What does AMPS stand for?', options: ['Advanced Message Processing System', 'Application Message Publish Service', 'Automated Messaging Platform System', 'Advanced Memory Processing Service'], correctAnswer: 0, explanation: 'AMPS stands for Advanced Message Processing System, built by 60East Technologies.' },
+    { questionId: 'M0-q002', type: 'mcq', difficulty: 'easy', concept: 'AMPS company', question: 'Which company develops AMPS?', options: ['60East Technologies', 'Apache Software Foundation', 'Confluent', 'IBM'], correctAnswer: 0, explanation: 'AMPS is developed and maintained by 60East Technologies.' },
+    { questionId: 'M0-q003', type: 'mcq', difficulty: 'medium', concept: 'AMPS features', question: 'Which of the following is NOT a core capability of AMPS?', options: ['Relational database with ACID transactions', 'Publish/subscribe messaging', 'State of the World (SOW) database', 'Message logging and replay'], correctAnswer: 0, explanation: 'AMPS is not a traditional relational database. It provides messaging, SOW (document store/cache), logging, and aggregation.' },
+    { questionId: 'M0-q004', type: 'mcq', difficulty: 'medium', concept: 'use cases', question: 'Which industry commonly uses AMPS for trade plant operations?', options: ['Financial services', 'Healthcare', 'Retail', 'Education'], correctAnswer: 0, explanation: 'AMPS is widely used in financial services for trade plant operations, risk calculations, and market data distribution.' },
+    { questionId: 'M0-q005', type: 'mcq', difficulty: 'easy', concept: 'delivery models', question: 'Which two message delivery models does AMPS support?', options: ['Publish/subscribe and queued', 'Push and pull', 'Request/reply and streaming', 'Broadcast and multicast'], correctAnswer: 0, explanation: 'AMPS supports publish/subscribe (fan-out) and queued (competitive consumption) message delivery.' },
+    { questionId: 'M0-q006', type: 'mcq', difficulty: 'medium', concept: 'CLI tool', question: 'What is the name of the command-line client included with AMPS?', options: ['spark', 'amps-cli', 'amps-shell', 'mq-console'], correctAnswer: 0, explanation: 'spark is the command-line client included with AMPS for testing and administration.' },
+    { questionId: 'M0-q007', type: 'mcq', difficulty: 'easy', concept: 'monitoring', question: 'How does AMPS expose monitoring statistics?', options: ['RESTful HTTP interface', 'SNMP only', 'JMX only', 'Syslog only'], correctAnswer: 0, explanation: 'AMPS provides detailed monitoring and statistics via a RESTful interface called Galvanometer.' },
+    { questionId: 'M0-q008', type: 'mcq', difficulty: 'medium', concept: 'architecture', question: 'What is at the core of the AMPS architecture?', options: ['A fast messaging engine', 'A relational database', 'A file system cache', 'A web server'], correctAnswer: 0, explanation: 'AMPS is built around a fast messaging engine that supports pub/sub and queued delivery with full content filtering.' },
+    { questionId: 'M0-q009', type: 'mcq', difficulty: 'easy', concept: 'SOW', question: 'What does SOW stand for in AMPS?', options: ['State of the World', 'Store on Write', 'Stream of Work', 'System Object Wrapper'], correctAnswer: 0, explanation: 'SOW stands for State of the World, AMPS\'s integrated database capability.' },
+    { questionId: 'M0-q010', type: 'mcq', difficulty: 'medium', concept: 'HA', question: 'Which feature provides automatic failover in AMPS?', options: ['Integrated replication', 'Load balancer only', 'Database clustering', 'Kubernetes orchestration'], correctAnswer: 0, explanation: 'AMPS provides integrated replication and automatic failover and recovery for high availability.' },
+  ],
+  M1: [
+    { questionId: 'M1-q001', type: 'mcq', difficulty: 'easy', concept: 'OS support', question: 'Which operating system is recommended for production AMPS deployments?', options: ['Linux (RHEL, CentOS, Ubuntu)', 'Windows Server', 'macOS', 'FreeBSD'], correctAnswer: 0, explanation: 'Linux distributions such as RHEL, CentOS, and Ubuntu are recommended for production AMPS deployments.' },
+    { questionId: 'M1-q002', type: 'mcq', difficulty: 'easy', concept: 'startup', question: 'How do you start the AMPS server?', options: ['amps config-file.xml', 'service amps start', 'systemctl start amps', 'amps --daemon'], correctAnswer: 0, explanation: 'Start AMPS by passing the configuration file: ./bin/amps config/amps-config.xml' },
+    { questionId: 'M1-q003', type: 'mcq', difficulty: 'medium', concept: 'shutdown', question: 'Which signal should you use for graceful AMPS shutdown?', options: ['SIGTERM', 'SIGKILL', 'SIGSTOP', 'SIGHUP'], correctAnswer: 0, explanation: 'Always use SIGTERM or SIGINT for graceful shutdown. SIGKILL can corrupt the SOW or transaction log.' },
+    { questionId: 'M1-q004', type: 'mcq', difficulty: 'easy', concept: 'spark', question: 'What is spark used for?', options: ['Command-line testing and administration', 'Compiling AMPS configuration', 'Monitoring only', 'Message encryption'], correctAnswer: 0, explanation: 'spark is the AMPS command-line client for publishing, subscribing, querying, and administration.' },
+    { questionId: 'M1-q005', type: 'mcq', difficulty: 'medium', concept: 'JSON', question: 'Are field names in AMPS JSON messages case-sensitive?', options: ['Yes', 'No', 'Only for top-level fields', 'Only for nested fields'], correctAnswer: 0, explanation: 'Field names in AMPS JSON messages are case-sensitive.' },
+    { questionId: 'M1-q006', type: 'mcq', difficulty: 'easy', concept: 'storage', question: 'What type of storage is recommended for AMPS SOW files and transaction logs?', options: ['High-performance SSD', 'Network-attached storage', 'Tape backup', 'CD-ROM'], correctAnswer: 0, explanation: 'Fast, local SSD storage is recommended for SOW files and transaction log journals.' },
+    { questionId: 'M1-q007', type: 'mcq', difficulty: 'medium', concept: 'WSL', question: 'Can AMPS be evaluated on Windows?', options: ['Yes, using WSL2 or a virtual machine', 'No, Linux only', 'Yes, native Windows support', 'Only on Windows Server'], correctAnswer: 0, explanation: 'AMPS can be evaluated on Windows or macOS using WSL2 or a virtual machine.' },
+    { questionId: 'M1-q008', type: 'mcq', difficulty: 'easy', concept: 'architecture', question: 'What CPU architecture does AMPS require?', options: ['64-bit x86_64', '32-bit x86', 'ARM64', 'Any architecture'], correctAnswer: 0, explanation: 'AMPS requires 64-bit x86_64 architecture.' },
+    { questionId: 'M1-q009', type: 'mcq', difficulty: 'medium', concept: 'command line', question: 'Which command-line option displays the AMPS version?', options: ['--version', '-v', '--info', '-ver'], correctAnswer: 0, explanation: 'Use ./bin/amps --version to display version information.' },
+    { questionId: 'M1-q010', type: 'mcq', difficulty: 'easy', concept: 'filesystem', question: 'What happens if AMPS does not have write access to its SOW directory?', options: ['It fails to start or cannot persist data', 'It runs in memory-only mode automatically', 'It switches to read-only mode', 'It logs a warning but continues'], correctAnswer: 0, explanation: 'AMPS needs write access to SOW and log directories. Without it, the server may fail to start or persist data.' },
+  ],
+  M2: [
+    { questionId: 'M2-q001', type: 'mcq', difficulty: 'easy', concept: 'pub/sub', question: 'In pub/sub messaging, how many subscribers can receive a single message?', options: ['All subscribers to the topic', 'Exactly one subscriber', 'At most two subscribers', 'Only the first subscriber'], correctAnswer: 0, explanation: 'In publish/subscribe (fan-out), one message is delivered to all subscribers of the topic.' },
+    { questionId: 'M2-q002', type: 'mcq', difficulty: 'easy', concept: 'topics', question: 'What does a topic represent in AMPS?', options: ['A channel for related messages', 'A physical database table', 'A network port', 'A user group'], correctAnswer: 0, explanation: 'A topic is a channel that identifies the type of message. Publishers send to topics; subscribers receive from topics.' },
+    { questionId: 'M2-q003', type: 'mcq', difficulty: 'medium', concept: 'ad hoc', question: 'What is a key limitation of ad hoc topics in production?', options: ['They have no SOW, transaction log, or entitlement controls', 'They cannot be subscribed to', 'They only support XML messages', 'They are limited to 100 messages'], correctAnswer: 0, explanation: 'Ad hoc topics lack SOW persistence, transaction logging, and entitlement controls. Always configure topics explicitly in production.' },
+    { questionId: 'M2-q004', type: 'mcq', difficulty: 'medium', concept: 'regex', question: 'Can AMPS subscribers use regular expressions to match multiple topics?', options: ['Yes', 'No', 'Only with admin privileges', 'Only in enterprise edition'], correctAnswer: 0, explanation: 'Subscribers can use regular expressions like ORDERS_.* to match multiple topics with one subscription.' },
+    { questionId: 'M2-q005', type: 'mcq', difficulty: 'easy', concept: 'headers', question: 'Which header contains the unique identifier for a message?', options: ['AMPS_MessageId', 'AMPS_Topic', 'CorrelationId', 'AMPS_CommandId'], correctAnswer: 0, explanation: 'AMPS_MessageId is the unique identifier assigned to each message by AMPS.' },
+    { questionId: 'M2-q006', type: 'mcq', difficulty: 'medium', concept: 'ordering', question: 'What ordering guarantee does AMPS provide within a topic?', options: ['Absolute ordering', 'Best-effort ordering', 'No ordering guarantee', 'Random ordering'], correctAnswer: 0, explanation: 'AMPS guarantees absolute message ordering within each topic.' },
+    { questionId: 'M2-q007', type: 'mcq', difficulty: 'medium', concept: 'conflation', question: 'What does a conflated subscription deliver?', options: ['Only the latest message per SOW key', 'All messages in batch', 'Every other message', 'Only error messages'], correctAnswer: 0, explanation: 'Conflation delivers only the latest message for each SOW key, reducing bandwidth for subscribers that only need current state.' },
+    { questionId: 'M2-q008', type: 'mcq', difficulty: 'medium', concept: 'replace', question: 'What happens when you replace a subscription with the same CommandId?', options: ['The old subscription is replaced without unsubscribing', 'Both subscriptions run in parallel', 'An error occurs', 'The client disconnects'], correctAnswer: 0, explanation: 'Replacing a subscription with the same CommandId updates the filter, topic, or options without requiring an unsubscribe first.' },
+    { questionId: 'M2-q009', type: 'mcq', difficulty: 'easy', concept: 'select list', question: 'What is the purpose of a select list in a subscription?', options: ['Receive only specified fields', 'Filter by topic', 'Sort messages', 'Group messages'], correctAnswer: 0, explanation: 'Select lists let subscribers receive only the fields they need, reducing bandwidth and processing.' },
+    { questionId: 'M2-q010', type: 'mcq', difficulty: 'easy', concept: 'decoupling', question: 'What is the main benefit of pub/sub decoupling?', options: ['Publishers and subscribers can change independently', 'Messages are encrypted automatically', 'All messages are persisted', 'Only one subscriber is allowed'], correctAnswer: 0, explanation: 'Decoupling means publishers don\'t need to know about subscribers and vice versa, allowing independent scaling and evolution.' },
+  ],
+  M3: [
+    { questionId: 'M3-q001', type: 'mcq', difficulty: 'easy', concept: 'filtering', question: 'What is content filtering in AMPS?', options: ['Subscribing to messages based on payload content', 'Encrypting message content', 'Compressing large messages', 'Logging message content'], correctAnswer: 0, explanation: 'Content filtering lets subscribers receive only messages whose payload matches specified criteria.' },
+    { questionId: 'M3-q002', type: 'mcq', difficulty: 'easy', concept: 'field reference', question: 'How do you reference a field in an AMPS filter expression?', options: ['/FieldName', 'FieldName', '$FieldName', '@FieldName'], correctAnswer: 0, explanation: 'Field references in AMPS expressions start with a forward slash, e.g., /Ticker.' },
+    { questionId: 'M3-q003', type: 'mcq', difficulty: 'medium', concept: 'data types', question: 'Which of these is a valid AMPS expression data type?', options: ['String', 'DateTime', 'Blob', 'UUID'], correctAnswer: 0, explanation: 'AMPS expressions support integers, floating point, strings, booleans, NULL, and arrays.' },
+    { questionId: 'M3-q004', type: 'mcq', difficulty: 'easy', concept: 'operators', question: 'Which operator checks if a value is within a range?', options: ['BETWEEN', 'RANGE', 'IN', 'WITHIN'], correctAnswer: 0, explanation: 'The BETWEEN operator checks if a value is within an inclusive range, e.g., /Price BETWEEN 50 AND 150.' },
+    { questionId: 'M3-q005', type: 'mcq', difficulty: 'medium', concept: 'logical', question: 'What is the precedence order of logical operators in AMPS?', options: ['NOT > AND > OR', 'OR > AND > NOT', 'AND > OR > NOT', 'All have equal precedence'], correctAnswer: 0, explanation: 'Logical operator precedence is: NOT (highest), then AND, then OR (lowest). Use parentheses for clarity.' },
+    { questionId: 'M3-q006', type: 'mcq', difficulty: 'medium', concept: 'LIKE', question: 'In AMPS LIKE expressions, what does the % wildcard match?', options: ['Zero or more characters', 'Exactly one character', 'One or more digits', 'A single word'], correctAnswer: 0, explanation: '% matches zero or more characters. _ matches exactly one character.' },
+    { questionId: 'M3-q007', type: 'mcq', difficulty: 'medium', concept: 'NULL', question: 'How do you check if a field is NULL in AMPS?', options: ['/Field IS NULL', '/Field = NULL', '/Field == NULL', 'ISNULL(/Field)'], correctAnswer: 0, explanation: 'Use IS NULL to check for NULL values, e.g., /OptionalField IS NULL.' },
+    { questionId: 'M3-q008', type: 'mcq', difficulty: 'hard', concept: 'NaN', question: 'What is the result of NaN = NaN in AMPS expressions?', options: ['false', 'true', 'NULL', 'Error'], correctAnswer: 0, explanation: 'NaN = NaN returns false, following IEEE 754 rules. Use IS NULL to check for missing or invalid numeric values.' },
+    { questionId: 'M3-q009', type: 'mcq', difficulty: 'medium', concept: 'arrays', question: 'How do you access the first element of an array in AMPS expressions?', options: ['/Array[0]', '/Array(0)', '/Array.0', '/Array{0}'], correctAnswer: 0, explanation: 'Array elements are accessed with square brackets: /Tags[0] for the first element.' },
+    { questionId: 'M3-q010', type: 'mcq', difficulty: 'easy', concept: 'IN', question: 'What does the IN operator do?', options: ['Checks if a value exists in a list', 'Joins two arrays', 'Performs a substring search', 'Validates a regex pattern'], correctAnswer: 0, explanation: 'The IN operator checks if a value matches any item in a list, e.g., /Ticker IN ("IBM", "AAPL").' },
+  ],
+  M4: [
+    { questionId: 'M4-q001', type: 'mcq', difficulty: 'easy', concept: 'SOW definition', question: 'What does the State of the World (SOW) store?', options: ['The latest message per key for a topic', 'All messages ever published', 'Only deleted messages', 'Error logs'], correctAnswer: 0, explanation: 'The SOW persists the latest message for each SOW key, acting as a current-value cache and queryable database.' },
+    { questionId: 'M4-q002', type: 'mcq', difficulty: 'medium', concept: 'SOW use case', question: 'When should you use a SOW topic?', options: ['When you need to query current state', 'For fire-and-forget events only', 'When no persistence is needed', 'For one-way broadcast only'], correctAnswer: 0, explanation: 'Use SOW when you need to query current state, track changes, support delta messaging, or aggregate data.' },
+    { questionId: 'M4-q003', type: 'mcq', difficulty: 'medium', concept: 'SOW keys', question: 'What happens if you publish a message with the same SOW key as an existing record?', options: ['The existing record is replaced', 'An error occurs', 'A duplicate is created', 'The publish is ignored'], correctAnswer: 0, explanation: 'Publishing a message with an existing SOW key replaces the old record with the new one.' },
+    { questionId: 'M4-q004', type: 'mcq', difficulty: 'easy', concept: 'key types', question: 'Can SOW keys be composed of multiple fields?', options: ['Yes', 'No', 'Only in enterprise edition', 'Only for JSON messages'], correctAnswer: 0, explanation: 'SOW keys can combine multiple fields into a composite key for more precise record identification.' },
+    { questionId: 'M4-q005', type: 'mcq', difficulty: 'medium', concept: 'indexing', question: 'What is the trade-off of adding more SOW indexes?', options: ['Faster queries but more memory and slower updates', 'Slower queries but less memory', 'No impact on performance', 'Only affects replication speed'], correctAnswer: 0, explanation: 'More indexes speed up queries but consume more memory and slow down publish operations.' },
+    { questionId: 'M4-q006', type: 'mcq', difficulty: 'easy', concept: 'sow_and_subscribe', question: 'What does sow_and_subscribe do?', options: ['Returns current records then streams updates', 'Only queries historical data', 'Only subscribes to new messages', 'Deletes old records'], correctAnswer: 0, explanation: 'sow_and_subscribe first returns the current SOW contents matching the query, then continues with real-time updates.' },
+    { questionId: 'M4-q007', type: 'mcq', difficulty: 'medium', concept: 'historical', question: 'What is required for historical SOW queries?', options: ['Transaction log configured for the topic', 'Only SOW configured', 'Only queue configured', 'No special configuration'], correctAnswer: 0, explanation: 'Historical SOW queries require both SOW and transaction log to be configured for the topic.' },
+    { questionId: 'M4-q008', type: 'mcq', difficulty: 'easy', concept: 'pagination', question: 'Which options control pagination in SOW queries?', options: ['topN and skipN', 'page and limit', 'offset and count', 'start and end'], correctAnswer: 0, explanation: 'Use topN to limit results and skipN to skip records for pagination.' },
+    { questionId: 'M4-q009', type: 'mcq', difficulty: 'medium', concept: 'aggregation', question: 'Which aggregation functions does AMPS support for SOW queries?', options: ['COUNT, MIN, MAX, SUM, AVG', 'ONLY COUNT and SUM', 'STDDEV, VARIANCE, MEDIAN', 'COUNT, FIRST, LAST'], correctAnswer: 0, explanation: 'AMPS supports COUNT, MIN, MAX, SUM, and AVG for aggregated SOW queries and views.' },
+    { questionId: 'M4-q010', type: 'mcq', difficulty: 'medium', concept: 'maintenance', question: 'What does SOW compaction do?', options: ['Reclaims space from deleted records', 'Deletes all records', 'Compresses messages', 'Adds new indexes'], correctAnswer: 0, explanation: 'SOW compaction reclaims disk space from deleted or expired records.' },
+  ],
+  M5: [
+    { questionId: 'M5-q001', type: 'mcq', difficulty: 'easy', concept: 'queue model', question: 'In AMPS message queues, how many consumers receive each message?', options: ['Exactly one', 'All subscribers', 'At most two', 'A random subset'], correctAnswer: 0, explanation: 'Message queues provide competitive consumption — each message is delivered to exactly one consumer.' },
+    { questionId: 'M5-q002', type: 'mcq', difficulty: 'medium', concept: 'lease', question: 'What is a lease in AMPS queues?', options: ['Temporary exclusive access to a message', 'A permanent lock on the queue', 'A network connection', 'A configuration file'], correctAnswer: 0, explanation: 'A lease gives a consumer temporary exclusive access to a message. If not acknowledged in time, the lease expires.' },
+    { questionId: 'M5-q003', type: 'mcq', difficulty: 'medium', concept: 'ack', question: 'What happens if a consumer does not acknowledge a leased message in time?', options: ['The message becomes available to another consumer', 'The message is deleted', 'The consumer is disconnected', 'The queue stops'], correctAnswer: 0, explanation: 'If a lease expires without acknowledgment, the message becomes available for another consumer to process.' },
+    { questionId: 'M5-q004', type: 'mcq', difficulty: 'easy', concept: 'use case', question: 'Which scenario is best suited for message queues?', options: ['Task distribution to a worker pool', 'Broadcasting market data to all traders', 'Sending notifications to all users', 'Real-time chat messages'], correctAnswer: 0, explanation: 'Queues are ideal for task distribution where each task should be processed exactly once by one worker.' },
+    { questionId: 'M5-q005', type: 'mcq', difficulty: 'medium', concept: 'replication', question: 'What does "global" queue replication mean?', options: ['Messages are consumed once across the entire replication group', 'Messages are consumed on every instance', 'Messages are not replicated', 'Only queue metadata is replicated'], correctAnswer: 0, explanation: 'With global replication, a message is consumed once across the entire replication group, not per instance.' },
+    { questionId: 'M5-q006', type: 'mcq', difficulty: 'medium', concept: 'group local', question: 'What is the purpose of group local queues?', options: ['Messages consumed once within a designated group', 'Messages consumed by all groups', 'Messages not replicated', 'Messages only for local clients'], correctAnswer: 0, explanation: 'Group local queues ensure messages are consumed once within a group, allowing different groups to process independently.' },
+    { questionId: 'M5-q007', type: 'mcq', difficulty: 'easy', concept: 'underlying topics', question: 'Can a single AMPS queue consume from multiple underlying topics?', options: ['Yes', 'No', 'Only two topics', 'Only with admin privileges'], correctAnswer: 0, explanation: 'A queue can be configured with multiple UnderlyingTopic elements to aggregate work from different sources.' },
+    { questionId: 'M5-q008', type: 'mcq', difficulty: 'medium', concept: 'pubsub vs queue', question: 'Which delivery model is better for broadcasting price updates to all subscribers?', options: ['Publish/subscribe', 'Message queue', 'Both are equivalent', 'Neither is suitable'], correctAnswer: 0, explanation: 'Pub/sub is better for broadcasts because all subscribers receive the message. Queues deliver to only one consumer.' },
+    { questionId: 'M5-q009', type: 'mcq', difficulty: 'easy', concept: 'configuration', question: 'Where are queue parameters like LeaseTime configured?', options: ['In the AMPS configuration file', 'In the client code only', 'In the operating system', 'In the message payload'], correctAnswer: 0, explanation: 'Queue parameters such as LeaseTime and MaxBacklog are configured in the AMPS XML configuration file.' },
+    { questionId: 'M5-q010', type: 'mcq', difficulty: 'medium', concept: 'delivery guarantee', question: 'What delivery guarantee do AMPS queues provide?', options: ['At-least-once delivery', 'Exactly-once delivery', 'At-most-once delivery', 'Best-effort delivery'], correctAnswer: 0, explanation: 'AMPS queues provide at-least-once delivery. Messages are retried if a lease expires without acknowledgment.' },
+  ],
+  M6: [
+    { questionId: 'M6-q001', type: 'mcq', difficulty: 'easy', concept: 'transaction log', question: 'What does the AMPS Transaction Log record?', options: ['Every message with full fidelity', 'Only error messages', 'Only SOW updates', 'Only subscription commands'], correctAnswer: 0, explanation: 'The transaction log records every message that passes through AMPS, enabling replay, replication, and historical queries.' },
+    { questionId: 'M6-q002', type: 'mcq', difficulty: 'medium', concept: 'bookmark', question: 'What is a bookmark in the AMPS transaction log?', options: ['A unique, ordered identifier for a message', 'A saved search query', 'A user favorite topic', 'A configuration snapshot'], correctAnswer: 0, explanation: 'A bookmark is a unique, monotonically increasing identifier assigned to each message in the transaction log.' },
+    { questionId: 'M6-q003', type: 'mcq', difficulty: 'easy', concept: 'replay', question: 'What does subscribing with bookmark "0" do?', options: ['Replays from the beginning of the log', 'Starts from the current time', 'Subscribes to topic 0', 'Resets the transaction log'], correctAnswer: 0, explanation: 'Bookmark "0" means subscribe from the very beginning of the transaction log.' },
+    { questionId: 'M6-q004', type: 'mcq', difficulty: 'medium', concept: 'delta publish', question: 'What is the benefit of delta publish?', options: ['Sends only changed fields', 'Sends messages faster', 'Compresses messages', 'Encrypts messages'], correctAnswer: 0, explanation: 'Delta publish sends only the fields that have changed, reducing bandwidth for updates.' },
+    { questionId: 'M6-q005', type: 'mcq', difficulty: 'medium', concept: 'delta subscribe', question: 'What does a delta subscriber receive?', options: ['Only the fields that changed', 'The full message every time', 'Only the SOW key', 'Only the message header'], correctAnswer: 0, explanation: 'Delta subscribers receive only the fields that changed compared to the previous message for the same SOW key.' },
+    { questionId: 'M6-q006', type: 'mcq', difficulty: 'medium', concept: 'requirements', question: 'What is required for delta publish/subscribe?', options: ['The topic must be in the SOW', 'A transaction log only', 'No special requirements', 'A queue configuration'], correctAnswer: 0, explanation: 'Delta messaging requires the topic to be stored in the SOW so AMPS can compare messages and identify changes.' },
+    { questionId: 'M6-q007', type: 'mcq', difficulty: 'easy', concept: 'conflated topics', question: 'What do conflated topics do?', options: ['Batch updates and send only the latest per key', 'Delete old messages', 'Duplicate messages for reliability', 'Compress message content'], correctAnswer: 0, explanation: 'Conflated topics batch updates within a window and deliver only the latest message per SOW key.' },
+    { questionId: 'M6-q008', type: 'mcq', difficulty: 'medium', concept: 'views', question: 'What are views in AMPS?', options: ['Computed projections over SOW topics', 'Graphical dashboards', 'Client connection windows', 'Message preview panes'], correctAnswer: 0, explanation: 'Views are computed projections (aggregations) over SOW topics that update in near real-time.' },
+    { questionId: 'M6-q009', type: 'mcq', difficulty: 'easy', concept: 'enrichment', question: 'Where does message enrichment occur?', options: ['Server-side before storage or delivery', 'Client-side only', 'In the network layer', 'In the database'], correctAnswer: 0, explanation: 'Enrichment runs server-side in AMPS, adding computed or looked-up fields before storing or delivering messages.' },
+    { questionId: 'M6-q010', type: 'mcq', difficulty: 'medium', concept: 'utilities', question: 'Which utility searches journal files for messages matching criteria?', options: ['amps_journal_search', 'amps-grep', 'spark', 'sow_query'], correctAnswer: 0, explanation: 'amps_journal_search is the utility for searching transaction log journal files offline.' },
+  ],
+  M7: [
+    { questionId: 'M7-q001', type: 'mcq', difficulty: 'easy', concept: 'replication', question: 'What is the primary purpose of AMPS replication?', options: ['Copy messages between instances', 'Compress messages', 'Encrypt messages', 'Index SOW topics'], correctAnswer: 0, explanation: 'Replication copies messages from one AMPS instance to another for high availability and scale.' },
+    { questionId: 'M7-q002', type: 'mcq', difficulty: 'medium', concept: 'resync', question: 'What happens when a replica comes back online after failure?', options: ['AMPS automatically resynchronizes it', 'It must be manually rebuilt', 'All data is lost', 'It starts from empty state'], correctAnswer: 0, explanation: 'AMPS automatically detects the replica is behind and sends missing messages from the transaction log.' },
+    { questionId: 'M7-q003', type: 'mcq', difficulty: 'medium', concept: 'two-way', question: 'What is two-way replication?', options: ['Both instances accept writes and replicate to each other', 'Only one instance accepts writes', 'Data flows in one direction only', 'Messages are duplicated twice'], correctAnswer: 0, explanation: 'Two-way replication allows both instances to accept client writes and replicate changes to each other.' },
+    { questionId: 'M7-q004', type: 'mcq', difficulty: 'medium', concept: 'passthrough', question: 'What is PassThrough replication used for?', options: ['Chaining instances in a tiered topology', 'Local-only messaging', 'Client authentication', 'Message compression'], correctAnswer: 0, explanation: 'PassThrough replication chains instances together, useful for hub-and-spoke or tiered deployments.' },
+    { questionId: 'M7-q005', type: 'mcq', difficulty: 'easy', concept: 'security', question: 'How can replication traffic be secured?', options: ['TLS/SSL encryption', 'IP whitelisting only', 'Password in message body', 'No security needed'], correctAnswer: 0, explanation: 'Replication traffic should be secured with TLS/SSL encryption and mutual authentication.' },
+    { questionId: 'M7-q006', type: 'mcq', difficulty: 'medium', concept: 'guaranteed publish', question: 'What does guaranteed publishing ensure?', options: ['Message is persisted to transaction log before ack', 'Message is delivered to all subscribers', 'Message is encrypted', 'Message is compressed'], correctAnswer: 0, explanation: 'Guaranteed publish waits for AMPS to confirm the message is in the transaction log before acknowledging.' },
+    { questionId: 'M7-q007', type: 'mcq', difficulty: 'medium', concept: 'durable publish', question: 'What is durable publishing?', options: ['Publisher stores messages locally until acknowledged', 'Messages are stored only on the server', 'Messages are written to tape', 'Messages are sent twice'], correctAnswer: 0, explanation: 'Durable publishing stores messages locally by the publisher until AMPS acknowledges them, surviving publisher restarts.' },
+    { questionId: 'M7-q008', type: 'mcq', difficulty: 'easy', concept: 'heartbeat', question: 'What is the purpose of heartbeats in AMPS?', options: ['Detect disconnections and trigger failover', 'Speed up message delivery', 'Compress messages', 'Authenticate clients'], correctAnswer: 0, explanation: 'Heartbeats are regular ping/pong messages that detect network partitions or unresponsive peers.' },
+    { questionId: 'M7-q009', type: 'mcq', difficulty: 'medium', concept: 'HA benefit', question: 'Which is a benefit of AMPS high availability?', options: ['Automatic failover during instance failure', 'Faster message publishing', 'Reduced memory usage', 'Simpler configuration'], correctAnswer: 0, explanation: 'High availability with replication provides automatic failover when an AMPS instance fails.' },
+    { questionId: 'M7-q010', type: 'mcq', difficulty: 'easy', concept: 'disaster recovery', question: 'What role do replicas play in disaster recovery?', options: ['Standby instances that take over if primary fails', 'They only store logs', 'They compress old data', 'They authenticate users'], correctAnswer: 0, explanation: 'Replicas serve as standby instances that can take over if the primary AMPS instance fails.' },
+  ],
+  M8: [
+    { questionId: 'M8-q001', type: 'mcq', difficulty: 'easy', concept: 'config format', question: 'What format are AMPS configuration files in?', options: ['XML', 'JSON', 'YAML', 'INI'], correctAnswer: 0, explanation: 'AMPS configuration files are XML-based, with sections for transports, SOW, monitoring, and replication.' },
+    { questionId: 'M8-q002', type: 'mcq', difficulty: 'easy', concept: 'transport', question: 'What does a transport define?', options: ['How clients connect to AMPS', 'How data is stored', 'How users authenticate', 'How logs are rotated'], correctAnswer: 0, explanation: 'Transports define the protocol, port, and message type that clients use to connect to AMPS.' },
+    { questionId: 'M8-q003', type: 'mcq', difficulty: 'medium', concept: 'protocols', question: 'Which protocol is the native AMPS protocol?', options: ['amps', 'fix', 'nvfix', 'http'], correctAnswer: 0, explanation: 'The native AMPS protocol is called "amps" and is the most commonly used protocol.' },
+    { questionId: 'M8-q004', type: 'mcq', difficulty: 'medium', concept: 'message types', question: 'Which message type is commonly used for modern APIs?', options: ['json', 'xml', 'fix', 'bflat'], correctAnswer: 0, explanation: 'JSON is the most common message type for modern applications due to its readability and wide support.' },
+    { questionId: 'M8-q005', type: 'mcq', difficulty: 'easy', concept: 'galvanometer', question: 'What is Galvanometer?', options: ['AMPS RESTful monitoring interface', 'A queue management tool', 'A message encryption service', 'A client library'], correctAnswer: 0, explanation: 'Galvanometer is AMPS\'s RESTful monitoring interface that exposes statistics via HTTP.' },
+    { questionId: 'M8-q006', type: 'mcq', difficulty: 'medium', concept: 'event topics', question: 'Which event topic provides client connection status?', options: ['/AMPS/ClientStatus', '/AMPS/SOWStats', '/AMPS/Replication', '/AMPS/Logging'], correctAnswer: 0, explanation: '/AMPS/ClientStatus publishes events when clients connect to or disconnect from AMPS.' },
+    { questionId: 'M8-q007', type: 'mcq', difficulty: 'medium', concept: 'actions', question: 'What can AMPS actions do?', options: ['Respond to events automatically', 'Only log messages', 'Only send emails', 'Only restart the server'], correctAnswer: 0, explanation: 'Actions let AMPS automatically respond to events like SOW expiration, client connections, or message publishes.' },
+    { questionId: 'M8-q008', type: 'mcq', difficulty: 'easy', concept: 'slow client', question: 'What is a slow client policy?', options: ['How AMPS handles subscribers that cannot keep up', 'A policy for slow publishers', 'A network bandwidth limit', 'A disk space threshold'], correctAnswer: 0, explanation: 'Slow client policies define how AMPS handles subscribers that cannot keep up with message rates.' },
+    { questionId: 'M8-q009', type: 'mcq', difficulty: 'medium', concept: 'slow client options', question: 'Which is NOT a valid slow client policy?', options: ['retry', 'disconnect', 'buffer', 'conflate'], correctAnswer: 0, explanation: 'Valid slow client policies include disconnect, buffer, conflate, and pause. "retry" is not a valid policy.' },
+    { questionId: 'M8-q010', type: 'mcq', difficulty: 'easy', concept: 'SOW config', question: 'Which element defines the SOW key field in topic configuration?', options: ['Key', 'Index', 'FileName', 'TopicName'], correctAnswer: 0, explanation: 'The Key element specifies which field(s) form the SOW key for a topic.' },
+  ],
+  M9: [
+    { questionId: 'M9-q001', type: 'mcq', difficulty: 'easy', concept: 'security model', question: 'What are the two main components of AMPS security?', options: ['Authentication and entitlements', 'Encryption and compression', 'Logging and monitoring', 'Replication and failover'], correctAnswer: 0, explanation: 'AMPS security consists of authentication (who you are) and entitlements (what you can do).' },
+    { questionId: 'M9-q002', type: 'mcq', difficulty: 'medium', concept: 'auth modules', question: 'Which authentication module is recommended for production?', options: ['OAuth or LDAP', 'Simple Access', 'None', 'Local file only'], correctAnswer: 0, explanation: 'For production, use OAuth, LDAP, Kerberos, or a custom module. Simple Access is for development only.' },
+    { questionId: 'M9-q003', type: 'mcq', difficulty: 'easy', concept: 'entitlements', question: 'What do entitlements control?', options: ['What actions a user can perform', 'How fast messages are delivered', 'Which topics exist', 'How many clients can connect'], correctAnswer: 0, explanation: 'Entitlements control permissions like publish, subscribe, sow, queue, and admin access.' },
+    { questionId: 'M9-q004', type: 'mcq', difficulty: 'medium', concept: 'simple access', question: 'Why should Simple Access NOT be used in production?', options: ['Passwords stored in config file', 'It is too slow', 'It requires external network', 'It does not support JSON'], correctAnswer: 0, explanation: 'Simple Access stores passwords in the configuration file, which is insecure for production environments.' },
+    { questionId: 'M9-q005', type: 'mcq', difficulty: 'medium', concept: 'OAuth', question: 'How does AMPS validate OAuth tokens?', options: ['Via HTTP(S) to the token provider', 'By decoding locally only', 'By asking the client', 'By checking a local database'], correctAnswer: 0, explanation: 'AMPS validates OAuth tokens by making HTTP(S) requests to the configured TokenInfoEndpoint.' },
+    { questionId: 'M9-q006', type: 'mcq', difficulty: 'easy', concept: 'TLS', question: 'What does TLS provide for AMPS replication?', options: ['Encryption and authentication', 'Message compression', 'Faster delivery', 'SOW indexing'], correctAnswer: 0, explanation: 'TLS encrypts replication traffic and can provide mutual certificate-based authentication.' },
+    { questionId: 'M9-q007', type: 'mcq', difficulty: 'medium', concept: 'performance', question: 'Which practice improves AMPS performance?', options: ['Using simple comparisons over regex in filters', 'Using regex for all filters', 'Disabling SOW indexes', 'Storing all topics in SOW'], correctAnswer: 0, explanation: 'Simple comparisons (=, IN, LIKE) are faster than regular expressions. Use regex only when necessary.' },
+    { questionId: 'M9-q008', type: 'mcq', difficulty: 'medium', concept: 'capacity testing', question: 'What should you use when measuring AMPS performance?', options: ['Realistic data complexity and volumes', 'Tiny test messages only', 'A single client connection', 'Local loopback network only'], correctAnswer: 0, explanation: 'Always test with realistic message sizes, complexity, and volumes that match your production workload.' },
+    { questionId: 'M9-q009', type: 'mcq', difficulty: 'easy', concept: 'pitfall', question: 'Which is a common AMPS anti-pattern?', options: ['Using ad hoc topics in production', 'Configuring SOW keys', 'Using guaranteed publish for critical data', 'Testing failover regularly'], correctAnswer: 0, explanation: 'Using ad hoc topics in production is an anti-pattern because they lack SOW, transaction logs, and entitlements.' },
+    { questionId: 'M9-q010', type: 'mcq', difficulty: 'medium', concept: 'best practice', question: 'What is a best practice for SOW topic configuration?', options: ['Define explicit keys and necessary indexes', 'Never use indexes', 'Use ad hoc topics', 'Store everything in one topic'], correctAnswer: 0, explanation: 'Always define explicit SOW keys and create indexes only for fields used in queries and filters.' },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// Final Exam (50 questions - 5 from each module)
+// ---------------------------------------------------------------------------
+const FINAL_EXAM = [
+  { questionId: 'FE-q001', type: 'mcq', difficulty: 'easy', concept: 'AMPS definition', question: 'What does AMPS stand for?', options: ['Advanced Message Processing System', 'Application Message Publish Service', 'Automated Messaging Platform System', 'Advanced Memory Processing Service'], correctAnswer: 0, explanation: 'AMPS = Advanced Message Processing System by 60East Technologies.' },
+  { questionId: 'FE-q002', type: 'mcq', difficulty: 'easy', concept: 'delivery models', question: 'Which delivery model sends one message to exactly one consumer?', options: ['Message queue', 'Publish/subscribe', 'Broadcast', 'Multicast'], correctAnswer: 0, explanation: 'Message queues provide competitive consumption — exactly one consumer per message.' },
+  { questionId: 'FE-q003', type: 'mcq', difficulty: 'medium', concept: 'SOW', question: 'What does the SOW always contain?', options: ['The most recent message per key', 'All messages ever published', 'Only error messages', 'Only subscription commands'], correctAnswer: 0, explanation: 'The State of the World contains the latest message for each SOW key.' },
+  { questionId: 'FE-q004', type: 'mcq', difficulty: 'medium', concept: 'transaction log', question: 'What enables message replay in AMPS?', options: ['Transaction log', 'SOW only', 'Client cache', 'Network buffer'], correctAnswer: 0, explanation: 'The transaction log records all messages, enabling replay from any bookmark.' },
+  { questionId: 'FE-q005', type: 'mcq', difficulty: 'easy', concept: 'spark', question: 'What is spark?', options: ['AMPS command-line client', 'A messaging protocol', 'A monitoring dashboard', 'A queue type'], correctAnswer: 0, explanation: 'spark is the command-line client included with AMPS.' },
+  { questionId: 'FE-q006', type: 'mcq', difficulty: 'medium', concept: 'content filtering', question: 'What is the main benefit of content filtering?', options: ['Subscribers receive only relevant messages', 'Messages are encrypted', 'All messages are persisted', 'Publishers know all subscribers'], correctAnswer: 0, explanation: 'Content filtering lets subscribers specify criteria, reducing bandwidth and simplifying client code.' },
+  { questionId: 'FE-q007', type: 'mcq', difficulty: 'easy', concept: 'shutdown', question: 'Which signal should be used for graceful AMPS shutdown?', options: ['SIGTERM', 'SIGKILL', 'SIGSTOP', 'SIGUSR1'], correctAnswer: 0, explanation: 'SIGTERM or SIGINT triggers graceful shutdown. SIGKILL can corrupt data.' },
+  { questionId: 'FE-q008', type: 'mcq', difficulty: 'medium', concept: 'delta', question: 'What does delta subscribe receive?', options: ['Only changed fields', 'Full message every time', 'Only headers', 'Only SOW key'], correctAnswer: 0, explanation: 'Delta subscribers receive only the fields that changed compared to the previous message.' },
+  { questionId: 'FE-q009', type: 'mcq', difficulty: 'medium', concept: 'replication', question: 'What happens when a replica comes back online?', options: ['Automatic resynchronization', 'Manual rebuild required', 'Data is lost', 'Replication stops'], correctAnswer: 0, explanation: 'AMPS automatically detects and resynchronizes replicas using the transaction log.' },
+  { questionId: 'FE-q010', type: 'mcq', difficulty: 'easy', concept: 'security', question: 'What are the two main security components in AMPS?', options: ['Authentication and entitlements', 'Encryption and compression', 'Logging and replication', 'Monitoring and failover'], correctAnswer: 0, explanation: 'Authentication verifies identity; entitlements control permissions.' },
+  { questionId: 'FE-q011', type: 'mcq', difficulty: 'medium', concept: 'queue lease', question: 'What happens if a queue message lease expires without acknowledgment?', options: ['Another consumer can process it', 'The message is deleted', 'The queue stops', 'The consumer is banned'], correctAnswer: 0, explanation: 'Expired leases make messages available for other consumers, providing at-least-once delivery.' },
+  { questionId: 'FE-q012', type: 'mcq', difficulty: 'easy', concept: 'config', question: 'What format are AMPS configuration files?', options: ['XML', 'JSON', 'YAML', 'INI'], correctAnswer: 0, explanation: 'AMPS uses XML configuration files.' },
+  { questionId: 'FE-q013', type: 'mcq', difficulty: 'medium', concept: 'views', question: 'What are views in AMPS?', options: ['Computed projections over SOW topics', 'Graphical dashboards', 'Client windows', 'Log files'], correctAnswer: 0, explanation: 'Views are computed aggregations over SOW topics that update in near real-time.' },
+  { questionId: 'FE-q014', type: 'mcq', difficulty: 'easy', concept: 'message ordering', question: 'What ordering does AMPS guarantee within a topic?', options: ['Absolute ordering', 'Best-effort ordering', 'No ordering', 'Reverse ordering'], correctAnswer: 0, explanation: 'AMPS guarantees absolute ordering of messages within each topic.' },
+  { questionId: 'FE-q015', type: 'mcq', difficulty: 'medium', concept: 'SOW query', question: 'What does sow_and_subscribe do?', options: ['Returns current records then streams updates', 'Only queries historical data', 'Only subscribes to new messages', 'Deletes matching records'], correctAnswer: 0, explanation: 'sow_and_subscribe first returns current SOW contents, then continues with real-time updates.' },
+  { questionId: 'FE-q016', type: 'mcq', difficulty: 'medium', concept: 'NaN', question: 'What is the result of NaN = NaN in AMPS?', options: ['false', 'true', 'NULL', 'Error'], correctAnswer: 0, explanation: 'Following IEEE 754, NaN = NaN returns false in AMPS expressions.' },
+  { questionId: 'FE-q017', type: 'mcq', difficulty: 'easy', concept: 'guaranteed publish', question: 'What does guaranteed publishing ensure?', options: ['Message is in transaction log before ack', 'Message is delivered to all subscribers', 'Message is encrypted', 'Message is compressed'], correctAnswer: 0, explanation: 'Guaranteed publish waits for the message to be persisted to the transaction log.' },
+  { questionId: 'FE-q018', type: 'mcq', difficulty: 'medium', concept: 'Galvanometer', question: 'How do you access AMPS statistics via Galvanometer?', options: ['HTTP GET requests', 'SNMP', 'JMX', 'SQL queries'], correctAnswer: 0, explanation: 'Galvanometer exposes statistics via RESTful HTTP GET requests in JSON format.' },
+  { questionId: 'FE-q019', type: 'mcq', difficulty: 'easy', concept: 'ad hoc', question: 'Why should ad hoc topics be avoided in production?', options: ['No SOW, transaction log, or entitlements', 'They are too slow', 'They use too much memory', 'They require special licenses'], correctAnswer: 0, explanation: 'Ad hoc topics lack persistence, logging, and security controls.' },
+  { questionId: 'FE-q020', type: 'mcq', difficulty: 'medium', concept: 'slow client', question: 'Which is a valid slow client policy?', options: ['disconnect', 'retry', 'ignore', 'block'], correctAnswer: 0, explanation: 'Valid policies include disconnect, buffer, conflate, and pause.' },
+  { questionId: 'FE-q021', type: 'mcq', difficulty: 'easy', concept: 'field reference', question: 'How do you reference a field in AMPS expressions?', options: ['/FieldName', 'FieldName', '$FieldName', '@FieldName'], correctAnswer: 0, explanation: 'Field references start with /, e.g., /Ticker.' },
+  { questionId: 'FE-q022', type: 'mcq', difficulty: 'medium', concept: 'conflation', question: 'What does message conflation do?', options: ['Delivers only the latest per SOW key', 'Sends all messages in a batch', 'Duplicates messages', 'Encrypts messages'], correctAnswer: 0, explanation: 'Conflation reduces message volume by delivering only the latest message per SOW key.' },
+  { questionId: 'FE-q023', type: 'mcq', difficulty: 'medium', concept: 'OAuth', question: 'How does AMPS validate OAuth tokens?', options: ['HTTP(S) to token provider', 'Local decoding only', 'Client verification', 'Database lookup'], correctAnswer: 0, explanation: 'AMPS makes HTTP(S) requests to the configured TokenInfoEndpoint to validate tokens.' },
+  { questionId: 'FE-q024', type: 'mcq', difficulty: 'easy', concept: 'storage', question: 'What storage is recommended for AMPS transaction logs?', options: ['High-performance SSD', 'HDD', 'Network storage', 'Tape'], correctAnswer: 0, explanation: 'Fast local SSD is recommended for transaction log journals and SOW files.' },
+  { questionId: 'FE-q025', type: 'mcq', difficulty: 'medium', concept: 'two-way replication', question: 'What is a characteristic of two-way replication?', options: ['Both instances accept writes', 'Only one instance is active', 'Messages loop infinitely', 'No failover support'], correctAnswer: 0, explanation: 'Two-way replication allows both instances to accept client writes.' },
+  { questionId: 'FE-q026', type: 'mcq', difficulty: 'easy', concept: 'select list', question: 'What is the purpose of a select list?', options: ['Receive only specified fields', 'Filter by topic', 'Sort results', 'Group messages'], correctAnswer: 0, explanation: 'Select lists let subscribers receive only the fields they need.' },
+  { questionId: 'FE-q027', type: 'mcq', difficulty: 'medium', concept: 'actions', question: 'What can AMPS actions automate?', options: ['Responses to system events', 'Client code generation', 'Database schema changes', 'OS upgrades'], correctAnswer: 0, explanation: 'Actions let AMPS automatically respond to events like SOW expiration or client connections.' },
+  { questionId: 'FE-q028', type: 'mcq', difficulty: 'easy', concept: 'queue vs pubsub', question: 'When should you use a queue instead of pub/sub?', options: ['Task distribution to workers', 'Broadcasting market data', 'Sending notifications to all', 'Real-time chat'], correctAnswer: 0, explanation: 'Queues are for competitive consumption; pub/sub is for broadcasting.' },
+  { questionId: 'FE-q029', type: 'mcq', difficulty: 'medium', concept: 'bookmark', question: 'What does bookmark "0" mean in a subscription?', options: ['Replay from beginning of log', 'Start from now', 'No bookmark', 'Invalid bookmark'], correctAnswer: 0, explanation: 'Bookmark "0" subscribes from the very beginning of the transaction log.' },
+  { questionId: 'FE-q030', type: 'mcq', difficulty: 'easy', concept: 'JSON', question: 'Are JSON field names case-sensitive in AMPS?', options: ['Yes', 'No', 'Only top-level', 'Only nested'], correctAnswer: 0, explanation: 'All field names in AMPS JSON messages are case-sensitive.' },
+  { questionId: 'FE-q031', type: 'mcq', difficulty: 'medium', concept: 'enrichment', question: 'Where does message enrichment run?', options: ['Server-side', 'Client-side', 'Network layer', 'Database'], correctAnswer: 0, explanation: 'Enrichment is configured and executed server-side in AMPS.' },
+  { questionId: 'FE-q032', type: 'mcq', difficulty: 'easy', concept: 'heartbeats', question: 'What do heartbeats detect?', options: ['Disconnected or unresponsive peers', 'Slow messages', 'Large payloads', 'Authentication failures'], correctAnswer: 0, explanation: 'Heartbeats detect network partitions and unresponsive clients or servers.' },
+  { questionId: 'FE-q033', type: 'mcq', difficulty: 'medium', concept: 'historical SOW', question: 'What is required for historical SOW queries?', options: ['Transaction log', 'Queue configuration', 'Replication only', 'No special config'], correctAnswer: 0, explanation: 'Historical SOW queries require both SOW and transaction log configuration.' },
+  { questionId: 'FE-q034', type: 'mcq', difficulty: 'easy', concept: 'entitlements', question: 'What do entitlements control?', options: ['What users can do', 'How fast messages flow', 'Which topics exist', 'Network ports'], correctAnswer: 0, explanation: 'Entitlements control permissions like publish, subscribe, sow, queue, and admin.' },
+  { questionId: 'FE-q035', type: 'mcq', difficulty: 'medium', concept: 'delta requirements', question: 'What is required for delta publish/subscribe?', options: ['SOW topic', 'Queue only', 'Transaction log only', 'No requirements'], correctAnswer: 0, explanation: 'Delta messaging requires the topic to be in the SOW so AMPS can compare messages.' },
+  { questionId: 'FE-q036', type: 'mcq', difficulty: 'easy', concept: 'Simple Access', question: 'Why is Simple Access not recommended for production?', options: ['Passwords in config file', 'Too slow', 'No JSON support', 'Requires external network'], correctAnswer: 0, explanation: 'Simple Access stores passwords in the configuration file, making it insecure for production.' },
+  { questionId: 'FE-q037', type: 'mcq', difficulty: 'medium', concept: 'aggregation', question: 'Which is a supported AMPS aggregation function?', options: ['AVG', 'STDDEV', 'MEDIAN', 'PERCENTILE'], correctAnswer: 0, explanation: 'AMPS supports COUNT, MIN, MAX, SUM, and AVG for aggregation.' },
+  { questionId: 'FE-q038', type: 'mcq', difficulty: 'easy', concept: 'regex topics', question: 'Can subscribers use regex to match multiple topics?', options: ['Yes', 'No', 'Only admins', 'Only enterprise'], correctAnswer: 0, explanation: 'Regular expression subscriptions allow matching multiple topics with one command.' },
+  { questionId: 'FE-q039', type: 'mcq', difficulty: 'medium', concept: 'group local', question: 'What does group local queue replication do?', options: ['Consumes once within a group', 'Consumes on every instance', 'Does not replicate', 'Only for local clients'], correctAnswer: 0, explanation: 'Group local ensures messages are consumed once within each designated group.' },
+  { questionId: 'FE-q040', type: 'mcq', difficulty: 'easy', concept: 'protocol', question: 'What is the native AMPS client protocol?', options: ['amps', 'fix', 'http', 'mqtt'], correctAnswer: 0, explanation: 'The native protocol is called "amps" and is the most commonly used.' },
+  { questionId: 'FE-q041', type: 'mcq', difficulty: 'medium', concept: 'durable publish', question: 'What does durable publishing do?', options: ['Stores messages locally until acked', 'Compresses messages', 'Encrypts messages', 'Duplicates messages'], correctAnswer: 0, explanation: 'Durable publishing stores messages locally by the publisher until AMPS acknowledges them.' },
+  { questionId: 'FE-q042', type: 'mcq', difficulty: 'easy', concept: 'BETWEEN', question: 'What does the BETWEEN operator do?', options: ['Checks inclusive range', 'Checks exclusive range', 'Matches regex', 'Checks array membership'], correctAnswer: 0, explanation: 'BETWEEN checks if a value is within an inclusive range.' },
+  { questionId: 'FE-q043', type: 'mcq', difficulty: 'medium', concept: 'passThrough', question: 'What is PassThrough replication?', options: ['Chaining instances together', 'Local-only replication', 'One-way with no ack', 'Multicast replication'], correctAnswer: 0, explanation: 'PassThrough chains instances, useful for hub-and-spoke topologies.' },
+  { questionId: 'FE-q044', type: 'mcq', difficulty: 'easy', concept: 'event topic', question: 'Which event topic reports client connections?', options: ['/AMPS/ClientStatus', '/AMPS/SOWStats', '/AMPS/Replication', '/AMPS/Logging'], correctAnswer: 0, explanation: '/AMPS/ClientStatus publishes connect and disconnect events.' },
+  { questionId: 'FE-q045', type: 'mcq', difficulty: 'medium', concept: 'SOW keys', question: 'Can a SOW key span multiple fields?', options: ['Yes', 'No', 'Only two fields', 'Only in JSON'], correctAnswer: 0, explanation: 'Composite SOW keys can combine multiple fields for record identification.' },
+  { questionId: 'FE-q046', type: 'mcq', difficulty: 'easy', concept: 'persistence', question: 'What provides at-least-once delivery in queues?', options: ['Lease expiry and retry', 'SOW only', 'Transaction log only', 'Client cache'], correctAnswer: 0, explanation: 'If a lease expires without acknowledgment, the message becomes available for another consumer.' },
+  { questionId: 'FE-q047', type: 'mcq', difficulty: 'medium', concept: 'conflated topics', question: 'What do conflated topics configure?', options: ['Window and granularity', 'SOW key only', 'Queue lease time', 'Replication type'], correctAnswer: 0, explanation: 'Conflated topics use Window and Granularity settings to batch updates.' },
+  { questionId: 'FE-q048', type: 'mcq', difficulty: 'easy', concept: 'replace subscription', question: 'What happens when replacing a subscription?', options: ['Old subscription is updated without unsubscribing', 'Both run in parallel', 'Error occurs', 'Client disconnects'], correctAnswer: 0, explanation: 'Replacement updates the subscription using the same CommandId without requiring unsubscribe.' },
+  { questionId: 'FE-q049', type: 'mcq', difficulty: 'medium', concept: 'IS NULL', question: 'How do you check for NULL in AMPS expressions?', options: ['/Field IS NULL', '/Field = NULL', '/Field == NULL', 'ISNULL(/Field)'], correctAnswer: 0, explanation: 'Use IS NULL to check for NULL values in AMPS expressions.' },
+  { questionId: 'FE-q050', type: 'mcq', difficulty: 'easy', concept: 'best practice', question: 'What is a best practice for SOW configuration?', options: ['Define explicit keys and necessary indexes', 'Never use indexes', 'Use ad hoc topics', 'Store everything in one topic'], correctAnswer: 0, explanation: 'Always define SOW keys and create indexes only for frequently queried fields.' },
+];
+
+// ---------------------------------------------------------------------------
+// Application State
+// ---------------------------------------------------------------------------
+let state = {
+  currentSlide: 0,
+  quizMode: false,
+  quizCurrentQuestion: 0,
+  quizAnswers: [],
+  quizRetryMode: false,
+  quizRetryQuestions: [],
+  finalExamMode: false,
+  finalExamCurrentQuestion: 0,
+  finalExamAnswers: [],
+  showTOC: false,
+  progress: loadProgress(),
+};
+
+// ---------------------------------------------------------------------------
+// Storage (localStorage with cookie fallback)
+// ---------------------------------------------------------------------------
+function saveProgress() {
+  const data = JSON.stringify(state.progress);
+  try {
+    localStorage.setItem(STORE_KEY, data);
+  } catch (e) {
+    document.cookie = STORE_KEY + '=' + encodeURIComponent(data) + '; path=/; max-age=31536000';
+  }
+}
+
+function loadProgress() {
+  let data = null;
+  try {
+    data = localStorage.getItem(STORE_KEY);
+  } catch (e) {}
+  if (!data) {
+    const match = document.cookie.match(new RegExp('(?:^|; )' + STORE_KEY + '=([^;]*)'));
+    if (match) data = decodeURIComponent(match[1]);
+  }
+  if (data) {
+    try {
+      return JSON.parse(data);
+    } catch (e) {}
+  }
+  return initProgress();
+}
+
+function initProgress() {
+  const modules = {};
+  for (let i = 0; i < MODULE_NAMES.length; i++) {
+    const modId = 'M' + i;
+    const slideCount = SLIDES.filter(s => s.moduleId === modId).length;
+    modules[modId] = {
+      slides_completed: 0,
+      total_slides: slideCount,
+      quiz_attempted: false,
+      first_attempt_score: 0,
+      total_questions: QUIZ_DATA[modId] ? QUIZ_DATA[modId].length : 0,
+      failed_questions: [],
+      retry_completed: false,
+      recovered_questions: [],
+      mastery_percentage: 0,
+    };
+  }
+  return {
+    modules: modules,
+    streak_days: 0,
+    last_study_date: null,
+    total_modules_completed: 0,
+    total_modules: MODULE_NAMES.length,
+    achievements: [
+      { id: 'first-slide', title: 'Blast Off', emoji: '🚀', unlocked: false },
+      { id: 'first-quiz', title: 'First Steps', emoji: '👟', unlocked: false },
+      { id: 'streak-3', title: 'On Fire', emoji: '🔥', unlocked: false },
+      { id: 'perfect-score', title: 'Star Student', emoji: '⭐', unlocked: false },
+      { id: 'comeback', title: 'Comeback Kid', emoji: '🔄', unlocked: false },
+      { id: 'final-exam', title: 'Champion', emoji: '🏆', unlocked: false },
+    ],
+    overall_percentage: 0,
+    final_exam_completed: false,
+    final_exam_score: 0,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Achievement Helpers
+// ---------------------------------------------------------------------------
+function unlockAchievement(id) {
+  const ach = state.progress.achievements.find(a => a.id === id);
+  if (ach && !ach.unlocked) {
+    ach.unlocked = true;
+    saveProgress();
+    showConfetti(10);
+  }
+}
+
+function checkAchievements() {
+  const p = state.progress;
+  // First slide
+  const anySlide = Object.values(p.modules).some(m => m.slides_completed > 0);
+  if (anySlide) unlockAchievement('first-slide');
+  // First quiz
+  const anyQuiz = Object.values(p.modules).some(m => m.quiz_attempted);
+  if (anyQuiz) unlockAchievement('first-quiz');
+  // Streak
+  if (p.streak_days >= 3) unlockAchievement('streak-3');
+  // Perfect score
+  const anyPerfect = Object.values(p.modules).some(m => m.first_attempt_score === m.total_questions && m.total_questions > 0);
+  if (anyPerfect) unlockAchievement('perfect-score');
+  // Comeback kid
+  const anyComeback = Object.values(p.modules).some(m => m.retry_completed && m.recovered_questions.length > 0);
+  if (anyComeback) unlockAchievement('comeback');
+  // Champion
+  if (p.final_exam_completed && p.final_exam_score >= 40) unlockAchievement('final-exam');
+}
+
+function updateStreak() {
+  const today = new Date().toISOString().split('T')[0];
+  const last = state.progress.last_study_date;
+  if (!last) {
+    state.progress.streak_days = 1;
+  } else if (last === today) {
+    // same day, no change
+  } else {
+    const lastDate = new Date(last);
+    const todayDate = new Date(today);
+    const diff = (todayDate - lastDate) / (1000 * 60 * 60 * 24);
+    if (diff === 1) {
+      state.progress.streak_days += 1;
+    } else {
+      state.progress.streak_days = 1;
+    }
+  }
+  state.progress.last_study_date = today;
+}
+
+// ---------------------------------------------------------------------------
+// Shuffle with seed
+// ---------------------------------------------------------------------------
+function seededRandom(seed) {
+  let x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
+function shuffleArray(array, seed) {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(seededRandom(seed + i) * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ---------------------------------------------------------------------------
+// Module & Slide Helpers
+// ---------------------------------------------------------------------------
+function getModuleSlides(moduleId) {
+  return SLIDES.filter(s => s.moduleId === moduleId);
+}
+
+function getModuleQuizSlides(moduleId) {
+  return SLIDES.filter(s => s.moduleId === moduleId && s.type === 'quiz');
+}
+
+function getOverallSlideCount() {
+  return SLIDES.filter(s => !['dashboard', 'final_exam_intro', 'final_exam_quiz'].includes(s.type)).length;
+}
+
+function getCompletedSlideCount() {
+  let count = 0;
+  for (const modId in state.progress.modules) {
+    count += state.progress.modules[modId].slides_completed;
+  }
+  return count;
+}
+
+function getModuleForSlideIndex(idx) {
+  return SLIDES[idx] ? SLIDES[idx].moduleId : null;
+}
+
+function getSlideIndexById(moduleId, type) {
+  return SLIDES.findIndex(s => s.moduleId === moduleId && s.type === type);
+}
+
+function getFirstSlideOfModule(moduleId) {
+  return SLIDES.findIndex(s => s.moduleId === moduleId);
+}
+
+function markSlideCompleted(idx) {
+  const slide = SLIDES[idx];
+  if (!slide || slide.moduleId === 'dashboard' || slide.moduleId === 'final') return;
+  const mod = state.progress.modules[slide.moduleId];
+  if (!mod) return;
+  // Count unique slides completed
+  const moduleSlides = getModuleSlides(slide.moduleId);
+  const seen = new Set();
+  for (let i = 0; i <= idx; i++) {
+    if (SLIDES[i].moduleId === slide.moduleId) {
+      seen.add(i);
+    }
+  }
+  mod.slides_completed = Math.max(mod.slides_completed, seen.size);
+  // Cap at total
+  mod.slides_completed = Math.min(mod.slides_completed, mod.total_slides);
+  // Check module completion
+  if (mod.slides_completed >= mod.total_slides && mod.quiz_attempted) {
+    const modIndex = parseInt(slide.moduleId.replace('M', ''));
+    if (!isNaN(modIndex)) {
+      // module completed
+    }
+  }
+  updateOverallPercentage();
+  saveProgress();
+}
+
+function updateOverallPercentage() {
+  let totalSlides = 0;
+  let completedSlides = 0;
+  let totalQuizzes = 0;
+  let completedQuizzes = 0;
+  for (const modId in state.progress.modules) {
+    const m = state.progress.modules[modId];
+    totalSlides += m.total_slides;
+    completedSlides += m.slides_completed;
+    totalQuizzes += 1;
+    if (m.quiz_attempted) completedQuizzes += 1;
+  }
+  const slidePct = totalSlides > 0 ? completedSlides / totalSlides : 0;
+  const quizPct = totalQuizzes > 0 ? completedQuizzes / totalQuizzes : 0;
+  state.progress.overall_percentage = Math.round(((slidePct + quizPct) / 2) * 100);
+  state.progress.total_modules_completed = completedQuizzes;
+}
+
+// ---------------------------------------------------------------------------
+// Confetti
+// ---------------------------------------------------------------------------
+function showConfetti(count = 30) {
+  const colors = ['#FF6B6B', '#4ECDC4', '#FFD93D', '#9B59B6', '#2ECC71', '#3498DB'];
+  for (let i = 0; i < count; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = Math.random() * 2 + 's';
+    piece.style.width = (6 + Math.random() * 8) + 'px';
+    piece.style.height = piece.style.width;
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 5000);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Render Functions
+// ---------------------------------------------------------------------------
+function render() {
+  const app = document.getElementById('app');
+  const slide = SLIDES[state.currentSlide];
+  if (!slide) return;
+
+  updateStreak();
+  checkAchievements();
+
+  let html = '';
+  html += renderHeader();
+  html += '<div class="slide-container">';
+
+  if (slide.type === 'dashboard') {
+    html += renderDashboard();
+  } else if (slide.type === 'quiz') {
+    html += renderQuiz(slide.moduleId);
+  } else if (slide.type === 'final_exam_intro') {
+    html += renderFinalExamIntro();
+  } else if (slide.type === 'final_exam_quiz') {
+    html += renderFinalExam();
+  } else {
+    html += renderSlideContent(slide);
+  }
+
+  html += '</div>';
+  html += renderNavBar(slide);
+  html += renderTOC();
+
+  app.innerHTML = html;
+
+  // KaTeX render
+  if (typeof renderMathInElement !== 'undefined') {
+    renderMathInElement(app, { delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}] });
+  }
+}
+
+function renderHeader() {
+  const totalSlides = getOverallSlideCount();
+  const completed = getCompletedSlideCount();
+  const pct = totalSlides > 0 ? Math.round((completed / totalSlides) * 100) : 0;
+  const p = state.progress;
+  return `
+    <div class="header">
+      <h1>📚 AMPS 5.3.5 Onboarding</h1>
+      <div class="progress-bar"><div class="fill" style="width:${pct}%"></div></div>
+      <div class="streak">${p.streak_days > 0 ? '🔥 ' + p.streak_days + ' day' + (p.streak_days > 1 ? 's' : '') : ''}</div>
+    </div>
+  `;
+}
+
+function renderDashboard() {
+  const p = state.progress;
+  let modulesHtml = '';
+  for (let i = 0; i < MODULE_NAMES.length; i++) {
+    const modId = 'M' + i;
+    const mod = p.modules[modId];
+    const modSlides = getModuleSlides(modId);
+    const firstSlideIdx = getFirstSlideOfModule(modId);
+    const pct = mod.total_slides > 0 ? Math.round((mod.slides_completed / mod.total_slides) * 100) : 0;
+    const isCompleted = mod.quiz_attempted && mod.slides_completed >= mod.total_slides;
+    const statusEmoji = isCompleted ? '✅' : (mod.slides_completed > 0 ? '▶️' : '🔒');
+    modulesHtml += `
+      <div class="module-card ${isCompleted ? 'completed' : ''}" onclick="go(${firstSlideIdx})">
+        <div class="module-card-header">
+          <span class="module-number">${MODULE_NAMES[i]}</span>
+          <span class="module-status">${statusEmoji}</span>
+        </div>
+        <div class="module-title">${MODULE_NAMES[i].split(': ')[1]}</div>
+        <div class="module-progress"><div class="fill" style="width:${pct}%"></div></div>
+        <div style="font-size:0.8rem;color:#888;margin-top:4px;">${mod.slides_completed}/${mod.total_slides} slides • ${mod.quiz_attempted ? mod.first_attempt_score + '/' + mod.total_questions + ' quiz' : 'quiz not taken'}</div>
+      </div>
+    `;
+  }
+
+  const achievementsHtml = p.achievements.map(a => `
+    <div class="achievement ${a.unlocked ? '' : 'locked'}">
+      <span class="achievement-icon">${a.emoji}</span>
+      <span>${a.title}</span>
+    </div>
+  `).join('');
+
+  const allModulesDone = Object.values(p.modules).every(m => m.quiz_attempted && m.slides_completed >= m.total_slides);
+
+  return `
+    <div class="dashboard">
+      <h2>🚀 Welcome, Developer!</h2>
+      <p>Master AMPS 5.3.5 with interactive slides, quizzes, and a final exam.</p>
+      <div class="achievements-bar">${achievementsHtml}</div>
+      <div class="module-grid">${modulesHtml}</div>
+      <button class="final-exam-btn" ${allModulesDone ? '' : 'disabled'} onclick="startFinalExam()">
+        🏆 Take Final Exam ${allModulesDone ? '' : '(Complete all modules first)'}
+      </button>
+    </div>
+  `;
+}
+
+function renderSlideContent(slide) {
+  const typeLabels = {
+    intro: 'Intro',
+    concept: 'Concept',
+    definition: 'Definition',
+    diagram_explanation: 'Diagram',
+    formula_explanation: 'Formula',
+    worked_example: 'Example',
+    table_explanation: 'Table',
+    real_world_example: 'Real World',
+    mini_activity: 'Activity',
+    recap: 'Recap',
+    chapter_summary: 'Summary',
+  };
+  const badgeClass = 'badge-' + (typeLabels[slide.type] ? slide.type : 'concept');
+  const badgeText = typeLabels[slide.type] || 'Content';
+  const content = slide.content ? slide.content.join('') : '';
+  return `
+    <div class="slide-type-badge ${badgeClass}">${badgeText}</div>
+    <h2 class="slide-title">${slide.title}</h2>
+    <div class="slide-content">${content}</div>
+  `;
+}
+
+function renderQuiz(moduleId) {
+  const questions = QUIZ_DATA[moduleId];
+  if (!questions) return '<p>No quiz available.</p>';
+  const mod = state.progress.modules[moduleId];
+
+  // Check if showing results
+  if (state.quizMode && state.quizCurrentQuestion >= questions.length && !state.quizRetryMode) {
+    return renderQuizResults(moduleId);
+  }
+  if (state.quizRetryMode && state.quizCurrentQuestion >= state.quizRetryQuestions.length) {
+    return renderQuizRetryResults(moduleId);
+  }
+
+  const qList = state.quizRetryMode ? state.quizRetryQuestions : questions;
+  const qIdx = state.quizCurrentQuestion;
+  const q = qList[qIdx];
+  const shuffled = shuffleArray(q.options.map((opt, i) => ({opt, idx: i})), q.questionId.split('').reduce((a,c)=>a+c.charCodeAt(0),0));
+  const total = qList.length;
+
+  let html = `
+    <div class="slide-type-badge badge-quiz">Quiz</div>
+    <h2 class="slide-title">${state.quizRetryMode ? 'Retry Failed Questions' : MODULE_NAMES[parseInt(moduleId.replace('M',''))]}</h2>
+    <div class="quiz-container">
+      <div style="margin-bottom:16px;font-size:0.9rem;color:#666;">Question ${qIdx + 1} of ${total}</div>
+      <div class="quiz-question">${q.question}</div>
+  `;
+
+  shuffled.forEach((item, i) => {
+    html += `<button class="quiz-option" id="opt-${i}" onclick="answerQuiz(${item.idx}, ${i})">${item.opt}</button>`;
+  });
+
+  html += `<div id="quiz-explanation" style="display:none;" class="quiz-explanation"></div>`;
+  html += '</div>';
+  return html;
+}
+
+function renderQuizResults(moduleId) {
+  const questions = QUIZ_DATA[moduleId];
+  const answers = state.quizAnswers;
+  let correct = 0;
+  const failed = [];
+  answers.forEach((a, i) => {
+    if (a === questions[i].correctAnswer) {
+      correct++;
+    } else {
+      failed.push(questions[i].questionId);
+    }
+  });
+
+  const mod = state.progress.modules[moduleId];
+  mod.quiz_attempted = true;
+  mod.first_attempt_score = correct;
+  mod.failed_questions = failed;
+  mod.mastery_percentage = Math.round((correct / questions.length) * 100);
+  updateOverallPercentage();
+  saveProgress();
+  checkAchievements();
+
+  const msg = correct >= 8 ? '🎉 Excellent work!' : correct >= 6 ? '👍 Good job!' : '💪 Keep practicing!';
+
+  let html = `
+    <div class="quiz-result">
+      <div class="quiz-result-score">${correct}/${questions.length}</div>
+      <div class="quiz-result-message">${msg}</div>
+      <p>${correct >= 8 ? 'You have a solid grasp of this module.' : 'Review the slides and try again to improve your score.'}</p>
+  `;
+  if (failed.length > 0) {
+    html += `<button class="nav-btn btn-quiz" onclick="startRetry('${moduleId}')">🔄 Retry Failed Questions (${failed.length})</button>`;
+  }
+  html += `<button class="nav-btn btn-next" onclick="goToDashboard()">🏠 Back to Dashboard</button>`;
+  html += '</div>';
+
+  if (correct === questions.length) {
+    showConfetti(50);
+    unlockAchievement('perfect-score');
+  }
+
+  return html;
+}
+
+function renderQuizRetryResults(moduleId) {
+  const questions = QUIZ_DATA[moduleId];
+  const retryQs = state.quizRetryQuestions;
+  const answers = state.quizAnswers;
+  let recovered = 0;
+  retryQs.forEach((q, i) => {
+    if (answers[i] === q.correctAnswer) recovered++;
+  });
+
+  const mod = state.progress.modules[moduleId];
+  mod.retry_completed = true;
+  mod.recovered_questions = retryQs.filter((q, i) => answers[i] === q.correctAnswer).map(q => q.questionId);
+  mod.mastery_percentage = Math.round(((mod.first_attempt_score + recovered) / questions.length) * 100);
+  updateOverallPercentage();
+  saveProgress();
+  checkAchievements();
+
+  if (recovered > 0) unlockAchievement('comeback');
+
+  return `
+    <div class="quiz-result">
+      <div class="quiz-result-score">Recovered ${recovered}/${retryQs.length}</div>
+      <div class="quiz-result-message">🔄 Retry Complete!</div>
+      <p>Your final mastery for this module: <strong>${mod.mastery_percentage}%</strong></p>
+      <button class="nav-btn btn-next" onclick="goToDashboard()">🏠 Back to Dashboard</button>
+    </div>
+  `;
+}
+
+function renderFinalExamIntro() {
+  return `
+    <div class="slide-type-badge badge-quiz">Final Exam</div>
+    <h2 class="slide-title">🏆 Final Exam</h2>
+    <div class="slide-content">
+      <p>You've reached the final exam! This covers all 10 modules.</p>
+      <ul>
+        <li>50 questions total</li>
+        <li>Mix of easy, medium, and hard difficulty</li>
+        <li>You need 80% (40/50) to pass</li>
+        <li>You can retake as many times as needed</li>
+      </ul>
+      <div class="callout"><div class="callout-title">🎯 Ready?</div>Take your time and think through each question.</div>
+      <button class="nav-btn btn-quiz" onclick="startFinalExamQuiz()" style="margin-top:20px;">Start Exam</button>
+    </div>
+  `;
+}
+
+function renderFinalExam() {
+  const questions = FINAL_EXAM;
+  if (state.finalExamCurrentQuestion >= questions.length) {
+    return renderFinalExamResults();
+  }
+
+  const qIdx = state.finalExamCurrentQuestion;
+  const q = questions[qIdx];
+  const shuffled = shuffleArray(q.options.map((opt, i) => ({opt, idx: i})), q.questionId.split('').reduce((a,c)=>a+c.charCodeAt(0),0));
+
+  let html = `
+    <div class="slide-type-badge badge-quiz">Final Exam</div>
+    <h2 class="slide-title">🏆 Final Exam</h2>
+    <div class="quiz-container">
+      <div style="margin-bottom:16px;font-size:0.9rem;color:#666;">Question ${qIdx + 1} of ${questions.length}</div>
+      <div class="quiz-question">${q.question}</div>
+  `;
+  shuffled.forEach((item, i) => {
+    html += `<button class="quiz-option" id="opt-${i}" onclick="answerFinalExam(${item.idx}, ${i})">${item.opt}</button>`;
+  });
+  html += `<div id="quiz-explanation" style="display:none;" class="quiz-explanation"></div>`;
+  html += '</div>';
+  return html;
+}
+
+function renderFinalExamResults() {
+  const questions = FINAL_EXAM;
+  const answers = state.finalExamAnswers;
+  let correct = 0;
+  answers.forEach((a, i) => {
+    if (a === questions[i].correctAnswer) correct++;
+  });
+  const passed = correct >= 40;
+  state.progress.final_exam_completed = true;
+  state.progress.final_exam_score = correct;
+  saveProgress();
+  checkAchievements();
+
+  let html = `
+    <div class="quiz-result">
+      <div class="quiz-result-score">${correct}/${questions.length}</div>
+      <div class="quiz-result-message">${passed ? '🎉 Congratulations! You passed!' : '💪 Keep studying and try again!'}</div>
+      <p>${passed ? 'You have demonstrated strong knowledge of AMPS 5.3.5.' : 'You need 40/50 to pass. Review weak modules and retake.'}</p>
+      <button class="nav-btn btn-next" onclick="goToDashboard()">🏠 Back to Dashboard</button>
+    </div>
+  `;
+  if (passed) showConfetti(80);
+  return html;
+}
+
+function renderNavBar(slide) {
+  const isQuiz = slide.type === 'quiz' || slide.type === 'final_exam_quiz';
+  const isFirst = state.currentSlide === 0;
+  const isLast = state.currentSlide === SLIDES.length - 1;
+
+  let html = '<div class="nav-bar">';
+  html += `<button class="nav-btn btn-prev" ${isFirst ? 'disabled' : ''} onclick="prev()">◀ Previous</button>`;
+  html += `<button class="nav-btn btn-toc" onclick="toggleTOC()">☰ Contents</button>`;
+  if (!isQuiz && slide.moduleId !== 'dashboard' && slide.moduleId !== 'final') {
+    const quizIdx = getSlideIndexById(slide.moduleId, 'quiz');
+    if (quizIdx >= 0) {
+      html += `<button class="nav-btn btn-quiz" onclick="go(${quizIdx}); startQuiz('${slide.moduleId}')">📝 Quiz</button>`;
+    }
+  }
+  html += `<button class="nav-btn btn-next" ${isLast ? 'disabled' : ''} onclick="next()">Next ▶</button>`;
+  html += '</div>';
+  return html;
+}
+
+function renderTOC() {
+  let html = '<div class="toc-overlay" id="toc-overlay" onclick="if(event.target===this)toggleTOC()">';
+  html += '<div class="toc-panel">';
+  html += '<h2>📑 Table of Contents</h2>';
+
+  // Dashboard link
+  html += '<div class="toc-slide" onclick="go(0); toggleTOC()">🏠 Dashboard</div>';
+
+  for (let i = 0; i < MODULE_NAMES.length; i++) {
+    const modId = 'M' + i;
+    const modSlides = SLIDES.filter(s => s.moduleId === modId);
+    const mod = state.progress.modules[modId];
+    html += `<div class="toc-module">`;
+    html += `<div class="toc-module-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">`;
+    html += `<span>${MODULE_NAMES[i]}</span>`;
+    html += `<span>${mod.slides_completed >= mod.total_slides && mod.quiz_attempted ? '✅' : '▶️'}</span>`;
+    html += `</div>`;
+    html += `<div class="toc-module-slides">`;
+    modSlides.forEach((s, idx) => {
+      const globalIdx = SLIDES.indexOf(s);
+      const isActive = globalIdx === state.currentSlide;
+      const isCompleted = idx < mod.slides_completed;
+      html += `<div class="toc-slide ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}" onclick="go(${globalIdx}); toggleTOC()">${s.title}</div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  // Final exam
+  const finalIntroIdx = SLIDES.findIndex(s => s.moduleId === 'final' && s.type === 'final_exam_intro');
+  if (finalIntroIdx >= 0) {
+    html += `<div class="toc-slide" onclick="go(${finalIntroIdx}); toggleTOC()">🏆 Final Exam</div>`;
+  }
+
+  html += '</div></div>';
+  return html;
+}
+
+// ---------------------------------------------------------------------------
+// Navigation
+// ---------------------------------------------------------------------------
+function go(idx) {
+  if (idx < 0 || idx >= SLIDES.length) return;
+  markSlideCompleted(state.currentSlide);
+  state.currentSlide = idx;
+  state.quizMode = false;
+  state.quizRetryMode = false;
+  state.finalExamMode = false;
+  render();
+}
+
+function next() {
+  if (state.currentSlide < SLIDES.length - 1) {
+    markSlideCompleted(state.currentSlide);
+    state.currentSlide++;
+    render();
+  }
+}
+
+function prev() {
+  if (state.currentSlide > 0) {
+    state.currentSlide--;
+    render();
+  }
+}
+
+function goToDashboard() {
+  go(0);
+}
+
+function toggleTOC() {
+  const overlay = document.getElementById('toc-overlay');
+  if (overlay) {
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Quiz Engine
+// ---------------------------------------------------------------------------
+function startQuiz(moduleId) {
+  state.quizMode = true;
+  state.quizCurrentQuestion = 0;
+  state.quizAnswers = [];
+  state.quizRetryMode = false;
+  state.quizRetryQuestions = [];
+  render();
+}
+
+function startRetry(moduleId) {
+  const mod = state.progress.modules[moduleId];
+  const failedIds = mod.failed_questions;
+  state.quizRetryMode = true;
+  state.quizCurrentQuestion = 0;
+  state.quizAnswers = [];
+  state.quizRetryQuestions = QUIZ_DATA[moduleId].filter(q => failedIds.includes(q.questionId));
+  render();
+}
+
+function answerQuiz(answerIdx, buttonIdx) {
+  const moduleId = SLIDES[state.currentSlide].moduleId;
+  const questions = state.quizRetryMode ? state.quizRetryQuestions : QUIZ_DATA[moduleId];
+  const q = questions[state.quizCurrentQuestion];
+  const isCorrect = answerIdx === q.correctAnswer;
+
+  // Disable all buttons
+  const buttons = document.querySelectorAll('.quiz-option');
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === buttonIdx) {
+      btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+    }
+    // Highlight correct answer
+    const shuffled = shuffleArray(q.options.map((opt, idx) => ({opt, idx})), q.questionId.split('').reduce((a,c)=>a+c.charCodeAt(0),0));
+    if (shuffled[i].idx === q.correctAnswer) {
+      btn.classList.add('correct-answer');
+    }
+  });
+
+  // Show explanation
+  const expl = document.getElementById('quiz-explanation');
+  const msg = isCorrect ? ENCOURAGEMENT_RIGHT[Math.floor(Math.random() * ENCOURAGEMENT_RIGHT.length)] : ENCOURAGEMENT_WRONG[Math.floor(Math.random() * ENCOURAGEMENT_WRONG.length)];
+  expl.innerHTML = `<strong>${msg}</strong><br><br>${q.explanation}`;
+  expl.style.display = 'block';
+
+  state.quizAnswers.push(answerIdx);
+
+  // Auto-advance after delay
+  setTimeout(() => {
+    state.quizCurrentQuestion++;
+    render();
+  }, 2500);
+}
+
+// ---------------------------------------------------------------------------
+// Final Exam Engine
+// ---------------------------------------------------------------------------
+function startFinalExam() {
+  const p = state.progress;
+  const allDone = Object.values(p.modules).every(m => m.quiz_attempted && m.slides_completed >= m.total_slides);
+  if (!allDone) return;
+  go(SLIDES.findIndex(s => s.moduleId === 'final' && s.type === 'final_exam_intro'));
+}
+
+function startFinalExamQuiz() {
+  state.finalExamMode = true;
+  state.finalExamCurrentQuestion = 0;
+  state.finalExamAnswers = [];
+  go(SLIDES.findIndex(s => s.moduleId === 'final' && s.type === 'final_exam_quiz'));
+}
+
+function answerFinalExam(answerIdx, buttonIdx) {
+  const q = FINAL_EXAM[state.finalExamCurrentQuestion];
+  const isCorrect = answerIdx === q.correctAnswer;
+
+  const buttons = document.querySelectorAll('.quiz-option');
+  buttons.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === buttonIdx) {
+      btn.classList.add(isCorrect ? 'selected-correct' : 'selected-wrong');
+    }
+    const shuffled = shuffleArray(q.options.map((opt, idx) => ({opt, idx})), q.questionId.split('').reduce((a,c)=>a+c.charCodeAt(0),0));
+    if (shuffled[i].idx === q.correctAnswer) {
+      btn.classList.add('correct-answer');
+    }
+  });
+
+  const expl = document.getElementById('quiz-explanation');
+  const msg = isCorrect ? ENCOURAGEMENT_RIGHT[Math.floor(Math.random() * ENCOURAGEMENT_RIGHT.length)] : ENCOURAGEMENT_WRONG[Math.floor(Math.random() * ENCOURAGEMENT_WRONG.length)];
+  expl.innerHTML = `<strong>${msg}</strong><br><br>${q.explanation}`;
+  expl.style.display = 'block';
+
+  state.finalExamAnswers.push(answerIdx);
+
+  setTimeout(() => {
+    state.finalExamCurrentQuestion++;
+    render();
+  }, 2500);
+}
+
+// ---------------------------------------------------------------------------
+// Keyboard Navigation
+// ---------------------------------------------------------------------------
+document.addEventListener('keydown', (e) => {
+  if (state.quizMode || state.finalExamMode) return; // Don't interfere with quiz
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    e.preventDefault();
+    next();
+  } else if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    prev();
+  } else if (e.key === 'Home') {
+    e.preventDefault();
+    go(0);
+  } else if (e.key === 'End') {
+    e.preventDefault();
+    go(SLIDES.length - 1);
+  } else if (e.key === 't' || e.key === 'T') {
+    toggleTOC();
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Initialize
+// ---------------------------------------------------------------------------
+render();
+</script>
+</body>
+</html>
