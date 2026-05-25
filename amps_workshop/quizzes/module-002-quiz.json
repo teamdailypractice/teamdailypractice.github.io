@@ -1,0 +1,174 @@
+[
+  {
+    "questionId": "q002-001",
+    "type": "mcq",
+    "question": "What is an 'Ad Hoc' topic in AMPS?",
+    "options": [
+      "A topic that must be pre-configured in the XML file.",
+      "A topic created automatically when a message is published to it.",
+      "A topic that only supports XML messages.",
+      "A topic used exclusively for internal monitoring."
+    ],
+    "correctAnswer": "A topic created automatically when a message is published to it.",
+    "explanation": "Ad Hoc topics in AMPS allow for basic Pub/Sub without any prior server configuration.",
+    "hints": [
+      "Does AMPS require you to define every topic name in advance?",
+      "Think about 'on-the-fly' topic creation."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-002",
+    "type": "mcq",
+    "question": "Which two standards are combined to form the AMPS Filter Grammar?",
+    "options": [
+      "JSON and SQL-92",
+      "XPath and SQL-92",
+      "XML and CSS Selectors",
+      "XPath and JavaScript"
+    ],
+    "correctAnswer": "XPath and SQL-92",
+    "explanation": "AMPS uses a subset of XPath for identifying fields and SQL-92 operators for comparison logic.",
+    "hints": [
+      "One is for path navigation, the other is for 'WHERE' clause logic.",
+      "It's a mix of a web standard and a database standard."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-003",
+    "type": "mcq",
+    "question": "How do you refer to a field name that contains spaces, such as 'Order Date'?",
+    "options": [
+      "\"/Order Date\"",
+      "'/Order Date'",
+      "[/Order Date]",
+      "/Order\\ Date"
+    ],
+    "correctAnswer": "[/Order Date]",
+    "explanation": "AMPS uses a bracketed identifier syntax to support field names that are not valid XPath step names.",
+    "hints": [
+      "Standard XPath doesn't like spaces. AMPS adds a special container.",
+      "Look for the syntax that uses square brackets."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-004",
+    "type": "mcq",
+    "question": "In the expression `/qty / 10`, why is the space before the slash important?",
+    "options": [
+      "To improve readability for humans.",
+      "To prevent the parser from thinking the slash is part of an XPath identifier.",
+      "To indicate a floating-point division.",
+      "It isn't important; AMPS ignores all whitespace."
+    ],
+    "correctAnswer": "To prevent the parser from thinking the slash is part of an XPath identifier.",
+    "explanation": "Since the forward slash is also used as a path separator in XPath, spaces are needed to distinguish the division operator.",
+    "hints": [
+      "What else is the '/' character used for in AMPS filters?",
+      "Think about path separators."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-005",
+    "type": "true_false",
+    "question": "A comparison with a NULL value (e.g., `/field = NULL`) will return true if the field is missing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "Following SQL-92 semantics, comparisons with NULL are never true. You must use the 'IS NULL' predicate.",
+    "hints": [
+      "How does SQL handle 'WHERE x = NULL'?",
+      "You need a specific predicate for NULL checks."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-006",
+    "type": "mcq",
+    "question": "What does the 'short-circuiting' behavior in AMPS filters ensure?",
+    "options": [
+      "That the server crashes if an error occurs.",
+      "That the right side of an OR is only evaluated if the left side is false.",
+      "That all parts of an expression are always evaluated.",
+      "That strings are always converted to numbers."
+    ],
+    "correctAnswer": "That the right side of an OR is only evaluated if the left side is false.",
+    "explanation": "Short-circuiting improves performance by avoiding unnecessary evaluations once the result is determined.",
+    "hints": [
+      "If the first part of an OR is true, do you need to check the second part?",
+      "It's a common optimization in programming languages."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-007",
+    "type": "mcq",
+    "question": "Which operator provides the best performance for checking a field against a list of specific values?",
+    "options": [
+      "LIKE",
+      "OR",
+      "IN",
+      "BETWEEN"
+    ],
+    "correctAnswer": "IN",
+    "explanation": "The IN operator is highly optimized in AMPS for set membership tests.",
+    "hints": [
+      "Which operator looks like '/state IN ('NY', 'NJ')'?",
+      "It's faster than multiple ORs."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-008",
+    "type": "mcq",
+    "question": "What happens if a comparison operator is applied to an array (e.g., `/arrayField = 5`)?",
+    "options": [
+      "It returns true only if the first element is 5.",
+      "It returns true if any element in the array is 5.",
+      "It returns an error because arrays cannot be compared.",
+      "It returns true only if every element in the array is 5."
+    ],
+    "correctAnswer": "It returns true if any element in the array is 5.",
+    "explanation": "AMPS comparison operators are 'array-aware' and evaluate every element in the array.",
+    "hints": [
+      "Is AMPS array-aware for comparisons?",
+      "Does it check one element or all elements?"
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-009",
+    "type": "mcq",
+    "question": "Which regex library does AMPS use for the LIKE operator?",
+    "options": [
+      "Java Regex",
+      "POSIX Regex",
+      "PCRE (Perl Compatible Regular Expressions)",
+      "Python Re"
+    ],
+    "correctAnswer": "PCRE (Perl Compatible Regular Expressions)",
+    "explanation": "AMPS uses the PCRE library, providing powerful and flexible pattern matching.",
+    "hints": [
+      "It starts with 'P'.",
+      "It's named after a popular scripting language."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "q002-010",
+    "type": "fill_blank",
+    "question": "The ______ function returns the first non-null value from a list of arguments.",
+    "correctAnswer": "COALESCE",
+    "explanation": "COALESCE is used to handle multiple optional fields or provide default values.",
+    "hints": [
+      "It's a standard SQL function for handling NULLs.",
+      "It starts with 'C' and ends with 'E'."
+    ],
+    "sourceModule": "module-002"
+  }
+]

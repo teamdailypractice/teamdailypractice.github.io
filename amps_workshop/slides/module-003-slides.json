@@ -1,0 +1,200 @@
+[
+  {
+    "moduleId": "module-003",
+    "slideNumber": 1,
+    "title": "Module 3: State of the World (SOW)",
+    "type": "title",
+    "content": [
+      "Mastering persistence and state in AMPS.",
+      "Understanding the SOW Database.",
+      "Querying and Atomic Subscriptions."
+    ],
+    "speakerNotes": "Welcome to Module 3. Today we're diving into the 'State of the World' or SOW, which is one of AMPS' most powerful features."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 2,
+    "title": "What is the SOW? 🗄️",
+    "type": "bullets",
+    "content": [
+      "SOW = State of the World.",
+      "A high-performance database within AMPS.",
+      "Stores the 'last value' for every unique message.",
+      "Enables applications to query current state immediately."
+    ],
+    "speakerNotes": "Think of the SOW as a real-time database. While pub/sub handles the stream, the SOW handles the state."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 3,
+    "title": "SOW vs. Pub/Sub 🔄",
+    "type": "bullets",
+    "content": [
+      "**Pub/Sub**: Ephemeral. You get messages only while you are connected.",
+      "**SOW**: Persistent. You can ask 'What is the current price of IBM?' at any time.",
+      "Use Pub/Sub for notifications; use SOW for state management."
+    ],
+    "speakerNotes": "Pub/sub is like a radio broadcast. SOW is like a library where you can look up the latest edition of a book."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 4,
+    "title": "SOW as a Last-Value Cache ⚡",
+    "type": "bullets",
+    "content": [
+      "Automatically updates existing records when a new message with the same key arrives.",
+      "Extremely low latency for both updates and queries.",
+      "Ideal for view servers and real-time dashboards."
+    ],
+    "speakerNotes": "In AMPS, every time a message is published to a SOW topic, AMPS checks if that record already exists. If it does, it updates it. If not, it creates it."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 5,
+    "title": "SOW as a Document Store 📄",
+    "type": "bullets",
+    "content": [
+      "Store full JSON or XML documents.",
+      "Query based on any field within the document.",
+      "No need for fixed schemas - it's flexible like a NoSQL store."
+    ],
+    "speakerNotes": "AMPS doesn't just store simple key-value pairs. It can store complex, nested documents and let you query them using XPath or SQL-92 filters."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 6,
+    "title": "SOW Keys: The Identity of a Message 🔑",
+    "type": "bullets",
+    "content": [
+      "Every SOW record must have a unique identifier called a **SOW Key**.",
+      "This key determines which record is updated during a publish.",
+      "AMPS uses this key to perform efficient lookups."
+    ],
+    "speakerNotes": "The SOW Key is the 'Primary Key' of your SOW topic. It's how AMPS knows that message A and message B are updates to the same object."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 7,
+    "title": "SOW Key Strategies 🧠",
+    "type": "bullets",
+    "content": [
+      "**Content-based**: AMPS calculates the key from one or more fields (e.g., `/orderId`).",
+      "**User-provided**: The publisher explicitly provides a key in the message header.",
+      "Most applications prefer content-based keys for simplicity."
+    ],
+    "speakerNotes": "With content-based keys, the publisher just sends data, and AMPS handles the identity. User-provided keys are useful when the identity isn't in the payload itself."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 8,
+    "title": "Visualizing SOW Key Calculation",
+    "type": "visual",
+    "content": [
+      "How AMPS processes an incoming message to find its SOW record."
+    ],
+    "mermaid": "graph LR\n  A[Incoming Message] --> B[Extract Key Field: /id]\n  B --> C[Compute Hash]\n  C --> D[SOW Key: 0x8660...]\n  D --> E{Record Exists?}\n  E -- Yes --> F[Update Record]\n  E -- No --> G[Insert New Record]",
+    "speakerNotes": "This diagram shows the flow. AMPS extracts the field, hashes it to create a SOW Key, and then decides whether to update or insert."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 9,
+    "title": "Configuring a SOW Topic 🛠️",
+    "type": "code",
+    "content": [
+      "<SOW>",
+      "  <Topic>",
+      "    <Name>Orders</Name>",
+      "    <MessageType>json</MessageType>",
+      "    <Key>/orderId</Key>",
+      "    <FileName>./sow/%n.sow</FileName>",
+      "  </Topic>",
+      "</SOW>"
+    ],
+    "speakerNotes": "This is a basic configuration. We name the topic, specify the format, define the key field, and provide a file path for persistence."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 10,
+    "title": "Key Configuration Fields 📝",
+    "type": "bullets",
+    "content": [
+      "**Topic**: The name of the SOW table.",
+      "**MessageType**: JSON, FIX, NVFIX, etc.",
+      "**Key**: The field(s) used to identify records.",
+      "**FileName**: Enables disk persistence (survives restarts)."
+    ],
+    "speakerNotes": "Notice the %n in the FileName - this is a macro that AMPS replaces with the topic name. Using FileName is critical if you want your data to be there after a server restart."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 11,
+    "title": "Querying the SOW: The 'sow' Command 🔍",
+    "type": "bullets",
+    "content": [
+      "Retrieves a point-in-time snapshot.",
+      "Returns all records matching the topic and filter.",
+      "The command completes once the results are sent."
+    ],
+    "speakerNotes": "Using the 'sow' command is like running a SELECT statement in SQL. You get the current data and the connection stays open, but the query is finished."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 12,
+    "title": "Filtering SOW Queries 🧪",
+    "type": "bullets",
+    "content": [
+      "**SQL-92**: `/price > 100 AND /symbol = 'AAPL'`",
+      "**Regular Expressions**: `/symbol LIKE '(?i)ibm'`",
+      "**XPath**: `/orders/item[1]/id = 50`"
+    ],
+    "speakerNotes": "AMPS filters are incredibly fast because AMPS builds internal indexes to speed up matching against the SOW."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 13,
+    "title": "Atomic Query and Subscribe ⚡",
+    "type": "bullets",
+    "content": [
+      "**Problem**: If you query then subscribe, you might miss messages that happen in between.",
+      "**Solution**: AMPS provides a single command to do both atomically.",
+      "Ensures no duplicates and no gaps."
+    ],
+    "speakerNotes": "This is a classic distributed systems problem. AMPS solves it by handling the registration and the snapshot in a single step on the server."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 14,
+    "title": "The 'sow_and_subscribe' Solution ✅",
+    "type": "bullets",
+    "content": [
+      "1. AMPS registers the subscription first.",
+      "2. AMPS then runs the SOW query.",
+      "3. Client receives the snapshot, followed by real-time updates."
+    ],
+    "speakerNotes": "To the application, this looks like one continuous stream of data starting with the current state."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 15,
+    "title": "Atomic Flow Diagram",
+    "type": "visual",
+    "content": [
+      "Eliminating race conditions with sow_and_subscribe."
+    ],
+    "mermaid": "sequenceDiagram\n  participant C as Client\n  participant S as AMPS Server\n  C->>S: sow_and_subscribe\n  Note over S: 1. Register Sub\n  S->>C: 2. Snapshot (Record 1)\n  S->>C: 2. Snapshot (Record 2)\n  Note right of S: Update Arrives\n  S->>C: 3. Real-time Update (Record 1 Updated)",
+    "speakerNotes": "Watch how the update is delivered immediately after the snapshot records, guaranteeing consistency."
+  },
+  {
+    "moduleId": "module-003",
+    "slideNumber": 16,
+    "title": "Module Summary 🏁",
+    "type": "bullets",
+    "content": [
+      "SOW provides last-value state and document storage.",
+      "Identity is managed via SOW Keys (Content or User).",
+      "Use `sow` for snapshots and `sow_and_subscribe` for real-time state.",
+      "Persistence is enabled via `FileName` in config."
+    ],
+    "speakerNotes": "That wraps up Module 3. You now know how to manage state in AMPS. Next, we'll look at how to use these features in your code!"
+  }
+]

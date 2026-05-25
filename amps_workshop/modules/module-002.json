@@ -1,0 +1,27 @@
+{
+  "moduleId": "module-002",
+  "title": "Pub/Sub & Content Filtering",
+  "sections": [
+    {
+      "title": "Topic Identifiers & Ad Hoc Topics",
+      "page": 20
+    },
+    {
+      "title": "Regular Expression Subscriptions",
+      "page": 22
+    },
+    {
+      "title": "Content Filtering Principles",
+      "page": 24
+    },
+    {
+      "title": "AMPS Expressions & Syntax",
+      "page": 144
+    },
+    {
+      "title": "Data Types & Operators",
+      "page": 149
+    }
+  ],
+  "assets": []
+}

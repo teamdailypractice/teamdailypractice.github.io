@@ -1,0 +1,192 @@
+[
+  {
+    "moduleId": "module-009",
+    "slideNumber": 1,
+    "title": "Module 9: Security & Entitlements 🛡️",
+    "type": "title",
+    "content": [
+      "Welcome to Module 9!",
+      "In this session, we will explore how AMPS keeps your data safe and ensures that only the right people have access to the right resources.",
+      "Topic coverage:",
+      "• Authentication & Logon",
+      "• Resource Entitlements",
+      "• Content-Based Security",
+      "• Field-Level Security",
+      "• Enterprise Integration Modules"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 2,
+    "title": "The Security Trinity 🔒",
+    "type": "content",
+    "content": [
+      "AMPS security is built on three pillars:",
+      "1. **Authentication**: Who are you? (Identity Verification)",
+      "2. **Entitlement**: What are you allowed to do? (Access Control)",
+      "3. **Encryption**: Keeping data private in transit (TLS/SSL)",
+      "Built with a plugin-based architecture for maximum flexibility! 🔌"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 3,
+    "title": "Authentication Flow 🔑",
+    "type": "diagram",
+    "content": [
+      "How AMPS verifies your identity when you connect."
+    ],
+    "mermaid": "sequenceDiagram\n    participant Client\n    participant AMPS\n    participant AuthModule\n    participant IDP as Identity Provider\n\n    Client->>AMPS: Connect & Logon(user, pass)\n    AMPS->>AuthModule: authenticate(user, pass)\n    AuthModule->>IDP: Validate Credentials\n    IDP-->>AuthModule: Success/Fail\n    AuthModule-->>AMPS: Authenticated User Context\n    AMPS-->>Client: Logon Acknowledged"
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 4,
+    "title": "Logon Methods: Explicit vs. Implicit 📋",
+    "type": "content",
+    "content": [
+      "**Explicit Logon**: The client sends a `logon` command with credentials immediately after connecting. (Recommended! ✅)",
+      "**Implicit Logon**: The client sends a command (like `subscribe`) without logging in first. AMPS tries to authenticate with an empty username/password.",
+      "⚠️ Implicit logon is **disabled by default** in modern AMPS for better security."
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 5,
+    "title": "Entitlements Overview 🚦",
+    "type": "content",
+    "content": [
+      "Entitlements are the 'Gatekeepers' of AMPS.",
+      "They control access to every operation:",
+      "• Can this user subscribe to this topic?",
+      "• Can they publish to that queue?",
+      "• Are they allowed to see the admin console?",
+      "Checked at the start of a command and cached for performance! ⚡"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 6,
+    "title": "Resource Types & Permissions 🎫",
+    "type": "content",
+    "content": [
+      "AMPS categorizes resources into four main types:",
+      "• **logon**: Permission to enter the system.",
+      "• **topic**: Access to message data (read/write).",
+      "• **admin**: Access to statistics and management commands.",
+      "• **replication_logon**: Permission for other AMPS instances to connect.",
+      "Permissions can be `read`, `write`, or `none`."
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 7,
+    "title": "Entitlement Check Flow 🔄",
+    "type": "diagram",
+    "content": [
+      "AMPS checks permissions for every resource access."
+    ],
+    "mermaid": "graph TD\n    A[Client Request] --> B{In Cache?}\n    B -- Yes --> C[Apply Cached Result]\n    B -- No --> D[Call Entitlement Module]\n    D --> E{Allowed?}\n    E -- Yes --> F[Cache & Execute]\n    E -- No --> G[Reject Request]\n    F --> H[Apply Content Filters/Select Lists]"
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 8,
+    "title": "Content-Based Security 🔍",
+    "type": "content",
+    "content": [
+      "Restrict visibility at the **record level** using filter predicates.",
+      "Example: A user can only see orders where `/Region == 'EMEA'`.",
+      "• Enforced by the server on every message.",
+      "• Completely transparent to the application.",
+      "• Allows multi-tenant topics where users only see 'their' data. 🏘️"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 9,
+    "title": "Field-Level Security 🙈",
+    "type": "content",
+    "content": [
+      "Hide sensitive data using **Select Lists**.",
+      "Example: Strip the `/CreditCardNumber` field from messages for regular users, but keep it for the Billing service.",
+      "• `-/CC_Number` -> Removes the field.",
+      "• `+/ID, +/Price` -> Only includes specified fields.",
+      "Privacy by design! 🕵️"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 10,
+    "title": "Enterprise Integration Modules 🏢",
+    "type": "content",
+    "content": [
+      "AMPS doesn't just do 'simple' auth; it scales to the enterprise:",
+      "• **Multimethod**: Integrates with LDAP and Kerberos. 🛡️",
+      "• **OAuth**: Modern web-scale authentication. 🌐",
+      "• **RESTful (HTTP)**: Ask an external web service for permissions. 🌍",
+      "• **Simple Access**: Regex-based allow/deny lists for easy setup."
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 11,
+    "title": "Protecting Data in Transit: TLS/SSL 🚄",
+    "type": "content",
+    "content": [
+      "Encryption is vital for security over untrusted networks.",
+      "• Standard TLS/SSL for client-server links.",
+      "• **Mutual TLS (mTLS)**: Server verifies the client's certificate too! 🤝",
+      "• Independent of the Auth/Entitlement system – defense in depth."
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 12,
+    "title": "Outbound Security & Authenticators 📤",
+    "type": "content",
+    "content": [
+      "AMPS itself needs to 'log on' to other systems (like for replication).",
+      "**Authenticators** handle this:",
+      "• Provide credentials to downstream instances.",
+      "• Can run external commands to fetch tokens.",
+      "• Supports Kerberos and LDAP for outbound links."
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 13,
+    "title": "Best Practices for AMPS Security 🏆",
+    "type": "content",
+    "content": [
+      "• **Use Explicit Logon**: Always know who is connecting.",
+      "• **Enable TLS**: Never send sensitive data in the clear.",
+      "• **Least Privilege**: Only grant the permissions needed for the job.",
+      "• **Regularly Reset Caches**: Ensure permission changes take effect.",
+      "• **Monitor Admin Access**: The admin console is powerful – protect it! ⚡"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 14,
+    "title": "Summary & Key Takeaways 📝",
+    "type": "content",
+    "content": [
+      "• Security is baked into the core of AMPS, not an afterthought.",
+      "• Plugins allow integration with ANY enterprise system.",
+      "• Content and Field-level security provide fine-grained control.",
+      "• A secure AMPS instance is a happy (and compliant) instance! 😊"
+    ]
+  },
+  {
+    "moduleId": "module-009",
+    "slideNumber": 15,
+    "title": "Hands-on Exercise: Coming Up! 🛠️",
+    "type": "content",
+    "content": [
+      "Next, we will practice:",
+      "1. Configuring a basic authentication module.",
+      "2. Setting up topic-level entitlements.",
+      "3. testing content-based filters for sensitive data.",
+      "Get ready to lock it down! 🔐"
+    ]
+  }
+]

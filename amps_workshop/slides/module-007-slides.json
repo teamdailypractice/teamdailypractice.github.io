@@ -1,0 +1,198 @@
+[
+  {
+    "moduleId": "module-007",
+    "slideNumber": 1,
+    "title": "Module 7: High Availability & Replication",
+    "type": "title",
+    "content": [
+      "Ensuring 24/7 Uptime with AMPS 🛡️",
+      "Understanding Replication and Failover"
+    ],
+    "speakerNotes": "Welcome to Module 7. Today we're diving into the 'heart' of AMPS reliability: High Availability and Replication."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 2,
+    "title": "Why High Availability?",
+    "type": "bullets",
+    "content": [
+      "Hardware fails, networks glitch, and sites go dark. 💥",
+      "Business-critical data needs to be available regardless.",
+      "AMPS provides 'Always On' capabilities through:",
+      "  - Persistent Transaction Logging 📜",
+      "  - Real-time Integrated Replication 🔄",
+      "  - Automatic Client Failover ⚡"
+    ],
+    "speakerNotes": "High availability isn't just about the server; it's about the entire ecosystem working together to mask failures from the end-user."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 3,
+    "title": "The Core Architecture: Peer-to-Peer",
+    "type": "bullets",
+    "content": [
+      "No single point of failure (No controller/quorum nodes).",
+      "Leaderless: Every node is 'hot' and processes independently. 🔥",
+      "Replication is point-to-point and unidirectional by default.",
+      "Bidirectional replication creates a Hot-Hot pair."
+    ],
+    "speakerNotes": "Unlike some systems that rely on a central 'zoo-keeper' or 'orchestrator', AMPS nodes are independent peers. This simplifies deployment and increases resilience."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 4,
+    "title": "Replication Topologies: Pair (Hot-Hot)",
+    "type": "diagram",
+    "content": [
+      "Standard failover configuration.",
+      "Two instances (Group A) replicating to each other.",
+      "Clients can connect to either instance."
+    ],
+    "mermaid": "graph LR\n  A[Instance 1] <-->|Sync Replication| B[Instance 2]\n  C[Client] --> A\n  C -.->|Failover| B",
+    "speakerNotes": "The Pair topology is the bread and butter of AMPS HA. Usually configured with Synchronous replication."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 5,
+    "title": "Replication Topologies: Hub and Spoke (Star)",
+    "type": "diagram",
+    "content": [
+      "Scaling out to hundreds of downstream consumers.",
+      "Ingestion Tier -> Hub Tier -> Application Tier.",
+      "Hubs act as pure distributors (no SOW, usually)."
+    ],
+    "mermaid": "graph LR\n  I[Ingestion] --> H[Hub]\n  H --> S1[Spoke 1]\n  H --> S2[Spoke 2]\n  H --> S3[Spoke 3]",
+    "speakerNotes": "Hub and Spoke is ideal for distributing data to different regions or departments without putting load on the ingestion servers."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 6,
+    "title": "Replication Topologies: Mesh",
+    "type": "diagram",
+    "content": [
+      "Highly interconnected network.",
+      "Uses PassThrough replication to forward data.",
+      "Multiple paths for redundancy. 🕸️"
+    ],
+    "mermaid": "graph TD\n  A <--> B\n  B <--> C\n  C <--> A\n  A <--> D\n  D <--> B",
+    "speakerNotes": "Mesh topologies provide maximum redundancy but require careful configuration of PassThrough rules to avoid infinite loops."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 7,
+    "title": "Sync vs. Async Replication",
+    "type": "bullets",
+    "content": [
+      "**Sync (Synchronous):** 🤝",
+      "  - Publisher waits for ACK from ALL sync destinations.",
+      "  - Zero data loss guarantee during failover.",
+      "**Async (Asynchronous):** 🚀",
+      "  - Publisher gets ACK as soon as the message is local.",
+      "  - High performance, suitable for DR sites."
+    ],
+    "speakerNotes": "Choose Sync for local HA pairs and Async for remote Disaster Recovery sites where latency might be high."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 8,
+    "title": "Failover: The 'Self-Healing' Instance",
+    "type": "bullets",
+    "content": [
+      "AMPS instances are aware of what they've missed.",
+      "**Resynchronization (Resync):** On reconnect, the source replays missed journals.",
+      "Uses `/AMPS/Tx/Checkpoint` to find the exact restart point.",
+      "Ensures the transaction log is eventually consistent. 🩹"
+    ],
+    "speakerNotes": "Resync happens automatically. You don't need to manually restore backups or 'sync' files."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 9,
+    "title": "Client Failover: HAClient",
+    "type": "bullets",
+    "content": [
+      "The AMPS Client Libraries (Java, C++, Python, etc.) handle the heavy lifting.",
+      "**HAClient Features:**",
+      "  - Automatic Reconnection.",
+      "  - Subscription Recovery.",
+      "  - Duplicate Suppression using Sequence Numbers."
+    ],
+    "speakerNotes": "By using the HAClient class, your application code stays simple while AMPS manages the network complexity."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 10,
+    "title": "Bookmark Subscriptions: Resume Anywhere",
+    "type": "bullets",
+    "content": [
+      "Subscriptions can survive both client and server restarts.",
+      "Client stores the last seen 'Bookmark'.",
+      "On reconnect, client says: 'Start from Bookmark X'.",
+      "AMPS replays exactly what was missed. 📑"
+    ],
+    "speakerNotes": "Bookmarks are the key to durable subscriptions. They work across any instance in the replication group."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 11,
+    "title": "Transactional Integrity: Sequence Numbers",
+    "type": "bullets",
+    "content": [
+      "Every message has a **Client Name** + **Sequence Number**.",
+      "Prevents duplicates if a publisher resends during failover.",
+      "AMPS 'Duplicate Detection' ensures one record in the SOW. ✅"
+    ],
+    "speakerNotes": "Sequence numbers ensure that even if a publisher 'blindly' resends, the system stays consistent."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 12,
+    "title": "Replicating the SOW",
+    "type": "bullets",
+    "content": [
+      "SOW caches are replicated command-by-command.",
+      "Replicates `publish`, `delta_publish`, and `sow_delete`.",
+      "Ensures real-time query results are identical on all nodes. 📂"
+    ],
+    "speakerNotes": "When you update a SOW record, the 'delta' or 'publish' is sent across the wire, updating all mirrored SOW files."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 13,
+    "title": "Replicating Queues: Ownership",
+    "type": "bullets",
+    "content": [
+      "Queues are tricky: Only one person can process a message! ☝️",
+      "**Message Ownership:** The instance that received the publish 'owns' the message.",
+      "Only the owner delivers to its local subscribers.",
+      "Other nodes can 'request' ownership if they have idle workers."
+    ],
+    "speakerNotes": "Queue replication ensures that delivery guarantees are maintained even in a distributed cluster."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 14,
+    "title": "Disaster Recovery: Proxied Transfer",
+    "type": "bullets",
+    "content": [
+      "What if the owner of a queue message goes offline? 😱",
+      "**Proxied Transfer:** Allows another instance to 'proxy' the ownership.",
+      "Ensures queue messages don't get 'stuck' on a dead server.",
+      "Used for temporary recovery during site failures."
+    ],
+    "speakerNotes": "Proxied transfer is a powerful DR tool for queues, allowing work to continue even if the original ingestion site is gone."
+  },
+  {
+    "moduleId": "module-007",
+    "slideNumber": 15,
+    "title": "Best Practices for HA",
+    "type": "bullets",
+    "content": [
+      "1. Always use unique **Client Names**. 🆔",
+      "2. Use **Sync** replication for failover partners.",
+      "3. Enable **PassThrough** for cluster-wide visibility.",
+      "4. Monitor your replication latency using the Admin console. 📊"
+    ],
+    "speakerNotes": "Following these rules will save you from common headaches like message loss or split-brain scenarios."
+  }
+]

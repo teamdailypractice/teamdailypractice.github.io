@@ -1,0 +1,33 @@
+{
+  "moduleId": "module-010",
+  "title": "Module 10: Client Development & Best Practices",
+  "sections": [
+    {
+      "title": "Client SDK Overview",
+      "content": "AMPS provides high-performance SDKs for major programming languages, including Java, C#/.NET, C++, Python, JavaScript (Node.js/Browser), and Go. These SDKs are designed to be thin wrappers around the AMPS protocol, ensuring minimal overhead. The two most critical interfaces for any developer are the `Command` interface (used to send requests like `subscribe`, `sow`, or `publish`) and the `Message` interface (used to process incoming data and metadata)."
+    },
+    {
+      "title": "Programming Patterns",
+      "content": "Developing with AMPS involves several core patterns: 1. Asynchronous Callbacks: Processing messages in a background thread to avoid blocking the main application. 2. Exception Handling: Properly catching and responding to connection drops or entitlement errors. 3. HA Connection Management: Utilizing the `HAClient` to automatically handle server failover, reconnection, and bookmark resynchronization."
+    },
+    {
+      "title": "Performance Tuning",
+      "content": "To achieve microsecond latencies, AMPS and its clients must be tuned for the hardware. Key techniques include CPU pinning (binding threads to specific cores to avoid context switches) and NUMA awareness (ensuring memory is allocated close to the CPU core processing the data). Disk I/O should be optimized using XFS filesystems and SSD/NVMe storage for transaction logs."
+    },
+    {
+      "title": "OS Tuning for Low Latency",
+      "content": "The underlying operating system plays a critical role. Disabling Transparent Huge Pages (THP) is often recommended to prevent unpredictable memory allocation latencies. TCP stack tuning—such as adjusting `TCP_NODELAY`, `SO_RCVBUF`, and `SO_SNDBUF`—ensures that small messages are delivered immediately without buffering."
+    },
+    {
+      "title": "Deployment Checklist",
+      "content": "Before going live, every AMPS deployment should undergo a validation checklist: verify NUMA layout, test HA failover scenarios, validate disk throughput with `fio` or AMPS utilities, and ensure monitoring (Galvanometer/Restful API) is active and integrated with enterprise alerts."
+    }
+  ],
+  "assets": [
+    {
+      "id": "client-ha-flow",
+      "type": "diagram",
+      "description": "Client-Server HA Reconnection Flow"
+    }
+  ]
+}

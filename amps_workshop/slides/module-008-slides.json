@@ -1,0 +1,193 @@
+[
+  {
+    "moduleId": "module-008",
+    "slideNumber": 1,
+    "title": "Module 8: Administration & Monitoring",
+    "type": "title",
+    "content": [
+      "Ensuring health, performance, and visibility in AMPS 🛠️",
+      "Overview of the AMPS monitoring ecosystem"
+    ],
+    "speakerNotes": "Welcome to Module 8. Today we focus on how to keep your AMPS instance running smoothly and how to peek inside the engine using the built-in monitoring tools."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 2,
+    "title": "Why Monitoring Matters",
+    "type": "bullet_points",
+    "content": [
+      "Visibility into real-time performance ⚡",
+      "Historical analysis for capacity planning 📈",
+      "Rapid troubleshooting of client connectivity 🔍",
+      "Proactive alerting on resource exhaustion 🚨"
+    ],
+    "speakerNotes": "Without monitoring, you're flying blind. AMPS is designed for low latency, so even small deviations in performance can be critical."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 3,
+    "title": "The AMPS Monitoring Stack",
+    "type": "diagram",
+    "content": [
+      "AMPS provides multiple ways to consume health data:"
+    ],
+    "mermaid": "graph TD\n    A[AMPS Engine] --> B[Stats Database (stats.db)]\n    B --> C[REST API (/amps)]\n    C --> D[Galvanometer (Web UI)]\n    A --> E[Event Logs (Files/Syslog)]\n    A --> F[Internal Topics (/AMPS/.*)]",
+    "speakerNotes": "The statistics flow from the engine to a SQLite database, which is exposed via REST, and finally visualized in the Galvanometer."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 4,
+    "title": "The Galvanometer (Web UI)",
+    "type": "bullet_points",
+    "content": [
+      "Built-in graphical dashboard 📊",
+      "No separate installation required (bundled with server)",
+      "Access via browser: `http://<host>:<admin_port>/`",
+      "Real-time visibility into CPU, memory, and message rates"
+    ],
+    "speakerNotes": "The Galvanometer is your first stop for a quick health check. It's a JavaScript app served directly by AMPS."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 5,
+    "title": "Galvanometer Features",
+    "type": "bullet_points",
+    "content": [
+      "**Topic Browser**: Query/Subscribe to any topic directly 🔍",
+      "**Client View**: Monitor every connected client 👥",
+      "**Replication Graph**: Visualize your cluster topology 🌐",
+      "**Grid Display**: Inspect SOW records in real-time"
+    ],
+    "speakerNotes": "One of the most powerful features is the Topic Browser. It allows you to verify data flow without writing a single line of client code."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 6,
+    "title": "RESTful Statistics Interface",
+    "type": "bullet_points",
+    "content": [
+      "Root URI: `http://<host>:<port>/amps` 🕸️",
+      "Machine-readable formats: **JSON, XML, CSV**",
+      "Hierarchical endpoints: `/host`, `/instance`, `/administration`"
+    ],
+    "speakerNotes": "If you want to integrate AMPS with external tools like Prometheus or Grafana, the REST API is the way to do it."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 7,
+    "title": "Time Range Queries",
+    "type": "code_sample",
+    "content": [
+      "Access historical data using `t0` and `t1` parameters:",
+      "`/amps/instance/processors/all/messages_received_per_sec.json?t0=20231027T000000`"
+    ],
+    "speakerNotes": "You can pull historical trends directly from the REST API. All timestamps must be in UTC ISO-8601 format."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 8,
+    "title": "Statistics Database (stats.db)",
+    "type": "bullet_points",
+    "content": [
+      "Internal SQLite database 🗄️",
+      "Stores historical metrics snapshots",
+      "Configured in `<Admin>` block using `<FileName>`",
+      "Allows deep analysis using standard SQL tools"
+    ],
+    "speakerNotes": "By default, stats are in memory. For production, ALWAYS persist them to a file so you can analyze crashes or performance spikes after a restart."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 9,
+    "title": "Configuring Administration",
+    "type": "code_sample",
+    "content": [
+      "Example `<Admin>` configuration:",
+      "```xml",
+      "<Admin>",
+      "  <InetAddr>8085</InetAddr>",
+      "  <FileName>./stats.db</FileName>",
+      "  <Interval>5s</Interval>",
+      "  <SQLTransport>websocket-any</SQLTransport>",
+      "</Admin>",
+      "```"
+    ],
+    "speakerNotes": "The SQLTransport element is crucial—it tells the Galvanometer which transport to use for its built-in query tools."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 10,
+    "title": "Event Logging Overview",
+    "type": "bullet_points",
+    "content": [
+      "Rich logging framework 📝",
+      "Multiple targets: File, Stdout, Syslog",
+      "Supports compression (`gzip` protocol)",
+      "Uniquely identified messages (`CC-NNNN`)"
+    ],
+    "speakerNotes": "Logging is your trail of breadcrumbs. Every message has a unique ID, making it easy to search for specific events."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 11,
+    "title": "Log Levels & Filtering",
+    "type": "bullet_points",
+    "content": [
+      "**trace**: All inbound/outbound data (verbose!)",
+      "**info**: General operation status (production default)",
+      "**warning**: Non-fatal issues",
+      "**error**: Operation failures",
+      "**critical/emergency**: System-level failure"
+    ],
+    "speakerNotes": "Be careful with 'trace' in production—it logs every single message and can fill up your disks very quickly."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 12,
+    "title": "Log Rotation & Formatting",
+    "type": "bullet_points",
+    "content": [
+      "**RotationThreshold**: Rotate logs by size (e.g., `100MB`) 🔄",
+      "**Filename Masks**: Use `%Y`, `%m`, `%d`, `%n` for automated naming",
+      "**Filtering**: Use `<IncludeErrors>` or `<ExcludeErrors>` to tune output"
+    ],
+    "speakerNotes": "Log rotation prevents a single file from consuming all disk space. The '%n' mask is useful for creating a sequence of numbered log files."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 13,
+    "title": "Monitoring Topics (/AMPS/ClientStatus)",
+    "type": "bullet_points",
+    "content": [
+      "Internal event stream for client activity 🔔",
+      "Events: `logon`, `subscribe`, `disconnect`, `sow_query`",
+      "Allows applications to react to peer status changes"
+    ],
+    "speakerNotes": "The ClientStatus topic is essentially 'AMPS meta-messaging'. You can write apps that alert you whenever a critical publisher disconnects."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 14,
+    "title": "Monitoring Topics (/AMPS/SOWStats)",
+    "type": "bullet_points",
+    "content": [
+      "Snapshot of SOW topic health 📊",
+      "Fields: `topic`, `message_type`, `record_count`, `timestamp`",
+      "Enabled via `<SOWStatsInterval>`"
+    ],
+    "speakerNotes": "SOWStats is great for monitoring the 'fullness' of your cache. If record counts spike unexpectedly, you might have a logic error in your publishers."
+  },
+  {
+    "moduleId": "module-008",
+    "slideNumber": 15,
+    "title": "Module Summary",
+    "type": "bullet_points",
+    "content": [
+      "Use **Galvanometer** for daily checks and ad-hoc queries 🛠️",
+      "Use **REST API** for automation and tool integration 🤖",
+      "Always persist **stats.db** and rotate **logs** 🛡️",
+      "Subscribe to **/AMPS/** topics for real-time reactive monitoring 📡"
+    ],
+    "speakerNotes": "That concludes Module 8. You now have the tools to ensure your AMPS deployment remains healthy and observable."
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "moduleId": "M1",
+    "slideNumber": 1,
+    "title": "Module 1: Introduction & Getting Started",
+    "type": "title",
+    "content": [
+      "Welcome to the AMPS Workshop! 🚀",
+      "Advanced Message Processing System",
+      "A Guide for Modern Data-Intensive Applications"
+    ],
+    "speakerNotes": "Welcome everyone! Today we start our journey with AMPS. We'll cover what it is, why it's different, and how to get it running."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 2,
+    "title": "What is AMPS?",
+    "type": "content",
+    "content": [
+      "• **Nontraditional Approach**: Built for streaming data and parallelized multicore systems.",
+      "• **Versatility**: Cuts across traditional boundaries of databases, messaging, and analytics.",
+      "• **Focus**: Performance, low latency, and ease of use. ⚡",
+      "• **Engineered for scale**: Handles the most demanding workloads on the planet."
+    ],
+    "speakerNotes": "AMPS stands for Advanced Message Processing System. It's not just a message bus; it's a platform that combines messaging, storage, and real-time analytics."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 3,
+    "title": "Common Use Cases",
+    "type": "content",
+    "content": [
+      "AMPS is the backbone for:",
+      "• **Trade Plant Operations**: Backtesting & Analysis 📈",
+      "• **Risk Calculations**: Real-time sensitivity ⚡",
+      "• **Elastic Worker Farms**: Competitive consumption 🚜",
+      "• **View Servers**: Aggregating data for UIs 🖥️",
+      "• **Message Flow Integration**: High-performance 'shock absorbers' 🛡️"
+    ],
+    "speakerNotes": "You'll find AMPS in top-tier financial institutions and tech companies where every microsecond counts."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 4,
+    "title": "AMPS Core Components",
+    "type": "diagram",
+    "content": [
+      "Three pillars of AMPS functionality:"
+    ],
+    "mermaid": "graph TD\n    A[AMPS Engine] --> B[Messaging Hub]\n    A --> C[SOW Database]\n    A --> D[Aggregation Engine]\n    B --> B1[Pub/Sub]\n    B --> B2[Queuing]\n    C --> C1[Current Value Cache]\n    D --> D1[Real-time Analytics]",
+    "speakerNotes": "AMPS integrates messaging, state (SOW), and analytics (CEP) into a single, highly optimized engine."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 5,
+    "title": "Feature Highlights: Pub/Sub & Filtering",
+    "type": "content",
+    "content": [
+      "• **Topic-Based Pub/Sub**: Support for literal names and Regular Expressions.",
+      "• **Content Filtering**: Subscribe to a topic with a `WHERE` clause.",
+      "• **Decoupling**: Publishers don't need to know what subscribers want.",
+      "• **Precision**: Only receive actionable messages. 🎯"
+    ],
+    "speakerNotes": "Content filtering is a 'killer feature' of AMPS. It uses SQL-92 and XPath to let subscribers pick exactly what they need."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 6,
+    "title": "The SOW (State of the World)",
+    "type": "content",
+    "content": [
+      "• **Integrated Database**: Persists the most recent update for each unique record.",
+      "• **High Performance**: NoSQL document store capability. 🌎",
+      "• **Atomic Query & Subscribe**: Get initial state AND live updates in one step.",
+      "• **Delta Updates**: Send/Receive only the fields that changed. 📉"
+    ],
+    "speakerNotes": "SOW is like a database table that's always live. It's built for speed and scales with your hardware."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 7,
+    "title": "The Transaction Log",
+    "type": "content",
+    "content": [
+      "• **Record & Replay**: A journal of all incoming messages. 📖",
+      "• **Full Fidelity**: Replay exactly what happened, in the same order.",
+      "• **Durable Subscriptions**: Resume after failure without missing a beat.",
+      "• **Backtesting**: Speed up history for analysis. ⏩"
+    ],
+    "speakerNotes": "The Transaction Log is the source of truth. It enables replication, message queues, and historical analysis."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 8,
+    "title": "Installation: Easy as Unzip",
+    "type": "content",
+    "content": [
+      "• **Platform**: 64-bit Linux (Kernel 2.6+). 🐧",
+      "• **No Dependencies**: Everything needed is in the package.",
+      "• **Environment**: Referred to as `$AMPSDIR`.",
+      "• **Unpacking**: `tar -xzf amps-5.3.5.tar.gz` 📦"
+    ],
+    "speakerNotes": "Installation is simple. Just unpack it. No complex package management required for the server itself."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 9,
+    "title": "$AMPSDIR Structure",
+    "type": "content",
+    "content": [
+      "• `/bin`: `ampServer`, `spark`, and other utilities.",
+      "• `/docs`: Documentation and guides.",
+      "• `/lib`: Shared libraries.",
+      "• `/sdk`: Extension API for custom message types and actions. 🛠️"
+    ],
+    "speakerNotes": "Knowing where things are is the first step. The 'bin' folder is where the action happens."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 10,
+    "title": "Starting the Server",
+    "type": "content",
+    "content": [
+      "1. **Generate Config**:",
+      "   `./bin/ampServer --sample-config > amps_config.xml` 📝",
+      "2. **Launch Server**:",
+      "   `./bin/ampServer amps_config.xml` ⚙️",
+      "3. **Verify**: Look for the 'Congratulations' message in the terminal! 🎉"
+    ],
+    "speakerNotes": "The sample config is a great starting point. It enables basic Pub/Sub and the monitoring interface."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 11,
+    "title": "JSON Primer: The Language of AMPS",
+    "type": "content",
+    "content": [
+      "• **Objects**: `{ \"id\": 101, \"symbol\": \"IBM\" }`",
+      "• **Arrays**: `[ \"buy\", \"sell\", \"hold\" ]`",
+      "• **Hierarchical**: Nest objects and arrays as needed.",
+      "• **Readable**: Easy for humans to read, easy for machines to parse. 📄"
+    ],
+    "speakerNotes": "While AMPS supports FIX, XML, and Binary, JSON is used for most examples due to its simplicity."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 12,
+    "title": "The AMPS Protocol (JSON)",
+    "type": "content",
+    "content": [
+      "Commands to AMPS are also formatted as JSON headers:",
+      "• **Header**: `{\"c\":\"publish\",\"t\":\"test\"}`",
+      "• **Payload**: `{\"note\":\"Hello!\"}`",
+      "• **Combined**: Header + Payload",
+      "• **Note**: The client libraries handle this for you! 🛡️"
+    ],
+    "speakerNotes": "The header contains the command ('c') and topic ('t'). You rarely have to build these by hand; the SDKs do it for you."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 13,
+    "title": "Spark CLI: Your Swiss Army Knife",
+    "type": "content",
+    "content": [
+      "• **What is it?**: A Java-based command line client included with AMPS.",
+      "• **Ping**: `spark ping -server localhost:9007` 📡",
+      "• **Purpose**: Ad hoc testing, diagnostics, and simple scripting.",
+      "• **Tip**: Requires Java 1.7+ on your system. ☕"
+    ],
+    "speakerNotes": "Spark is the first tool you'll use to test your connection. It's powerful for quick checks."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 14,
+    "title": "Publish & Subscribe with Spark",
+    "type": "content",
+    "content": [
+      "• **Subscribe**:",
+      "   `spark subscribe -topic test -type json` 📥",
+      "• **Publish**:",
+      "   `echo '{\"msg\":\"hi\"}' | spark publish -topic test` 📤",
+      "• **Decoupled**: Try starting the subscriber first, then publish! 🔄"
+    ],
+    "speakerNotes": "This is the most basic interaction. Start a subscriber in one terminal and publish from another."
+  },
+  {
+    "moduleId": "M1",
+    "slideNumber": 15,
+    "title": "Module 1 Summary",
+    "type": "content",
+    "content": [
+      "• AMPS is a high-performance messaging and storage platform. 🚀",
+      "• Features include Pub/Sub, SOW, Queues, and Replay. 🌎",
+      "• Runs on Linux with zero external dependencies. 🐧",
+      "• Configuration via XML; Messaging often via JSON. 📄",
+      "• Use `spark` for ad hoc testing. ⚡"
+    ],
+    "speakerNotes": "We've covered the basics. Next, we'll dive deeper into SOW and content filtering!"
+  }
+]

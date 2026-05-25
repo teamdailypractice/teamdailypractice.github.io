@@ -1,0 +1,849 @@
+[
+  {
+    "questionId": "FINAL-M1-Q9",
+    "type": "mcq",
+    "question": "What is the primary purpose of the AMPS 'Transaction Log'?",
+    "options": [
+      "To store user passwords",
+      "To record and replay message streams",
+      "To provide a GUI for monitoring",
+      "To compress network traffic"
+    ],
+    "correctAnswer": "To record and replay message streams",
+    "explanation": "The Transaction Log is a persistent journal of messages used for replay, replication, and high availability.",
+    "hints": [
+      "It acts like a black box for messages.",
+      "Think 'Record and Replay'."
+    ],
+    "sourceModule": "M1",
+    "concept": "Features"
+  },
+  {
+    "questionId": "FINAL-M1-Q1",
+    "type": "mcq",
+    "question": "What does AMPS stand for?",
+    "options": [
+      "Advanced Message Processing System",
+      "Automated Message Publishing Service",
+      "Asynchronous Message Processing Software",
+      "Advanced Multicore Processing System"
+    ],
+    "correctAnswer": "Advanced Message Processing System",
+    "explanation": "AMPS is the 'Advanced Message Processing System' from 60East Technologies.",
+    "hints": [
+      "The 'A' stands for Advanced.",
+      "The 'P' stands for Processing."
+    ],
+    "sourceModule": "M1",
+    "concept": "Introduction"
+  },
+  {
+    "questionId": "FINAL-M1-Q10",
+    "type": "fill_blank",
+    "question": "To test connectivity to an AMPS server using spark, you use the _____ command.",
+    "correctAnswer": "ping",
+    "explanation": "The `spark ping` command is the standard way to verify that a server is reachable and responding.",
+    "hints": [
+      "Similar to the network utility.",
+      "It's a 4-letter word."
+    ],
+    "sourceModule": "M1",
+    "concept": "Spark CLI"
+  },
+  {
+    "questionId": "FINAL-M1-Q8",
+    "type": "mcq",
+    "question": "Which utility provides a command-line interface for ad hoc testing and diagnostics?",
+    "options": [
+      "ampserr",
+      "spark",
+      "galvanometer",
+      "amps-grep"
+    ],
+    "correctAnswer": "spark",
+    "explanation": "`spark` is the versatile CLI client included in the `bin` directory for basic operations.",
+    "hints": [
+      "It's a bright idea.",
+      "It starts with 's'."
+    ],
+    "sourceModule": "M1",
+    "concept": "Spark CLI"
+  },
+  {
+    "questionId": "FINAL-M1-Q4",
+    "type": "mcq",
+    "question": "What is the name of the main AMPS server binary?",
+    "options": [
+      "amps-engine",
+      "ampServer",
+      "spark",
+      "ampsd"
+    ],
+    "correctAnswer": "ampServer",
+    "explanation": "The main server process is named `ampServer` and is found in the `bin` directory.",
+    "hints": [
+      "It combines 'amp' and 'Server'.",
+      "It's camelCased."
+    ],
+    "sourceModule": "M1",
+    "concept": "Starting AMPS"
+  },
+  {
+    "questionId": "FINAL-q002-006",
+    "type": "mcq",
+    "question": "What does the 'short-circuiting' behavior in AMPS filters ensure?",
+    "options": [
+      "That the server crashes if an error occurs.",
+      "That the right side of an OR is only evaluated if the left side is false.",
+      "That all parts of an expression are always evaluated.",
+      "That strings are always converted to numbers."
+    ],
+    "correctAnswer": "That the right side of an OR is only evaluated if the left side is false.",
+    "explanation": "Short-circuiting improves performance by avoiding unnecessary evaluations once the result is determined.",
+    "hints": [
+      "If the first part of an OR is true, do you need to check the second part?",
+      "It's a common optimization in programming languages."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "FINAL-q002-001",
+    "type": "mcq",
+    "question": "What is an 'Ad Hoc' topic in AMPS?",
+    "options": [
+      "A topic that must be pre-configured in the XML file.",
+      "A topic created automatically when a message is published to it.",
+      "A topic that only supports XML messages.",
+      "A topic used exclusively for internal monitoring."
+    ],
+    "correctAnswer": "A topic created automatically when a message is published to it.",
+    "explanation": "Ad Hoc topics in AMPS allow for basic Pub/Sub without any prior server configuration.",
+    "hints": [
+      "Does AMPS require you to define every topic name in advance?",
+      "Think about 'on-the-fly' topic creation."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "FINAL-q002-005",
+    "type": "true_false",
+    "question": "A comparison with a NULL value (e.g., `/field = NULL`) will return true if the field is missing.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "Following SQL-92 semantics, comparisons with NULL are never true. You must use the 'IS NULL' predicate.",
+    "hints": [
+      "How does SQL handle 'WHERE x = NULL'?",
+      "You need a specific predicate for NULL checks."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "FINAL-q002-004",
+    "type": "mcq",
+    "question": "In the expression `/qty / 10`, why is the space before the slash important?",
+    "options": [
+      "To improve readability for humans.",
+      "To prevent the parser from thinking the slash is part of an XPath identifier.",
+      "To indicate a floating-point division.",
+      "It isn't important; AMPS ignores all whitespace."
+    ],
+    "correctAnswer": "To prevent the parser from thinking the slash is part of an XPath identifier.",
+    "explanation": "Since the forward slash is also used as a path separator in XPath, spaces are needed to distinguish the division operator.",
+    "hints": [
+      "What else is the '/' character used for in AMPS filters?",
+      "Think about path separators."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "FINAL-q002-003",
+    "type": "mcq",
+    "question": "How do you refer to a field name that contains spaces, such as 'Order Date'?",
+    "options": [
+      "\"/Order Date\"",
+      "'/Order Date'",
+      "[/Order Date]",
+      "/Order\\ Date"
+    ],
+    "correctAnswer": "[/Order Date]",
+    "explanation": "AMPS uses a bracketed identifier syntax to support field names that are not valid XPath step names.",
+    "hints": [
+      "Standard XPath doesn't like spaces. AMPS adds a special container.",
+      "Look for the syntax that uses square brackets."
+    ],
+    "sourceModule": "module-002"
+  },
+  {
+    "questionId": "FINAL-q3-010",
+    "type": "true_false",
+    "question": "A SOW query (sow command) remains active and continues to send updates until the client disconnects.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "A 'sow' command is a point-in-time query and finishes once the snapshot is delivered. To receive ongoing updates, you must use 'subscribe' or 'sow_and_subscribe'.",
+    "hints": [
+      "Is a query the same as a subscription?",
+      "Does a snapshot last forever?"
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "FINAL-q3-002",
+    "type": "mcq",
+    "question": "Which AMPS feature is best suited for building a real-time dashboard that displays the current price of various stocks?",
+    "options": [
+      "Basic Pub/Sub",
+      "Transaction Log",
+      "State of the World (SOW)",
+      "Dead Letter Queue"
+    ],
+    "correctAnswer": "State of the World (SOW)",
+    "explanation": "The SOW acts as a last-value cache, making it perfect for applications that need the current, most recent state of data.",
+    "hints": [
+      "Think about where 'current state' is stored.",
+      "Dashboards need the 'latest' values immediately upon starting."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "FINAL-q3-007",
+    "type": "mcq",
+    "question": "What is the primary benefit of using 'sow_and_subscribe' over a separate 'sow' query followed by a 'subscribe' command?",
+    "options": [
+      "It is faster to type.",
+      "It uses less memory on the client.",
+      "It prevents race conditions and ensures no messages are missed.",
+      "It allows using regular expressions in the topic name."
+    ],
+    "correctAnswer": "It prevents race conditions and ensures no messages are missed.",
+    "explanation": "Doing both in one atomic operation ensures that the subscription is active before the snapshot is taken, so no updates are missed in the gap between commands.",
+    "hints": [
+      "Think about 'atomic' operations.",
+      "What happens if an update arrives between two separate commands?"
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "FINAL-q3-008",
+    "type": "mcq",
+    "question": "Which filtering languages are supported by AMPS for SOW queries?",
+    "options": [
+      "Only SQL-92",
+      "Only XPath",
+      "SQL-92 and XPath",
+      "Java and Python"
+    ],
+    "correctAnswer": "SQL-92 and XPath",
+    "explanation": "AMPS uses SQL-92 for logical predicates and XPath to identify fields within structured messages like JSON or XML.",
+    "hints": [
+      "AMPS is content-aware.",
+      "It uses standard database and XML technologies."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "FINAL-q3-004",
+    "type": "true_false",
+    "question": "AMPS can only calculate a SOW key based on the content of the message.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "AMPS supports both content-based keys (calculated by AMPS) and user-provided keys (provided by the publisher).",
+    "hints": [
+      "Can the publisher decide what the key is?",
+      "Think about 'User-provided' strategies."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "FINAL-q004-01",
+    "type": "mcq",
+    "question": "What is the primary storage unit used by the AMPS Transaction Log?",
+    "options": [
+      "Relational Database Tables",
+      "Sequential Journal Files",
+      "In-memory Hash Maps",
+      "Compressed ZIP archives"
+    ],
+    "correctAnswer": "Sequential Journal Files",
+    "explanation": "AMPS writes messages sequentially to Journal Files on disk. This approach optimizes for maximum disk throughput and ensures durability.",
+    "hints": [
+      "Think about how AMPS achieves high performance by avoiding random disk seeks.",
+      "The term often used for a chronological record of events is a 'journal'."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "FINAL-q004-06",
+    "type": "mcq",
+    "question": "What is the purpose of the 'NOW' bookmark?",
+    "options": [
+      "It deletes all messages in the log.",
+      "It replays only the last 5 minutes of data.",
+      "It skips all historical data and starts with the live stream.",
+      "It provides the current server time."
+    ],
+    "correctAnswer": "It skips all historical data and starts with the live stream.",
+    "explanation": "A NOW bookmark tells AMPS to begin the subscription with the next message that arrives, without replaying any history from the log.",
+    "hints": [
+      "The name implies the present moment.",
+      "Useful when you don't care about what happened in the past."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "FINAL-q004-05",
+    "type": "mcq",
+    "question": "If you want to replay messages at exactly three times the speed they were originally published, which option should you set?",
+    "options": [
+      "speed=300%",
+      "rate=3X",
+      "multiplier=3",
+      "fast_forward=3"
+    ],
+    "correctAnswer": "rate=3X",
+    "explanation": "The 'rate' option allows multipliers like '2X' or '3X', where AMPS paces the replay relative to the original publish timestamps.",
+    "hints": [
+      "We are talking about the 'rate' of delivery.",
+      "Look for an option that uses 'X' as a multiplier symbol."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "FINAL-q004-07",
+    "type": "fill_blank",
+    "question": "To request a replay between two specific timestamps, you use the format: [start:____).",
+    "correctAnswer": "end",
+    "explanation": "Replay windows are specified using range syntax, such as [start:end), where the start is inclusive and the end is exclusive.",
+    "hints": [
+      "If you have a 'start', what usually comes next to define a range?",
+      "Think about the 'beginning' and the '____' of a window."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "FINAL-q004-04",
+    "type": "true_false",
+    "question": "True or False: Once a message is written to a journal file, it is considered immutable and cannot be changed by AMPS.",
+    "correctAnswer": "true",
+    "explanation": "AMPS journal files are append-only and immutable. This ensures the integrity of the historical record and simplifies replication.",
+    "hints": [
+      "If you could change the past, it wouldn't be a reliable audit trail, would it?",
+      "Think about the 'log' in 'transaction log'."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "FINAL-q5-009",
+    "type": "true_false",
+    "concept": "Distributed Queues",
+    "question": "True or False: AMPS Distributed Queues require a central 'Master' node to coordinate message ownership between replicated instances.",
+    "correctAnswer": "false",
+    "explanation": "AMPS instances coordinate ownership peer-to-peer via replication, allowing for truly distributed operation without a single point of failure.",
+    "hints": [
+      "AMPS is designed for High Availability.",
+      "Does AMPS rely on a single 'Master' for replication?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "FINAL-q5-004",
+    "type": "mcq",
+    "concept": "max_backlog",
+    "question": "What does the 'max_backlog' parameter on a queue subscription control?",
+    "options": [
+      "The maximum size of the transaction log.",
+      "The number of messages a publisher can send per second.",
+      "The maximum number of unacknowledged messages AMPS will deliver to that specific consumer at once.",
+      "The total number of consumers allowed on the queue."
+    ],
+    "correctAnswer": "The maximum number of unacknowledged messages AMPS will deliver to that specific consumer at once.",
+    "explanation": "max_backlog allows consumers to declare their capacity. AMPS won't 'push' more messages to a worker than it can handle.",
+    "hints": [
+      "It's a form of flow control for the consumer.",
+      "How many 'tasks' can you have on your desk at once?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "FINAL-q5-008",
+    "type": "mcq",
+    "concept": "Delivery Strategy",
+    "question": "Which delivery strategy distributes messages based on the relative 'max_backlog' capacities of available consumers?",
+    "options": [
+      "Round Robin",
+      "Random",
+      "Proportional",
+      "First Come First Served"
+    ],
+    "correctAnswer": "Proportional",
+    "explanation": "The Proportional strategy uses the ratio of consumer max_backlog values to distribute load, giving more work to more powerful machines.",
+    "hints": [
+      "If Worker A has capacity 10 and Worker B has capacity 20, Worker B gets twice as much work.",
+      "It scales based on the size of the worker's 'bucket'."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "FINAL-q5-003",
+    "type": "mcq",
+    "concept": "Lease Period",
+    "question": "What happens if a consumer's 'Lease Period' for a message expires before they send an acknowledgement?",
+    "options": [
+      "The message is permanently deleted.",
+      "The consumer is disconnected from AMPS.",
+      "AMPS returns the message to the queue for delivery to another consumer.",
+      "The message is moved to the dead-letter queue immediately."
+    ],
+    "correctAnswer": "AMPS returns the message to the queue for delivery to another consumer.",
+    "explanation": "The lease period is a safety mechanism. If a worker crashes or hangs, AMPS ensures the message isn't 'stuck' by timing out the lease and redelivering the work.",
+    "hints": [
+      "It's like a library book; if you don't return it (or renew it), it becomes available for others.",
+      "AMPS assumes the worker failed if the lease expires."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "FINAL-q5-007",
+    "type": "mcq",
+    "concept": "MaxDeliveries",
+    "question": "What is the primary purpose of the 'MaxDeliveries' configuration option?",
+    "options": [
+      "To limit how many total messages a queue can hold.",
+      "To prevent 'poison messages' from repeatedly crashing workers by limiting redelivery attempts.",
+      "To set the maximum number of consumers for the queue.",
+      "To define how many times a publisher can retry a failed publish."
+    ],
+    "correctAnswer": "To prevent 'poison messages' from repeatedly crashing workers by limiting redelivery attempts.",
+    "explanation": "If a message is malformed and causes a worker to crash every time it's processed, MaxDeliveries ensures it is eventually removed after N failures.",
+    "hints": [
+      "Think about a task that is impossible to complete.",
+      "How do we stop an infinite loop of failure?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "FINAL-q4",
+    "type": "mcq",
+    "question": "What is the default Join behavior in AMPS?",
+    "options": [
+      "Inner Join",
+      "Left Outer Join",
+      "Right Outer Join",
+      "Full Outer Join"
+    ],
+    "correctAnswer": "Left Outer Join",
+    "explanation": "AMPS uses Left Outer Join semantics; if no match is found in the joined topic, the primary record is still projected with NULLs for the lookup fields.",
+    "hints": [
+      "The primary topic records are always preserved.",
+      "Lookup fields are NULL if missing."
+    ],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "FINAL-q3",
+    "type": "true_false",
+    "question": "AMPS Views can only join topics that share the same message type (e.g., JSON to JSON).",
+    "correctAnswer": "false",
+    "explanation": "AMPS allows joining topics of different message types, such as joining a FIX topic with a JSON topic.",
+    "hints": [
+      "Think about AMPS's flexibility.",
+      "The message type is specified in the Join definition."
+    ],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "FINAL-q2",
+    "type": "mcq",
+    "question": "Which aggregation function would you use to find the average price of a stock in a View?",
+    "options": [
+      "SUM",
+      "AVG",
+      "MIN",
+      "MEAN"
+    ],
+    "correctAnswer": "AVG",
+    "explanation": "AVG() calculates the arithmetic mean of the specified field across a group of messages.",
+    "hints": [
+      "It's a standard SQL-like function.",
+      "It stands for Average."
+    ],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "FINAL-q9",
+    "type": "true_false",
+    "question": "If a record goes out of focus and back into focus within the same conflation interval, the subscriber will still receive an OOF message.",
+    "correctAnswer": "false",
+    "explanation": "AMPS only sends the final state at the end of the conflation interval. If the record is back in focus, no OOF is sent.",
+    "hints": [
+      "Conflation only cares about the end of the interval.",
+      "AMPS minimizes noise."
+    ],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "FINAL-q7",
+    "type": "mcq",
+    "question": "Which of these is NOT a valid OOF reason code?",
+    "options": [
+      "deleted",
+      "expired",
+      "filter",
+      "restarted"
+    ],
+    "correctAnswer": "restarted",
+    "explanation": "Valid reason codes are deleted, expired, filter, and entitlement.",
+    "hints": [
+      "Think about why a record leaves a filter.",
+      "One of these is about the server state, not the record state."
+    ],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "FINAL-q7-6",
+    "type": "mcq",
+    "question": "How does AMPS detect and suppress duplicate messages during publisher failover?",
+    "options": [
+      "Using message timestamps",
+      "Comparing the entire message body",
+      "Using unique Client Names and Sequence Numbers",
+      "Requesting a resend of all data"
+    ],
+    "correctAnswer": "Using unique Client Names and Sequence Numbers",
+    "explanation": "AMPS identifies duplicates by looking at the combination of the Client Name and the Sequence Number provided by the publisher.",
+    "hints": [
+      "What do we call the unique ID assigned to each message by the publisher?",
+      "Why is a consistent 'Name' important for a client?"
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "FINAL-q7-10",
+    "type": "fill_blank",
+    "question": "The AMPS ________ subscription allows a client to resume a message stream from a specific point in the transaction log after a restart.",
+    "correctAnswer": "bookmark",
+    "explanation": "Bookmark subscriptions use the unique bookmark ID assigned to each message in the transaction log to provide durable, resumable streaming.",
+    "hints": [
+      "What do you put in a physical book to save your place?",
+      "It's a unique identifier for a position in the transaction log."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "FINAL-q7-9",
+    "type": "mcq",
+    "question": "Which client class is specifically designed to handle failover and subscription recovery in AMPS?",
+    "options": [
+      "Client",
+      "HAClient",
+      "ReliableClient",
+      "SecureClient"
+    ],
+    "correctAnswer": "HAClient",
+    "explanation": "The HAClient class (High Availability Client) includes built-in logic for reconnection, resubscription, and reliable publishing.",
+    "hints": [
+      "What is the acronym for High Availability?",
+      "It's a specialized subclass of the standard Client."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "FINAL-q7-1",
+    "type": "mcq",
+    "question": "What are the two core features AMPS uses to provide High Availability?",
+    "options": [
+      "Websockets and JSON",
+      "Transaction Logging and Integrated Replication",
+      "SOW and Delta Messaging",
+      "Spark and Galvanometer"
+    ],
+    "correctAnswer": "Transaction Logging and Integrated Replication",
+    "explanation": "AMPS uses the transaction log to record every message and replication to mirror that log across multiple instances.",
+    "hints": [
+      "Think about what keeps a record of messages on disk.",
+      "Think about how messages get from one server to another."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "FINAL-q7-4",
+    "type": "mcq",
+    "question": "What is the main difference between Synchronous (Sync) and Asynchronous (Async) replication?",
+    "options": [
+      "Sync is faster than Async.",
+      "Async requires more bandwidth than Sync.",
+      "Sync waits for the destination to persist the message before acknowledging the publisher.",
+      "Async is only used for SOW topics."
+    ],
+    "correctAnswer": "Sync waits for the destination to persist the message before acknowledging the publisher.",
+    "explanation": "Synchronous replication ensures that a message is safely stored on both the source and destination before the publisher is notified.",
+    "hints": [
+      "Which one provides a stronger 'durability' guarantee?",
+      "Think about what 'synchronizing' expectations means in this context."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "FINAL-q8-009",
+    "type": "mcq",
+    "question": "What configuration setting is required to enable periodic publishing of statistics for SOW topics?",
+    "options": [
+      "SOWStatsInterval",
+      "AdminInterval",
+      "StatsUpdate",
+      "SOWMonitoring"
+    ],
+    "correctAnswer": "SOWStatsInterval",
+    "explanation": "SOWStatsInterval determines how often AMPS publishes snapshots to the /AMPS/SOWStats topic.",
+    "hints": [
+      "It combines the feature (SOWStats) with a time (Interval).",
+      "It's similar to the Interval in the Admin block."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "FINAL-q8-006",
+    "type": "mcq",
+    "question": "Which log level is the most verbose and includes all inbound and outbound message data?",
+    "options": [
+      "developer",
+      "trace",
+      "info",
+      "stats"
+    ],
+    "correctAnswer": "trace",
+    "explanation": "The 'trace' level records every byte sent to or from the server, including message contents.",
+    "hints": [
+      "It's like a 'wire trace' of the network traffic.",
+      "It is lower in the hierarchy than 'info'."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "FINAL-q8-005",
+    "type": "mcq",
+    "question": "How are time-range queries specified in the AMPS RESTful interface?",
+    "options": [
+      "Using the 'start' and 'end' query parameters",
+      "Using the 't0' and 't1' query parameters",
+      "By adding a date to the URI path",
+      "By sending a POST request with a JSON body"
+    ],
+    "correctAnswer": "Using the 't0' and 't1' query parameters",
+    "explanation": "AMPS uses 't0' (start time) and 't1' (end time) as query parameters for filtering historical statistics.",
+    "hints": [
+      "The parameters use a 't' followed by a number.",
+      "They represent the beginning and end of the interval."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "FINAL-q8-003",
+    "type": "mcq",
+    "question": "What protocol must be enabled to allow the Galvanometer to perform interactive queries and subscriptions?",
+    "options": [
+      "REST",
+      "WebSocket",
+      "FIX",
+      "NVFIX"
+    ],
+    "correctAnswer": "WebSocket",
+    "explanation": "Galvanometer uses the WebSocket protocol to maintain persistent connections for real-time queries and subscriptions.",
+    "hints": [
+      "Modern web browsers use this for two-way communication.",
+      "Check the <SQLTransport> configuration."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "FINAL-q8-004",
+    "type": "mcq",
+    "question": "Which RESTful statistics output format is NOT supported for aggregate (non-leaf) nodes?",
+    "options": [
+      "JSON",
+      "XML",
+      "CSV",
+      "HTML"
+    ],
+    "correctAnswer": "CSV",
+    "explanation": "CSV is a flat, tabular format and cannot easily represent the hierarchical (tree-like) structure of aggregate nodes in AMPS statistics.",
+    "hints": [
+      "Think about which format struggles with nested data.",
+      "Aggregate nodes have child elements."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "FINAL-q9-1",
+    "type": "mcq",
+    "question": "Which security pillar in AMPS is responsible for verifying a user's identity?",
+    "options": [
+      "Entitlement",
+      "Authentication",
+      "Encryption",
+      "Conflation"
+    ],
+    "correctAnswer": "Authentication",
+    "explanation": "Authentication is the process of assigning and verifying an identity for a connection.",
+    "hints": [
+      "Think about the first step in joining a secure system.",
+      "It's about 'who' you are, not 'what' you can do."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "FINAL-q9-8",
+    "type": "true_false",
+    "question": "AMPS re-checks entitlements for every single message delivered on an active subscription.",
+    "correctAnswer": "false",
+    "explanation": "AMPS checks entitlements when the subscription is created and applies any filters/select lists then. It does not re-run the module for every message.",
+    "hints": [
+      "Re-checking every message would be very slow.",
+      "Permissions are checked at the 'start' of the command."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "FINAL-q9-7",
+    "type": "mcq",
+    "question": "What happens when you use mTLS (Mutual TLS)?",
+    "options": [
+      "The client verifies the server's certificate.",
+      "The server verifies the client's certificate.",
+      "Both the client and server verify each other's certificates.",
+      "The data is encrypted twice."
+    ],
+    "correctAnswer": "Both the client and server verify each other's certificates.",
+    "explanation": "Mutual TLS requires both ends of the connection to present and verify certificates.",
+    "hints": [
+      "The 'M' stands for 'Mutual'.",
+      "It's a two-way trust street."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "FINAL-q9-10",
+    "type": "mcq",
+    "question": "What should an administrator do after re-enabling an entitlement system that was previously disabled?",
+    "options": [
+      "Restart the server immediately",
+      "Run an entitlement reset to clear existing connection caches",
+      "Nothing, AMPS updates automatically",
+      "Re-install all security modules"
+    ],
+    "correctAnswer": "Run an entitlement reset to clear existing connection caches",
+    "explanation": "An entitlement reset ensures that all current connections and subscriptions are validated against the new policy.",
+    "hints": [
+      "AMPS doesn't automatically disconnect users when entitlements are re-enabled.",
+      "You need to 'clear' the old state."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "FINAL-q9-2",
+    "type": "true_false",
+    "question": "Implicit logon is enabled by default in AMPS 5.0 and later.",
+    "correctAnswer": "false",
+    "explanation": "Implicit logon is disabled by default in AMPS 5.0+ to encourage stronger security practices.",
+    "hints": [
+      "Does AMPS prefer you to log in explicitly or 'guess' your identity?",
+      "Modern security usually defaults to 'more secure'."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "FINAL-q10-5",
+    "type": "fill_blank",
+    "question": "To ensure no messages are missed during a restart, an application should use a ________ subscription combined with a ________ store.",
+    "correctAnswer": [
+      "bookmark",
+      "bookmark"
+    ],
+    "explanation": "A bookmark subscription tells AMPS where to resume, and a bookmark store keeps track of the last seen bookmark on local storage.",
+    "hints": [
+      "What is the unique identifier AMPS uses to track messages in the transaction log?",
+      "Think about how the client remembers its state after a crash."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "FINAL-q10-2",
+    "type": "mcq",
+    "question": "What are the two core interfaces used in AMPS client development?",
+    "options": [
+      "Request and Response",
+      "Command and Message",
+      "Sender and Receiver",
+      "Publisher and Subscriber"
+    ],
+    "correctAnswer": "Command and Message",
+    "explanation": "The `Command` interface is used to send requests to the server, and the `Message` interface is used to handle data and metadata coming from the server.",
+    "hints": [
+      "One is used to tell AMPS what to do, the other contains what AMPS sends back.",
+      "Think of them as 'verbs' and 'nouns'."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "FINAL-q10-10",
+    "type": "mcq",
+    "question": "Which of these is NOT part of the pre-production deployment checklist?",
+    "options": [
+      "Verifying NUMA and CPU layout.",
+      "Load testing with production-like volumes.",
+      "Configuring the Galvanometer for monitoring.",
+      "Disabling all authentication to maximize speed."
+    ],
+    "correctAnswer": "Disabling all authentication to maximize speed.",
+    "explanation": "Security should never be disabled in production. AMPS is designed to perform at high speed even with authentication and entitlement active.",
+    "hints": [
+      "One of these options is a dangerous security risk.",
+      "Does the documentation suggest skipping security for performance?"
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "FINAL-q10-7",
+    "type": "mcq",
+    "question": "Which Linux filesystem is most recommended for storing AMPS transaction logs?",
+    "options": [
+      "FAT32",
+      "NTFS",
+      "ext3",
+      "XFS"
+    ],
+    "correctAnswer": "XFS",
+    "explanation": "XFS is highly optimized for the large, sequential, and concurrent write patterns used by AMPS transaction logs.",
+    "hints": [
+      "AMPS documentation consistently points to one specific Linux filesystem for high-performance I/O.",
+      "It's a three-letter acronym."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "FINAL-q10-9",
+    "type": "mcq",
+    "question": "What does the `TCP_NODELAY` setting do when enabled?",
+    "options": [
+      "It increases the total bandwidth of the connection.",
+      "It disables Nagle's algorithm, sending small packets immediately.",
+      "It compresses the data before sending it.",
+      "It automatically retries failed packet deliveries."
+    ],
+    "correctAnswer": "It disables Nagle's algorithm, sending small packets immediately.",
+    "explanation": "By disabling Nagle's algorithm, the TCP stack sends messages as soon as they are available rather than waiting to buffer them into larger packets, reducing latency.",
+    "hints": [
+      "Think about 'buffering' vs 'immediate delivery'.",
+      "Nagle's algorithm was designed for a different era of networking."
+    ],
+    "sourceModule": "module-010"
+  }
+]

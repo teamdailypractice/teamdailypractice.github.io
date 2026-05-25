@@ -1,0 +1,46 @@
+{
+  "moduleId": "module-007",
+  "title": "Module 7: High Availability & Replication",
+  "sections": [
+    {
+      "title": "Introduction to High Availability",
+      "content": "AMPS is designed for mission-critical applications where downtime is not an option. High Availability (HA) in AMPS is built on two core pillars: Transaction Logging and Integrated Replication. These features allow AMPS instances to share state, recover from failures, and provide a consistent view of data across a distributed network. 🛡️"
+    },
+    {
+      "title": "Replication Basics",
+      "content": "Replication in AMPS is point-to-point and 'push-based'. A source instance pushes a command stream (publishes, deletes, etc.) from its transaction log to one or more destination instances. This ensures that every message persisted on one server can be safely mirrored to others. 🔄"
+    },
+    {
+      "title": "Replication Topologies",
+      "content": "AMPS supports flexible topologies to suit different architectural needs: \n\n1. **Pair (Hot-Hot):** Two instances replicating to each other, acting as equivalent failover partners.\n2. **Hub and Spoke (Star):** Ingestion servers push to a central Hub, which then distributes to multiple Application (Spoke) servers. Great for massive scaling! 🌟\n3. **Mesh:** A complex network where multiple instances are interconnected, often using PassThrough replication to ensure data reaches every node."
+    },
+    {
+      "title": "Sync vs. Async Replication",
+      "content": "The 'SyncType' determines the persistence guarantee:\n\n- **Synchronous (Sync):** The source waits for the destination to acknowledge the message before telling the publisher it's 'persisted'. This is mandatory for failover partners to prevent data loss. 🤝\n- **Asynchronous (Async):** The source acknowledges the publisher as soon as the message is local. Faster, but carries a risk if the source fails before the message reaches the destination."
+    },
+    {
+      "title": "Failover and Self-Healing",
+      "content": "AMPS instances are 'self-healing'. When a connection is restored, the upstream instance automatically performs a **Resynchronization (Resync)**, replaying only the missed messages from its transaction log. For clients, the **HAClient** and **Bookmark Subscriptions** allow them to reconnect and resume exactly where they left off without missing a single beat. 🩹"
+    },
+    {
+      "title": "Transactional Integrity",
+      "content": "AMPS ensures integrity across a cluster using unique **Client Names** and **Sequence Numbers**. This allows the server to detect and discard duplicate messages that might arrive during failover, ensuring 'exactly-once' processing semantics even in chaotic network conditions. ✅"
+    },
+    {
+      "title": "Replicating SOW and Queues",
+      "content": "Replication handles more than just simple messages:\n\n- **SOW:** Replicates `publish`, `delta_publish`, and `sow_delete` commands to keep caches in sync.\n- **Queues:** Uses **Message Ownership** to ensure a queue message is only processed once in the entire network. If an owner goes offline, **Proxied Transfer** can temporarily allow other instances to take over ownership. 📥"
+    }
+  ],
+  "assets": [
+    {
+      "assetId": "topology-star",
+      "type": "mermaid",
+      "content": "graph LR\n  I1[Ingestion 1] --> Hub\n  I2[Ingestion 2] --> Hub\n  Hub --> S1[Spoke/App 1]\n  Hub --> S2[Spoke/App 2]\n  Hub --> S3[Spoke/App 3]"
+    },
+    {
+      "assetId": "topology-mesh",
+      "type": "mermaid",
+      "content": "graph TD\n  A <--> B\n  B <--> C\n  C <--> A\n  A <--> D\n  D <--> B"
+    }
+  ]
+}

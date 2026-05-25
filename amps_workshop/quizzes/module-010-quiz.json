@@ -1,0 +1,167 @@
+[
+  {
+    "questionId": "q10-1",
+    "type": "mcq",
+    "question": "Which of the following client SDKs are officially supported by AMPS?",
+    "options": [
+      "Java, Python, C++, and Go",
+      "Ruby, PHP, and Perl",
+      "Java, C#, Swift, and Kotlin",
+      "Python, JavaScript, Rust, and Erlang"
+    ],
+    "correctAnswer": "Java, Python, C++, and Go",
+    "explanation": "AMPS provides high-performance native SDKs for Java, C#/.NET, C++, Python, JavaScript, and Go.",
+    "hints": [
+      "Think about the languages mentioned in the Client SDK Overview slide.",
+      "AMPS targets enterprise environments with high-performance requirements."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-2",
+    "type": "mcq",
+    "question": "What are the two core interfaces used in AMPS client development?",
+    "options": [
+      "Request and Response",
+      "Command and Message",
+      "Sender and Receiver",
+      "Publisher and Subscriber"
+    ],
+    "correctAnswer": "Command and Message",
+    "explanation": "The `Command` interface is used to send requests to the server, and the `Message` interface is used to handle data and metadata coming from the server.",
+    "hints": [
+      "One is used to tell AMPS what to do, the other contains what AMPS sends back.",
+      "Think of them as 'verbs' and 'nouns'."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-3",
+    "type": "true_false",
+    "question": "Asynchronous callbacks should be used to avoid blocking the main application thread when processing messages.",
+    "correctAnswer": "true",
+    "explanation": "Using asynchronous handlers ensures that the network thread can continue receiving data while the application processes the message in the background.",
+    "hints": [
+      "Blocking the main thread usually leads to poor UI responsiveness or throughput bottlenecks.",
+      "Think about why AMPS is designed for low latency."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-4",
+    "type": "mcq",
+    "question": "What is the primary purpose of the `HAClient` in AMPS SDKs?",
+    "options": [
+      "To increase the message throughput by 2x.",
+      "To automatically manage failover and reconnection across multiple servers.",
+      "To encrypt all messages sent over the network.",
+      "To provide a graphical interface for monitoring."
+    ],
+    "correctAnswer": "To automatically manage failover and reconnection across multiple servers.",
+    "explanation": "The `HAClient` is a specialized client that handles connection management, resubscription, and bookmark tracking during server failovers.",
+    "hints": [
+      "What does 'HA' stand for?",
+      "Think about what happens when a server goes down in a mission-critical system."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-5",
+    "type": "fill_blank",
+    "question": "To ensure no messages are missed during a restart, an application should use a ________ subscription combined with a ________ store.",
+    "correctAnswer": [
+      "bookmark",
+      "bookmark"
+    ],
+    "explanation": "A bookmark subscription tells AMPS where to resume, and a bookmark store keeps track of the last seen bookmark on local storage.",
+    "hints": [
+      "What is the unique identifier AMPS uses to track messages in the transaction log?",
+      "Think about how the client remembers its state after a crash."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-6",
+    "type": "mcq",
+    "question": "Why is it recommended to disable Transparent Huge Pages (THP) for AMPS workloads?",
+    "options": [
+      "THP consumes too much disk space.",
+      "THP is only compatible with Windows.",
+      "THP can cause unpredictable latency spikes during memory allocation.",
+      "THP prevents the use of SSDs."
+    ],
+    "correctAnswer": "THP can cause unpredictable latency spikes during memory allocation.",
+    "explanation": "The kernel's background defragmentation of huge pages can pause the process, leading to jitter that is unacceptable in low-latency environments.",
+    "hints": [
+      "Think about the impact of 'stalls' in a real-time trading application.",
+      "It's a memory management feature that sometimes does too much work in the background."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-7",
+    "type": "mcq",
+    "question": "Which Linux filesystem is most recommended for storing AMPS transaction logs?",
+    "options": [
+      "FAT32",
+      "NTFS",
+      "ext3",
+      "XFS"
+    ],
+    "correctAnswer": "XFS",
+    "explanation": "XFS is highly optimized for the large, sequential, and concurrent write patterns used by AMPS transaction logs.",
+    "hints": [
+      "AMPS documentation consistently points to one specific Linux filesystem for high-performance I/O.",
+      "It's a three-letter acronym."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-8",
+    "type": "true_false",
+    "question": "CPU pinning helps performance by ensuring that threads stay on their assigned physical cores, minimizing context switches.",
+    "correctAnswer": "true",
+    "explanation": "Keeping a thread on a single core improves L1/L2 cache locality and prevents the overhead of moving the thread's state between cores.",
+    "hints": [
+      "Think about 'context switching' and why it might be bad for speed.",
+      "Does a CPU work faster if it doesn't have to keep reloading data into its local cache?"
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-9",
+    "type": "mcq",
+    "question": "What does the `TCP_NODELAY` setting do when enabled?",
+    "options": [
+      "It increases the total bandwidth of the connection.",
+      "It disables Nagle's algorithm, sending small packets immediately.",
+      "It compresses the data before sending it.",
+      "It automatically retries failed packet deliveries."
+    ],
+    "correctAnswer": "It disables Nagle's algorithm, sending small packets immediately.",
+    "explanation": "By disabling Nagle's algorithm, the TCP stack sends messages as soon as they are available rather than waiting to buffer them into larger packets, reducing latency.",
+    "hints": [
+      "Think about 'buffering' vs 'immediate delivery'.",
+      "Nagle's algorithm was designed for a different era of networking."
+    ],
+    "sourceModule": "module-010"
+  },
+  {
+    "questionId": "q10-10",
+    "type": "mcq",
+    "question": "Which of these is NOT part of the pre-production deployment checklist?",
+    "options": [
+      "Verifying NUMA and CPU layout.",
+      "Load testing with production-like volumes.",
+      "Configuring the Galvanometer for monitoring.",
+      "Disabling all authentication to maximize speed."
+    ],
+    "correctAnswer": "Disabling all authentication to maximize speed.",
+    "explanation": "Security should never be disabled in production. AMPS is designed to perform at high speed even with authentication and entitlement active.",
+    "hints": [
+      "One of these options is a dangerous security risk.",
+      "Does the documentation suggest skipping security for performance?"
+    ],
+    "sourceModule": "module-010"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "moduleId": "module-004",
+  "title": "Transaction Log & Replay",
+  "sections": [
+    {
+      "title": "Introduction to the Transaction Log",
+      "content": "The AMPS Transaction Log is a high-performance, durable storage mechanism that records every message published to configured topics. It provides a sequential, historical record of the message stream, serving as the foundation for reliable messaging, historical replay, and high availability. Unlike traditional database logs, the AMPS transaction log is fully queryable and accessible via the client APIs. 📜"
+    },
+    {
+      "title": "Core Principles: Journals and Bookmarks",
+      "content": "AMPS stores the transaction log in multiple sequential files called **Journal Files**. These files are immutable once written, ensuring high integrity. Each message in the log is assigned a unique **Bookmark**, which is a combination of the publisher's identifier and a sequence number. Bookmarks are monotonically increasing, allowing AMPS to quickly locate any point in the history. 🔖"
+    },
+    {
+      "title": "Configuring the Transaction Log",
+      "content": "To enable the transaction log, you add a `<TransactionLog>` section to your AMPS configuration. Key parameters include `<JournalDirectory>` for storage location, `<JournalSize>` for file rotation, and `<Name>` (often a regex) to specify which topics to record. \n\n```xml\n<TransactionLog>\n  <JournalDirectory>./journals</JournalDirectory>\n  <JournalSize>1GB</JournalSize>\n  <Topic>\n    <Name>ORDERS</Name>\n    <MessageType>json</MessageType>\n  </Topic>\n</TransactionLog>\n```"
+    },
+    {
+      "title": "Bookmark Subscriptions",
+      "content": "Bookmark subscriptions allow clients to request a message stream starting from a specific point in time. There are several special bookmark types:\n- **EPOCH (0)**: Replay from the very beginning of the log.\n- **NOW (0|1|)**: Skip history and start from the current live stream.\n- **Specific Bookmark**: Resume exactly after a previously processed message.\n- **Timestamp**: Replay from a specific moment (e.g., `20231027T100000Z`). 🕒"
+    },
+    {
+      "title": "Advanced Replay Control",
+      "content": "AMPS provides fine-grained control over how messages are replayed:\n- **Rate Control**: Limit replay speed (e.g., `rate=1000` msgs/sec or `rate=2X` original speed).\n- **Pause/Resume**: Temporarily halt a replay without losing state.\n- **Start/End Ranges**: Request a specific window of messages using the `[start:end)` syntax.\n- **Conflation**: Receive only the latest update for a key within a specified interval during replay. 🏎️"
+    },
+    {
+      "title": "High Availability (HA) & Replication",
+      "content": "The Transaction Log is the backbone of AMPS HA. It ensures that a standby instance can catch up by replaying missed messages from the primary. It also enables **Reliable Publishing**, where the server acknowledges a message only after it is safely persisted to the log (and optionally replicated). This guarantees zero data loss and strict ordering across failovers. 🏗️"
+    }
+  ],
+  "assets": []
+}

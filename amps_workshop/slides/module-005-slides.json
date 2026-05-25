@@ -1,0 +1,181 @@
+[
+  {
+    "moduleId": "module-005",
+    "slideNumber": 1,
+    "title": "Module 5: Message Queues 📬",
+    "type": "title",
+    "content": [
+      "Understanding Point-to-Point Messaging in AMPS",
+      "Competitive Consumption & Worker Farms",
+      "Ensuring 'Once-and-Only-Once' Processing"
+    ],
+    "speakerNotes": "Welcome to Module 5. Today we shift from Pub/Sub to Message Queues. In Pub/Sub, everyone gets a copy. In Queues, only ONE person gets the message."
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 2,
+    "title": "Pub/Sub vs. Queues 🎯",
+    "type": "content",
+    "content": [
+      "**Pub/Sub**: One-to-Many 📢. Every subscriber gets every message.",
+      "**Queues**: One-to-One 👤. One message = One consumer.",
+      "**The Goal**: Distribute work across multiple workers without duplication.",
+      "AMPS uses the same `subscribe` command but with queue semantics."
+    ],
+    "speakerNotes": "Think of Pub/Sub like a radio broadcast. Think of Queues like a task list where one worker grabs one task."
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 3,
+    "title": "Competitive Consumption 🏎️",
+    "type": "content",
+    "content": [
+      "Multiple consumers subscribe to the same queue topic.",
+      "AMPS acts as the 'Load Balancer'.",
+      "Messages are distributed based on consumer capacity and availability.",
+      "Prevents any single worker from being overwhelmed while others are idle."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 4,
+    "title": "Visualizing Consumer Competition 📊",
+    "type": "diagram",
+    "content": [
+      "Workers compete for messages in the queue."
+    ],
+    "mermaid": "graph LR\n    P[Publisher] --> Q((AMPS Queue))\n    Q --> W1[Worker A]\n    Q --> W2[Worker B]\n    Q --> W3[Worker C]\n    style Q fill:#f9f,stroke:#333,stroke-width:4px\n    style W1 fill:#ccf\n    style W2 fill:#ccf\n    style W3 fill:#ccf"
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 5,
+    "title": "Built on Transaction Logs 📚",
+    "type": "content",
+    "content": [
+      "AMPS Queues are not 'separate' storage.",
+      "They are a view over the **Transaction Log**.",
+      "Advantage: Queues are persistent across restarts.",
+      "Advantage: You can replicate queues for High Availability."
+    ],
+    "speakerNotes": "Because queues are based on the transaction log, they inherit all the reliability and speed of the AMPS engine."
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 6,
+    "title": "The max_backlog Pattern 🚧",
+    "type": "content",
+    "content": [
+      "**max_backlog**: The number of unacknowledged messages a consumer can hold.",
+      "Workers on slow hardware set low backlog (e.g., 2).",
+      "Workers on powerful hardware set high backlog (e.g., 50).",
+      "AMPS uses this to balance delivery proportionally."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 7,
+    "title": "Delivery Strategies ⚖️",
+    "type": "content",
+    "content": [
+      "**Round Robin**: Strict rotation among consumers.",
+      "**Proportional**: Based on `max_backlog` ratios.",
+      "**Least Loaded**: Prioritizes workers with the most free 'slots'.",
+      "Configurable via the `<Strategy>` tag in the SOW configuration."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 8,
+    "title": "Lease Period & Acknowledgement ✅",
+    "type": "content",
+    "content": [
+      "When a message is delivered, it is 'Leased' to the consumer.",
+      "The consumer must process it and send a `sow_delete` (Ack).",
+      "If the **Lease Period** (e.g., 10m) expires without an Ack, AMPS takes it back.",
+      "The message is then redelivered to the next available consumer."
+    ],
+    "speakerNotes": "The sow_delete command is how AMPS knows you're done. If you crash, the lease expires and AMPS gives the task to someone else."
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 9,
+    "title": "Handling Failure: Redelivery 🔄",
+    "type": "content",
+    "content": [
+      "**At-Least-Once**: Default semantics ensuring no message is lost.",
+      "**MaxDeliveries**: How many times to try before giving up?",
+      "Prevents 'Poison Messages' from crashing workers repeatedly.",
+      "Dead Letter Queues: Where failed messages go for human review."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 10,
+    "title": "Queue Configuration ⚙️",
+    "type": "code",
+    "content": [
+      "Queues are defined in the `<SOW>` section.",
+      "Example:",
+      "<Queue>\n  <Name>WorkToDo</Name>\n  <UnderlyingTopic>Work</UnderlyingTopic>\n  <LeasePeriod>10m</LeasePeriod>\n  <MaxDeliveries>5</MaxDeliveries>\n</Queue>"
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 11,
+    "title": "Distributed Queues: Replicated Scale 🌐",
+    "type": "content",
+    "content": [
+      "Queues work across multiple AMPS instances.",
+      "Replication ensures both instances know who 'owns' the message.",
+      "Prevents duplicate processing even if the primary server fails.",
+      "Enables geographically distributed worker farms."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 12,
+    "title": "Mermaid: Distributed Queue Routing 🗺️",
+    "type": "diagram",
+    "content": [
+      "Ownership coordination across instances."
+    ],
+    "mermaid": "graph TD\n    P[Publisher] --> AMPS1[AMPS Instance A]\n    AMPS1 <-->|Replication| AMPS2[AMPS Instance B]\n    AMPS1 --> C1[Local Consumer]\n    AMPS2 --> C2[Remote Consumer]\n    subgraph Ownership Coordination\n    AMPS1\n    AMPS2\n    end"
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 13,
+    "title": "Message Expiration ⏳",
+    "type": "content",
+    "content": [
+      "Not every message is valid forever.",
+      "**Expiration**: Set a TTL (e.g., 1h) for queue items.",
+      "Expired messages are automatically removed from the active queue.",
+      "Useful for time-sensitive tasks like quote updates or ephemeral signals."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 14,
+    "title": "Use Case: Worker Farms 🛠️",
+    "type": "content",
+    "content": [
+      "Scenario: CPU-heavy risk calculations.",
+      "Solution: 50 workers subscribed to 'Risk_Queue'.",
+      "Benefit: Automatic load balancing, automatic recovery on crash.",
+      "Result: Massive horizontal scalability with zero custom logic."
+    ]
+  },
+  {
+    "moduleId": "module-005",
+    "slideNumber": 15,
+    "title": "Summary: Mastering Queues 📝",
+    "type": "content",
+    "content": [
+      "✅ Queues provide Point-to-Point delivery.",
+      "✅ Built on Transaction Logs for durability.",
+      "✅ Competitive Consumption for fair load balancing.",
+      "✅ Distributed Queues for global scale.",
+      "🚀 Next Up: Module 6 - High Availability & Replication!"
+    ]
+  }
+]

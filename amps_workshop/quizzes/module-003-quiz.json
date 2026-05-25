@@ -1,0 +1,178 @@
+[
+  {
+    "questionId": "q3-001",
+    "type": "mcq",
+    "question": "What does 'SOW' stand for in the context of AMPS?",
+    "options": [
+      "Stream of Words",
+      "State of the World",
+      "Standard Operating Workload",
+      "Storage of Webhooks"
+    ],
+    "correctAnswer": "State of the World",
+    "explanation": "SOW stands for State of the World, which refers to the current snapshot of all unique records in a topic.",
+    "hints": [
+      "It represents the current 'state' of everything AMPS knows.",
+      "The first word is 'State'."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-002",
+    "type": "mcq",
+    "question": "Which AMPS feature is best suited for building a real-time dashboard that displays the current price of various stocks?",
+    "options": [
+      "Basic Pub/Sub",
+      "Transaction Log",
+      "State of the World (SOW)",
+      "Dead Letter Queue"
+    ],
+    "correctAnswer": "State of the World (SOW)",
+    "explanation": "The SOW acts as a last-value cache, making it perfect for applications that need the current, most recent state of data.",
+    "hints": [
+      "Think about where 'current state' is stored.",
+      "Dashboards need the 'latest' values immediately upon starting."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-003",
+    "type": "mcq",
+    "question": "What is used to uniquely identify a record within a SOW topic?",
+    "options": [
+      "Topic Name",
+      "Message Type",
+      "SOW Key",
+      "Sequence Number"
+    ],
+    "correctAnswer": "SOW Key",
+    "explanation": "A SOW Key is a unique identifier (like a primary key in a database) that AMPS uses to distinguish one record from another in a SOW topic.",
+    "hints": [
+      "It's the 'identity' of the message.",
+      "It sounds like a database primary key."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-004",
+    "type": "true_false",
+    "question": "AMPS can only calculate a SOW key based on the content of the message.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "AMPS supports both content-based keys (calculated by AMPS) and user-provided keys (provided by the publisher).",
+    "hints": [
+      "Can the publisher decide what the key is?",
+      "Think about 'User-provided' strategies."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-005",
+    "type": "mcq",
+    "question": "Which configuration element is required to ensure SOW data survives an AMPS server restart?",
+    "options": [
+      "<Topic>",
+      "<MessageType>",
+      "<FileName>",
+      "<Key>"
+    ],
+    "correctAnswer": "<FileName>",
+    "explanation": "The <FileName> element specifies the path where AMPS will persist the SOW data to disk. Without it, the SOW is memory-only and lost on restart.",
+    "hints": [
+      "Persistence requires a place on disk.",
+      "It involves a 'File'."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-006",
+    "type": "mcq",
+    "question": "Which command retrieves a point-in-time snapshot from a SOW topic?",
+    "options": [
+      "subscribe",
+      "sow",
+      "publish",
+      "delta_subscribe"
+    ],
+    "correctAnswer": "sow",
+    "explanation": "The 'sow' command is used to query the current state of a SOW topic at a specific moment.",
+    "hints": [
+      "It's the name of the feature itself.",
+      "Queries use this command."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-007",
+    "type": "mcq",
+    "question": "What is the primary benefit of using 'sow_and_subscribe' over a separate 'sow' query followed by a 'subscribe' command?",
+    "options": [
+      "It is faster to type.",
+      "It uses less memory on the client.",
+      "It prevents race conditions and ensures no messages are missed.",
+      "It allows using regular expressions in the topic name."
+    ],
+    "correctAnswer": "It prevents race conditions and ensures no messages are missed.",
+    "explanation": "Doing both in one atomic operation ensures that the subscription is active before the snapshot is taken, so no updates are missed in the gap between commands.",
+    "hints": [
+      "Think about 'atomic' operations.",
+      "What happens if an update arrives between two separate commands?"
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-008",
+    "type": "mcq",
+    "question": "Which filtering languages are supported by AMPS for SOW queries?",
+    "options": [
+      "Only SQL-92",
+      "Only XPath",
+      "SQL-92 and XPath",
+      "Java and Python"
+    ],
+    "correctAnswer": "SQL-92 and XPath",
+    "explanation": "AMPS uses SQL-92 for logical predicates and XPath to identify fields within structured messages like JSON or XML.",
+    "hints": [
+      "AMPS is content-aware.",
+      "It uses standard database and XML technologies."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-009",
+    "type": "mcq",
+    "question": "If a SOW topic is configured with <Key>/id</Key>, what happens when a message with an existing 'id' is published?",
+    "options": [
+      "AMPS rejects the message.",
+      "AMPS creates a second record with the same id.",
+      "AMPS updates the existing record with the new content.",
+      "AMPS deletes the existing record and does nothing."
+    ],
+    "correctAnswer": "AMPS updates the existing record with the new content.",
+    "explanation": "SOW is a last-value cache; if the SOW Key already exists, the incoming message updates the state of that specific record.",
+    "hints": [
+      "It's a 'last-value' cache.",
+      "Think about an 'UPSERT' operation."
+    ],
+    "sourceModule": "module-003"
+  },
+  {
+    "questionId": "q3-010",
+    "type": "true_false",
+    "question": "A SOW query (sow command) remains active and continues to send updates until the client disconnects.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "A 'sow' command is a point-in-time query and finishes once the snapshot is delivered. To receive ongoing updates, you must use 'subscribe' or 'sow_and_subscribe'.",
+    "hints": [
+      "Is a query the same as a subscription?",
+      "Does a snapshot last forever?"
+    ],
+    "sourceModule": "module-003"
+  }
+]

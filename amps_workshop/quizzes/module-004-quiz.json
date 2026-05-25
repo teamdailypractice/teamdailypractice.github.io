@@ -1,0 +1,170 @@
+[
+  {
+    "questionId": "q004-01",
+    "type": "mcq",
+    "question": "What is the primary storage unit used by the AMPS Transaction Log?",
+    "options": [
+      "Relational Database Tables",
+      "Sequential Journal Files",
+      "In-memory Hash Maps",
+      "Compressed ZIP archives"
+    ],
+    "correctAnswer": "Sequential Journal Files",
+    "explanation": "AMPS writes messages sequentially to Journal Files on disk. This approach optimizes for maximum disk throughput and ensures durability.",
+    "hints": [
+      "Think about how AMPS achieves high performance by avoiding random disk seeks.",
+      "The term often used for a chronological record of events is a 'journal'."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-02",
+    "type": "mcq",
+    "question": "Which two pieces of information make up a 'Bookmark' in AMPS?",
+    "options": [
+      "Topic Name and Message Type",
+      "Publisher ID and Sequence Number",
+      "Timestamp and IP Address",
+      "Client Name and SOW Key"
+    ],
+    "correctAnswer": "Publisher ID and Sequence Number",
+    "explanation": "A bookmark is an opaque identifier derived from the publisher ID and the monotonically increasing sequence number assigned to each message.",
+    "hints": [
+      "Every message needs to know who sent it and its position in that sender's stream.",
+      "It's like a pointer in a book: who is the author, and what is the page number?"
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-03",
+    "type": "mcq",
+    "question": "To replay a topic from the very beginning of recorded history, which bookmark should you use?",
+    "options": [
+      "NOW",
+      "START",
+      "EPOCH",
+      "ORIGIN"
+    ],
+    "correctAnswer": "EPOCH",
+    "explanation": "The EPOCH bookmark (represented as 0) tells AMPS to start the replay from the oldest message available in the transaction log.",
+    "hints": [
+      "In computing, what term is often used to refer to the 'beginning of time'?",
+      "It rhymes with 'epic'."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-04",
+    "type": "true_false",
+    "question": "True or False: Once a message is written to a journal file, it is considered immutable and cannot be changed by AMPS.",
+    "correctAnswer": "true",
+    "explanation": "AMPS journal files are append-only and immutable. This ensures the integrity of the historical record and simplifies replication.",
+    "hints": [
+      "If you could change the past, it wouldn't be a reliable audit trail, would it?",
+      "Think about the 'log' in 'transaction log'."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-05",
+    "type": "mcq",
+    "question": "If you want to replay messages at exactly three times the speed they were originally published, which option should you set?",
+    "options": [
+      "speed=300%",
+      "rate=3X",
+      "multiplier=3",
+      "fast_forward=3"
+    ],
+    "correctAnswer": "rate=3X",
+    "explanation": "The 'rate' option allows multipliers like '2X' or '3X', where AMPS paces the replay relative to the original publish timestamps.",
+    "hints": [
+      "We are talking about the 'rate' of delivery.",
+      "Look for an option that uses 'X' as a multiplier symbol."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-06",
+    "type": "mcq",
+    "question": "What is the purpose of the 'NOW' bookmark?",
+    "options": [
+      "It deletes all messages in the log.",
+      "It replays only the last 5 minutes of data.",
+      "It skips all historical data and starts with the live stream.",
+      "It provides the current server time."
+    ],
+    "correctAnswer": "It skips all historical data and starts with the live stream.",
+    "explanation": "A NOW bookmark tells AMPS to begin the subscription with the next message that arrives, without replaying any history from the log.",
+    "hints": [
+      "The name implies the present moment.",
+      "Useful when you don't care about what happened in the past."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-07",
+    "type": "fill_blank",
+    "question": "To request a replay between two specific timestamps, you use the format: [start:____).",
+    "correctAnswer": "end",
+    "explanation": "Replay windows are specified using range syntax, such as [start:end), where the start is inclusive and the end is exclusive.",
+    "hints": [
+      "If you have a 'start', what usually comes next to define a range?",
+      "Think about the 'beginning' and the '____' of a window."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-08",
+    "type": "mcq",
+    "question": "How does AMPS handle a situation where a journal file reaches its maximum size?",
+    "options": [
+      "It stops accepting new messages.",
+      "It overwrites the beginning of the file.",
+      "It creates a new journal file and continues writing there.",
+      "It crashes with a 'Disk Full' error."
+    ],
+    "correctAnswer": "It creates a new journal file and continues writing there.",
+    "explanation": "AMPS uses a sequence of files. When one reaches the configured 'JournalSize', AMPS 'rotates' to a new file in the same directory.",
+    "hints": [
+      "Think about why they are called 'sequential' journal files.",
+      "It's a process of rotation."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-09",
+    "type": "mcq",
+    "question": "What is the benefit of 'rate_max_gap' in a bookmark subscription?",
+    "options": [
+      "It increases the maximum message size.",
+      "It skips over long periods of inactivity during a historical replay.",
+      "It prevents network congestion by adding delays.",
+      "It automatically fills missing sequence numbers."
+    ],
+    "correctAnswer": "It skips over long periods of inactivity during a historical replay.",
+    "explanation": "If a replay multiplier is used (e.g., 5X), 'rate_max_gap' ensures the replay doesn't wait too long during gaps where no messages were originally published (like overnight).",
+    "hints": [
+      "Imagine replaying a full weekend of data where nothing happened on Sunday.",
+      "It helps you avoid 'dead time' in your replay."
+    ],
+    "sourceModule": "module-004"
+  },
+  {
+    "questionId": "q004-10",
+    "type": "mcq",
+    "question": "In a High Availability (HA) setup, how does a standby server synchronize with the primary?",
+    "options": [
+      "By copying the SOW files every hour.",
+      "By replaying missing messages from the primary's transaction log.",
+      "By asking the clients to republish all their data.",
+      "Standby servers do not synchronize until they become primary."
+    ],
+    "correctAnswer": "By replaying missing messages from the primary's transaction log.",
+    "explanation": "Replication is built on the transaction log. A standby instance identifies where it left off and requests a bookmark subscription from the primary to 'catch up'.",
+    "hints": [
+      "Replication is just another form of 'replay' between servers.",
+      "The standby uses its last known bookmark to ask for updates."
+    ],
+    "sourceModule": "module-004"
+  }
+]

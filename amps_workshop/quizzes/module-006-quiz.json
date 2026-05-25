@@ -1,0 +1,100 @@
+[
+  {
+    "questionId": "q1",
+    "type": "mcq",
+    "question": "What is an AMPS View most similar to in a traditional RDBMS?",
+    "options": ["A Materialized View", "A Temporary Table", "A Stored Procedure", "A Trigger"],
+    "correctAnswer": "A Materialized View",
+    "explanation": "AMPS Views aggregate and transform data from underlying topics and store the result in memory, updating in real-time.",
+    "hints": ["It stores the result of a calculation.", "It updates automatically as data changes."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q2",
+    "type": "mcq",
+    "question": "Which aggregation function would you use to find the average price of a stock in a View?",
+    "options": ["SUM", "AVG", "MIN", "MEAN"],
+    "correctAnswer": "AVG",
+    "explanation": "AVG() calculates the arithmetic mean of the specified field across a group of messages.",
+    "hints": ["It's a standard SQL-like function.", "It stands for Average."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q3",
+    "type": "true_false",
+    "question": "AMPS Views can only join topics that share the same message type (e.g., JSON to JSON).",
+    "correctAnswer": "false",
+    "explanation": "AMPS allows joining topics of different message types, such as joining a FIX topic with a JSON topic.",
+    "hints": ["Think about AMPS's flexibility.", "The message type is specified in the Join definition."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q4",
+    "type": "mcq",
+    "question": "What is the default Join behavior in AMPS?",
+    "options": ["Inner Join", "Left Outer Join", "Right Outer Join", "Full Outer Join"],
+    "correctAnswer": "Left Outer Join",
+    "explanation": "AMPS uses Left Outer Join semantics; if no match is found in the joined topic, the primary record is still projected with NULLs for the lookup fields.",
+    "hints": ["The primary topic records are always preserved.", "Lookup fields are NULL if missing."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q5",
+    "type": "mcq",
+    "question": "Which feature is used to limit the frequency of updates sent to a subscriber for high-velocity data?",
+    "options": ["Filtering", "Aggregation", "Conflation", "Projection"],
+    "correctAnswer": "Conflation",
+    "explanation": "Conflation ensures a subscriber receives the latest state of a record at a specified interval, rather than every single update.",
+    "hints": ["It handles 'too much data' for a client.", "It's time-based or message-based."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q6",
+    "type": "mcq",
+    "question": "What does an OOF notification signify?",
+    "options": ["Out-of-Frequency: Too many messages", "Out-of-Focus: Record no longer matches subscription", "Only-One-Filter: Filter conflict", "Order-Of-Fields: Field sequence change"],
+    "correctAnswer": "Out-of-Focus: Record no longer matches subscription",
+    "explanation": "OOF notifications tell a subscriber that a record they were tracking is no longer relevant to their subscription.",
+    "hints": ["It relates to subscription focus.", "It helps maintain a local cache."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q7",
+    "type": "mcq",
+    "question": "Which of these is NOT a valid OOF reason code?",
+    "options": ["deleted", "expired", "filter", "restarted"],
+    "correctAnswer": "restarted",
+    "explanation": "Valid reason codes are deleted, expired, filter, and entitlement.",
+    "hints": ["Think about why a record leaves a filter.", "One of these is about the server state, not the record state."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q8",
+    "type": "mcq",
+    "question": "In a View projection, how is the 'Grouping Key' determined?",
+    "options": ["By an explicit <GroupBy> tag", "All fields NOT using an aggregate function are grouping keys", "The first field in the projection", "Only the SOW key of the underlying topic"],
+    "correctAnswer": "All fields NOT using an aggregate function are grouping keys",
+    "explanation": "Any field in the projection that is not wrapped in an aggregate function (like SUM or AVG) is automatically used by AMPS to group the data.",
+    "hints": ["It's implicit based on the projection.", "Non-aggregated fields form the group."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q9",
+    "type": "true_false",
+    "question": "If a record goes out of focus and back into focus within the same conflation interval, the subscriber will still receive an OOF message.",
+    "correctAnswer": "false",
+    "explanation": "AMPS only sends the final state at the end of the conflation interval. If the record is back in focus, no OOF is sent.",
+    "hints": ["Conflation only cares about the end of the interval.", "AMPS minimizes noise."],
+    "sourceModule": "module-006"
+  },
+  {
+    "questionId": "q10",
+    "type": "mcq",
+    "question": "Which aggregate function is used to return an arbitrary value from a group?",
+    "options": ["FIRST", "LAST", "ANY", "SAMPLE"],
+    "correctAnswer": "ANY",
+    "explanation": "The ANY() function returns a value from the group, which is useful for fields that are identical across all members of the group.",
+    "hints": ["It's used when any example will do.", "It's a standard AMPS function name."],
+    "sourceModule": "module-006"
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "moduleId": "module-010",
+    "slideNumber": 1,
+    "title": "Client Development & Best Practices 🚀",
+    "type": "title",
+    "content": [
+      "Mastering the AMPS SDKs",
+      "Optimizing for Low Latency",
+      "Building Resilient Applications"
+    ],
+    "speakerNotes": "Welcome to Module 10. Today we dive into how to build world-class applications using AMPS SDKs and how to squeeze every bit of performance out of your OS and hardware."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 2,
+    "title": "AMPS Client SDKs: Multi-language Support 🌍",
+    "type": "content",
+    "content": [
+      "Native SDKs for: Java, C#, C++, Python, Go, and JavaScript.",
+      "Consistency across languages: Unified API design.",
+      "High performance: Optimized for the specific runtime (e.g., Zero-copy in C++).",
+      "Platform support: Linux, Windows, macOS, and Cloud environments."
+    ],
+    "speakerNotes": "AMPS supports all major enterprise languages. Each SDK is optimized for its specific environment while maintaining a consistent programming model across the board."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 3,
+    "title": "Core Interfaces: Message & Command 🛠️",
+    "type": "content",
+    "content": [
+      "**Command**: The 'verbs' of AMPS (Subscribe, Publish, SOW, Delta).",
+      "**Message**: The 'nouns' containing payload and metadata (Topic, SOW Key, Bookmark).",
+      "Metadata access: Efficiently retrieve header info without full payload parsing.",
+      "Payload flexibility: Support for JSON, FIX, BFlat, Protobuf, and Binary."
+    ],
+    "speakerNotes": "Every interaction in AMPS revolves around these two interfaces. Commands go to the server; Messages come back."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 4,
+    "title": "Programming Pattern: Asynchronous Callbacks 🔄",
+    "type": "content",
+    "content": [
+      "Don't block the main thread! 🛑",
+      "Message Handlers: Register a function/method to handle incoming data.",
+      "Concurrency: AMPS clients often use background threads for network I/O.",
+      "Thread Safety: Ensure your handler logic is thread-safe or hands off to a worker queue."
+    ],
+    "mermaid": "graph LR\n  A[Network Thread] -- Message --> B{Message Handler}\n  B -- Process --> C[App Logic]\n  B -- Queue --> D[Worker Thread Pool]",
+    "speakerNotes": "Asynchronous processing is the key to maintaining high throughput and low latency. Use a handler to receive messages and immediately return control to the SDK."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 5,
+    "title": "Exception Handling & Error Recovery 🛡️",
+    "type": "content",
+    "content": [
+      "Connection Errors: Network drops, timeouts, and refused connections.",
+      "Entitlement Errors: Unauthorized access to topics or commands.",
+      "Protocol Errors: Invalid filters or malformed messages.",
+      "Best Practice: Implement an Exception Listener to catch background errors."
+    ],
+    "speakerNotes": "In a distributed system, things fail. Your code must be ready to catch exceptions not just in the main loop, but in background listeners as well."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 6,
+    "title": "High Availability: HAClient & Reconnection 🔄",
+    "type": "content",
+    "content": [
+      "**HAClient**: Wrapper that manages multiple server URIs.",
+      "Automatic Reconnection: Loops through servers until one is available.",
+      "State Management: Resubscribes to active topics upon reconnection.",
+      "Transparency: The application continues to function during the failover."
+    ],
+    "mermaid": "sequenceDiagram\n  participant C as HAClient\n  participant S1 as Primary Server\n  participant S2 as Backup Server\n  C->>S1: Connect & Subscribe\n  Note over S1: Server Fails 💥\n  C->>C: Detect Disconnect\n  C->>S2: Reconnect\n  C->>S2: Resubscribe with Bookmark\n  S2-->>C: Catch-up Messages",
+    "speakerNotes": "The HAClient is the 'Easy Button' for high availability. It handles the complexity of finding a live server and resuming your exact state using bookmarks."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 7,
+    "title": "Bookmark Subscriptions for Data Integrity ✅",
+    "type": "content",
+    "content": [
+      "Never miss a message! 📉",
+      "Bookmarks: Unique IDs for every message in the transaction log.",
+      "Bookmark Stores: Local file or memory to track 'last seen' messages.",
+      "Resume: On restart, the client asks for data starting 'after' the last bookmark."
+    ],
+    "speakerNotes": "Combine the HAClient with a Bookmark Store to create a 'gapless' subscription that survives both network drops and application restarts."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 8,
+    "title": "Performance Tuning: CPU Pinning & NUMA 🧠",
+    "type": "content",
+    "content": [
+      "**CPU Pinning**: Bind AMPS threads to specific physical cores.",
+      "**NUMA**: Non-Uniform Memory Access awareness.",
+      "Minimize context switches: Keep threads on their assigned cores.",
+      "Memory Locality: Access memory on the same socket as the CPU."
+    ],
+    "speakerNotes": "On modern multi-socket servers, the distance between the CPU and memory matters. AMPS is NUMA-aware, and you should ensure your OS configuration respects this."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 9,
+    "title": "Performance Tuning: Disk I/O (XFS & SSD) 💾",
+    "type": "content",
+    "content": [
+      "Transaction logs need fast sequential writes. ✍️",
+      "Use SSD or NVMe for low-latency persistence.",
+      "Filesystem: **XFS** is highly recommended for AMPS performance.",
+      "Avoid NFS for primary logs: Latency and locking issues are common."
+    ],
+    "speakerNotes": "Disk latency is the most common bottleneck for persistent messaging. Use local fast storage and the XFS filesystem for the best results."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 10,
+    "title": "OS Tuning: Transparent Huge Pages (THP) 📄",
+    "type": "content",
+    "content": [
+      "The Problem: THP can cause 'stalls' during memory allocation.",
+      "The Solution: **Disable THP** for AMPS workloads.",
+      "Why? Large, unpredictable latency spikes are unacceptable for trading apps.",
+      "Command: `echo never > /sys/kernel/mm/transparent_hugepage/enabled`"
+    ],
+    "speakerNotes": "Transparent Huge Pages are great for some apps, but for low-latency messaging, they introduce jitter. Disable them to ensure consistent performance."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 11,
+    "title": "OS Tuning: TCP Settings for Low Latency ⚡",
+    "type": "content",
+    "content": [
+      "`TCP_NODELAY`: Disable Nagle's algorithm to send small packets immediately.",
+      "`SO_RCVBUF` / `SO_SNDBUF`: Tune buffer sizes for high-throughput pipes.",
+      "Interrupt Coalescing: Adjust NIC settings to process packets faster.",
+      "Bypass the stack? Consider Kernel Bypass (Solarflare/Mellanox) for ultra-low latency."
+    ],
+    "speakerNotes": "Standard TCP settings are for throughput, not latency. We need to tune the stack to ensure every message is delivered as fast as the wire allows."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 12,
+    "title": "Threading Models: Client-side Parallelism 🧵",
+    "type": "content",
+    "content": [
+      "Single-threaded handlers: Easy but can be a bottleneck.",
+      "Pipeline Processing: One thread for I/O, many for processing.",
+      "Lock-free queues: Use Disrupter or similar patterns for inter-thread handoffs.",
+      "Goal: Maximize CPU saturation across all available cores."
+    ],
+    "mermaid": "graph TD\n  A[NIC] --> B[SDK Network Thread]\n  B --> C[Lock-Free Queue]\n  C --> D1[Worker 1]\n  C --> D2[Worker 2]\n  C --> D3[Worker 3]",
+    "speakerNotes": "Don't let your business logic slow down your message reception. Use a high-performance threading model to scale your application."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 13,
+    "title": "Deployment Checklist: Pre-Production 📋",
+    "type": "content",
+    "content": [
+      "✅ Hardware: Verified NUMA and CPU layout.",
+      "✅ OS: THP disabled, TCP tuned, XFS mounted.",
+      "✅ AMPS: Replication active, HAClient tested.",
+      "✅ Monitoring: Galvanometer and Alerts configured.",
+      "✅ Scaling: Load tested with production-like message volumes."
+    ],
+    "speakerNotes": "Before you click 'Go', walk through this checklist. Most production issues are caused by simple configuration misses in the OS or hardware layers."
+  },
+  {
+    "moduleId": "module-010",
+    "slideNumber": 14,
+    "title": "Summary & Best Practices Recap ✨",
+    "type": "content",
+    "content": [
+      "Use the right SDK and the HAClient for resilience. 🛡️",
+      "Optimize your code with async patterns and bookmark stores. 🔄",
+      "Tune your hardware and OS for the microsecond level. ⏱️",
+      "Monitor everything! 📊"
+    ],
+    "speakerNotes": "We've covered a lot today. Remember: AMPS is fast, but your application is only as fast as its slowest component. Tune every layer!"
+  }
+]

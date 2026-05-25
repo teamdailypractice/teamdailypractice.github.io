@@ -1,0 +1,174 @@
+[
+  {
+    "questionId": "q7-1",
+    "type": "mcq",
+    "question": "What are the two core features AMPS uses to provide High Availability?",
+    "options": [
+      "Websockets and JSON",
+      "Transaction Logging and Integrated Replication",
+      "SOW and Delta Messaging",
+      "Spark and Galvanometer"
+    ],
+    "correctAnswer": "Transaction Logging and Integrated Replication",
+    "explanation": "AMPS uses the transaction log to record every message and replication to mirror that log across multiple instances.",
+    "hints": [
+      "Think about what keeps a record of messages on disk.",
+      "Think about how messages get from one server to another."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-2",
+    "type": "true_false",
+    "question": "AMPS replication relies on a central controller or 'leader' node to coordinate message flow.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "AMPS replication is peer-to-peer and leaderless. Each instance processes messages independently.",
+    "hints": [
+      "Does AMPS have a 'Zookeeper' or similar central authority?",
+      "Can each instance run on its own without a master?"
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-3",
+    "type": "mcq",
+    "question": "Which replication topology involves ingestion servers pushing to a central distributor, which then pushes to application servers?",
+    "options": [
+      "Ring",
+      "Mesh",
+      "Hub and Spoke (Star)",
+      "Peer-to-Peer Pair"
+    ],
+    "correctAnswer": "Hub and Spoke (Star)",
+    "explanation": "The Hub and Spoke topology uses a central 'hub' to distribute messages to many 'spoke' application servers.",
+    "hints": [
+      "Think about a bicycle wheel.",
+      "What topology is used for massive scale-out of consumers?"
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-4",
+    "type": "mcq",
+    "question": "What is the main difference between Synchronous (Sync) and Asynchronous (Async) replication?",
+    "options": [
+      "Sync is faster than Async.",
+      "Async requires more bandwidth than Sync.",
+      "Sync waits for the destination to persist the message before acknowledging the publisher.",
+      "Async is only used for SOW topics."
+    ],
+    "correctAnswer": "Sync waits for the destination to persist the message before acknowledging the publisher.",
+    "explanation": "Synchronous replication ensures that a message is safely stored on both the source and destination before the publisher is notified.",
+    "hints": [
+      "Which one provides a stronger 'durability' guarantee?",
+      "Think about what 'synchronizing' expectations means in this context."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-5",
+    "type": "mcq",
+    "question": "What is the process called when an AMPS instance automatically replays missed messages to catch up after a disconnection?",
+    "options": [
+      "Re-indexing",
+      "Resynchronization (Resync)",
+      "Back-filling",
+      "Delta Recovery"
+    ],
+    "correctAnswer": "Resynchronization (Resync)",
+    "explanation": "Resynchronization (Resync) is the automatic process where an upstream instance replays journals to a downstream instance to fill gaps.",
+    "hints": [
+      "It sounds like 'syncing again'.",
+      "AMPS does this automatically to 'self-heal' the cluster."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-6",
+    "type": "mcq",
+    "question": "How does AMPS detect and suppress duplicate messages during publisher failover?",
+    "options": [
+      "Using message timestamps",
+      "Comparing the entire message body",
+      "Using unique Client Names and Sequence Numbers",
+      "Requesting a resend of all data"
+    ],
+    "correctAnswer": "Using unique Client Names and Sequence Numbers",
+    "explanation": "AMPS identifies duplicates by looking at the combination of the Client Name and the Sequence Number provided by the publisher.",
+    "hints": [
+      "What do we call the unique ID assigned to each message by the publisher?",
+      "Why is a consistent 'Name' important for a client?"
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-7",
+    "type": "mcq",
+    "question": "In a replicated queue, who initially 'owns' a message published to a Distributed Queue?",
+    "options": [
+      "The Hub server",
+      "The first instance to receive the publish from the client",
+      "All instances in the cluster equally",
+      "The instance with the lowest CPU load"
+    ],
+    "correctAnswer": "The first instance to receive the publish from the client",
+    "explanation": "In a distributed queue, the ingestion instance (the one the client connected to) initially owns the message.",
+    "hints": [
+      "Ownership starts where the message 'landed' first.",
+      "Does ownership move automatically without a request?"
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-8",
+    "type": "mcq",
+    "question": "What feature allows an instance to grant ownership of a queue message if the original owner is offline?",
+    "options": [
+      "PassThrough Replication",
+      "Resync",
+      "Proxied Transfer",
+      "Bookmark Replay"
+    ],
+    "correctAnswer": "Proxied Transfer",
+    "explanation": "Proxied Transfer is an administrative feature that allows a surviving instance to act as a proxy for an offline instance to move queue work forward.",
+    "hints": [
+      "What is it called when someone acts on behalf of another?",
+      "This is a DR feature for queues."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-9",
+    "type": "mcq",
+    "question": "Which client class is specifically designed to handle failover and subscription recovery in AMPS?",
+    "options": [
+      "Client",
+      "HAClient",
+      "ReliableClient",
+      "SecureClient"
+    ],
+    "correctAnswer": "HAClient",
+    "explanation": "The HAClient class (High Availability Client) includes built-in logic for reconnection, resubscription, and reliable publishing.",
+    "hints": [
+      "What is the acronym for High Availability?",
+      "It's a specialized subclass of the standard Client."
+    ],
+    "sourceModule": "module-007"
+  },
+  {
+    "questionId": "q7-10",
+    "type": "fill_blank",
+    "question": "The AMPS ________ subscription allows a client to resume a message stream from a specific point in the transaction log after a restart.",
+    "correctAnswer": "bookmark",
+    "explanation": "Bookmark subscriptions use the unique bookmark ID assigned to each message in the transaction log to provide durable, resumable streaming.",
+    "hints": [
+      "What do you put in a physical book to save your place?",
+      "It's a unique identifier for a position in the transaction log."
+    ],
+    "sourceModule": "module-007"
+  }
+]

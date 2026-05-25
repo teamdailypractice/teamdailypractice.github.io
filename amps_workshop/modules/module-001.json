@@ -1,0 +1,84 @@
+{
+  "moduleId": "M1",
+  "title": "Module 1: Introduction & Getting Started",
+  "sections": [
+    {
+      "title": "Welcome & Introduction",
+      "content": [
+        "Welcome to the Advanced Message Processing System (AMPS) from 60East Technologies! 🚀 AMPS is designed for data-intensive applications with demanding requirements for low latency and high performance. It takes a nontraditional approach to messaging, storage, and analytics, built from the ground up for streaming data and highly-parallelized multicore systems.",
+        "AMPS is widely used in high-stakes environments such as:",
+        "• Trade plant operations (backtesting and historical analysis) 📈",
+        "• Risk calculations ⚡",
+        "• Elastic worker farms 🚜",
+        "• View servers 🖥️",
+        "• Message flow integration and 'shock absorbers' 🛡️",
+        "AMPS combines fast messaging with an integrated database (SOW), aggregation engine, and historical replay (Transaction Log)."
+      ]
+    },
+    {
+      "title": "Feature Highlights",
+      "content": [
+        "AMPS offers a powerful suite of features to streamline your data processing:",
+        "• **Pub/Sub Messaging**: Fast fan-out with full content filtering. 📡",
+        "• **Content Filtering**: Use SQL-92 predicates and regular expressions (PCRE2) to get exactly the data you need.",
+        "• **State of the World (SOW)**: An integrated database for current value caching and key/value storage. 🌎",
+        "• **Message Queues**: Competitive consumption with delivery guarantees. 📥",
+        "• **Complex Event Processing (CEP)**: Real-time aggregation and analytics over streaming data. 🧠",
+        "• **Historical Replay**: Record and replay message streams with full fidelity via the Transaction Log.",
+        "• **High Availability**: Integrated replication and automatic failover for enterprise scale. 🏗️"
+      ]
+    },
+    {
+      "title": "Installation",
+      "content": [
+        "Installing AMPS is straightforward. It runs on 64-bit Linux (kernel 2.6+) and contains all necessary dependencies. 🐧",
+        "1. Download the distribution to your Linux system.",
+        "2. Unpack the distribution into your desired directory (referred to as `$AMPSDIR`).",
+        "Within `$AMPSDIR`, you will find:",
+        "• `bin/`: AMPS engine binaries and utilities (like `ampServer` and `spark`).",
+        "• `docs/`: Documentation files.",
+        "• `lib/`: Library dependencies.",
+        "• `sdk/`: Include files for the AMPS extension API.",
+        "Note: AMPS client libraries (Java, C#, Python, etc.) are available as separate downloads. 📦"
+      ]
+    },
+    {
+      "title": "Starting AMPS",
+      "content": [
+        "The AMPS engine binary is named `ampServer`. ⚙️",
+        "To start AMPS, you need a configuration file. You can generate a minimal sample configuration with the following command:",
+        "`$AMPSDIR/bin/ampServer --sample-config > $AMPSDIR/amps_config.xml`",
+        "To start the server using this configuration:",
+        "`$AMPSDIR/bin/ampServer $AMPSDIR/amps_config.xml`",
+        "Once started, you should see a message indicating the version and build date. Congratulations! You've successfully cranked up the AMPS! 🎉"
+      ]
+    },
+    {
+      "title": "JSON Messages - A Quick Primer",
+      "content": [
+        "AMPS supports many message types, but JSON is the most common for evaluation and samples. 📄",
+        "JSON (JavaScript Object Notation) has two basic constructs:",
+        "• **Objects**: Key/value pairs enclosed in `{}`.",
+        "• **Arrays**: Ordered lists of values enclosed in `[]`.",
+        "JSON supports hierarchical construction, meaning values can be nested objects or arrays. AMPS uses a subset of JSON for its own command protocol (the `amps` protocol).",
+        "Example of an AMPS publish command in JSON:",
+        "`{\"c\":\"publish\",\"t\":\"test-topic\"}{ \"id\" : 1, \"message\" : \"Hello, World!\" }`"
+      ]
+    },
+    {
+      "title": "Spark CLI",
+      "content": [
+        "AMPS provides the `spark` utility, a command-line interface for interacting with the server. ⚡",
+        "`spark` is most commonly used for ad hoc testing or simple maintenance tasks.",
+        "Common `spark` commands:",
+        "• **ping**: Test connectivity to the server.",
+        "• **subscribe**: Start a subscription to a topic.",
+        "• **publish**: Send a message to a topic.",
+        "Example ping command:",
+        "`$AMPSDIR/bin/spark ping -server localhost:9007 -type json`",
+        "This confirms that the server is listening and ready to accept JSON messages on port 9007. 🎯"
+      ]
+    }
+  ],
+  "assets": []
+}

@@ -1,0 +1,55 @@
+{
+  "moduleId": "module-006",
+  "title": "Module 6: Advanced Analytics (CEP & Views)",
+  "sections": [
+    {
+      "title": "Introduction to Views",
+      "content": [
+        "AMPS Views are high-performance virtual topics that aggregate or transform data from one or more underlying SOW topics.",
+        "They are similar to 'Materialized Views' in traditional databases, but they update in real-time as the underlying data changes.",
+        "Views allow for complex calculations, filtering, and joining of data before it ever reaches the subscriber."
+      ]
+    },
+    {
+      "title": "Aggregation Functions",
+      "content": [
+        "AMPS supports standard SQL-like aggregation functions to summarize data streams.",
+        "Key functions include: SUM, AVG, MIN, MAX, COUNT, and COUNT_DISTINCT.",
+        "The ANY function can also be used to retrieve an arbitrary value from a group.",
+        "Grouping is achieved by specifying non-aggregated fields in the view definition, effectively creating a 'GROUP BY' structure."
+      ]
+    },
+    {
+      "title": "Joining Topics",
+      "content": [
+        "Views can perform joins across multiple topics, even if they use different message types (e.g., joining FIX with JSON).",
+        "AMPS primarily uses LEFT OUTER JOIN semantics: if a match is not found in the joined topic, NULL values are projected for those fields.",
+        "Joins are string-based by default, so care must be taken with numeric formats (e.g., '10' vs '10.0')."
+      ]
+    },
+    {
+      "title": "Conflation",
+      "content": [
+        "Conflation helps subscribers handle high-velocity data by limiting the update rate.",
+        "Time-based conflation sends the latest state of a record at regular intervals (e.g., every 1s).",
+        "Subscription-based conflation allows individual clients to request their own intervals.",
+        "Topic-based conflation is defined on the server and applies to all subscribers of that topic."
+      ]
+    },
+    {
+      "title": "Out-of-Focus (OOF) Notifications",
+      "content": [
+        "OOF notifications inform a subscriber when a record no longer matches their filter criteria.",
+        "This happens when a record is deleted, expires, or is updated such that it no longer meets the filter.",
+        "OOF messages include a 'reason' header (deleted, expired, filter, entitlement) to help the application take appropriate action."
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "id": "view-flow-diagram",
+      "type": "diagram",
+      "path": "assets/diagrams/view-flow.svg"
+    }
+  ]
+}

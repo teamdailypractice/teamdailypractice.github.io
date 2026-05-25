@@ -1,0 +1,56 @@
+{
+  "moduleId": "module-009",
+  "title": "Security & Entitlements",
+  "sections": [
+    {
+      "title": "Introduction to AMPS Security",
+      "page": 800,
+      "content": [
+        "Keeping data safe is a critical consideration for production environments.",
+        "AMPS provides a robust framework for authentication, entitlement, and data encryption.",
+        "Security in AMPS is highly extensible through a plugin-based architecture."
+      ],
+      "assets": []
+    },
+    {
+      "title": "Authentication",
+      "page": 801,
+      "content": [
+        "Authentication is the process of assigning and verifying an identity for a connection.",
+        "AMPS supports both explicit logon commands and implicit logon (though disabled by default for security).",
+        "Once an identity is assigned, it remains for the lifetime of the connection."
+      ],
+      "assets": []
+    },
+    {
+      "title": "Entitlements",
+      "page": 805,
+      "content": [
+        "Entitlements enforce permissions to access AMPS resources like topics and admin stats.",
+        "Resource types include logon, replication_logon, topic, and admin.",
+        "Permissions can be granularly controlled (read, write, replication allowed)."
+      ],
+      "assets": []
+    },
+    {
+      "title": "Content-Based and Field-Level Security",
+      "page": 809,
+      "content": [
+        "Content-based security uses filters to restrict which records a user can see or publish.",
+        "Field-level security uses select lists to hide specific fields from messages.",
+        "These features allow for multi-tenant environments on a single AMPS instance."
+      ],
+      "assets": []
+    },
+    {
+      "title": "Security Modules",
+      "page": 819,
+      "content": [
+        "AMPS includes several modules: HTTP (RESTful), Multimethod (LDAP/Kerberos), Simple Access, and OAuth.",
+        "These modules allow AMPS to integrate with existing enterprise identity providers."
+      ],
+      "assets": []
+    }
+  ],
+  "assets": []
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "moduleId": "module-006",
+    "slideNumber": 1,
+    "title": "Module 6: Advanced Analytics (CEP & Views)",
+    "type": "intro",
+    "content": [
+      "Welcome to Module 6! 🚀",
+      "Today we explore how AMPS transforms raw data into real-time insights.",
+      "Topics covered:",
+      "• Views & Projections",
+      "• Aggregation & Grouping",
+      "• Real-time Conflation",
+      "• Out-of-Focus (OOF) Notifications"
+    ],
+    "speakerNotes": "Introduce the module on analytics and CEP."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 2,
+    "title": "What are AMPS Views?",
+    "type": "concept",
+    "content": [
+      "Views are 'Virtual Topics' calculated from one or more SOW topics.",
+      "They act like Materialized Views in a database.",
+      "Features:",
+      "• Recalculated automatically on every update.",
+      "• Can aggregate data (SUM, AVG, etc.).",
+      "• Can project (rename/filter) fields.",
+      "• Can join data from multiple topics."
+    ],
+    "speakerNotes": "Explain the concept of views as materialized virtual topics."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 3,
+    "title": "View Data Flow",
+    "type": "diagram_explanation",
+    "content": [
+      "Data flows from Underlying Topics into the View Topic.",
+      "AMPS handles the heavy lifting of recalculation."
+    ],
+    "mermaid": "graph TD\n    A[Topic: Orders] -->|Update| V{View: TotalSales}\n    B[Topic: Prices] -->|Update| V\n    V -->|Real-time| S1[Subscriber A]\n    V -->|Real-time| S2[Subscriber B]",
+    "speakerNotes": "Use the diagram to show how multiple topics feed into a single view."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 4,
+    "title": "Aggregation Functions",
+    "type": "definition",
+    "content": [
+      "AMPS provides powerful built-in functions for data reduction:",
+      "• SUM(field): Total value.",
+      "• AVG(field): Mean value.",
+      "• MIN / MAX(field): Range limits.",
+      "• COUNT(field): Number of records.",
+      "• COUNT_DISTINCT(field): Number of unique values.",
+      "• ANY(field): Returns one example from the group."
+    ],
+    "speakerNotes": "List the core aggregation functions."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 5,
+    "title": "Grouping and Projection",
+    "type": "concept",
+    "content": [
+      "To aggregate data, you must define how to group it.",
+      "Any field in the projection that is NOT aggregated becomes part of the 'Grouping Key'.",
+      "Example: Grouping by 'Symbol' to get total volume per ticker.",
+      "AMPS produces a unique SOW record for each unique grouping key."
+    ],
+    "speakerNotes": "Explain how grouping works similar to SQL GROUP BY."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 6,
+    "title": "Joining Topics",
+    "type": "concept",
+    "content": [
+      "AMPS supports Joins between SOW topics.",
+      "• Relationship is defined via a Join expression.",
+      "• Format: [TopicA].[Field] = [TopicB].[Field].",
+      "• Different message types can be joined (e.g., JSON to FIX).",
+      "• This is a LEFT OUTER JOIN: TopicA is the primary; TopicB is the lookup."
+    ],
+    "speakerNotes": "Explain how joins work between topics."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 7,
+    "title": "Join Behavior",
+    "type": "diagram_explanation",
+    "content": [
+      "If a match is found in the joined topic, fields are merged.",
+      "If no match is found, fields from the joined topic appear as NULL."
+    ],
+    "mermaid": "graph LR\n    P[Primary Topic] -- Join Key --> L[Lookup Topic]\n    P -- No Match --> O[Result: Primary + NULLs]\n    P -- Match --> M[Result: Merged Record]",
+    "speakerNotes": "Explain the LEFT OUTER JOIN behavior."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 8,
+    "title": "Real-time Conflation",
+    "type": "concept",
+    "content": [
+      "Conflation manages high-update volume for slow consumers.",
+      "Instead of every update, subscribers receive the 'latest state' at a specific interval.",
+      "• Benefits: Reduced network traffic, prevents client overload.",
+      "• Accuracy: Clients always see the most recent data (no staleness beyond the interval)."
+    ],
+    "speakerNotes": "Introduce conflation as a solution for high-frequency updates."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 9,
+    "title": "Subscription Conflation",
+    "type": "definition",
+    "content": [
+      "Requested via subscription options (e.g., conflation=1s).",
+      "Types of Conflation Control:",
+      "• Time-based: Interval (e.g., 500ms, 10s).",
+      "• Key-based: Uses SOW keys (or custom conflation_key) to identify 'the same record'.",
+      "• Auto-conflation: AMPS adjusts based on client speed."
+    ],
+    "speakerNotes": "Explain the different ways to configure conflation on a subscription."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 10,
+    "title": "Out-of-Focus (OOF) Notifications",
+    "type": "concept",
+    "content": [
+      "What happens when a record no longer matches your filter? 🔍",
+      "Without OOF: The client 'loses track' of the record (it just stops updating).",
+      "With OOF: AMPS sends a special message notifying the client that the record is gone.",
+      "Crucial for maintaining an accurate local cache."
+    ],
+    "speakerNotes": "Explain the purpose of OOF notifications."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 11,
+    "title": "OOF Reasons",
+    "type": "table_explanation",
+    "content": [
+      "AMPS provides a reason code in the OOF header:",
+      "• deleted: The record was explicitly removed from the SOW.",
+      "• expired: The record's TTL (Time-To-Live) was reached.",
+      "• filter: The record was updated and no longer matches the subscription's filter.",
+      "• entitlement: The subscriber no longer has permission to see the record."
+    ],
+    "speakerNotes": "Explain the different reason codes for OOF messages."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 12,
+    "title": "OOF + Conflation",
+    "type": "concept",
+    "content": [
+      "What if a record goes out of focus and back in within the same interval?",
+      "• AMPS sends the 'final state' at the end of the interval.",
+      "• If it's still in focus, no OOF is sent.",
+      "• If it's gone at the end, one OOF is sent.",
+      "This ensures consistency without excessive noise."
+    ],
+    "speakerNotes": "Explain the interaction between OOF and conflation."
+  },
+  {
+    "moduleId": "module-006",
+    "slideNumber": 13,
+    "title": "Summary: Advanced Analytics",
+    "type": "recap",
+    "content": [
+      "• Views provide server-side aggregation and joining.",
+      "• Aggregations (SUM, AVG) require Grouping keys.",
+      "• Conflation reduces update rates for efficiency.",
+      "• OOF notifications are vital for state synchronization."
+    ],
+    "speakerNotes": "Summarize the key points of the module."
+  }
+]

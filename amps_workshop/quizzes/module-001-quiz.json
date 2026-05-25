@@ -1,0 +1,184 @@
+[
+  {
+    "questionId": "M1-Q1",
+    "type": "mcq",
+    "question": "What does AMPS stand for?",
+    "options": [
+      "Advanced Message Processing System",
+      "Automated Message Publishing Service",
+      "Asynchronous Message Processing Software",
+      "Advanced Multicore Processing System"
+    ],
+    "correctAnswer": "Advanced Message Processing System",
+    "explanation": "AMPS is the 'Advanced Message Processing System' from 60East Technologies.",
+    "hints": [
+      "The 'A' stands for Advanced.",
+      "The 'P' stands for Processing."
+    ],
+    "sourceModule": "M1",
+    "concept": "Introduction"
+  },
+  {
+    "questionId": "M1-Q2",
+    "type": "mcq",
+    "question": "Which operating system is the AMPS server primarily supported on?",
+    "options": [
+      "Windows Server 2022",
+      "64-bit Linux (Kernel 2.6+)",
+      "macOS Sonoma",
+      "FreeBSD"
+    ],
+    "correctAnswer": "64-bit Linux (Kernel 2.6+)",
+    "explanation": "AMPS is designed for x64 Linux systems and leverages kernel features for high performance.",
+    "hints": [
+      "It is a popular open-source server OS.",
+      "Think about the penguin mascot."
+    ],
+    "sourceModule": "M1",
+    "concept": "Installation"
+  },
+  {
+    "questionId": "M1-Q3",
+    "type": "true_false",
+    "question": "AMPS requires a separate external database to store its 'State of the World' (SOW) data.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": "False",
+    "explanation": "AMPS includes an integrated database for SOW, meaning no external database is required.",
+    "hints": [
+      "Does AMPS claim to be an 'integrated' system?",
+      "Re-read the 'Core Components' section."
+    ],
+    "sourceModule": "M1",
+    "concept": "Features"
+  },
+  {
+    "questionId": "M1-Q4",
+    "type": "mcq",
+    "question": "What is the name of the main AMPS server binary?",
+    "options": [
+      "amps-engine",
+      "ampServer",
+      "spark",
+      "ampsd"
+    ],
+    "correctAnswer": "ampServer",
+    "explanation": "The main server process is named `ampServer` and is found in the `bin` directory.",
+    "hints": [
+      "It combines 'amp' and 'Server'.",
+      "It's camelCased."
+    ],
+    "sourceModule": "M1",
+    "concept": "Starting AMPS"
+  },
+  {
+    "questionId": "M1-Q5",
+    "type": "mcq",
+    "question": "Which command line option allows the server to generate a minimal configuration file?",
+    "options": [
+      "--init",
+      "--create-config",
+      "--sample-config",
+      "--gen-xml"
+    ],
+    "correctAnswer": "--sample-config",
+    "explanation": "Running `ampServer --sample-config` outputs a minimal valid XML configuration.",
+    "hints": [
+      "It uses the word 'sample'.",
+      "It is used to bootstrap a new installation."
+    ],
+    "sourceModule": "M1",
+    "concept": "Configuration"
+  },
+  {
+    "questionId": "M1-Q6",
+    "type": "mcq",
+    "question": "In the $AMPSDIR structure, which directory contains the extension API include files?",
+    "options": [
+      "bin",
+      "lib",
+      "sdk",
+      "docs"
+    ],
+    "correctAnswer": "sdk",
+    "explanation": "The `sdk` directory contains the necessary headers for developing custom AMPS extensions.",
+    "hints": [
+      "It stands for Software Development Kit.",
+      "It's where you find files for building things."
+    ],
+    "sourceModule": "M1",
+    "concept": "Installation"
+  },
+  {
+    "questionId": "M1-Q7",
+    "type": "mcq",
+    "question": "What are the two basic constructs of the JSON format?",
+    "options": [
+      "Tables and Rows",
+      "Objects and Arrays",
+      "Nodes and Attributes",
+      "Keys and Indices"
+    ],
+    "correctAnswer": "Objects and Arrays",
+    "explanation": "JSON is built on two structures: a collection of name/value pairs (Objects) and an ordered list of values (Arrays).",
+    "hints": [
+      "Think about `{}` and `[]` symbols.",
+      "One is curly, one is square."
+    ],
+    "sourceModule": "M1",
+    "concept": "JSON Primer"
+  },
+  {
+    "questionId": "M1-Q8",
+    "type": "mcq",
+    "question": "Which utility provides a command-line interface for ad hoc testing and diagnostics?",
+    "options": [
+      "ampserr",
+      "spark",
+      "galvanometer",
+      "amps-grep"
+    ],
+    "correctAnswer": "spark",
+    "explanation": "`spark` is the versatile CLI client included in the `bin` directory for basic operations.",
+    "hints": [
+      "It's a bright idea.",
+      "It starts with 's'."
+    ],
+    "sourceModule": "M1",
+    "concept": "Spark CLI"
+  },
+  {
+    "questionId": "M1-Q9",
+    "type": "mcq",
+    "question": "What is the primary purpose of the AMPS 'Transaction Log'?",
+    "options": [
+      "To store user passwords",
+      "To record and replay message streams",
+      "To provide a GUI for monitoring",
+      "To compress network traffic"
+    ],
+    "correctAnswer": "To record and replay message streams",
+    "explanation": "The Transaction Log is a persistent journal of messages used for replay, replication, and high availability.",
+    "hints": [
+      "It acts like a black box for messages.",
+      "Think 'Record and Replay'."
+    ],
+    "sourceModule": "M1",
+    "concept": "Features"
+  },
+  {
+    "questionId": "M1-Q10",
+    "type": "fill_blank",
+    "question": "To test connectivity to an AMPS server using spark, you use the _____ command.",
+    "correctAnswer": "ping",
+    "explanation": "The `spark ping` command is the standard way to verify that a server is reachable and responding.",
+    "hints": [
+      "Similar to the network utility.",
+      "It's a 4-letter word."
+    ],
+    "sourceModule": "M1",
+    "concept": "Spark CLI"
+  }
+]

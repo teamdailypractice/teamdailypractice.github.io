@@ -1,0 +1,174 @@
+[
+  {
+    "questionId": "q5-001",
+    "type": "mcq",
+    "concept": "Queue vs Pub/Sub",
+    "question": "What is the primary difference between AMPS Pub/Sub and AMPS Queues?",
+    "options": [
+      "Queues support content filtering, Pub/Sub does not.",
+      "In Pub/Sub, every subscriber gets every message; in Queues, only one consumer processes each message.",
+      "Queues are only available in memory, while Pub/Sub is persistent.",
+      "There is no difference; they are different names for the same feature."
+    ],
+    "correctAnswer": "In Pub/Sub, every subscriber gets every message; in Queues, only one consumer processes each message.",
+    "explanation": "Queues implement point-to-point or competitive consumption semantics, ensuring that a single unit of work is not duplicated across multiple workers.",
+    "hints": [
+      "Think about a radio broadcast vs. a physical mail delivery.",
+      "How many people should process a single bank transaction?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-002",
+    "type": "mcq",
+    "concept": "Acknowledge",
+    "question": "Which AMPS command is used by a consumer to signal that a queue message has been successfully processed?",
+    "options": [
+      "ack",
+      "commit",
+      "sow_delete",
+      "release"
+    ],
+    "correctAnswer": "sow_delete",
+    "explanation": "In AMPS, a queue is a view over the SOW/Transaction Log. Deleting the record from the queue's view (sow_delete) acts as the acknowledgement.",
+    "hints": [
+      "It's a SOW command used to remove records.",
+      "The message is 'removed' from the active queue once done."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-003",
+    "type": "mcq",
+    "concept": "Lease Period",
+    "question": "What happens if a consumer's 'Lease Period' for a message expires before they send an acknowledgement?",
+    "options": [
+      "The message is permanently deleted.",
+      "The consumer is disconnected from AMPS.",
+      "AMPS returns the message to the queue for delivery to another consumer.",
+      "The message is moved to the dead-letter queue immediately."
+    ],
+    "correctAnswer": "AMPS returns the message to the queue for delivery to another consumer.",
+    "explanation": "The lease period is a safety mechanism. If a worker crashes or hangs, AMPS ensures the message isn't 'stuck' by timing out the lease and redelivering the work.",
+    "hints": [
+      "It's like a library book; if you don't return it (or renew it), it becomes available for others.",
+      "AMPS assumes the worker failed if the lease expires."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-004",
+    "type": "mcq",
+    "concept": "max_backlog",
+    "question": "What does the 'max_backlog' parameter on a queue subscription control?",
+    "options": [
+      "The maximum size of the transaction log.",
+      "The number of messages a publisher can send per second.",
+      "The maximum number of unacknowledged messages AMPS will deliver to that specific consumer at once.",
+      "The total number of consumers allowed on the queue."
+    ],
+    "correctAnswer": "The maximum number of unacknowledged messages AMPS will deliver to that specific consumer at once.",
+    "explanation": "max_backlog allows consumers to declare their capacity. AMPS won't 'push' more messages to a worker than it can handle.",
+    "hints": [
+      "It's a form of flow control for the consumer.",
+      "How many 'tasks' can you have on your desk at once?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-005",
+    "type": "mcq",
+    "concept": "Storage",
+    "question": "Where are AMPS Queue messages physically stored to ensure persistence across restarts?",
+    "options": [
+      "In a specialized 'Queue File' (.qf).",
+      "In the AMPS Transaction Log.",
+      "Only in memory for maximum performance.",
+      "In an external SQL database."
+    ],
+    "correctAnswer": "In the AMPS Transaction Log.",
+    "explanation": "AMPS Queues are built on top of the Transaction Log, utilizing its high-performance sequential storage for both messages and their delivery state.",
+    "hints": [
+      "AMPS reuses its core persistence engine for queues.",
+      "Remember the 'Record and Replay' module."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-006",
+    "type": "true_false",
+    "concept": "Filtering",
+    "question": "True or False: AMPS Queues support content filtering, allowing a consumer to only receive specific types of work from a shared queue.",
+    "correctAnswer": "true",
+    "explanation": "Just like Pub/Sub, queue subscriptions can include filters (e.g., /region = 'US') so workers only get tasks they are qualified to handle.",
+    "hints": [
+      "Can a worker ask for only 'Gold' priority tasks?",
+      "Content filtering is a core AMPS feature."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-007",
+    "type": "mcq",
+    "concept": "MaxDeliveries",
+    "question": "What is the primary purpose of the 'MaxDeliveries' configuration option?",
+    "options": [
+      "To limit how many total messages a queue can hold.",
+      "To prevent 'poison messages' from repeatedly crashing workers by limiting redelivery attempts.",
+      "To set the maximum number of consumers for the queue.",
+      "To define how many times a publisher can retry a failed publish."
+    ],
+    "correctAnswer": "To prevent 'poison messages' from repeatedly crashing workers by limiting redelivery attempts.",
+    "explanation": "If a message is malformed and causes a worker to crash every time it's processed, MaxDeliveries ensures it is eventually removed after N failures.",
+    "hints": [
+      "Think about a task that is impossible to complete.",
+      "How do we stop an infinite loop of failure?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-008",
+    "type": "mcq",
+    "concept": "Delivery Strategy",
+    "question": "Which delivery strategy distributes messages based on the relative 'max_backlog' capacities of available consumers?",
+    "options": [
+      "Round Robin",
+      "Random",
+      "Proportional",
+      "First Come First Served"
+    ],
+    "correctAnswer": "Proportional",
+    "explanation": "The Proportional strategy uses the ratio of consumer max_backlog values to distribute load, giving more work to more powerful machines.",
+    "hints": [
+      "If Worker A has capacity 10 and Worker B has capacity 20, Worker B gets twice as much work.",
+      "It scales based on the size of the worker's 'bucket'."
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-009",
+    "type": "true_false",
+    "concept": "Distributed Queues",
+    "question": "True or False: AMPS Distributed Queues require a central 'Master' node to coordinate message ownership between replicated instances.",
+    "correctAnswer": "false",
+    "explanation": "AMPS instances coordinate ownership peer-to-peer via replication, allowing for truly distributed operation without a single point of failure.",
+    "hints": [
+      "AMPS is designed for High Availability.",
+      "Does AMPS rely on a single 'Master' for replication?"
+    ],
+    "sourceModule": "module-005"
+  },
+  {
+    "questionId": "q5-010",
+    "type": "fill_blank",
+    "concept": "Dead Letter Queue",
+    "question": "Messages that exceed MaxDeliveries or expire without being processed are often moved to a __________ queue for later inspection.",
+    "correctAnswer": "dead-letter",
+    "explanation": "A dead-letter queue is a special topic where 'unprocessable' messages are sent so developers can investigate why they failed.",
+    "hints": [
+      "It's where letters go when the address is wrong.",
+      "The name sounds a bit spooky."
+    ],
+    "sourceModule": "module-005"
+  }
+]

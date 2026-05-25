@@ -1,0 +1,66 @@
+{
+  "moduleId": "module-008",
+  "title": "Module 8: Administration & Monitoring",
+  "sections": [
+    {
+      "title": "Introduction to Monitoring",
+      "content": [
+        "Monitoring is essential for maintaining the health, performance, and reliability of an AMPS instance. AMPS provides a multi-layered monitoring architecture that includes a graphical web interface, a RESTful statistics API, a persistent statistics database, and a flexible event logging system.",
+        "Effective administration involves not only observing current state but also analyzing historical trends to prevent issues before they impact production workloads."
+      ]
+    },
+    {
+      "title": "The Galvanometer (Web UI)",
+      "content": [
+        "The Galvanometer is a browser-based monitoring tool included with AMPS. It provides a visual representation of the server's state, including CPU and memory usage, network throughput, and client activity.",
+        "Key features include:",
+        "- **Monitoring Dashboards**: Real-time graphs for system and instance metrics.",
+        "- **Topic Browser**: A grid view that allows administrators to issue queries and subscriptions directly from the browser to inspect data.",
+        "- **Client View**: Detailed information on connected clients, their subscriptions, and message rates.",
+        "- **Replication Graph**: A visual map of replication links and message flow between instances.",
+        "The Galvanometer uses the RESTful Statistics Interface for data and requires a WebSocket transport (e.g., `<SQLTransport>`) to enable interactive queries."
+      ]
+    },
+    {
+      "title": "RESTful Statistics Interface",
+      "content": [
+        "AMPS exposes its internal statistics through a lightweight REST interface, typically hosted on the admin port (default 8085).",
+        "The interface follows a hierarchical URI structure:",
+        "- `/host`: Operating system and hardware metrics (CPU, Memory, Disk, Network).",
+        "- `/instance`: Metrics specific to the AMPS engine (Processors, SOW, Transaction Log, Transports, Clients).",
+        "- `/administration`: Access to administrative functions like disconnecting clients or managing replication.",
+        "Supported formats: XML, JSON, CSV, and RNC (Relax NG Compact schema).",
+        "Time-range queries can be performed by appending `t0` and `t1` parameters in ISO-8601 format (e.g., `?t0=20231027T090000&t1=20231027T100000`)."
+      ]
+    },
+    {
+      "title": "Statistics Database (stats.db)",
+      "content": [
+        "Under the hood, AMPS maintains a statistics database, often named `stats.db`. By default, this is stored in memory, but production systems should persist it to a file using the `<FileName>` tag in the `<Admin>` configuration.",
+        "The database is in SQLite format, allowing it to be queried using standard SQLite tools for deep historical analysis.",
+        "The `<Interval>` tag defines how frequently AMPS captures a snapshot of its internal metrics (e.g., every 5 seconds)."
+      ]
+    },
+    {
+      "title": "Event Logging",
+      "content": [
+        "The AMPS logging framework is highly configurable, supporting multiple targets like files, stdout, and syslog.",
+        "Log levels (from most to least verbose): `developer`, `trace`, `stats`, `info`, `warning`, `error`, `critical`, `emergency`.",
+        "Log message format: `[Timestamp] [ThreadID] [Level]: [ErrorID] [Message]`.",
+        "- **ErrorID**: Follows the `CC-NNNN` format where `CC` is the category (e.g., `00` for Startup) and `NNNN` is the unique message number.",
+        "- **Rotation**: Logs can be rotated based on size (`RotationThreshold`) and timestamp-based filenames.",
+        "- **Filtering**: Specific errors can be included or excluded using `<IncludeErrors>` and `<ExcludeErrors>`."
+      ]
+    },
+    {
+      "title": "Monitoring Topics",
+      "content": [
+        "AMPS publishes real-time status updates to internal topics starting with `/AMPS/`.",
+        "- `/AMPS/ClientStatus`: Publishes messages whenever a client connects, disconnects, or issues commands. Useful for tracking application presence.",
+        "- `/AMPS/SOWStats`: Provides periodic updates on SOW topic sizes and record counts. Enabled via the `<SOWStatsInterval>` configuration.",
+        "These topics can be treated like any other AMPS topic: you can subscribe to them, filter them, or even persist them to a SOW for querying."
+      ]
+    }
+  ],
+  "assets": []
+}

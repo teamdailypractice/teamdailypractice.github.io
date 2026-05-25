@@ -1,0 +1,205 @@
+[
+  {
+    "moduleId": "module-002",
+    "slideNumber": 1,
+    "title": "Welcome to Module 2: Pub/Sub & Content Filtering 📡",
+    "type": "intro",
+    "content": [
+      "AMPS is a low-latency messaging system at its core.",
+      "Today we explore how AMPS routes data efficiently.",
+      "**Key Topics:**",
+      "- Topic Identifiers & Ad Hoc Topics",
+      "- Regular Expression Subscriptions",
+      "- Content Filtering Principles",
+      "- AMPS Expression Language"
+    ],
+    "speakerNotes": "Welcome students! In this module, we'll dive into the heart of AMPS messaging: how to define topics and filter content for maximum efficiency."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 2,
+    "title": "Ad Hoc Topics: Zero Configuration ⚡",
+    "type": "concept",
+    "content": [
+      "AMPS does not require pre-declaring topics for basic Pub/Sub.",
+      "**Ad Hoc Topics:** Topics created 'on the fly' when a publisher sends data.",
+      "Publishers and subscribers are completely decoupled.",
+      "A topic name determines the message stream."
+    ],
+    "speakerNotes": "One of AMPS' strengths is that you don't need to configure topics in advance for simple messaging. This is what we call 'Ad Hoc Topics'."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 3,
+    "title": "Topic Identifiers 🏷️",
+    "type": "specification",
+    "content": [
+      "Topics are the primary way to categorize message streams.",
+      "Topics are message-type specific (JSON 'quotes' != XML 'quotes').",
+      "**Regex Subscriptions:** Subscribers can use regular expressions to match multiple topics.",
+      "Example: `^ORDERS_.*` matches `ORDERS_US`, `ORDERS_EU`, etc."
+    ],
+    "speakerNotes": "Subscribers can use regular expressions to listen to multiple topics at once, further decoupling them from the publisher's specific topic choices."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 4,
+    "title": "Content Filtering: The 'WHERE' Clause 🔍",
+    "type": "concept",
+    "content": [
+      "Content Filtering allows subscribers to receive only the data they need.",
+      "**Benefits:**",
+      "- **Bandwidth Efficiency:** Less data sent over the wire.",
+      "- **Decoupling:** Publishers don't need to know subscriber needs.",
+      "- **Simpler Clients:** Code only processes relevant messages."
+    ],
+    "speakerNotes": "Think of content filtering as a SQL WHERE clause for your message stream. It moves the selection logic from the client to the server."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 5,
+    "title": "Message Routing Logic 🛤️",
+    "type": "diagram",
+    "content": [
+      "AMPS evaluates content filters for every message published."
+    ],
+    "mermaid": "graph TD\n  Pub[Publisher] -- Message --> AMPS{AMPS Server}\n  AMPS -- \"Filter: /Sym='IBM'\" --> Sub1[Subscriber 1]\n  AMPS -- \"Filter: /Price > 100\" --> Sub2[Subscriber 2]\n  AMPS -- \"No Filter\" --> Sub3[Subscriber 3]\n  style AMPS fill:#f9f,stroke:#333,stroke-width:4px",
+    "speakerNotes": "This diagram shows how AMPS acts as a high-speed router, evaluating filters to determine which subscribers should receive a particular message."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 6,
+    "title": "AMPS Filter Grammar 🏗️",
+    "type": "specification",
+    "content": [
+      "AMPS uses a combination of two standards:",
+      "1. **XPath Identifiers:** To locate fields within the message.",
+      "2. **SQL-92 Operators:** To form the comparison predicate.",
+      "**Example:** `/Order/Symbol = 'MSFT' AND /Order/Qty > 100`"
+    ],
+    "speakerNotes": "If you know XPath and SQL, you already know 90% of AMPS filtering. We use XPath for paths and SQL for the logic."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 7,
+    "title": "XPath Identifiers in AMPS 📍",
+    "type": "specification",
+    "content": [
+      "Identifiers specify the value of an attribute or element.",
+      "- **JSON/XML:** `/Order/Symbol`",
+      "- **FIX:** `/55` (using tag numbers)",
+      "- **Special Names:** `[/Field With Spaces]` (use brackets for non-standard names)."
+    ],
+    "speakerNotes": "AMPS uses a subset of XPath. For FIX, we use the tag number as the field name. Brackets allow for field names that don't fit standard XPath naming rules."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 8,
+    "title": "AMPS Data Types 💎",
+    "type": "specification",
+    "content": [
+      "AMPS is 'transparently typed'. It converts as needed.",
+      "**Core Types:**",
+      "- **Integer:** 64-bit signed/unsigned.",
+      "- **Floating Point:** 64-bit double precision.",
+      "- **String/Binary:** Character sequences.",
+      "- **Boolean:** `true` or `false`.",
+      "- **NULL:** Missing or empty fields."
+    ],
+    "speakerNotes": "AMPS tries to be helpful. If you compare a string '100' to a number 50, it will attempt to convert the string to a number for the comparison."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 9,
+    "title": "Logical & Arithmetic Operators ➕",
+    "type": "reference",
+    "content": [
+      "**Logical:** `NOT`, `AND`, `OR` (in precedence order).",
+      "**Arithmetic:** `+`, `-`, `*`, `/`, `%`, `MOD`.",
+      "⚠️ **Tip:** Use spaces around `/` in arithmetic to avoid XPath confusion (e.g., `/qty / 10` vs `/qty/10`)."
+    ],
+    "speakerNotes": "Standard precedence applies. Always remember the space around the division operator to ensure the parser doesn't think it's part of an XPath identifier."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 10,
+    "title": "Comparison Operators ⚖️",
+    "type": "reference",
+    "content": [
+      "**Equality:** `=`, `==`, `!=`, `<>`",
+      "**Range:** `<`, `<=`, `>`, `>=`",
+      "**Set/Range:** `IN`, `BETWEEN`",
+      "**Examples:**",
+      "- `/qty BETWEEN 1 AND 10`",
+      "- `/state IN ('NY', 'NJ', 'CT')`"
+    ],
+    "speakerNotes": "IN is highly optimized in AMPS. It's generally faster than using multiple OR statements for the same field."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 11,
+    "title": "String Operators: LIKE, BEGINS WITH 🧵",
+    "type": "reference",
+    "content": [
+      "- **BEGINS WITH**: Optimized prefix matching (case-sensitive).",
+      "- **ENDS WITH**: Optimized suffix matching.",
+      "- **LIKE**: Full PCRE (Perl Compatible Regular Expression) matching.",
+      "**Example:** `/name LIKE '(?i)gyro'` (case-insensitive match)."
+    ],
+    "speakerNotes": "BEGINS WITH is a specialized, high-performance operator. Use LIKE when you need the full power of regular expressions."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 12,
+    "title": "Handling NULL & NaN 🧩",
+    "type": "concept",
+    "content": [
+      "In AMPS, comparisons with `NULL` are never true.",
+      "**Predicates:**",
+      "- `IS NULL` / `IS NOT NULL`",
+      "- `IS NAN` (Not a Number)",
+      "**COALESCE:** Returns the first non-null value.",
+      "`COALESCE(/user, /guest, 'anonymous')`"
+    ],
+    "speakerNotes": "SQL semantics apply to NULL. You must use 'IS NULL' to check for existence, as `/field = NULL` will always be false."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 13,
+    "title": "Working with Arrays 📚",
+    "type": "concept",
+    "content": [
+      "AMPS filters are 'array-aware'.",
+      "1. **Comparisons (=, <, LIKE):** Evaluate every element. Returns true if *any* match.",
+      "2. **Arithmetic/Functions:** Use the *first* element.",
+      "**Example:** `/data = 5` matches if `data` is `[1, 5, 10]`."
+    ],
+    "speakerNotes": "This is a powerful feature. Comparison operators check if any element in the array matches the condition."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 14,
+    "title": "Expression Optimization 🚀",
+    "type": "concept",
+    "content": [
+      "- **Short-Circuiting:** In `A OR B`, B is only evaluated if A is false.",
+      "- **Partial Parsing:** AMPS only parses fields used in filters/indexes.",
+      "- **Hash Indexes:** Exact string matches on SOW topics are ultra-fast."
+    ],
+    "speakerNotes": "To optimize your filters, put the least expensive or most likely to be true conditions on the left side of an OR statement."
+  },
+  {
+    "moduleId": "module-002",
+    "slideNumber": 15,
+    "title": "Module 2 Summary 🏁",
+    "type": "summary",
+    "content": [
+      "✅ **Ad Hoc Topics:** No setup required for basic Pub/Sub.",
+      "✅ **Regex Topics:** Subscribe to many topics at once.",
+      "✅ **Content Filters:** Precise data delivery using XPath + SQL.",
+      "✅ **Strong Types:** Transparent conversion for ease of use.",
+      "✅ **Optimized:** Short-circuiting and partial parsing keep AMPS fast."
+    ],
+    "speakerNotes": "We've covered the basics of how AMPS identifies topics and filters content. Next, we'll look at the State of the World (SOW) database."
+  }
+]

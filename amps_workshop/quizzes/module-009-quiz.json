@@ -1,0 +1,170 @@
+[
+  {
+    "questionId": "q9-1",
+    "type": "mcq",
+    "question": "Which security pillar in AMPS is responsible for verifying a user's identity?",
+    "options": [
+      "Entitlement",
+      "Authentication",
+      "Encryption",
+      "Conflation"
+    ],
+    "correctAnswer": "Authentication",
+    "explanation": "Authentication is the process of assigning and verifying an identity for a connection.",
+    "hints": [
+      "Think about the first step in joining a secure system.",
+      "It's about 'who' you are, not 'what' you can do."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-2",
+    "type": "true_false",
+    "question": "Implicit logon is enabled by default in AMPS 5.0 and later.",
+    "correctAnswer": "false",
+    "explanation": "Implicit logon is disabled by default in AMPS 5.0+ to encourage stronger security practices.",
+    "hints": [
+      "Does AMPS prefer you to log in explicitly or 'guess' your identity?",
+      "Modern security usually defaults to 'more secure'."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-3",
+    "type": "mcq",
+    "question": "Which resource type controls access to the AMPS stats and management interface?",
+    "options": [
+      "logon",
+      "topic",
+      "admin",
+      "replication_logon"
+    ],
+    "correctAnswer": "admin",
+    "explanation": "The 'admin' resource type controls permissions for the administrative interface and statistics.",
+    "hints": [
+      "This resource is for managers and operators.",
+      "It's separate from message data (topics)."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-4",
+    "type": "mcq",
+    "question": "How can you restrict a user to only see specific records within a topic?",
+    "options": [
+      "Field-Level Security",
+      "Content-Filtered Entitlements",
+      "Transport Encryption",
+      "Topic Regex"
+    ],
+    "correctAnswer": "Content-Filtered Entitlements",
+    "explanation": "Content-filtered entitlements allow the server to apply a filter to all requests from a user for a specific topic.",
+    "hints": [
+      "Think about filtering the 'what' based on the 'content'.",
+      "It works like a hidden WHERE clause."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-5",
+    "type": "mcq",
+    "question": "What is the purpose of an 'Entitlement Select List'?",
+    "options": [
+      "To filter which records are shown",
+      "To restrict which fields are visible in a message",
+      "To allow multiple users to share a logon",
+      "To encrypt specific fields in a message"
+    ],
+    "correctAnswer": "To restrict which fields are visible in a message",
+    "explanation": "A select list specifies which fields are included or excluded from messages delivered to a user.",
+    "hints": [
+      "It's about 'field-level' security.",
+      "Think about 'selecting' only certain parts of a message."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-6",
+    "type": "mcq",
+    "question": "Which module would you use to integrate AMPS with an existing LDAP or Kerberos system?",
+    "options": [
+      "amps-default-authentication-module",
+      "libamps_http_entitlement.so",
+      "libamps_multi_authentication.so",
+      "libamps_simple_access_entitlement.so"
+    ],
+    "correctAnswer": "libamps_multi_authentication.so",
+    "explanation": "The Multimethod (multi_authentication) module supports LDAP and Kerberos.",
+    "hints": [
+      "This module supports 'multiple' enterprise methods.",
+      "LDAP and Kerberos are standard enterprise protocols."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-7",
+    "type": "mcq",
+    "question": "What happens when you use mTLS (Mutual TLS)?",
+    "options": [
+      "The client verifies the server's certificate.",
+      "The server verifies the client's certificate.",
+      "Both the client and server verify each other's certificates.",
+      "The data is encrypted twice."
+    ],
+    "correctAnswer": "Both the client and server verify each other's certificates.",
+    "explanation": "Mutual TLS requires both ends of the connection to present and verify certificates.",
+    "hints": [
+      "The 'M' stands for 'Mutual'.",
+      "It's a two-way trust street."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-8",
+    "type": "true_false",
+    "question": "AMPS re-checks entitlements for every single message delivered on an active subscription.",
+    "correctAnswer": "false",
+    "explanation": "AMPS checks entitlements when the subscription is created and applies any filters/select lists then. It does not re-run the module for every message.",
+    "hints": [
+      "Re-checking every message would be very slow.",
+      "Permissions are checked at the 'start' of the command."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-9",
+    "type": "mcq",
+    "question": "If a user has 'read' permission on a Message Queue, what other action are they implicitly granted?",
+    "options": [
+      "Publishing to the queue",
+      "Deleting the queue",
+      "Acknowledging (deleting) messages they have received",
+      "Changing the queue's lease period"
+    ],
+    "correctAnswer": "Acknowledging (deleting) messages they have received",
+    "explanation": "For queues, 'read' permission implies the ability to acknowledge (and thus remove) messages.",
+    "hints": [
+      "To 'consume' from a queue, you must be able to say you are finished.",
+      "Acknowledgment is a special kind of 'delete' for queues."
+    ],
+    "sourceModule": "module-009"
+  },
+  {
+    "questionId": "q9-10",
+    "type": "mcq",
+    "question": "What should an administrator do after re-enabling an entitlement system that was previously disabled?",
+    "options": [
+      "Restart the server immediately",
+      "Run an entitlement reset to clear existing connection caches",
+      "Nothing, AMPS updates automatically",
+      "Re-install all security modules"
+    ],
+    "correctAnswer": "Run an entitlement reset to clear existing connection caches",
+    "explanation": "An entitlement reset ensures that all current connections and subscriptions are validated against the new policy.",
+    "hints": [
+      "AMPS doesn't automatically disconnect users when entitlements are re-enabled.",
+      "You need to 'clear' the old state."
+    ],
+    "sourceModule": "module-009"
+  }
+]

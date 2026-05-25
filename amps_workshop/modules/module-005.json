@@ -1,0 +1,48 @@
+{
+  "moduleId": "module-005",
+  "title": "Module 5: Message Queues",
+  "sections": [
+    {
+      "title": "Introduction to Message Queues 📬",
+      "content": [
+        "AMPS includes high performance queuing built on the AMPS messaging engine and the transaction log.",
+        "Unlike Basic Pub/Sub (where every subscriber receives a copy), AMPS Queues ensure that each message is processed by exactly one subscriber.",
+        "This is essential for task distribution, compute grids, and reliable order processing."
+      ]
+    },
+    {
+      "title": "Queue Models and Concepts 🎯",
+      "content": [
+        "Point-to-Point: A message is sent from a publisher and delivered to a single consumer.",
+        "Competitive Consumption: Multiple workers subscribe to the same queue. AMPS distributes messages among them based on availability and capacity.",
+        "Single Consumer: A specific configuration where only one consumer can be active at a time, often used for strict ordering."
+      ]
+    },
+    {
+      "title": "Queue Configuration & Semantics ⚙️",
+      "content": [
+        "Lease Period: The time a consumer has to process a message. If not acknowledged (via sow_delete) within this window, AMPS returns it to the queue.",
+        "At-Least-Once Delivery: The standard AMPS guarantee ensuring messages are redelivered if a consumer fails.",
+        "Max Deliveries: Limits the number of times a message can be retried before being removed or moved to a dead-letter queue.",
+        "Expiration: The 'Time to Live' (TTL) for a message in the queue."
+      ]
+    },
+    {
+      "title": "Delivery Strategies ⚖️",
+      "content": [
+        "Round Robin: Messages are delivered sequentially to available consumers.",
+        "Proportional: Messages are distributed based on the declared capacity (max_backlog) of each consumer.",
+        "Least Loaded: AMPS prioritizes consumers with the most available capacity."
+      ]
+    },
+    {
+      "title": "Distributed Queues 🌐",
+      "content": [
+        "AMPS allows queues to work across replicated instances while maintaining 'once-and-only-once' delivery guarantees.",
+        "Replicated instances coordinate ownership to ensure that even in a distributed environment, consumers don't double-process the same message.",
+        "This allows for global scale and high availability in message processing workflows."
+      ]
+    }
+  ],
+  "assets": []
+}

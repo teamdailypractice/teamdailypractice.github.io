@@ -1,0 +1,168 @@
+[
+  {
+    "moduleId": "module-004",
+    "slideNumber": 1,
+    "title": "Module 4: Transaction Log & Replay",
+    "type": "title",
+    "content": [
+      "Mastering message durability and historical playback in AMPS. 🔄",
+      "Building resilient, resumable, and auditable applications."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 2,
+    "title": "What is the Transaction Log?",
+    "type": "content",
+    "content": [
+      "A sequential, historical record of all published messages. 📖",
+      "Stored in durable **Journal Files** on disk.",
+      "Ensures **persistence** and **consistency** across restarts.",
+      "Fully queryable through the AMPS Client API (unlike standard DB logs).",
+      "The foundation for HA, Replication, and Message Queues."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 3,
+    "title": "How it Works: The Journaling Flow",
+    "type": "diagram",
+    "content": [
+      "Messages are appended sequentially to the active journal file."
+    ],
+    "mermaid": "graph LR\n    P[Publisher] -->|Message + Seq#| A[AMPS Server]\n    A -->|Append| J[Active Journal File]\n    J -->|Rotate if Full| J2[New Journal File]\n    A -->|Ack| P\n    A -.->|Replay| S[Subscriber]"
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 4,
+    "title": "Core Concepts: Journal Files",
+    "type": "content",
+    "content": [
+      "**Sequential Files**: AMPS writes to multiple files (journals) of fixed size. 📑",
+      "**Immutable**: Once a message is written, it is never modified.",
+      "**Configurable Retention**: Auto-archive or delete based on age or size.",
+      "**Sequential I/O**: Optimized for the maximum throughput of your storage device."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 5,
+    "title": "Bookmarks: The Universal Pointer",
+    "type": "content",
+    "content": [
+      "Every message in the log has a unique **Bookmark**. 🔖",
+      "Composed of: `Publisher ID` + `Sequence Number`.",
+      "**Monotonically Increasing**: Allows AMPS to find points in time instantly.",
+      "Bookmarks are consistent across a replicated network of AMPS instances."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 6,
+    "title": "Configuring the Transaction Log",
+    "type": "code",
+    "content": [
+      "Enable logging in the `TransactionLog` section of `config.xml`."
+    ],
+    "speakerNotes": "<TransactionLog>\n  <JournalDirectory>./journals</JournalDirectory>\n  <Topic>\n    <Name>WORK_ORDERS</Name>\n    <MessageType>json</MessageType>\n  </Topic>\n</TransactionLog>"
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 7,
+    "title": "Bookmark Subscriptions",
+    "type": "content",
+    "content": [
+      "A subscription that starts from a specific bookmark. 🎯",
+      "**EPOCH**: Start from the beginning of the log (replays everything).",
+      "**NOW**: Start from the live stream (no historical replay).",
+      "**Timestamp**: Start from a specific date/time.",
+      "**Specific Bookmark**: Resume exactly where you left off."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 8,
+    "title": "Replay Flow: History to Live",
+    "type": "diagram",
+    "content": [
+      "AMPS replays history, then seamlessly cuts over to live messages."
+    ],
+    "mermaid": "sequenceDiagram\n    participant S as Subscriber\n    participant A as AMPS Server\n    participant J as Journal\n    S->>A: Subscribe(Bookmark=EPOCH)\n    loop Replay Phase\n        A->>J: Read historical messages\n        J-->>A: Message Data\n        A-->>S: Deliver replayed message\n    end\n    Note over A,S: Cutover to Live\n    rect rgb(200, 255, 200)\n        A-->>S: Deliver new live publish\n    end"
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 9,
+    "title": "Advanced Replay: Rate Control",
+    "type": "content",
+    "content": [
+      "Don't let history overwhelm your client! 🏎️",
+      "**Absolute Rate**: `rate=1000` (messages/sec).",
+      "**Bandwidth Rate**: `rate=500KB` (bytes/sec).",
+      "**Multiplier**: `rate=2X` (replay twice as fast as originally published).",
+      "**Gap Control**: `rate_max_gap=10s` (skip over quiet periods)."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 10,
+    "title": "Replay Windows: Start & Stop",
+    "type": "content",
+    "content": [
+      "Request a specific slice of history using `[start:end)`. 🪟",
+      "Example: `[20230101T000000:20230101T010000)`",
+      "**Inclusive `[` / `]`**: Include the boundary bookmark.",
+      "**Exclusive `(` / `)`**: Skip the boundary bookmark.",
+      "Useful for auditing specific events or bulk processing historical data."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 11,
+    "title": "Pause and Resume",
+    "type": "content",
+    "content": [
+      "Control the flow of a bookmark subscription. ⏸️",
+      "**Pause**: AMPS stops sending but keeps your position in the log.",
+      "**Resume**: AMPS starts back up exactly where it paused.",
+      "Synchronize multiple subscriptions to replay at the same pace.",
+      "Note: Pausing a live subscription is generally not recommended (pacing is better handled by rate control)."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 12,
+    "title": "High Availability (HA) Integration",
+    "type": "content",
+    "content": [
+      "The Transaction Log is the backbone of HA. 🏗️",
+      "**Reliable Publishing**: Ack sent only after message is safely on disk.",
+      "**Resumable Subscriptions**: Clients use bookmarks to ensure 'exactly-once' processing.",
+      "**Replication Catch-up**: Standby servers replay logs from the primary to synchronize."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 13,
+    "title": "Best Practices",
+    "type": "content",
+    "content": [
+      "Use **fast storage** (SSD/NVMe) for journals. 🚀",
+      "Separate the journal directory from the OS/Application drive.",
+      "Implement a **Retention Policy** (archiving/deletion) to manage disk space.",
+      "Always use **unique client names** for resumable subscriptions.",
+      "Monitor journal disk usage and write latencies."
+    ]
+  },
+  {
+    "moduleId": "module-004",
+    "slideNumber": 14,
+    "title": "Summary",
+    "type": "content",
+    "content": [
+      "Transaction Log = Durable, Sequential History. ✅",
+      "Bookmarks = Pointers to specific messages. ✅",
+      "Bookmark Subscriptions = Flexible Replay & Recovery. ✅",
+      "Essential for production-grade, highly available systems. ✅"
+    ]
+  }
+]

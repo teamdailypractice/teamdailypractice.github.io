@@ -1,0 +1,42 @@
+{
+  "moduleId": "module-003",
+  "title": "Module 3: State of the World (SOW)",
+  "sections": [
+    {
+      "title": "SOW Database Concepts",
+      "content": "The State of the World (SOW) is one of the core features of AMPS, acting as a high-performance last-value cache or NoSQL document store. It persists the most recent update for each distinct message published to a topic, similar to a database table where each message is a row. This allows applications to query the current state at any time, rather than just waiting for new messages in a stream. 🗄️"
+    },
+    {
+      "title": "When to use SOW vs. Pub/Sub",
+      "content": "Use Pub/Sub for real-time notification of events (e.g., a ticker feed) where the 'now' is what matters. Use SOW when you need the 'latest' state (e.g., current inventory levels, pending orders, or user profiles) to initialize an application or query historical snapshots. 🔄"
+    },
+    {
+      "title": "How SOW works: SOW Keys",
+      "content": "Every record in a SOW topic is uniquely identified by a SOW Key. AMPS can calculate this key automatically based on message content (Content-based) or require the publisher to provide it (User-provided). This key acts as the 'Primary Key' for the record. 🔑"
+    },
+    {
+      "title": "Configuration of SOW topics",
+      "content": "To enable SOW for a topic, it must be configured in the AMPS configuration file. Key parameters include: Topic Name, MessageType (JSON, FIX, etc.), Key (the field(s) used for uniqueness), and FileName (where the data is persisted on disk). 🛠️"
+    },
+    {
+      "title": "Querying the SOW",
+      "content": "Applications retrieve data from the SOW using the 'sow' command. This command supports powerful filters (SQL-92 and XPath) to return only matching records. Unlike subscriptions, a query is a point-in-time snapshot. 🔍"
+    },
+    {
+      "title": "Atomic Query and Subscribe",
+      "content": "The 'sow_and_subscribe' command allows an application to retrieve the current state and immediately start receiving real-time updates in a single atomic operation. This prevents race conditions where an update might be missed between the initial query and a subsequent subscription. ⚡"
+    }
+  ],
+  "assets": [
+    {
+      "id": "sow-key-calc-diagram",
+      "type": "mermaid",
+      "content": "graph LR\n  A[Publisher] -- Publish Message --> B[AMPS Server]\n  B -- 1. Extract Key Fields --> C{Key Calculation}\n  C -- 2. Generate Hash --> D[SOW Key]\n  D -- 3. Lookup/Update --> E[(SOW Database)]"
+    },
+    {
+      "id": "query-subscribe-flow",
+      "type": "mermaid",
+      "content": "sequenceDiagram\n  participant Client\n  participant AMPS\n  Client->>AMPS: sow_and_subscribe(Topic, Filter)\n  AMPS->>AMPS: 1. Register Subscription\n  AMPS->>Client: 2. Send Snapshot (Matching Records)\n  AMPS->>Client: 3. Send Real-time Updates (New Matches)"
+    }
+  ]
+}

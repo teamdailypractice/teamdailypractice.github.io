@@ -1,0 +1,182 @@
+[
+  {
+    "questionId": "q8-001",
+    "type": "mcq",
+    "question": "What is the default port for the AMPS administrative and monitoring interface in the sample configuration?",
+    "options": [
+      "9007",
+      "8085",
+      "8080",
+      "9008"
+    ],
+    "correctAnswer": "8085",
+    "explanation": "In most AMPS documentation and sample configurations, the port 8085 is assigned to the Admin interface.",
+    "hints": [
+      "It's a common 'HTTP-like' port number often seen in AMPS examples.",
+      "Port 9007 is usually for the AMPS client protocol."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-002",
+    "type": "mcq",
+    "question": "Which component of the monitoring stack provides a graphical, browser-based dashboard?",
+    "options": [
+      "ampserr",
+      "The Galvanometer",
+      "spark",
+      "stats.db"
+    ],
+    "correctAnswer": "The Galvanometer",
+    "explanation": "The Galvanometer is the built-in JavaScript application that provides a graphical view of AMPS statistics.",
+    "hints": [
+      "Think of a tool named after a device that detects electric current.",
+      "It is a Web UI."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-003",
+    "type": "mcq",
+    "question": "What protocol must be enabled to allow the Galvanometer to perform interactive queries and subscriptions?",
+    "options": [
+      "REST",
+      "WebSocket",
+      "FIX",
+      "NVFIX"
+    ],
+    "correctAnswer": "WebSocket",
+    "explanation": "Galvanometer uses the WebSocket protocol to maintain persistent connections for real-time queries and subscriptions.",
+    "hints": [
+      "Modern web browsers use this for two-way communication.",
+      "Check the <SQLTransport> configuration."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-004",
+    "type": "mcq",
+    "question": "Which RESTful statistics output format is NOT supported for aggregate (non-leaf) nodes?",
+    "options": [
+      "JSON",
+      "XML",
+      "CSV",
+      "HTML"
+    ],
+    "correctAnswer": "CSV",
+    "explanation": "CSV is a flat, tabular format and cannot easily represent the hierarchical (tree-like) structure of aggregate nodes in AMPS statistics.",
+    "hints": [
+      "Think about which format struggles with nested data.",
+      "Aggregate nodes have child elements."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-005",
+    "type": "mcq",
+    "question": "How are time-range queries specified in the AMPS RESTful interface?",
+    "options": [
+      "Using the 'start' and 'end' query parameters",
+      "Using the 't0' and 't1' query parameters",
+      "By adding a date to the URI path",
+      "By sending a POST request with a JSON body"
+    ],
+    "correctAnswer": "Using the 't0' and 't1' query parameters",
+    "explanation": "AMPS uses 't0' (start time) and 't1' (end time) as query parameters for filtering historical statistics.",
+    "hints": [
+      "The parameters use a 't' followed by a number.",
+      "They represent the beginning and end of the interval."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-006",
+    "type": "mcq",
+    "question": "Which log level is the most verbose and includes all inbound and outbound message data?",
+    "options": [
+      "developer",
+      "trace",
+      "info",
+      "stats"
+    ],
+    "correctAnswer": "trace",
+    "explanation": "The 'trace' level records every byte sent to or from the server, including message contents.",
+    "hints": [
+      "It's like a 'wire trace' of the network traffic.",
+      "It is lower in the hierarchy than 'info'."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-007",
+    "type": "mcq",
+    "question": "In an AMPS log message identifier (e.g., 00-0015), what does the first part (CC) represent?",
+    "options": [
+      "The severity level",
+      "The error category or module",
+      "The thread ID",
+      "The timestamp"
+    ],
+    "correctAnswer": "The error category or module",
+    "explanation": "The 'CC' part identifies the functional category or module in AMPS (e.g., 00 for Startup, 12 for Connectivity).",
+    "hints": [
+      "It groups related error messages together.",
+      "It stands for Category."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-008",
+    "type": "mcq",
+    "question": "To which internal topic does AMPS publish client logon and disconnect events?",
+    "options": [
+      "/AMPS/Instance",
+      "/AMPS/ClientStatus",
+      "/AMPS/Events",
+      "/AMPS/Admins"
+    ],
+    "correctAnswer": "/AMPS/ClientStatus",
+    "explanation": "The /AMPS/ClientStatus topic is used by the engine to broadcast events related to client lifecycle and commands.",
+    "hints": [
+      "It focuses on the 'Status' of 'Clients'.",
+      "All internal topics start with /AMPS/."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-009",
+    "type": "mcq",
+    "question": "What configuration setting is required to enable periodic publishing of statistics for SOW topics?",
+    "options": [
+      "SOWStatsInterval",
+      "AdminInterval",
+      "StatsUpdate",
+      "SOWMonitoring"
+    ],
+    "correctAnswer": "SOWStatsInterval",
+    "explanation": "SOWStatsInterval determines how often AMPS publishes snapshots to the /AMPS/SOWStats topic.",
+    "hints": [
+      "It combines the feature (SOWStats) with a time (Interval).",
+      "It's similar to the Interval in the Admin block."
+    ],
+    "sourceModule": "module-008"
+  },
+  {
+    "questionId": "q8-010",
+    "type": "mcq",
+    "question": "What is the underlying file format of the AMPS statistics database (stats.db)?",
+    "options": [
+      "XML",
+      "SQLite",
+      "BSON",
+      "CSV"
+    ],
+    "correctAnswer": "SQLite",
+    "explanation": "AMPS uses the SQLite database format for its statistics storage, making it compatible with many third-party tools.",
+    "hints": [
+      "It's a popular, lightweight SQL database engine.",
+      "It allows using standard SQL queries on the file."
+    ],
+    "sourceModule": "module-008"
+  }
+]
